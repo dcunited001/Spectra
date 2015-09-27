@@ -49,40 +49,15 @@ class SpectraNode: SpectraModelable {
     var vertexBuffer: SpectraBuffer?
     var buffers: [SpectraBuffer] = []
     
-    var device:MTLDevice
-    
     // Modelable
     var modelScale = float4(1.0, 1.0, 1.0, 1.0)
     var modelPosition = float4(0.0, 0.0, 0.0, 1.0)
     var modelRotation = float4(1.0, 1.0, 1.0, 90)
     var modelMatrix: float4x4 = float4x4(diagonal: float4(1.0,1.0,1.0,1.0))
     
-    // TODO: reorder params
-    init(name: String, vertices: [float4], device: MTLDevice) {
-        self.device = device
-        
-        self.vCount = vertices.count
-        self.vBytes = Node<T>.calculateBytes(vCount)
-        self.vertexBuffer = self.device.newBufferWithBytes(vertices, length: vBytes, options: .CPUCacheModeDefaultCache)
-        self.vertexBuffer.label = "\(T.self) vertices"
+    init() {
         updateModelMatrix()
     }
-    
-//    func getRawVertices() -> [protocol<Vertexable, Chunkable>] {
-//        return []
-//    }
-//    
-//    func getVertexSize() -> Int {
-//        return sizeof(T)
-//    }
-//    
-//    static func getVertexSize() -> Int {
-//        return sizeof(T)
-//    }
-//    
-//    static func calculateBytes(vertexCount: Int) -> Int {
-//        return vertexCount * sizeof(T)
-//    }
 }
 
 protocol SpectraModelable: class {
@@ -231,7 +206,6 @@ extension SpectraRotatable {
         let rotation = (rotationRate * Float(t)) * (block?(self) ?? 1)
         self.modelRotation.w += rotation
     }
-    
     
     func updateRotationalVectorForTime(t: CFTimeInterval, block: (SpectraRotatable -> float4)?) {
         let rVector = (rotationRate * Float(t)) * (block?(self) ?? float4(1.0, 1.0, 1.0, 0.0))
