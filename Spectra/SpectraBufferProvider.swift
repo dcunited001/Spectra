@@ -53,7 +53,7 @@ class SpectraBaseBufferProvider: SpectraBufferProvider {
     deinit {
         for i in 0...inflightBuffersCount-1 {
             // TODO: is this correct? this deinit's the same thing over and over
-            // TODO: deinit memory for buffers?
+            // TODO: dealloc command buffers?
             dispatch_semaphore_signal(self.availableBuffersSemaphore)
         }
     }
