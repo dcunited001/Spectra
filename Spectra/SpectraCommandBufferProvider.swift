@@ -7,21 +7,12 @@
 //
 
 //TODO: command buffer provider for compute functions? do i need to differentiate this?
-//TODO: buffer providers for input to render/compute functions
-// - reusing a pool of these buffers should greatly increase performance
-// - but locks us down to a particular size of buffer ... or does it??
-// - if you just instantiate the largest buffer you'll need, then no.
-// - however, it does make it more difficult to specialize the behavior you need 
-//   for the buffer's memory (StorageModeShared, posix_memalign, etc.)
-// - and thus, it makes it more difficult to develop rendering behavior, as your
-//   nodes need to be aware of the implementation you're using
 
-//import Foundation
 import Metal
 
 let inflightCommandBuffers: Int = 3;
 
-class SpectraRenderCommandBufferProvider {
+class SpectraCommandBufferProvider {
     var availableBuffersIndex:Int = 0
     var availableBuffersSemaphore:dispatch_semaphore_t
     var inflightBuffersCount:Int
@@ -53,7 +44,3 @@ class SpectraRenderCommandBufferProvider {
         }
     }
 }
-
-
-
-
