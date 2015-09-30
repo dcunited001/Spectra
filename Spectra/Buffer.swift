@@ -16,12 +16,13 @@ protocol Buffer {
     
     func prepareBuffer(device: MTLDevice, options: MTLResourceOptions)
     func writeCompute(encoder: MTLComputeCommandEncoder, bufferOptions: [String:AnyObject])
-    func writeComputeInputs(encoder: MTLComputeCommandEncoder, inputOptions:[String:AnyObject])
     func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
-    func writeVertexInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject])
     func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
-    func writeFragmentInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject])
 }
+
+// Buffer was handling BufferInputs, but i need a separate BufferGroup for this
+// - most buffers will be handled through buffer providers, 
+// - so that will make it tricky to distribute BufferInput data changes to the buffers
 
 // so, right now, this handles a buffer with multiple param sets, 
 // - the buffer ID of which can be set at runtime
@@ -32,10 +33,6 @@ protocol Buffer {
 struct BufferOptions {
     var index:Int
     var offset:Int
-}
-
-struct BufferInputOptions {
-    var index:Int
 }
 
 class BaseBuffer: Buffer {
