@@ -54,6 +54,9 @@ in vertex data from FFT.
 
 #### Do i need a similar 'provider' pattern for inputs to vertex/fragement shaders?
 
+**update:** looks like no, encoder.setBytes() encodes using a copy of
+data!  excellent.
+
 By 'inputs', i mean the data i'm using below in `setBytes`.  similarly to the
 situation described above, and perhaps more inportantly, if the data
 referenced by the pointer &data changes between this frame and the next,
