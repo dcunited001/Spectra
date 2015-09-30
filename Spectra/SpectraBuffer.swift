@@ -11,53 +11,68 @@ import simd
 
 protocol Buffer {
     var buffer: MTLBuffer? { get set }
-    var bufferId: Int? { get set }
     var bytecount: Int? { get set }
     var resourceOptions: MTLResourceOptions? { get set }
     
     func prepareBuffer(device: MTLDevice, options: MTLResourceOptions)
-    func writeCompute(encoder: MTLComputeCommandEncoder)
-    func writeComputeParams(encoder: MTLComputeCommandEncoder)
-    func writeVertex(encoder: MTLRenderCommandEncoder)
-    func writeVertexParams(encoder: MTLRenderCommandEncoder)
-    func writeFragment(encoder: MTLRenderCommandEncoder)
-    func writeFragmentParams(encoder: MTLRenderCommandEncoder)
+    func writeCompute(encoder: MTLComputeCommandEncoder, bufferOptions: [String:AnyObject])
+    func writeComputeInputs(encoder: MTLComputeCommandEncoder, inputOptions:[String:AnyObject])
+    func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
+    func writeVertexInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject])
+    func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
+    func writeFragmentInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject])
+}
+
+// so, right now, this handles a buffer with multiple param sets, 
+// - the buffer ID of which can be set at runtime
+// - but, how to get this to work with multiple correlated buffers that share input params?
+
+// if [String:AnyObject] doesn't work out for bufferOptions,
+// - then [String:BufferInputOption]
+struct BufferOptions {
+    var index:Int
+    var offset:Int
+}
+
+struct BufferInputOptions {
+    var index:Int
 }
 
 class BaseBuffer: Buffer {
     var buffer: MTLBuffer?
-    var bufferId: Int?
     var bytecount: Int?
     var resourceOptions: MTLResourceOptions?
     
+    static let baseBufferDefaultOptions = ["default": BufferOptions(index: 0, offset: 0) as! AnyObject]
+    
     func prepareBuffer(device: MTLDevice, options: MTLResourceOptions) {
-        //either set buffer/bufferId or subclass and configure it
+        buffer = device.newBufferWithLength(bytecount!, options: options)
     }
     
-    func writeCompute(encoder: MTLComputeCommandEncoder) {
-        writeComputeParams(encoder)
-        encoder.setBuffer(buffer!, offset: 0, atIndex: bufferId!)
+    func writeCompute(encoder: MTLComputeCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
+        let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
+        encoder.setBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
     }
     
-    func writeComputeParams(encoder: MTLComputeCommandEncoder) {
+    func writeComputeInputs(encoder: MTLComputeCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
         // override in subclass
     }
     
-    func writeVertex(encoder: MTLRenderCommandEncoder) {
-        writeVertexParams(encoder)
-        encoder.setVertexBuffer(buffer!, offset: 0, atIndex: bufferId!)
+    func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
+        let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
+        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
     }
     
-    func writeVertexParams(encoder: MTLRenderCommandEncoder) {
+    func writeVertexInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
         // override in subclass
     }
     
-    func writeFragment(encoder: MTLRenderCommandEncoder) {
-        writeFragmentParams(encoder)
-        encoder.setFragmentBuffer(buffer!, offset: 0, atIndex: bufferId!)
+    func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
+        let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
+        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
     }
     
-    func writeFragmentParams(encoder: MTLRenderCommandEncoder) {
+    func writeFragmentInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
         // override in subclass
     }
 }
@@ -65,7 +80,6 @@ class BaseBuffer: Buffer {
 class CircularBuffer: BaseBuffer {
     
 }
-
 
 // manages writing texture data
 //class TextureBuffer: SpectraBaseBuffer {
