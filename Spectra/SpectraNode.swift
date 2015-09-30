@@ -30,15 +30,15 @@ import simd
 //TODO: evaluate new vertexable/colorable/textureable protocols
 // - do i really need to differentiate these protocols?
 protocol NodeVertexable {
-    var vertexBuffer: SpectraBuffer? { get set }
+    var vertexBuffer: Buffer? { get set }
 }
 
 protocol NodeColorable {
-    var colorBuffer: SpectraBuffer? { get set }
+    var colorBuffer: Buffer? { get set }
 }
 
 protocol NodeTextureable {
-    var textureBuffer: SpectraBuffer { get set }
+    var textureBuffer: Buffer { get set }
 }
 
 class Node: Modelable {
@@ -247,7 +247,7 @@ extension Translatable {
     }
 }
 
-protocol SpectraScalable: Modelable {
+protocol Scalable: Modelable {
     var scaleRate: Float { get set }
     func scaleForTime(t: CFTimeInterval, block: (Scalable -> float4)?)
 }
