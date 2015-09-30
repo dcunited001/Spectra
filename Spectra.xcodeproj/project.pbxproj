@@ -14,6 +14,7 @@
 		431A77701BB7F60A00F887AD /* CommandBufferProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A776F1BB7F60A00F887AD /* CommandBufferProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		43AE8CBD1BBA0D2F009D256B /* BufferProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AE8CBC1BBA0D2F009D256B /* BufferProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		43AE8CBF1BBA50CD009D256B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AE8CBE1BBA50CD009D256B /* Scene.swift */; settings = {ASSET_TAGS = (); }; };
+		43AE8CC11BBC73C6009D256B /* InputGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AE8CC01BBC73C6009D256B /* InputGroup.swift */; settings = {ASSET_TAGS = (); }; };
 		43F7EF1D1BB4A2AC00FB1E61 /* Spectra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7EF1C1BB4A2AC00FB1E61 /* Spectra.swift */; settings = {ASSET_TAGS = (); }; };
 		43F7EF1F1BB5E9EC00FB1E61 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7EF1E1BB5E9EC00FB1E61 /* Buffer.swift */; settings = {ASSET_TAGS = (); }; };
 		43F7EF211BB5E9F500FB1E61 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7EF201BB5E9F500FB1E61 /* Node.swift */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +30,7 @@
 		431A776F1BB7F60A00F887AD /* CommandBufferProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandBufferProvider.swift; sourceTree = "<group>"; };
 		43AE8CBC1BBA0D2F009D256B /* BufferProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferProvider.swift; sourceTree = "<group>"; };
 		43AE8CBE1BBA50CD009D256B /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		43AE8CC01BBC73C6009D256B /* InputGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGroup.swift; sourceTree = "<group>"; };
 		43F7EF0D1BB49A0500FB1E61 /* libSpectra.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSpectra.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F7EF1B1BB4A2AB00FB1E61 /* Spectra-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spectra-Bridging-Header.h"; sourceTree = "<group>"; };
 		43F7EF1C1BB4A2AC00FB1E61 /* Spectra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spectra.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				431A776F1BB7F60A00F887AD /* CommandBufferProvider.swift */,
 				43AE8CBC1BBA0D2F009D256B /* BufferProvider.swift */,
 				43AE8CBE1BBA50CD009D256B /* Scene.swift */,
+				43AE8CC01BBC73C6009D256B /* InputGroup.swift */,
 			);
 			path = Spectra;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				43F7EF1F1BB5E9EC00FB1E61 /* Buffer.swift in Sources */,
 				431A776C1BB7EEC400F887AD /* Renderer.swift in Sources */,
 				43F7EF211BB5E9F500FB1E61 /* Node.swift in Sources */,
+				43AE8CC11BBC73C6009D256B /* InputGroup.swift in Sources */,
 				431A77691BB7DA0800F887AD /* spectra_basic_triangle.metal in Sources */,
 				43F7EF1D1BB4A2AC00FB1E61 /* Spectra.swift in Sources */,
 				43F7EF231BB5EAAC00FB1E61 /* Input.swift in Sources */,
