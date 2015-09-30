@@ -16,20 +16,23 @@ protocol Input {
     func writeFragmentBytes(encoder: MTLRenderCommandEncoder)
 }
 
-struct BaseInput: Input {
-    var data: AnyObject? //TODO: can i use AnyObject here?
+protocol InputData {
+    func size() -> Int
+}
+
+class BaseInput: Input {
+    var data: InputData? //TODO: can i use AnyObject here?
     var bufferId: Int?
     
     func writeComputeBytes(encoder: MTLComputeCommandEncoder) {
-        encoder.setBytes(&data!, length: sizeof(InputType), atIndex: bufferId!)
+        encoder.setBytes(&data!, length: data!.size(), atIndex: bufferId!)
     }
     
     func writeVertexBytes(encoder: MTLRenderCommandEncoder) {
-        encoder.setVertexBytes(&data!, length: sizeof(InputType), atIndex: bufferId!)
+        encoder.setVertexBytes(&data!, length: data!.size(), atIndex: bufferId!)
     }
     
     func writeFragmentBytes(encoder: MTLRenderCommandEncoder) {
-        encoder.setFragmentBytes(&data!, length: sizeof(InputType), atIndex: bufferId!)
+        encoder.setFragmentBytes(&data!, length: data!.size(), atIndex: bufferId!)
     }
 }
-
