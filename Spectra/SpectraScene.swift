@@ -6,4 +6,21 @@
 //  Copyright © 2015 Spectra. All rights reserved.
 //
 
-import Foundation
+import Metal
+
+// SpectraScene
+// - render is called
+// - sets up render pass descriptor
+// - mutating state between renderers in the collection
+// - passes renderEncoder into encode(renderEncoder) for each renderer
+
+class Scene {
+    var renderers: [Renderer] = []
+    
+//    init() {
+//        
+//    }
+    
+    
+    
+}
