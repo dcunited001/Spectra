@@ -118,7 +118,7 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         super.init()
     }
     
-    override func configure(view: MetalView) {
+    override func configure(view: BaseView) {
         super.configure(view)
         setPerspectiveDefaults()
         setProjectableDefaults()
@@ -134,7 +134,7 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         }
     }
     
-    func adjustUniformScale(view: MetalView) {
+    func adjustUniformScale(view: BaseView) {
         uniformScale *= float4(1.0, Float(view.frame.width / view.frame.height), 1.0, 1.0)
     }
     
@@ -142,7 +142,7 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         return calcPerspectiveMatrix() * calcProjectionMatrix() * calcUniformMatrix() * modelMatrix
     }
     
-    func preparePipelineState(view: MetalView) -> Bool {
+    func preparePipelineState(view: BaseView) -> Bool {
         guard let vertexProgram = shaderLibrary?.newFunctionWithName(vertexShaderName) else {
             print("Couldn't load \(vertexShaderName)")
             return false
