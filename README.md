@@ -29,6 +29,9 @@ I want an easy way to list a bunch of objects on screen and have them be rendere
 
 #### How should I manage the render encoders in my app? 
 
+change encode function to accept a block?  then configure behavior for
+renderer in view or scene?
+
 I should "only create one per render pass" is the advice given in the wwdc talk. At least, until I need multiples per render pass.  My point is, i shouldn't need one per Renderer and i shouldn't need one renderer per object.
 
 #### How are resources and settings swapped out for render encoders?  
