@@ -9,7 +9,7 @@
 import Metal
 import simd
 
-protocol SpectraBuffer {
+protocol Buffer {
     var buffer: MTLBuffer? { get set }
     var bufferId: Int? { get set }
     var bytecount: Int? { get set }
@@ -24,7 +24,7 @@ protocol SpectraBuffer {
     func writeFragmentParams(encoder: MTLRenderCommandEncoder)
 }
 
-class SpectraBaseBuffer: SpectraBuffer {
+class BaseBuffer: Buffer {
     var buffer: MTLBuffer?
     var bufferId: Int?
     var bytecount: Int?
@@ -62,10 +62,9 @@ class SpectraBaseBuffer: SpectraBuffer {
     }
 }
 
-class SpectraCircularBuffer: SpectraBaseBuffer {
+class CircularBuffer: BaseBuffer {
     
 }
-
 
 
 // manages writing texture data
@@ -76,7 +75,7 @@ class SpectraCircularBuffer: SpectraBaseBuffer {
 // highly performant buffer (requires iOS and CPU/GPU integrated architecture)
 // TODO: decide if generic is required?
 @available(iOS 9.0, *)
-class NoCopyBuffer<T>: SpectraBaseBuffer {
+class NoCopyBuffer<T>: BaseBuffer {
     var stride:Int?
     var elementSize:Int = sizeof(T)
     private var bufferPtr: UnsafeMutablePointer<Void>?

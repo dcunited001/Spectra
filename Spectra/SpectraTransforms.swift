@@ -12,7 +12,7 @@ import simd
 // - perhaps protocol with default behavior, 
 // - so these methods can be added where needed
 
-class Spectra3DTransforms {
+class Transform3D {
     // sx  0   0   0
     // 0   sy  0   0
     // 0   0   sz  0

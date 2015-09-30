@@ -9,22 +9,15 @@
 import Metal
 import simd
 
-protocol SpectraInput {
-    //TODO: evaluate generic here??
-    typealias InputType
-    
-    var data: InputType? { get set }
+protocol Input {
     var bufferId: Int? { get set }
-    
     func writeComputeBytes(encoder: MTLComputeCommandEncoder)
     func writeVertexBytes(encoder: MTLRenderCommandEncoder)
     func writeFragmentBytes(encoder: MTLRenderCommandEncoder)
 }
 
-class SpectraBaseInput<T>: SpectraInput {
-    typealias InputType = T
-    
-    var data: InputType? //TODO: can i use AnyObject here?
+struct BaseInput: Input {
+    var data: AnyObject? //TODO: can i use AnyObject here?
     var bufferId: Int?
     
     func writeComputeBytes(encoder: MTLComputeCommandEncoder) {

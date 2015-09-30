@@ -12,7 +12,7 @@ import Metal
 
 let inflightCommandBuffers: Int = 3;
 
-class SpectraCommandBufferProvider {
+class CommandBufferProvider {
     var availableBuffersIndex:Int = 0
     var availableBuffersSemaphore:dispatch_semaphore_t
     var inflightBuffersCount:Int
@@ -30,10 +30,7 @@ class SpectraCommandBufferProvider {
     func nextCommandBuffer() -> MTLCommandBuffer {
         var buffer = commandBuffers[availableBuffersIndex]
         
-        availableBuffersIndex++
-        if availableBuffersIndex == inflightBuffersCount {
-            availableBuffersIndex = 0
-        }
+        availableBuffersIndex = (availableBuffersIndex + 1) % inflightBuffersCount
         
         return buffer
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		431A77691BB7DA0800F887AD /* spectra_basic_triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = 431A77671BB7DA0800F887AD /* spectra_basic_triangle.metal */; settings = {ASSET_TAGS = (); }; };
 		431A776A1BB7DA0800F887AD /* spectra_common.metal in Sources */ = {isa = PBXBuildFile; fileRef = 431A77681BB7DA0800F887AD /* spectra_common.metal */; settings = {ASSET_TAGS = (); }; };
+		431A776E1BB7EECB00F887AD /* SpectraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A776D1BB7EECB00F887AD /* SpectraView.swift */; settings = {ASSET_TAGS = (); }; };
 		431A77701BB7F60A00F887AD /* SpectraCommandBufferProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A776F1BB7F60A00F887AD /* SpectraCommandBufferProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		43AE8CBD1BBA0D2F009D256B /* SpectraBufferProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AE8CBC1BBA0D2F009D256B /* SpectraBufferProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		43F7EF1D1BB4A2AC00FB1E61 /* Spectra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7EF1C1BB4A2AC00FB1E61 /* Spectra.swift */; settings = {ASSET_TAGS = (); }; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		431A77671BB7DA0800F887AD /* spectra_basic_triangle.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = spectra_basic_triangle.metal; path = shaders/spectra_basic_triangle.metal; sourceTree = "<group>"; };
 		431A77681BB7DA0800F887AD /* spectra_common.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = spectra_common.metal; path = shaders/spectra_common.metal; sourceTree = "<group>"; };
+		431A776D1BB7EECB00F887AD /* SpectraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectraView.swift; sourceTree = "<group>"; };
 		431A776F1BB7F60A00F887AD /* SpectraCommandBufferProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectraCommandBufferProvider.swift; sourceTree = "<group>"; };
 		43AE8CBC1BBA0D2F009D256B /* SpectraBufferProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectraBufferProvider.swift; sourceTree = "<group>"; };
 		43F7EF0D1BB49A0500FB1E61 /* libSpectra.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSpectra.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				43F7EF201BB5E9F500FB1E61 /* SpectraNode.swift */,
 				43F7EF221BB5EAAC00FB1E61 /* SpectraInput.swift */,
 				43F7EF241BB5ECA000FB1E61 /* SpectraTransforms.swift */,
+				431A776D1BB7EECB00F887AD /* SpectraView.swift */,
 				431A776F1BB7F60A00F887AD /* SpectraCommandBufferProvider.swift */,
 				43AE8CBC1BBA0D2F009D256B /* SpectraBufferProvider.swift */,
 			);
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431A776E1BB7EECB00F887AD /* SpectraView.swift in Sources */,
 				43F7EF1F1BB5E9EC00FB1E61 /* SpectraBuffer.swift in Sources */,
 				43F7EF211BB5E9F500FB1E61 /* SpectraNode.swift in Sources */,
 				431A77691BB7DA0800F887AD /* spectra_basic_triangle.metal in Sources */,

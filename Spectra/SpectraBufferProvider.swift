@@ -19,11 +19,11 @@ import Metal
 
 let inflightBuffersCountDefault = 3 // three is magic number
 
-protocol SpectraBufferProvider {
+protocol BufferProvider {
     var bytecount:Int { get set }
     var availableBuffersIndex:Int { get set }
     var availableBuffersSemaphore:dispatch_semaphore_t { get set }
-    var buffers: [MTLBuffer] { get set } //shud b privatez
+    var buffers: [MTLBuffer] { get set } // private
     
     init(device:MTLDevice, bytecount:Int, numInflightBuffers:Int, options:MTLResourceOptions)
     // deinit N.B. must deinit!
@@ -31,7 +31,7 @@ protocol SpectraBufferProvider {
     func nextBuffer() -> MTLBuffer
 }
 
-class SpectraBaseBufferProvider: SpectraBufferProvider {
+class BaseBufferProvider: BufferProvider {
     // init with max bytecount needed
     // - E.G. in case # of vertices needed changes
     var bytecount:Int
@@ -61,10 +61,7 @@ class SpectraBaseBufferProvider: SpectraBufferProvider {
     func nextBuffer() -> MTLBuffer {
         var buffer = buffers[availableBuffersIndex]
         
-        availableBuffersIndex++
-        if availableBuffersIndex == inflightBuffersCount {
-            availableBuffersIndex = 0
-        }
+        availableBuffersIndex = (availableBuffersIndex + 1) % inflightBuffersCount
         
         // return the buffer unmodified and let the user determine how to write to it
         return buffer
