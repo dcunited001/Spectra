@@ -20,10 +20,6 @@ protocol Buffer {
     func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
 }
 
-// Buffer was handling BufferInputs, but i need a separate BufferGroup for this
-// - most buffers will be handled through buffer providers, 
-// - so that will make it tricky to distribute BufferInput data changes to the buffers
-
 // so, right now, this handles a buffer with multiple param sets, 
 // - the buffer ID of which can be set at runtime
 // - but, how to get this to work with multiple correlated buffers that share input params?
@@ -44,17 +40,17 @@ class BaseBuffer: Buffer {
     
     func writeCompute(encoder: MTLComputeCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
         let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
-        encoder.setBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
+        encoder.setBuffer(buffer!, offset: defaultBufferOptions.offset!, atIndex: defaultBufferOptions.index as! Int)
     }
     
     func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
         let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
-        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
+        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset!, atIndex: defaultBufferOptions.index as! Int)
     }
     
     func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
         let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
-        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
+        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset!, atIndex: defaultBufferOptions.index as! Int)
     }
 }
 
