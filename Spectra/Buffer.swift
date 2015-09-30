@@ -30,10 +30,6 @@ protocol Buffer {
 
 // if [String:AnyObject] doesn't work out for bufferOptions,
 // - then [String:BufferInputOption]
-struct BufferOptions {
-    var index:Int
-    var offset:Int
-}
 
 class BaseBuffer: Buffer {
     var buffer: MTLBuffer?
@@ -51,26 +47,14 @@ class BaseBuffer: Buffer {
         encoder.setBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
     }
     
-    func writeComputeInputs(encoder: MTLComputeCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
-        // override in subclass
-    }
-    
     func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
         let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
         encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
     }
     
-    func writeVertexInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
-        // override in subclass
-    }
-    
     func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
         let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
         encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset, atIndex: defaultBufferOptions.index as! Int)
-    }
-    
-    func writeFragmentInputs(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
-        // override in subclass
     }
 }
 

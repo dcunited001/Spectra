@@ -83,7 +83,7 @@ class SingleBufferProvider: BufferProvider {
     
     required init(device:MTLDevice, bytecount:Int, numInflightBuffers:Int = 1, options: MTLResourceOptions = .StorageModeManaged) {
         self.bytecount = bytecount
-        inflightBuffersCount = numInflightBuffer
+        inflightBuffersCount = numInflightBuffers
         prepareBuffer(device, options: options)
     }
     
