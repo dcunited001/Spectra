@@ -35,6 +35,24 @@ I should "only create one per render pass" is the advice given in the wwdc talk.
 
 it looks like a render encoder only works for like one vertex/fragment function, but that can't be true.  How would i render hundreds of objects with separate textures, etc?
 
+#### How to manage buffers for multiple objects?
+
+
+#### How to deal with vertex maps?
+
+E.G. vertex-triangle maps. common structure for vertex-tensor maps, etc?
+Interface for automatically allocating the required maps?
+
+#### How to update vertex maps when vertex structure changes?
+
+or explore using MTLVertexBufferLayoutDescriptor?
+
+#### How to update buffer size (and buffers in pool) when vertex structure/size changes?
+
+#### Common interface for objects using either buffer providers or just raw buffers?
+
+just wrap buffers in buffer provider pattern?
+
 #### How are buffer providers managed for nodes?  
 
 in the wwdc 2015 video for advanced metal, the dev mentions that what is written to a vertex/fragment buffer needs to stick around long enough after it's encoded for the GPU to render it.  But, if so, what's the point of StorageModeShared if you would have to constantly copy the updates you've made to other buffers in that buffer pool?
