@@ -15,9 +15,9 @@ protocol Buffer {
     var resourceOptions: MTLResourceOptions? { get set }
     
     func prepareBuffer(device: MTLDevice, options: MTLResourceOptions)
-    func writeCompute(encoder: MTLComputeCommandEncoder, bufferOptions: [String:AnyObject])
-    func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
-    func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject])
+    func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: InputParams)
+    func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: InputParams)
+    func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: InputParams)
 }
 
 // so, right now, this handles a buffer with multiple param sets, 
@@ -32,25 +32,20 @@ class BaseBuffer: Buffer {
     var bytecount: Int?
     var resourceOptions: MTLResourceOptions?
     
-    static let baseBufferDefaultOptions = ["default": BufferOptions(index: 0, offset: 0) as! AnyObject]
-    
     func prepareBuffer(device: MTLDevice, options: MTLResourceOptions) {
         buffer = device.newBufferWithLength(bytecount!, options: options)
     }
     
-    func writeCompute(encoder: MTLComputeCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
-        let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
-        encoder.setBuffer(buffer!, offset: defaultBufferOptions.offset!, atIndex: defaultBufferOptions.index as! Int)
+    func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: InputParams) {
+        encoder.setBuffer(buffer!, offset: inputParams.offset, atIndex: inputParams.index)
     }
     
-    func writeVertex(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
-        let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
-        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset!, atIndex: defaultBufferOptions.index as! Int)
+    func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: InputParams) {
+        encoder.setVertexBuffer(buffer!, offset: inputParams.offset, atIndex: inputParams.index)
     }
     
-    func writeFragment(encoder: MTLRenderCommandEncoder, bufferOptions: [String:AnyObject] = baseBufferDefaultOptions) {
-        let defaultBufferOptions = bufferOptions["default"] as! BufferOptions
-        encoder.setVertexBuffer(buffer!, offset: defaultBufferOptions.offset!, atIndex: defaultBufferOptions.index as! Int)
+    func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: InputParams) {
+        encoder.setVertexBuffer(buffer!, offset: inputParams.offset, atIndex: inputParams.index)
     }
 }
 
