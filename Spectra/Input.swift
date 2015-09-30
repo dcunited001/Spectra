@@ -10,10 +10,25 @@ import Metal
 import simd
 
 protocol Input {
-    var bufferId: Int? { get set }
-    func writeComputeBytes(encoder: MTLComputeCommandEncoder, inputOptions:[String:AnyObject])
-    func writeVertexBytes(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject])
-    func writeFragmentBytes(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject])
+    func writeComputeBytes(encoder: MTLComputeCommandEncoder, index: Int)
+    func writeVertexBytes(encoder: MTLRenderCommandEncoder, index: Int)
+    func writeFragmentBytes(encoder: MTLRenderCommandEncoder, index: Int)
+}
+
+class BaseInput<T>: Input {
+    var data: T? //TODO: can i use AnyObject here?
+    
+    func writeComputeBytes(encoder: MTLComputeCommandEncoder, index: Int) {
+        encoder.setBytes(&data!, length: sizeof(T), atIndex: index)
+    }
+    
+    func writeVertexBytes(encoder: MTLRenderCommandEncoder, index: Int) {
+        encoder.setVertexBytes(&data!, length: sizeof(T), atIndex: index)
+    }
+    
+    func writeFragmentBytes(encoder: MTLRenderCommandEncoder, index: Int) {
+        encoder.setFragmentBytes(&data!, length: sizeof(T), atIndex: index)
+    }
 }
 
 // can't use except as generic constraint =/
@@ -22,24 +37,3 @@ protocol Input {
 //    var data:InputDataType { get set }
 //    func size() -> Int
 //}
-
-struct BufferInputOptions {
-    var index:Int
-}
-
-class BaseInput<T>: Input {
-    var data: T? //TODO: can i use AnyObject here?
-    static let defaultInputOptions = ["default": BufferInputOptions(index: 0)]
-    
-    func writeComputeBytes(encoder: MTLComputeCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
-        encoder.setBytes(&data!, length: sizeof(T), atIndex: bufferId!)
-    }
-    
-    func writeVertexBytes(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
-        encoder.setVertexBytes(&data!, length: sizeof(T), atIndex: bufferId!)
-    }
-    
-    func writeFragmentBytes(encoder: MTLRenderCommandEncoder, inputOptions:[String:AnyObject] = [:]) {
-        encoder.setFragmentBytes(&data!, length: sizeof(T), atIndex: bufferId!)
-    }
-}
