@@ -31,7 +31,7 @@ class CommandBufferProvider {
         var buffer = commandBuffers[availableBuffersIndex]
         
         buffer.addCompletedHandler { (buffer) in
-            dispatch_semaphore_signal(availableBuffersSemaphore)
+            dispatch_semaphore_signal(self.availableBuffersSemaphore)
         }
         availableBuffersIndex = (availableBuffersIndex + 1) % inflightBuffersCount
         
