@@ -118,7 +118,7 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         super.init()
     }
     
-    override func configure(view: BaseView) {
+    func configure(view: BaseView) {
         super.configure(view)
         setPerspectiveDefaults()
         setProjectableDefaults()
@@ -190,10 +190,10 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         commandBuffer.presentDrawable(drawable)
         
         // __block??
-        let dispatchSemaphore: dispatch_semaphore_t = avaliableResourcesSemaphore
+//        let dispatchSemaphore: dispatch_semaphore_t = avaliableResourcesSemaphore
         
         commandBuffer.addCompletedHandler { (cmdBuffer) in
-            dispatch_semaphore_signal(dispatchSemaphore)
+//            dispatch_semaphore_signal(dispatchSemaphore)
         }
         commandBuffer.commit()
     }
@@ -211,6 +211,6 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
     }
     
     func encodeDraw(renderEncoder: MTLRenderCommandEncoder) {
-        renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: object!.vCount, instanceCount: 1)
+//        renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: object!.vCount, instanceCount: 1)
     }
 }

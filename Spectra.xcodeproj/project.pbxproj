@@ -60,10 +60,18 @@
 			name = shaders;
 			sourceTree = "<group>";
 		};
+		4365B58A1BBE0F690016DE21 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		43F7EF041BB49A0500FB1E61 = {
 			isa = PBXGroup;
 			children = (
 				43F7EF0F1BB49A0500FB1E61 /* Spectra */,
+				4365B58A1BBE0F690016DE21 /* Tests */,
 				43F7EF0E1BB49A0500FB1E61 /* Products */,
 			);
 			sourceTree = "<group>";
