@@ -1,0 +1,6 @@
+framework module Spectra {
+  umbrella header "Spectra-umbrella.h"
+
+  export *
+  module * { export * }
+}

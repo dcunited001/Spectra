@@ -8,33 +8,36 @@
 
 Pod::Spec.new do |s|
   s.name             = "Spectra"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of Spectra."
+  s.version      = "0.0.1.alpha"
+  s.summary      = "A library building on top of Metal for iOS and OSX"
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+This is a library for building on top of Metal for iOS and OSX.
+This is one of my first forays into graphics programming, so
+you've been warned.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Spectra"
+  s.homepage     = "http://appistack.com/"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "David Conner" => "dconner.pro@gmail.com" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/Spectra.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url   = "http://twitter.com/dcunit3d"
 
-  s.platform     = :ios, '8.0'
+  s.ios.deployment_target = "9.0"
+  s.osx.deployment_target = "10.11"
   s.requires_arc = true
+
+  s.ios.frameworks = "MetalKit", "Metal", "Accelerate"
+  s.osx.frameworks = "MetalKit", "Metal", "Accelerate"
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'Spectra' => ['Pod/Assets/*.png']
   }
 
+  # s.exclude_files = "Classes/Exclude"
+  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  # s.dependency "JSONKit", "~> 1.4"
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

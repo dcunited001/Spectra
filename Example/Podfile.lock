@@ -1,0 +1,20 @@
+PODS:
+  - Nimble (1.0.0)
+  - Quick (0.3.1)
+  - Spectra (0.1.0)
+
+DEPENDENCIES:
+  - Nimble
+  - Quick (~> 0.3.1)
+  - Spectra (from `../`)
+
+EXTERNAL SOURCES:
+  Spectra:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+  Spectra: c3365d9fefbd2cccebce09e5fcdac1f649172a59
+
+COCOAPODS: 0.38.2

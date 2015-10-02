@@ -1,0 +1,25 @@
+{
+  "name": "Spectra",
+  "version": "0.1.0",
+  "summary": "A short description of Spectra.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Spectra",
+  "license": "MIT",
+  "authors": {
+    "David Conner": "dconner.pro@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Spectra.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Spectra": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
