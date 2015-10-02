@@ -28,8 +28,14 @@ protocol BufferProvider {
     var availableBuffersSemaphore:dispatch_semaphore_t? { get set }
     var buffers: [Buffer] { get set } // private
     
-    init(device:MTLDevice, bytecount:Int, numInflightBuffers:Int, options:MTLResourceOptions)
     // deinit N.B. must deinit!
+    
+    init(device: MTLDevice, bytecount: Int, numInflightBuffers: Int, options: MTLResourceOptions)
+    func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions)
+    func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createBuffer: (BufferProvider) -> Buffer)
+    func createNewBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> Buffer
+    func createNewBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createBuffer: (BufferProvider) -> Buffer) -> Buffer
+    func releaseBuffer(numBuffers:Int)
     
     func getBuffer() -> Buffer
 }
@@ -40,28 +46,49 @@ class BufferPoolProvider: BufferProvider {
     var bytecount:Int
     var availableBuffersIndex:Int = 0
     var availableBuffersSemaphore:dispatch_semaphore_t?
-    var buffers: [Buffer] = []
-    var inflightBuffersCount:Int
+    internal var buffers: [Buffer] = []
+    private var inflightBuffersCount:Int
     
     required init(device: MTLDevice, bytecount: Int, numInflightBuffers: Int = inflightBuffersCountDefault, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
         self.bytecount = bytecount
         inflightBuffersCount = numInflightBuffers
-        availableBuffersSemaphore = dispatch_semaphore_create(inflightBuffersCount)
-        
-        for i in 0...inflightBuffersCount-1 {
-            let thisBuffer = BaseBuffer()
-            thisBuffer.bytecount = self.bytecount
-            thisBuffer.prepareBuffer(device, options: options)
-            buffers.append(thisBuffer)
-        }
     }
     
     deinit {
+        releaseBuffer(inflightBuffersCount)
+    }
+    
+    func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
+        availableBuffersSemaphore = dispatch_semaphore_create(inflightBuffersCount)
         for i in 0...inflightBuffersCount-1 {
-            // TODO: is this correct? this deinit's the same thing over and over
-            // TODO: dealloc command buffers?
-            dispatch_semaphore_signal(self.availableBuffersSemaphore!)
+            let buffer = createNewBuffer(device, bytecount: self.bytecount, options: options)
+            buffers.append(buffer)
         }
+    }
+    
+    func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache, createBuffer: (BufferProvider) -> Buffer) {
+        availableBuffersSemaphore = dispatch_semaphore_create(inflightBuffersCount)
+        for i in 0...inflightBuffersCount-1 {
+            let buffer = createNewBuffer(device, bytecount: self.bytecount, options: options, createBuffer: createBuffer)
+            buffers.append(buffer)
+        }
+    }
+    
+    func releaseBuffer(numBuffers:Int) {
+        for i in 0...numBuffers-1 {
+            dispatch_semaphore_signal(availableBuffersSemaphore!)
+        }
+    }
+    
+    func createNewBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> Buffer {
+        let thisBuffer = BaseBuffer()
+        thisBuffer.bytecount = self.bytecount
+        thisBuffer.prepareBuffer(device, options: options)
+        return thisBuffer
+    }
+    
+    func createNewBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createBuffer: (BufferProvider) -> Buffer) -> Buffer {
+        return createBuffer(self)
     }
     
     func getBuffer() -> Buffer {
