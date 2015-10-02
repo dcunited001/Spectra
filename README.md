@@ -17,6 +17,51 @@ However, after watching and rewatching some of the WWDC videos from
 assessing how to get from my current design to one that is "decent" from
 a performance and code maintainence/flexibility standpoint.
 
+#### Nodes and Node Generators
+
+Nodes are objects with uniformables, etc
+
+Node generators generate vertexes and vertex-triangle maps, which can
+also be used to index texture/color coordinates.
+
+Nodes should just have a map of buffers?
+
+NodeGenerators should also create vertex-face maps.  best way to
+generate an ID for the faces? 
+
+vertex-face maps allow for vertex-face tesselation using compute
+generator
+
+need to better understand complicated geometry shhit like {3,2,,4} like
+wtf does that even mean?  probably useful when creating compute
+generators for geometry
+
+vertex-morph maps: compute generators to create either random or 
+non-random maps of vertices to ID vertices to move as groups... whoa
+dude
+
+or like a 3D slice map: approximate all vertices that lie in a plane by
+approximating the plane to a linear 3D slice or a slice of a 3D
+funciton.  this generates a vertex morph map, to be used to modulate
+vertex position or color
+
+#### How to identify vertices that lie on a plane?
+
+is this even a problem i want to worry about? or should this be user
+defined?
+
+#### Tensor Maps
+
+Tensor maps need to be vertex-vertex maps defining the graph between nodes. 
+for simplicity, they should be limited to a set number of relationships
+between each node (at first)
+
+Tensor data lists contain one entry for every vertex-vertex edge and
+define a set number of parameters for each edge. Tensor data lists can
+be applied to modulate vertices, textures and colors.  Tensor data lists
+will need to be input to compute/vertex/fragment shaders, and also
+copied
+
 #### What should manage the CommandBufferProvider and command buffers?
 
 #### Do I need a separate pool of command buffers for Compute functions?
