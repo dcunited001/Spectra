@@ -12,7 +12,7 @@ struct TextureVertex {
 };
 
 // reuses the uniforms matrix to shift color as though it's a coordinate system
-float4 colorShiftWithMVP
+extern float4 colorShiftWithMVP
 (
  float4 color,
  float4x4 mvp)
@@ -27,7 +27,7 @@ float4 colorShiftWithMVP
                   color.w);
 }
 
-float4 colorShiftContinuousWithMVP
+extern float4 colorShiftContinuousWithMVP
 (
  const float4 color,
  const float4x4 mvp)
