@@ -12,37 +12,37 @@ import Metal
 
 let inflightCommandBuffers: Int = 3;
 
-class CommandBufferProvider {
-    var availableBuffersIndex:Int = 0
-    var availableBuffersSemaphore:dispatch_semaphore_t
-    var inflightBuffersCount:Int
+class CommandBufferPool {
+    var buffersIndex:Int = 0
+    var buffersSemaphore:dispatch_semaphore_t
+    var buffersCount:Int
     private var commandBuffers: [MTLCommandBuffer] = []
     
-    init(commandQueue: MTLCommandQueue, numInflightBuffers:Int = inflightCommandBuffers) {
-        inflightBuffersCount = numInflightBuffers
-        availableBuffersSemaphore = dispatch_semaphore_create(inflightBuffersCount)
+    init(commandQueue: MTLCommandQueue, buffersCount: Int = inflightCommandBuffers) {
+        self.buffersCount = buffersCount
+        buffersSemaphore = dispatch_semaphore_create(buffersCount)
         
-        for i in 0...inflightBuffersCount-1 {
+        for i in 0...buffersCount - 1 {
             commandBuffers.append(commandQueue.commandBuffer())
         }
     }
     
     func nextCommandBuffer() -> MTLCommandBuffer {
-        var buffer = commandBuffers[availableBuffersIndex]
+        var buffer = commandBuffers[buffersIndex]
         
         buffer.addCompletedHandler { (buffer) in
-            dispatch_semaphore_signal(self.availableBuffersSemaphore)
+            dispatch_semaphore_signal(self.buffersSemaphore)
         }
-        availableBuffersIndex = (availableBuffersIndex + 1) % inflightBuffersCount
+        buffersIndex = (buffersIndex + 1) % buffersCount
         
         return buffer
     }
     
     deinit {
-        for i in 0 ... self.inflightBuffersCount {
+        for i in 0 ... self.buffersCount {
             // TODO: is this correct? this deinit's the same thing over and over
             // TODO: deinit memory for buffers?
-            dispatch_semaphore_signal(self.availableBuffersSemaphore)
+            dispatch_semaphore_signal(self.buffersSemaphore)
         }
     }
 }
