@@ -37,7 +37,7 @@
 		434430271BBE884800571F3B /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434430261BBE884800571F3B /* Buffer.swift */; settings = {ASSET_TAGS = (); }; };
 		434430291BBEAF3B00571F3B /* BufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434430281BBEAF3B00571F3B /* BufferPool.swift */; settings = {ASSET_TAGS = (); }; };
 		4344302B1BBEAF7200571F3B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344302A1BBEAF7200571F3B /* Scene.swift */; settings = {ASSET_TAGS = (); }; };
-		4344302D1BBEAFCF00571F3B /* InputGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344302C1BBEAFCF00571F3B /* InputGroup.swift */; settings = {ASSET_TAGS = (); }; };
+		4344302D1BBEAFCF00571F3B /* EncodableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344302C1BBEAFCF00571F3B /* EncodableData.swift */; settings = {ASSET_TAGS = (); }; };
 		4344302F1BBEAFD800571F3B /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344302E1BBEAFD800571F3B /* Input.swift */; settings = {ASSET_TAGS = (); }; };
 		434430311BBEB08600571F3B /* CommandBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434430301BBEB08600571F3B /* CommandBufferPool.swift */; settings = {ASSET_TAGS = (); }; };
 		434430341BBEB09F00571F3B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434430331BBEB09F00571F3B /* View.swift */; settings = {ASSET_TAGS = (); }; };
@@ -170,7 +170,7 @@
 		434430261BBE884800571F3B /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		434430281BBEAF3B00571F3B /* BufferPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferPool.swift; sourceTree = "<group>"; };
 		4344302A1BBEAF7200571F3B /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		4344302C1BBEAFCF00571F3B /* InputGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGroup.swift; sourceTree = "<group>"; };
+		4344302C1BBEAFCF00571F3B /* EncodableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableData.swift; sourceTree = "<group>"; };
 		4344302E1BBEAFD800571F3B /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		434430301BBEB08600571F3B /* CommandBufferPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandBufferPool.swift; sourceTree = "<group>"; };
 		434430331BBEB09F00571F3B /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -568,7 +568,7 @@
 				434430261BBE884800571F3B /* Buffer.swift */,
 				434430281BBEAF3B00571F3B /* BufferPool.swift */,
 				4344302A1BBEAF7200571F3B /* Scene.swift */,
-				4344302C1BBEAFCF00571F3B /* InputGroup.swift */,
+				4344302C1BBEAFCF00571F3B /* EncodableData.swift */,
 				4344302E1BBEAFD800571F3B /* Input.swift */,
 				434430301BBEB08600571F3B /* CommandBufferPool.swift */,
 				434430331BBEB09F00571F3B /* View.swift */,
@@ -845,7 +845,7 @@
 				4344302F1BBEAFD800571F3B /* Input.swift in Sources */,
 				4A84F925B046D8D0F91D73347500BDFE /* BeLogical.swift in Sources */,
 				DFC3DDBF1569C41656B3D9C25036141A /* BeNil.swift in Sources */,
-				4344302D1BBEAFCF00571F3B /* InputGroup.swift in Sources */,
+				4344302D1BBEAFCF00571F3B /* EncodableData.swift in Sources */,
 				4344303F1BBEB13100571F3B /* spectra_basic_triangle.metal in Sources */,
 				A96D90EF4537922E3A7F274CFF24436C /* BeginWith.swift in Sources */,
 				434430311BBEB08600571F3B /* CommandBufferPool.swift in Sources */,
