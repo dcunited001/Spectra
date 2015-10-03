@@ -30,20 +30,20 @@ import simd
 //TODO: evaluate new vertexable/colorable/textureable protocols
 // - do i really need to differentiate these protocols?
 protocol NodeVertexable {
-    var vertexBuffer: Buffer? { get set }
+    var vertexBuffer: EncodableBuffer? { get set }
 }
 
 protocol NodeColorable {
-    var colorBuffer: Buffer? { get set }
+    var colorBuffer: EncodableBuffer? { get set }
 }
 
 protocol NodeTextureable {
-    var textureBuffer: Buffer { get set }
+    var textureBuffer: EncodableBuffer { get set }
 }
 
 class Node: Modelable {
-    var vertexBuffer: Buffer?
-    var buffers: [Buffer] = []
+    var vertexBuffer: EncodableBuffer?
+    var buffers: [EncodableBuffer] = []
     
     // Modelable
     var modelScale = float4(1.0, 1.0, 1.0, 1.0)
