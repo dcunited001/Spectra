@@ -98,7 +98,7 @@ class BaseBufferPool: BufferPool {
     var buffersCount:Int
     var buffersIndex:Int = 0
     var buffersSemaphore:dispatch_semaphore_t?
-    internal var buffers: [BaseEncodableBuffer] = []
+    internal var buffers: [EncodableBuffer] = []
     
     required init(device: MTLDevice, bytecount: Int, buffersCount: Int = inflightBuffersCountDefault, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
         self.bytecount = bytecount
