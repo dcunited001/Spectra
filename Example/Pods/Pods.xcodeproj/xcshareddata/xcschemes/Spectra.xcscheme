@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F555CFD846EF131FEB0DAC0A"
+               BlueprintIdentifier = "503EE136E02D995ADBB689D3"
                BuildableName = "Spectra.framework"
                BlueprintName = "Spectra"
                ReferencedContainer = "container:Pods.xcodeproj">

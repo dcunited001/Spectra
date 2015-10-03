@@ -1,21 +1,37 @@
 {
   "name": "Spectra",
-  "version": "0.1.0",
-  "summary": "A short description of Spectra.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Spectra",
+  "version": "0.0.1.alpha",
+  "summary": "A library building on top of Metal for iOS and OSX",
+  "description": "This is a library for building on top of Metal for iOS and OSX.\nThis is one of my first forays into graphics programming, so\nyou've been warned.",
+  "homepage": "http://appistack.com/",
   "license": "MIT",
   "authors": {
     "David Conner": "dconner.pro@gmail.com"
   },
   "source": {
     "git": "https://github.com/<GITHUB_USERNAME>/Spectra.git",
-    "tag": "0.1.0"
+    "tag": "0.0.1.alpha"
   },
+  "social_media_url": "http://twitter.com/dcunit3d",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0",
+    "osx": "10.11"
   },
   "requires_arc": true,
+  "ios": {
+    "frameworks": [
+      "MetalKit",
+      "Metal",
+      "Accelerate"
+    ]
+  },
+  "osx": {
+    "frameworks": [
+      "MetalKit",
+      "Metal",
+      "Accelerate"
+    ]
+  },
   "source_files": "Pod/Classes/**/*",
   "resource_bundles": {
     "Spectra": [
