@@ -25,7 +25,7 @@ protocol ViewDelegate: class {
 
 //TODO: MUST IMPLEMENT NSCODER & deinit to dealloc
 class BaseView: MTKView {
-    var commandBufferProvider: CommandBufferProvider?
+    var commandBufferPool: CommandBufferPool?
     var commandQueue: MTLCommandQueue!
     var defaultLibrary: MTLLibrary!
     
@@ -75,7 +75,7 @@ class BaseView: MTKView {
         self.device = device
         defaultLibrary = device.newDefaultLibrary()
         commandQueue = device.newCommandQueue()
-        commandBufferProvider = CommandBufferProvider(commandQueue: commandQueue)
+        commandBufferPool = CommandBufferPool(commandQueue: commandQueue)
     }
     
     func render() {
