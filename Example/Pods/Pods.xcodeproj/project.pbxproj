@@ -20,18 +20,17 @@
 		436B067A1BBFB8D0007C738A /* BasicTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06791BBFB8D0007C738A /* BasicTriangle.swift */; settings = {ASSET_TAGS = (); }; };
 		436B067C1BBFB8DE007C738A /* NodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067B1BBFB8DE007C738A /* NodeGenerator.swift */; settings = {ASSET_TAGS = (); }; };
 		436B06801BBFCD7B007C738A /* PlatonicSolids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067F1BBFCD7B007C738A /* PlatonicSolids.swift */; settings = {ASSET_TAGS = (); }; };
+		436B06851BC016E6007C738A /* PipelineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06841BC016E6007C738A /* PipelineGenerator.swift */; settings = {ASSET_TAGS = (); }; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4639E9B8DA457E5954A98E0B0E87D2F3 /* CommandBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE02A05B48FFC63BEA22B48A17A49A /* CommandBufferPool.swift */; };
 		50D951D30D1FE4FA8226F18063225A16 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */; };
 		70A9CF260777080514B474548612AB7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91538A6E5F97F88B0FD08A37D8383B04 /* Foundation.framework */; };
-		79F7A554FAEC67F7532BE663BF5B127E /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B274C9E5B9DC75AD8648631867FD4522 /* Buffer.swift */; };
 		80B11E0C300478763861A469ACFDAECC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8672B27E3B0E566DFC07B0F63D1DF35E /* Accelerate.framework */; };
 		8F695A3B4C71D185730A8BF2BFECFFF5 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE1BC096F336A33B5A5904D3822D3B9 /* Metal.framework */; };
 		C95F08371A1CBC2CD646927486204B04 /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDCFAF4503F490A5C3D0BC930948285 /* Transform3D.swift */; };
 		D0AF6F14C36C72E345B9E0B5DB35CFC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91538A6E5F97F88B0FD08A37D8383B04 /* Foundation.framework */; };
 		D7F031FC9D75238C9134AE4E39C79335 /* Spectra.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C3FA30429824669EB6606EE7EE8C33B /* Spectra.bundle */; };
 		DFB0A4033D740E0E3F5828C2083517AB /* Pods-Spectra_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C5CF1127B868F302279B82923D40B5 /* Pods-Spectra_Example-dummy.m */; };
-		E224A0C14A20559C5053763D98D3B6CE /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A16BB7B85CF14B4DD7689DF3A5287DA /* Input.swift */; };
 		EB0803D41E763BF35492A9A6C3D9305C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70DC1B11171CC929BD9542AFC6E9A8 /* Renderer.swift */; };
 		EE98A4EC959CFD1DA68F22C3A4D07B58 /* Spectra-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5710BDF3D4A7C3EBFD7B7FE3062E3363 /* Spectra-dummy.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +75,7 @@
 		436B06791BBFB8D0007C738A /* BasicTriangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
 		436B067B1BBFB8DE007C738A /* NodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
 		436B067F1BBFCD7B007C738A /* PlatonicSolids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
+		436B06841BC016E6007C738A /* PipelineGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
 		4521D307A13C6DADD98E17BA11BD0437 /* Spectra.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spectra.modulemap; sourceTree = "<group>"; };
 		4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		46764507C6796DC5125930286081E310 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,11 +94,9 @@
 		9254EE7007DB943CF4B12E22F50BCAB5 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
 		93AEA7F178EE510B104A697F570CE632 /* Pods-Spectra_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spectra_Example.modulemap"; sourceTree = "<group>"; };
 		97A5B7FC6C2DCF97AF59129A2449B397 /* Spectra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spectra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A16BB7B85CF14B4DD7689DF3A5287DA /* Input.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		9B553CF65000FC58A75CD07F4643B45E /* Pods-Spectra_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spectra_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9CDCFAF4503F490A5C3D0BC930948285 /* Transform3D.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
 		B1B415692C224E4161CD4918A86E5EA6 /* Pods-Spectra_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B274C9E5B9DC75AD8648631867FD4522 /* Buffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BEBEB9CF8032C8D238E760E768770489 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF441ACF9B2A77B1ABBC319175E6551A /* Pods_Spectra_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +203,13 @@
 			name = NodeGenerators;
 			sourceTree = "<group>";
 		};
+		436B06811BC00F42007C738A /* ComputeGenerators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ComputeGenerators;
+			sourceTree = "<group>";
+		};
 		5BA5D03FE94A82E27F9F1DDAA4F292A3 /* Pods-Spectra_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,12 +270,12 @@
 		AF8DFE7629CA29428DCC6D17E70E7F73 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				436B06841BC016E6007C738A /* PipelineGenerator.swift */,
+				436B06811BC00F42007C738A /* ComputeGenerators */,
 				436B06761BBFB5B0007C738A /* NodeGenerators */,
-				B274C9E5B9DC75AD8648631867FD4522 /* Buffer.swift */,
 				3D4A0427F58F50CF356D55A2084B8B66 /* BufferPool.swift */,
 				C9FE02A05B48FFC63BEA22B48A17A49A /* CommandBufferPool.swift */,
 				74670EE34A5EE7771E9F4872D3380C01 /* EncodableData.swift */,
-				9A16BB7B85CF14B4DD7689DF3A5287DA /* Input.swift */,
 				4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */,
 				436B067B1BBFB8DE007C738A /* NodeGenerator.swift */,
 				DB70DC1B11171CC929BD9542AFC6E9A8 /* Renderer.swift */,
@@ -461,11 +466,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F7A554FAEC67F7532BE663BF5B127E /* Buffer.swift in Sources */,
 				34BA775B1E0C3F6813BE6FC10F0A45C2 /* BufferPool.swift in Sources */,
 				4639E9B8DA457E5954A98E0B0E87D2F3 /* CommandBufferPool.swift in Sources */,
 				28CEA47E22709EF430A566A1DB21A64B /* EncodableData.swift in Sources */,
-				E224A0C14A20559C5053763D98D3B6CE /* Input.swift in Sources */,
 				50D951D30D1FE4FA8226F18063225A16 /* Node.swift in Sources */,
 				EB0803D41E763BF35492A9A6C3D9305C /* Renderer.swift in Sources */,
 				170E15BD8FA1FFE8760FBC74696DD7CA /* Scene.swift in Sources */,
@@ -482,6 +485,7 @@
 				436B06781BBFB5BD007C738A /* Cube.swift in Sources */,
 				DFB0A4033D740E0E3F5828C2083517AB /* Pods-Spectra_Example-dummy.m in Sources */,
 				436B06801BBFCD7B007C738A /* PlatonicSolids.swift in Sources */,
+				436B06851BC016E6007C738A /* PipelineGenerator.swift in Sources */,
 				436B067A1BBFB8D0007C738A /* BasicTriangle.swift in Sources */,
 				436B067C1BBFB8DE007C738A /* NodeGenerator.swift in Sources */,
 			);
