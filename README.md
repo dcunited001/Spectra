@@ -16,12 +16,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-Spectra is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "Spectra"
-```
+Spectra is available through [CocoaPods](http://cocoapods.org). To install, add `pod 'Spectra'` to your `Podfile`
 
 ## Author
 
@@ -44,6 +39,13 @@ However, after watching and rewatching some of the WWDC videos from
 2014/2015, I have a lot of questions I keep circling around to when
 assessing how to get from my current design to one that is "decent" from
 a performance and code maintainence/flexibility standpoint.
+
+
+#### 3D geometry library
+
+Need to check out `MathGeoLib`, which may be of use to include alongside Spectra.  But may be best not to tangle in with Spectra itself.
+
+Need to check out the license for `CAGL`, which looks amazing, but it seems there's some restrictions for commercial application distribution
 
 #### Nodes and Node Generators
 

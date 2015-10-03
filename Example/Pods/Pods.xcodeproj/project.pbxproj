@@ -16,6 +16,10 @@
 		2C0DCA92FCB6EFB97EDD56FEE793A5CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91538A6E5F97F88B0FD08A37D8383B04 /* Foundation.framework */; };
 		34BA775B1E0C3F6813BE6FC10F0A45C2 /* BufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A0427F58F50CF356D55A2084B8B66 /* BufferPool.swift */; };
 		3E72CEE35EF209DD2850F4EDEB182572 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9254EE7007DB943CF4B12E22F50BCAB5 /* MetalKit.framework */; };
+		436B06781BBFB5BD007C738A /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06771BBFB5BD007C738A /* Cube.swift */; settings = {ASSET_TAGS = (); }; };
+		436B067A1BBFB8D0007C738A /* BasicTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06791BBFB8D0007C738A /* BasicTriangle.swift */; settings = {ASSET_TAGS = (); }; };
+		436B067C1BBFB8DE007C738A /* NodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067B1BBFB8DE007C738A /* NodeGenerator.swift */; settings = {ASSET_TAGS = (); }; };
+		436B067E1BBFC734007C738A /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067D1BBFC734007C738A /* OrderedDictionary.swift */; settings = {ASSET_TAGS = (); }; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4639E9B8DA457E5954A98E0B0E87D2F3 /* CommandBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE02A05B48FFC63BEA22B48A17A49A /* CommandBufferPool.swift */; };
 		50D951D30D1FE4FA8226F18063225A16 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */; };
@@ -68,6 +72,10 @@
 		3D4A0427F58F50CF356D55A2084B8B66 /* BufferPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BufferPool.swift; sourceTree = "<group>"; };
 		41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Tests-umbrella.h"; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		436B06771BBFB5BD007C738A /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		436B06791BBFB8D0007C738A /* BasicTriangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
+		436B067B1BBFB8DE007C738A /* NodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
+		436B067D1BBFC734007C738A /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		4521D307A13C6DADD98E17BA11BD0437 /* Spectra.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spectra.modulemap; sourceTree = "<group>"; };
 		4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		46764507C6796DC5125930286081E310 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +195,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		436B06761BBFB5B0007C738A /* NodeGenerators */ = {
+			isa = PBXGroup;
+			children = (
+				436B06771BBFB5BD007C738A /* Cube.swift */,
+				436B06791BBFB8D0007C738A /* BasicTriangle.swift */,
+			);
+			name = NodeGenerators;
+			sourceTree = "<group>";
+		};
 		5BA5D03FE94A82E27F9F1DDAA4F292A3 /* Pods-Spectra_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,16 +264,19 @@
 		AF8DFE7629CA29428DCC6D17E70E7F73 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				436B06761BBFB5B0007C738A /* NodeGenerators */,
 				B274C9E5B9DC75AD8648631867FD4522 /* Buffer.swift */,
 				3D4A0427F58F50CF356D55A2084B8B66 /* BufferPool.swift */,
 				C9FE02A05B48FFC63BEA22B48A17A49A /* CommandBufferPool.swift */,
 				74670EE34A5EE7771E9F4872D3380C01 /* EncodableData.swift */,
 				9A16BB7B85CF14B4DD7689DF3A5287DA /* Input.swift */,
 				4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */,
+				436B067B1BBFB8DE007C738A /* NodeGenerator.swift */,
 				DB70DC1B11171CC929BD9542AFC6E9A8 /* Renderer.swift */,
 				7C7CB7776CE8FA590DF35B34275EF812 /* Scene.swift */,
 				9CDCFAF4503F490A5C3D0BC930948285 /* Transform3D.swift */,
 				0FEC3448E5AB16A3AF60FEDDF73A8628 /* View.swift */,
+				436B067D1BBFC734007C738A /* OrderedDictionary.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -459,7 +479,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436B06781BBFB5BD007C738A /* Cube.swift in Sources */,
 				DFB0A4033D740E0E3F5828C2083517AB /* Pods-Spectra_Example-dummy.m in Sources */,
+				436B067E1BBFC734007C738A /* OrderedDictionary.swift in Sources */,
+				436B067A1BBFB8D0007C738A /* BasicTriangle.swift in Sources */,
+				436B067C1BBFB8DE007C738A /* NodeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 577BEB18B6854DD93B87156FDD932C81 /* Pods-Spectra_Example.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -660,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 048378CA5E131C33E7BC1B1A7C8D27B2 /* Pods-Spectra_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
