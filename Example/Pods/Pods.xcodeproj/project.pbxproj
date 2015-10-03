@@ -19,7 +19,7 @@
 		436B06781BBFB5BD007C738A /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06771BBFB5BD007C738A /* Cube.swift */; settings = {ASSET_TAGS = (); }; };
 		436B067A1BBFB8D0007C738A /* BasicTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06791BBFB8D0007C738A /* BasicTriangle.swift */; settings = {ASSET_TAGS = (); }; };
 		436B067C1BBFB8DE007C738A /* NodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067B1BBFB8DE007C738A /* NodeGenerator.swift */; settings = {ASSET_TAGS = (); }; };
-		436B067E1BBFC734007C738A /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067D1BBFC734007C738A /* OrderedDictionary.swift */; settings = {ASSET_TAGS = (); }; };
+		436B06801BBFCD7B007C738A /* PlatonicSolids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B067F1BBFCD7B007C738A /* PlatonicSolids.swift */; settings = {ASSET_TAGS = (); }; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4639E9B8DA457E5954A98E0B0E87D2F3 /* CommandBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE02A05B48FFC63BEA22B48A17A49A /* CommandBufferPool.swift */; };
 		50D951D30D1FE4FA8226F18063225A16 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */; };
@@ -75,7 +75,7 @@
 		436B06771BBFB5BD007C738A /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		436B06791BBFB8D0007C738A /* BasicTriangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
 		436B067B1BBFB8DE007C738A /* NodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
-		436B067D1BBFC734007C738A /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		436B067F1BBFCD7B007C738A /* PlatonicSolids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
 		4521D307A13C6DADD98E17BA11BD0437 /* Spectra.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spectra.modulemap; sourceTree = "<group>"; };
 		4612A0303D02FE7DD43726C4BBF8B1C1 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		46764507C6796DC5125930286081E310 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +200,7 @@
 			children = (
 				436B06771BBFB5BD007C738A /* Cube.swift */,
 				436B06791BBFB8D0007C738A /* BasicTriangle.swift */,
+				436B067F1BBFCD7B007C738A /* PlatonicSolids.swift */,
 			);
 			name = NodeGenerators;
 			sourceTree = "<group>";
@@ -276,7 +277,6 @@
 				7C7CB7776CE8FA590DF35B34275EF812 /* Scene.swift */,
 				9CDCFAF4503F490A5C3D0BC930948285 /* Transform3D.swift */,
 				0FEC3448E5AB16A3AF60FEDDF73A8628 /* View.swift */,
-				436B067D1BBFC734007C738A /* OrderedDictionary.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 			files = (
 				436B06781BBFB5BD007C738A /* Cube.swift in Sources */,
 				DFB0A4033D740E0E3F5828C2083517AB /* Pods-Spectra_Example-dummy.m in Sources */,
-				436B067E1BBFC734007C738A /* OrderedDictionary.swift in Sources */,
+				436B06801BBFCD7B007C738A /* PlatonicSolids.swift in Sources */,
 				436B067A1BBFB8D0007C738A /* BasicTriangle.swift in Sources */,
 				436B067C1BBFB8DE007C738A /* NodeGenerator.swift in Sources */,
 			);

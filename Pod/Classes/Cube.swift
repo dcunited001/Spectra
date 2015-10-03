@@ -6,7 +6,6 @@
 //
 //
 
-import Metal
 import simd
 
 class CubeGenerator: NodeGenerator {
@@ -31,20 +30,20 @@ class CubeGenerator: NodeGenerator {
         ]
     }
     
-    func getColorVertices() -> [float4] {
+    func getColorCoords() -> [float4] {
         return [
-            float4(1.0, 1.0, 1.0, 0.5),
-            float4(0.0, 1.0, 1.0, 0.5),
-            float4(1.0, 0.0, 1.0, 0.5),
-            float4(1.0, 0.0, 0.0, 0.5),
-            float4(0.0, 0.0, 1.0, 0.5),
-            float4(1.0, 1.0, 0.0, 0.5),
-            float4(0.0, 1.0, 0.0, 0.5),
-            float4(0.0, 0.0, 0.0, 0.5)
+            float4(1.0, 1.0, 1.0, 1.0),
+            float4(0.0, 1.0, 1.0, 1.0),
+            float4(1.0, 0.0, 1.0, 1.0),
+            float4(1.0, 0.0, 0.0, 1.0),
+            float4(0.0, 0.0, 1.0, 1.0),
+            float4(1.0, 1.0, 0.0, 1.0),
+            float4(0.0, 1.0, 0.0, 1.0),
+            float4(0.0, 0.0, 0.0, 1.0)
         ]
     }
     
-    func getTextureVertices() -> [float4] {
+    func getTexCoords() -> [float4] {
         return [
             float4(0.0, 0.0, 0.0, 0.0),
             float4(0.0, 1.0, 0.0, 0.0),
@@ -64,7 +63,7 @@ class CubeGenerator: NodeGenerator {
     // |/    |/
     // D --- C
     
-    func getTriangleVertexMap() -> [Int:[Int]] {
+    func getTriangleVertexMap() -> [[Int]] {
         let A = 0
         let B = 1
         let C = 2
@@ -75,18 +74,18 @@ class CubeGenerator: NodeGenerator {
         let T = 7
         
         return [
-            0: [A,B,C], 1: [A,C,D],   //Front
-            2: [R,T,S], 3: [Q,R,S],   //Back
+            [A,B,C], [A,C,D],   //Front
+            [R,T,S], [Q,R,S],   //Back
             
-            4: [Q,S,B], 5: [Q,B,A],   //Left
-            6: [D,C,T], 7: [D,T,R],   //Right
+            [Q,S,B], [Q,B,A],   //Left
+            [D,C,T], [D,T,R],   //Right
             
-            8: [Q,A,D], 9: [Q,D,R],   //Top
-            10: [B,S,T], 11: [B,T,C]   //Bottom
+            [Q,A,D], [Q,D,R],   //Top
+            [B,S,T], [B,T,C]   //Bottom
         ]
     }
     
-    func getFaceVertexMap() -> [Int:[Int]] {
+    func getFaceVertexMap() -> [[Int]] {
         let A = 0
         let B = 1
         let C = 2
@@ -99,14 +98,14 @@ class CubeGenerator: NodeGenerator {
         //needs to be rewritten,
         // - so that vertices of face are invariant for rotations
         return [
-            0: [A,B,C,D],   //Front
-            1: [Q,R,S,T],   //Back
+            [A,B,C,D],   //Front
+            [Q,R,S,T],   //Back
             
-            2: [Q,A,D,T],   //Left
-            3: [B,R,S,C],   //Right
+            [Q,A,D,T],   //Left
+            [B,R,S,C],   //Right
             
-            4: [Q,R,B,A],   //Top
-            5: [T,S,C,D]   //Bottom
+            [Q,R,B,A],   //Top
+            [T,S,C,D]   //Bottom
         ]
     }
     
