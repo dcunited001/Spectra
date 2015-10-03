@@ -110,14 +110,18 @@ class BaseBufferPool: BufferPool {
     }
 }
 
-class SingleBufferPool: BufferPool {
+class SingleBuffer: BufferPool {
     var bytecount:Int
     var buffersCount:Int
     var buffersIndex:Int = 0
     var buffersSemaphore:dispatch_semaphore_t?
     var buffers: [EncodableBuffer] = []
     
-    required init(device:MTLDevice, bytecount:Int, buffersCount:Int = 1, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
+    deinit {
+        releaseBuffer(buffersCount)
+    }
+    
+    required init(device:MTLDevice, bytecount:Int, buffersCount:Int = 1, options: MTLResourceOptions = .StorageModeShared) {
         self.bytecount = bytecount
         self.buffersCount = buffersCount
         prepareBuffer(device, options: options)
@@ -134,7 +138,7 @@ class SingleBufferPool: BufferPool {
         
     }
     
-    func prepareBufferPool(device:MTLDevice, bytecount:Int, options:MTLResourceOptions, createWith: (SingleBufferPool) -> EncodableBuffer) {
+    func prepareBufferPool(device:MTLDevice, bytecount:Int, options:MTLResourceOptions, createWith: (SingleBuffer) -> EncodableBuffer) {
         
     }
     
