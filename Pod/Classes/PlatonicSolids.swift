@@ -8,7 +8,10 @@
 
 import simd
 
-class Tetrahedron: NodeGenerator {
+//N.B. textures are 1-to-1 with vertex-face map
+// - for simple 3d objects
+
+class TetrahedronGenerator: NodeGenerator {
     func getVertices() -> [float4] {
         return [
             float4( 1.0,  1.0,  1.0, 1.0),
@@ -50,7 +53,7 @@ class Tetrahedron: NodeGenerator {
     }
 }
 
-class Octahedron: NodeGenerator {
+class OctahedronGenerator: NodeGenerator {
     let A = Float(1 / (2 * sqrt(2.0)))
     let B = Float(1 / 2.0)
     
