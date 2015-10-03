@@ -27,6 +27,10 @@ David Conner, dconner.pro@gmail.com
 Spectra is available under the MIT license. See the LICENSE file for more info.
 
 
+### READ: [Metal Programming Guide](https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221-CH1-SW1)
+
+- [Vertex Descriptor for Data Organization](https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW44)
+
 ### Questions:
 
 I wrote this basic OSX app [MetalSpectrograph](https://github.com/dcunited001/MetalSpectrograph)
@@ -39,7 +43,6 @@ However, after watching and rewatching some of the WWDC videos from
 2014/2015, I have a lot of questions I keep circling around to when
 assessing how to get from my current design to one that is "decent" from
 a performance and code maintainence/flexibility standpoint.
-
 
 #### 3D geometry library
 
@@ -113,8 +116,21 @@ I should "only create one per render pass" is the advice given in the wwdc talk.
 
 it looks like a render encoder only works for like one vertex/fragment function, but that can't be true.  How would i render hundreds of objects with separate textures, etc?
 
+#### How to swap out various audio visualizations
+
+create various pipelineStateDescriptors for each combination of vertex/fragment function.  pipelineStateDescriptors also describe the colorAttachments and depthAttachments
+
+create map of pipelineState's during initilazation, then pass in renderEncoder and pipelineState to encode(), along with block for encoding vertexBuffers & fragmentBuffers
+
+#### How to 'reset' a renderEncoder between pipelineState changes
+
+could reset with a transition block, that defines commands to apply during the transition from one pipelineState to another
+
+or i could reset to a known default state (for DepthStencilState and RenderPipelineState)
+
 #### How to manage buffers for multiple objects?
 
+device.createBuffer for each object?  or concatenate vertex, etc data for groups of objects and pass vertex start/count info for each object.
 
 #### How to deal with vertex maps?
 
