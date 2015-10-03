@@ -9,29 +9,6 @@
 import Metal
 import simd
 
-// Buffer was handling BufferInputs, but i need a separate BufferGroup for this
-// - most buffers will be handled through buffer providers,
-// - so that will make it tricky to distribute BufferInput data changes to the buffers
-
-// but honestly, without managing groups, Buffer/BaseBuffer don't really do much
-// - except provide base classes to customize buffers for various situations (circular buffer)
-// - while providing common interface to BufferProvider
-
-protocol InputGroup {
-    //TODO: brainstorm
-    func writeComputeGroup(encoder: MTLComputeCommandEncoder, options: [String:InputParams])
-    func writeVertexGroup(encoder: MTLRenderCommandEncoder, options: [String:InputParams])
-    func writeFragmentGroup(encoder: MTLRenderCommandEncoder, options: [String:InputParams])
-    
-    // this doesn't allow me to recombine buffers/inputs as needed.  or select specific ones.
-    
-    // how to init buffer providers?
-    // - either init outside and pass in buffers to functions
-    // - or init providers inside and input group manages buffer pool access
-    //   - but this makes semaphore access a bit difficult to manage flow control
-    //   - and this makes it difficult to share buffers between different functions in a single pass
-}
-
 struct InputParams {
     var index:Int
     var offset:Int = 0
@@ -39,7 +16,6 @@ struct InputParams {
 
 //static let baseBufferDefaultOptions = ["default": BufferOptions(index: 0, offset: 0) as! AnyObject]
 
-//protocol EncodableInput {
 protocol EncodableData {
     
     // the advantage of this interface is that buffers, inputs & groups are all accessable under the same interface
@@ -137,3 +113,46 @@ class BaseEncodableGroup: EncodableData {
     }
 }
 
+//class CircularBuffer: EncodableBuffer {
+//    
+//}
+
+// manages writing texture data
+//class TextureBuffer: SpectraBaseBuffer {
+//
+//}
+
+// highly performant buffer (requires iOS and CPU/GPU integrated architecture)
+// TODO: decide if generic is required?
+//@available(iOS 9.0, *)
+//class NoCopyBuffer<T>: EncodableBuffer {
+//    var stride:Int?
+//    var elementSize:Int = sizeof(T)
+//    private var bufferPtr: UnsafeMutablePointer<Void>?
+//    private var bufferVoidPtr: COpaquePointer?
+//    private var bufferDataPtr: UnsafeMutablePointer<T>?
+//    var bufferAlignment: Int = 0x1000 // for NoCopy buffers, memory needs needs to be mutliples of 4096
+//    
+//    func prepareMemory(bytecount: Int) {
+//        self.bytecount = bytecount
+//        bufferPtr = UnsafeMutablePointer<Void>.alloc(bytecount)
+//        posix_memalign(&bufferPtr!, bufferAlignment, bytecount)
+//        bufferVoidPtr = COpaquePointer(bufferPtr!)
+//        bufferDataPtr = UnsafeMutablePointer<T>(bufferVoidPtr!)
+//    }
+//    
+//    override func prepareBuffer(device: MTLDevice, options: MTLResourceOptions) {
+//        //TODO: common deallocator?
+//        buffer = device.newBufferWithBytesNoCopy(bufferPtr!, length: bytecount!, options: .StorageModeShared, deallocator: nil)
+//    }
+//    
+//    //TODO: decide on how to use similar data access patterns when buffer is specific to a texture
+//    //    override func initTexture(device: MTLDevice, textureDescriptor: MTLTextureDescriptor) {
+//    //        //        texture = texBuffer!.newTextureWithDescriptor(textureDescriptor, offset: 0, bytesPerRow: calcBytesPerRow())
+//    //    }
+//    
+//    //mechanism for writing specific bytes
+//    func writeBuffer(data: [T]) {
+//        memcpy(bufferDataPtr!, data, bytecount!)
+//    }
+//}
