@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Cube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="itK-KW-s6r">
-                                                    <rect key="frame" x="7.5" y="12" width="39" height="20"/>
+                                                    <rect key="frame" x="15" y="12" width="39" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -52,7 +52,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="teh cubez" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0f0-mm-bGE">
-                                                    <rect key="frame" x="513" y="12" width="72" height="20"/>
+                                                    <rect key="frame" x="513" y="12" width="72" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -75,7 +75,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Quad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mat-W6-QtY">
-                                                    <rect key="frame" x="6.5" y="12" width="40" height="20"/>
+                                                    <rect key="frame" x="15" y="12" width="39.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -83,7 +83,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="a simple textured quad" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gsP-kg-eeT">
-                                                    <rect key="frame" x="419" y="12" width="166" height="20"/>
+                                                    <rect key="frame" x="419.5" y="12" width="165.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -120,17 +120,9 @@
                         <viewControllerLayoutGuide type="top" id="Igx-gj-Yf6"/>
                         <viewControllerLayoutGuide type="bottom" id="5ql-5O-Yqy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pdz-Hg-7fo">
+                    <view key="view" contentMode="scaleToFill" id="Pdz-Hg-7fo" customClass="MTKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cube" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BU8-7h-Lot">
-                                <rect key="frame" x="233" y="92" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -142,7 +134,6 @@
         <!--View Controller-->
         <scene sceneID="Zo3-Wn-wiU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YMa-H0-ofA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mHs-LG-8AV" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mYi-Mo-wyw"/>
@@ -163,18 +154,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMa-H0-ofA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-107" y="261"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="pb1-6g-5qj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jqd-co-PDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="LVx-DE-XY2" sceneMemberID="viewController">
                     <connections>
                         <segue destination="oFf-pD-zFd" kind="relationship" relationship="masterViewController" id="Df6-Hi-ZAD"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jqd-co-PDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1574" y="-20"/>
         </scene>
