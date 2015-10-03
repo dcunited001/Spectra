@@ -49,7 +49,6 @@ class BaseRenderer {
     }
     
     deinit {
-        
         //        for i in 0...self.kInFlightCommandBuffers{
         //            dispatch_semaphore_signal(avaliableResourcesSemaphore)
         //        }
@@ -177,8 +176,8 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         encodeVertexBuffers(renderEncoder)
         encodeFragmentBuffers(renderEncoder)
         encodeDraw(renderEncoder)
-        renderEncoder.endEncoding()
         renderEncoder.popDebugGroup()
+        renderEncoder.endEncoding()
     }
     
     func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer) {
