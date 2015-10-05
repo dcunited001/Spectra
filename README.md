@@ -114,7 +114,15 @@ I should "only create one per render pass" is the advice given in the wwdc talk.
 
 #### How are resources and settings swapped out for render encoders?
 
-it looks like a render encoder only works for like one vertex/fragment function, but that can't be true.  How would i render hundreds of objects with separate textures, etc?
+it looks like a render encoder only works for like one vertex/fragment function, but that can't be true.  
+
+any of the `.set` methods can be called on a renderEncoder without generating a new one.
+
+
+
+#### How would i render hundreds of objects with separate textures, etc?
+
+with an array texture or texture atlas
 
 #### How to swap out various audio visualizations
 
