@@ -32,7 +32,6 @@ vertex ColorVertex basicColorShiftedVertex
 {
     ColorVertex vout;
     vout.position = mvp * vin[vid];
-    
     vout.color = shiftColorWithMVP(*cin, mvp);
     
     return vout;
