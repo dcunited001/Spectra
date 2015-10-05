@@ -11,11 +11,6 @@ struct TextureVertex {
     float4 color;
 };
 
-//struct TextureVertex {
-//    float4 position [[ position ]];
-//    float4 color;
-//};
-
 // reuses the uniforms matrix to shift color as though it's a coordinate system
 extern float4 shiftColorWithMVP
 (
