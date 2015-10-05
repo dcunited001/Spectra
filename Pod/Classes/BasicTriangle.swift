@@ -41,4 +41,8 @@ class BasicTriangleGenerator: NodeGenerator {
     func getFaceVertexMap() -> [[Int]] {
         return [[0,1,2]]
     }
+    
+    func getFaceTriangleMap() -> [[Int]] {
+        return [[0]]
+    }
 }

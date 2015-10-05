@@ -51,6 +51,10 @@ class TetrahedronGenerator: NodeGenerator {
     func getFaceVertexMap() -> [[Int]] {
         return getTriangleVertexMap()
     }
+    
+    func getFaceTriangleMap() -> [[Int]] {
+        return (0...3).map { [$0] }
+    }
 }
 
 class OctahedronGenerator: NodeGenerator {
@@ -105,6 +109,10 @@ class OctahedronGenerator: NodeGenerator {
 
     func getFaceVertexMap() -> [[Int]] {
         return getTriangleVertexMap()
+    }
+    
+    func getFaceTriangleMap() -> [[Int]] {
+        return (0...7).map { [$0] }
     }
 }
 

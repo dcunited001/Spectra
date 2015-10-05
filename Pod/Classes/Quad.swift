@@ -46,4 +46,8 @@ class QuadGenerator: NodeGenerator {
     func getFaceVertexMap() -> [[Int]] {
         return [[0,1,2,3]]
     }
+    
+    func getFaceTriangleMap() -> [[Int]] {
+        return [[0,1]]
+    }
 }

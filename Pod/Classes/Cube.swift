@@ -109,6 +109,10 @@ class CubeGenerator: NodeGenerator {
         ]
     }
     
+    func getFaceTriangleMap() -> [[Int]] {
+        return (0...5).map { [2 * $0, 2 * $0 + 1] }
+    }
+    
 //    func getTextureVertices() -> [float4] {
 //        return [
 //        
