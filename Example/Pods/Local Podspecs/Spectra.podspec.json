@@ -33,10 +33,9 @@
     ]
   },
   "source_files": [
-    "Pod/Classes/*.swift",
-    "Pod/Classes/Shaders/*.metal",
-    "Pod/Classes/NodeGenerators/*.swift",
-    "Pod/Classes/ComputeGenerators/*.swift"
+    "Pod/Classes/**/*",
+    "Pod/Shaders/**/*",
+    "Pod/NodeGenerators/**/*"
   ],
   "resource_bundles": {
     "Spectra": [

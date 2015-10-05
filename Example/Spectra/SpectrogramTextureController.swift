@@ -10,8 +10,6 @@ import UIKit
 import MetalKit
 import EZAudio
 
-
 class SpectrogramTextureController: MetalViewController {
     
 }
-

@@ -31,7 +31,11 @@ you've been warned.
   s.ios.frameworks = "MetalKit", "Metal", "Accelerate"
   s.osx.frameworks = "MetalKit", "Metal", "Accelerate"
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = [
+    'Pod/Classes/**/*',
+    'Pod/Shaders/**/*',
+    'Pod/NodeGenerators/**/*']
+
   s.resource_bundles = {
     'Spectra' => ['Pod/Assets/*.png']
   }
