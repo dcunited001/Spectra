@@ -26,6 +26,7 @@
 		2AF0C869ADD7955CDDA81C8A0AEF7DCB /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421C948F566E2411584232610CA1041 /* Pods-Spectra_Tests-dummy.m */; };
 		360A7ED2E0F32D63696095B116D91213 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A450DFAF815C3F06EAD632203C377 /* Quad.swift */; };
 		3DA1249FDF11CC0BD57DE54A67AADE30 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = FB09BE101B788953A51E456EACA6B7CA /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC771BC298E900F5C876 /* spectra_color_shift.metal */; settings = {ASSET_TAGS = (); }; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CA1914E0AF764521FD5463E35D765E9 /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DE757B7BC2CCA86913C8E2DD664FEC /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -161,6 +162,7 @@
 		41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Tests-umbrella.h"; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43327F8BC8FCC6F14187399F52E03B00 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
+		4351FC771BC298E900F5C876 /* spectra_color_shift.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = spectra_color_shift.metal; sourceTree = "<group>"; };
 		455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
 		482B60C34431C2DEA9BCE4B4CC40A24E /* PipelineGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
 		49FF7440287FD30EFE218FF0FDB745E2 /* spectra_common.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = spectra_common.metal; sourceTree = "<group>"; };
@@ -217,7 +219,7 @@
 		BF441ACF9B2A77B1ABBC319175E6551A /* Pods_Spectra_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26C7C5BA21FB427288C981FB857F5AD /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
 		C2BA6C0EE0E496A321ABAD4A00023C23 /* Pods-Spectra_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		C505055817681185BB86A460EC49F811 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		C505055817681185BB86A460EC49F811 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = ../NodeGenerators/Node.swift; sourceTree = "<group>"; };
 		C5A21CAFCEBC126815DD9763BA1BBEBD /* Pods_Spectra_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A573E86B09913E296E5AF9A51B6775 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C70CB374BD855BC33BAAFDDCCE2D1871 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
@@ -403,6 +405,7 @@
 			children = (
 				51151EC9981D1EFD04D96AE36D04E0EB /* spectra_basic_triangle.metal */,
 				49FF7440287FD30EFE218FF0FDB745E2 /* spectra_common.metal */,
+				4351FC771BC298E900F5C876 /* spectra_color_shift.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -505,7 +508,6 @@
 			isa = PBXGroup;
 			children = (
 				57101C678CA2851C52113046014DF1EB /* Cube.swift */,
-				C505055817681185BB86A460EC49F811 /* Node.swift */,
 				82B64609D9751F38C1E53AD8F89C89D4 /* NodeGenerator.swift */,
 				E8C347A27777D7F6DB77BA32D24CB6B8 /* PlatonicSolids.swift */,
 				189A450DFAF815C3F06EAD632203C377 /* Quad.swift */,
@@ -568,6 +570,7 @@
 				998DD020F8810D74D44C124108070470 /* BufferTexture.swift */,
 				E0A1DAC805A45D91CC66110D7D04F413 /* CommandBufferPool.swift */,
 				AEB727EA2D3AB3F34097F9BFBC4BA7A0 /* EncodableData.swift */,
+				C505055817681185BB86A460EC49F811 /* Node.swift */,
 				482B60C34431C2DEA9BCE4B4CC40A24E /* PipelineGenerator.swift */,
 				5D88CC06DD571B8B23EB76518541169A /* Renderer.swift */,
 				B87782B387039A1363DF3A3CC8B46BDA /* Scene.swift */,
@@ -869,6 +872,7 @@
 				50A36A6265CE4770D0A71BEC49CA61D9 /* EZMicrophone.m in Sources */,
 				DFA145693AA34149FA08CA5D71724234 /* EZOutput.m in Sources */,
 				6CCB716E9803E5CFB8312B64FFD86C38 /* EZPlot.m in Sources */,
+				4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */,
 				D6600AD076DF939AB404338B94C6094A /* EZRecorder.m in Sources */,
 				A5CA6CED011609A0601B05AE06F11877 /* TPCircularBuffer.c in Sources */,
 			);
