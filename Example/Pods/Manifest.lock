@@ -1,7 +1,15 @@
 PODS:
+  - EZAudio (1.1.2):
+    - EZAudio/Full (= 1.1.2)
+  - EZAudio/Core (1.1.2)
+  - EZAudio/Full (1.1.2):
+    - EZAudio/Core
+    - TPCircularBuffer (~> 0.0)
   - Spectra (0.0.1.alpha)
+  - TPCircularBuffer (0.0.1)
 
 DEPENDENCIES:
+  - EZAudio
   - Spectra (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,6 +17,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Spectra: c48cb3f43c5d033b195e71d627a7fd542835634a
+  EZAudio: 01373de2b1257b77be1bf13753fb1c4ea8a9777e
+  Spectra: ba4b2e4164bc51a83d68ad9e24ce582fa7e7b291
+  TPCircularBuffer: 949e9632b9fb99b7274d7b2296ee22bff5841e35
 
 COCOAPODS: 0.38.2
