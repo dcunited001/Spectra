@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		066BB154BA24C4DCEF4642F1 /* Pods_Spectra_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A033ED2BE8059D67C63C7076 /* Pods_Spectra_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06741BBFB3AE007C738A /* MetalViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B068A1BC23328007C738A /* SpectrogramTextureController.swift */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		0BD99D9098A196B696963522 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		1328903B16E792FD233D3B8E /* Spectra.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Spectra.podspec; path = ../Spectra.podspec; sourceTree = "<group>"; };
 		436B06741BBFB3AE007C738A /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
+		436B068A1BC23328007C738A /* SpectrogramTextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrogramTextureController.swift; sourceTree = "<group>"; };
 		45209440FD1512ABEF566A1A /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spectra_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Spectra_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectra_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				436B06741BBFB3AE007C738A /* MetalViewController.swift */,
+				436B068A1BC23328007C738A /* SpectrogramTextureController.swift */,
 			);
 			name = "Example for Spectra";
 			path = Spectra;
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */,
 				436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
