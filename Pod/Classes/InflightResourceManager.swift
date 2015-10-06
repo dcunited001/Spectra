@@ -4,15 +4,13 @@
 //
 //  Created by David Conner on 10/6/15.
 //
-//
 
-let kInflightResourceCountDefault = 3
+let kInflightResourceCountDefault = 3 // three is magic number
 
 class InflightResourceManager {
     var inflightResourceCount:Int
-    var inflightResourceIndex:Int = 0
+    var index:Int = 0
     var inflightResourceSemaphore:dispatch_semaphore_t
-    
     
     init(inflightResourceCount: Int = kInflightResourceCountDefault) {
         self.inflightResourceCount = inflightResourceCount
@@ -21,7 +19,7 @@ class InflightResourceManager {
     
     func increment() {
         dispatch_semaphore_signal(inflightResourceSemaphore)
-        inflightResourceIndex = (inflightResourceIndex + 1) % inflightResourceCount
+        index = (index + 1) % inflightResourceCount
     }
     
     func wait() {
