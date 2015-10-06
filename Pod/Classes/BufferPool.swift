@@ -17,8 +17,6 @@
 
 import Metal
 
-let inflightBuffersCountDefault = 3 // three is magic number
-
 // N.B. planning on always accessing Buffer via BufferProvider (and MTLBuffer via Buffer)
 // - so that interface is consistent and so that stuff can easily be built on top of one thing
 
@@ -26,7 +24,6 @@ protocol BufferPool: class {
     var bytecount:Int { get set }
     var buffersCount:Int { get set }
     var buffersIndex:Int { get set }
-    var buffersSemaphore:dispatch_semaphore_t? { get set }
     var buffers: [EncodableBuffer] { get set } // private
     
     // N.B. must deinit resources!
@@ -36,22 +33,15 @@ protocol BufferPool: class {
     func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer)
     func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> EncodableBuffer
     func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer) -> EncodableBuffer
-    func releaseBuffer()
     
     func getBuffer() -> EncodableBuffer
+    func getBuffer(bufferIndex: Int) -> EncodableBuffer
 }
 
 //TODO: must dispatch_semaphore_signal from view render() !!!
 
 extension BufferPool {
-    //    var bytecount:Int
-    //    var availableBuffersIndex:Int = 0
-    //    var availableBuffersSemaphore:dispatch_semaphore_t?
-    //    internal var buffers: [Buffer] = []
-    //    private var inflightBuffersCount:Int
-    
     func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
-        buffersSemaphore = dispatch_semaphore_create(buffersCount)
         for _ in 0...buffersCount-1 {
             let buffer = createBuffer(device, bytecount: self.bytecount, options: options)
             buffers.append(buffer)
@@ -59,30 +49,10 @@ extension BufferPool {
     }
     
     func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache, createWith: (Self) -> EncodableBuffer) {
-        buffersSemaphore = dispatch_semaphore_create(buffersCount)
         for _ in 0...buffersCount-1 {
             let buffer = createBuffer(device, bytecount: self.bytecount, options: options, createWith: createWith)
             buffers.append(buffer)
         }
-    }
-    
-    func releaseBuffer() {
-        dispatch_semaphore_signal(buffersSemaphore!)
-    }
-    
-    func releaseBuffers(numBuffers: Int) {
-        for _ in 0...numBuffers-1 {
-            releaseBuffer()
-        }
-    }
-    
-    func getBuffer() -> EncodableBuffer {
-        var buffer = buffers[buffersIndex]
-        
-        buffersIndex = (buffersIndex + 1) % buffersCount
-        
-        // return the buffer unmodified and let the user determine how to write to it
-        return buffer
     }
     
     func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> EncodableBuffer {
@@ -95,6 +65,18 @@ extension BufferPool {
     func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer) -> EncodableBuffer {
         return createWith(self)
     }
+    
+    func getBuffer() -> EncodableBuffer {
+        var buffer = buffers[buffersIndex]
+        buffersIndex = (buffersIndex + 1) % buffersCount
+        
+        // return the buffer unmodified and let the user determine how to write to it
+        return buffer
+    }
+    
+    func getBuffer(bufferIndex: Int) -> EncodableBuffer {
+        return buffers[bufferIndex]
+    }
 }
 
 class BaseBufferPool: BufferPool {
@@ -103,19 +85,16 @@ class BaseBufferPool: BufferPool {
     var bytecount:Int
     var buffersCount:Int
     var buffersIndex:Int = 0
-    var buffersSemaphore:dispatch_semaphore_t?
     internal var buffers: [EncodableBuffer] = []
     
-    required init(device: MTLDevice, bytecount: Int, buffersCount: Int = inflightBuffersCountDefault, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
+    required init(device: MTLDevice, bytecount: Int, buffersCount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
         self.bytecount = bytecount
         self.buffersCount = buffersCount
     }
     
-    deinit {
-        for _ in 0...buffersCount - 1 {
-            releaseBuffer()
-        }
-    }
+    //deinit {
+        //TODO: release buffer memory?
+    //}
 }
 
 class SingleBuffer: BufferPool {
@@ -125,46 +104,13 @@ class SingleBuffer: BufferPool {
     var buffersSemaphore:dispatch_semaphore_t?
     var buffers: [EncodableBuffer] = []
     
-    deinit {
-        for _ in 0...buffersCount - 1 {
-            releaseBuffer()
-        }
-    }
-    
     required init(device:MTLDevice, bytecount:Int, buffersCount:Int = 1, options: MTLResourceOptions = .StorageModeShared) {
         self.bytecount = bytecount
         self.buffersCount = buffersCount
-        prepareBuffer(device, options: options)
     }
-    
-    func prepareBuffer(device:MTLDevice, options:MTLResourceOptions) {
-        let singleBuffer = BaseEncodableBuffer()
-        singleBuffer.bytecount = bytecount
-        singleBuffer.prepareBuffer(device, options: options)
-        buffers = [singleBuffer]
-    }
-    
-    func prepareBufferPool(device:MTLDevice, bytecount:Int, options:MTLResourceOptions) {
-        
-    }
-    
-    func prepareBufferPool(device:MTLDevice, bytecount:Int, options:MTLResourceOptions, createWith: (SingleBuffer) -> EncodableBuffer) {
-        
-    }
-    
-    //    func createBuffer(device:MTLDevice, bytecount:Int, options:MTLResourceOptions) -> Buffer {
-    //
-    //    }
-    //
-    //    func createBuffer(device:MTLDevice, bytecount:Int, options:MTLResourceOptions, createWith: (SingleBufferProvider) -> Buffer) -> Buffer {
-    //
-    //    }
     
     func getBuffer() -> EncodableBuffer {
         return buffers.first!
     }
     
 }
-
-
-
