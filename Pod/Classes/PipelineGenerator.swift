@@ -12,6 +12,8 @@ import Metal
 //TODO: ComputePipelineMap
 //TODO: DepthStencilStateMap
 
+//TODO: generators for DepthStencilState & SamplerState
+
 class RenderPipelineGenerator {
     var library: MTLLibrary
     var vertexFunction: String
@@ -23,8 +25,8 @@ class RenderPipelineGenerator {
         self.fragmentFunction = fragmentFunction
     }
     
+    //remove optional return and instead throw errors on program/pipeline load failures
     func generate(device: MTLDevice, setupDescriptor: ((inout MTLRenderPipelineDescriptor) -> Void)? = nil) -> MTLRenderPipelineState? {
-        
         guard let vertexProgram = library.newFunctionWithName(vertexFunction) else {
             print("Couldn't load \(vertexFunction)")
             return nil
@@ -62,7 +64,7 @@ class ComputePipelineGenerator {
         self.computeFunction = computeFunction
     }
     
-
+    //remove optional return and instead throw errors on program/pipeline load failures
     func generate(device:MTLDevice) -> MTLComputePipelineState? {
         guard let computeProgram = library.newFunctionWithName(computeFunction) else {
             print("Couldn't load \(computeFunction)")
