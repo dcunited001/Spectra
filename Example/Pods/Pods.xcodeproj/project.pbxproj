@@ -162,8 +162,8 @@
 		41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Tests-umbrella.h"; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43327F8BC8FCC6F14187399F52E03B00 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
-		4351FC771BC298E900F5C876 /* spectra_color_shift.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = spectra_color_shift.metal; sourceTree = "<group>"; };
-		4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflightResourceManager.swift; sourceTree = "<group>"; };
+		4351FC771BC298E900F5C876 /* spectra_color_shift.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = spectra_color_shift.metal; sourceTree = "<group>"; };
+		4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflightResourceManager.swift; sourceTree = "<group>"; };
 		455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
 		482B60C34431C2DEA9BCE4B4CC40A24E /* PipelineGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
 		49FF7440287FD30EFE218FF0FDB745E2 /* spectra_common.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = spectra_common.metal; sourceTree = "<group>"; };
@@ -832,8 +832,10 @@
 				E689E3F10BDF5C0769937830A601443A /* Spectra-dummy.m in Sources */,
 				C1B76B6F3AFC78808D3B30BA004A3032 /* Transform3D.swift in Sources */,
 				F24A5F411DA3651827468433DDB9F516 /* View.swift in Sources */,
+                4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */,
 				75A5566604BC15B72FCD08D48000FE10 /* spectra_basic_triangle.metal in Sources */,
-				9BA2F20CD7C87C535DF8101513E30800 /* spectra_common.metal in Sources */,
+                9BA2F20CD7C87C535DF8101513E30800 /* spectra_common.metal in Sources */,
+                4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
