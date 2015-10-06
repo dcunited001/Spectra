@@ -17,7 +17,6 @@
 		179D7C12E0003310EE988318FF94FCB3 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CB374BD855BC33BAAFDDCCE2D1871 /* Metal.framework */; };
 		1E27EDA35683B3D77863C83E0D37DF4F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA84DA8B559F6A00AC81FBA78FE8C56 /* Accelerate.framework */; };
 		2257C2F8793EA377C328C384C506ECB1 /* TPCircularBuffer+AudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FF678CE75F3F32FC6F39FB0D0DEF6E /* TPCircularBuffer+AudioBufferList.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22FC3E0AAA1EE904AA4336F16B0E1A57 /* CommandBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1DAC805A45D91CC66110D7D04F413 /* CommandBufferPool.swift */; };
 		231AD4E0F92270B6713E76611F24DC4B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */; };
 		2492175CE210A1A7C4BC608B23B5A801 /* EZAudioFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E125D86B39FA72E8725E8565017C7E /* EZAudioFloatConverter.m */; };
 		264F318E2F98FD1D3CBECAB7C4D46919 /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EFB3AFC4059A44433839FEA3675A67 /* EZAudioPlotGL.m */; };
@@ -236,7 +235,6 @@
 		DDF60FDF614A2745E6EC9CD1A0D43AE8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC4DE22D8180ED4AE64D880E8C23695 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
 		E01531B31C71B0A413564C9E3CBE3285 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0A1DAC805A45D91CC66110D7D04F413 /* CommandBufferPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommandBufferPool.swift; sourceTree = "<group>"; };
 		E1DE757B7BC2CCA86913C8E2DD664FEC /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = EZAudio/EZAudioFFT.h; sourceTree = "<group>"; };
 		E52AD474ECA0AFB82032D4FF5C44E071 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E8C347A27777D7F6DB77BA32D24CB6B8 /* PlatonicSolids.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
@@ -570,7 +568,6 @@
 				77C43F38566546F8B513026530943C4E /* BasicTriangle.swift */,
 				5474FDE8D7B5CD7E8B5395E3F0699592 /* BufferPool.swift */,
 				998DD020F8810D74D44C124108070470 /* BufferTexture.swift */,
-				E0A1DAC805A45D91CC66110D7D04F413 /* CommandBufferPool.swift */,
 				AEB727EA2D3AB3F34097F9BFBC4BA7A0 /* EncodableData.swift */,
 				C505055817681185BB86A460EC49F811 /* Node.swift */,
 				482B60C34431C2DEA9BCE4B4CC40A24E /* PipelineGenerator.swift */,
@@ -823,7 +820,6 @@
 				A1D0CA2474D0FDC65BA6F492E54CCAF8 /* BasicTriangle.swift in Sources */,
 				02ECFFAA687FB9EC15264B3AF4BAE6B4 /* BufferPool.swift in Sources */,
 				DE6D3C129A7AB16F2F56127A8FA276E1 /* BufferTexture.swift in Sources */,
-				22FC3E0AAA1EE904AA4336F16B0E1A57 /* CommandBufferPool.swift in Sources */,
 				C44A3CA649865B57F5D58F74AE81EF9B /* Cube.swift in Sources */,
 				0716818F97701142AD9689C391A49A1B /* EncodableData.swift in Sources */,
 				DAC05F5787AB552ADDBE75740FF86EE1 /* Node.swift in Sources */,
