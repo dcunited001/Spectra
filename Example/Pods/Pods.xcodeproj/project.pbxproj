@@ -25,8 +25,8 @@
 		2AF0C869ADD7955CDDA81C8A0AEF7DCB /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421C948F566E2411584232610CA1041 /* Pods-Spectra_Tests-dummy.m */; };
 		360A7ED2E0F32D63696095B116D91213 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A450DFAF815C3F06EAD632203C377 /* Quad.swift */; };
 		3DA1249FDF11CC0BD57DE54A67AADE30 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = FB09BE101B788953A51E456EACA6B7CA /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC771BC298E900F5C876 /* spectra_color_shift.metal */; settings = {ASSET_TAGS = (); }; };
-		4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; settings = {ASSET_TAGS = (); }; };
+		4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC771BC298E900F5C876 /* spectra_color_shift.metal */; };
+		4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CA1914E0AF764521FD5463E35D765E9 /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DE757B7BC2CCA86913C8E2DD664FEC /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
