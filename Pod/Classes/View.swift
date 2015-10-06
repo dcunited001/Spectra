@@ -27,8 +27,8 @@ protocol ViewDelegate: class {
 class BaseView: MTKView {
     var defaultLibrary: MTLLibrary!
     var commandQueue: MTLCommandQueue!
-    var commandBufferPool: CommandBufferPool?
     var renderPassDescriptor: MTLRenderPassDescriptor?
+    var inflightResources: InflightResourceManager
     
     var startTime: CFAbsoluteTime!
     var lastFrameStart: CFAbsoluteTime!
@@ -41,6 +41,8 @@ class BaseView: MTKView {
         //TODO: framebufferOnly might be why particleLab failed on OSX!
         framebufferOnly = false
         preferredFramesPerSecond = 60
+        
+        inflightResources = InflightResourceManager()
         
         beforeSetupMetal()
         setupMetal()
@@ -76,13 +78,16 @@ class BaseView: MTKView {
         self.device = device
         defaultLibrary = device.newDefaultLibrary()
         commandQueue = device.newCommandQueue()
-        commandBufferPool = CommandBufferPool(commandQueue: commandQueue)
     }
     
     func render() {
         //N.B. the app does not need to use currentRenderPassDescriptor
         let renderPassDescriptor = currentRenderPassDescriptor
-        let cmdBuffer = commandBufferPool!.getCommandBuffer()
+        let cmdBuffer = commandQueue.commandBuffer()
+        
+        cmdBuffer.addCompletedHandler { (cmdBuffer) in
+            // cycle commandBufferPool
+        }
         
         guard let drawable = currentDrawable else
         {
