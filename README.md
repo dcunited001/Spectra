@@ -118,7 +118,15 @@ it looks like a render encoder only works for like one vertex/fragment function,
 
 any of the `.set` methods can be called on a renderEncoder without generating a new one.
 
+the easiest and best option here would be to have a renderStrategy
+object for a scene, which takes a list of pipelineState keys, along with 
+blocks for each transition.  at this point, it's up to the user (via the scene) to
+decide how to transition between each renderEncoder.  the renderStrategy
+will accept the next block, which either transitions the renderEncoder
+to an acceptable state, or creates a new one from the commandBuffer.
 
+There should be an analogous computeStrategy.  renderStrategy should be
+nestable.  these should provide enough flexibility.
 
 #### How would i render hundreds of objects with separate textures, etc?
 
