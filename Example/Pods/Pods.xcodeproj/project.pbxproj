@@ -25,9 +25,9 @@
 		2AF0C869ADD7955CDDA81C8A0AEF7DCB /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421C948F566E2411584232610CA1041 /* Pods-Spectra_Tests-dummy.m */; };
 		360A7ED2E0F32D63696095B116D91213 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A450DFAF815C3F06EAD632203C377 /* Quad.swift */; };
 		3DA1249FDF11CC0BD57DE54A67AADE30 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = FB09BE101B788953A51E456EACA6B7CA /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC771BC298E900F5C876 /* spectra_color_shift.metal */; };
 		4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		43E90C101BC4562F009DBF99 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CA1914E0AF764521FD5463E35D765E9 /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DE757B7BC2CCA86913C8E2DD664FEC /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D726174A37F22C98A6E32F5F1A3DE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
@@ -43,7 +43,6 @@
 		6CCB716E9803E5CFB8312B64FFD86C38 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E771A81FAAD0B3F422E8AC985B257C /* EZPlot.m */; };
 		71AC4C5D1CCFCF5E042F0DD9811F9B15 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A5AB54443654208DB2B3C69B19FDC1 /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		745331DCD1095361C64DE3AEAA2EE26C /* EZAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C43309871DC0D18F1AD69FF21133A16 /* EZAudioDevice.m */; };
-		75A5566604BC15B72FCD08D48000FE10 /* spectra_basic_triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51151EC9981D1EFD04D96AE36D04E0EB /* spectra_basic_triangle.metal */; };
 		7985EDE3ADB6BB2986BAF8BBBA3EDE7A /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9062E469AF9E9BD5CE7693856FA2ECAF /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79D6046C6A1B81BDED0A6BEACE684BDE /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C26C7C5BA21FB427288C981FB857F5AD /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DCE605AC07EAA98FFBDDF15AA6B33E3 /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF5F1EA315D2B9D32EC6ADA1A52C957 /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,7 +55,6 @@
 		92DB57FFE018721BEEE4BE444EAE4A07 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */; };
 		97BAF29F1A2D846C324AD5F379CB8A40 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8C3A43DE09AA2FF4592A6D0EFC977D /* GLKit.framework */; };
 		9A8E6AEE039F85B80CB6946C4FDF187A /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88CC06DD571B8B23EB76518541169A /* Renderer.swift */; };
-		9BA2F20CD7C87C535DF8101513E30800 /* spectra_common.metal in Sources */ = {isa = PBXBuildFile; fileRef = 49FF7440287FD30EFE218FF0FDB745E2 /* spectra_common.metal */; };
 		A1D0CA2474D0FDC65BA6F492E54CCAF8 /* BasicTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C43F38566546F8B513026530943C4E /* BasicTriangle.swift */; };
 		A5CA6CED011609A0601B05AE06F11877 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 38F49DE79337C1C99838DB8CE4B822AF /* TPCircularBuffer.c */; };
 		ABC3065C878E63A86BF637A2D71EB75C /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 825D4BA1967FD89726B698845C7FC564 /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -162,14 +160,11 @@
 		41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Tests-umbrella.h"; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43327F8BC8FCC6F14187399F52E03B00 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
-		4351FC771BC298E900F5C876 /* spectra_color_shift.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = spectra_color_shift.metal; sourceTree = "<group>"; };
 		4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflightResourceManager.swift; sourceTree = "<group>"; };
 		455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
 		482B60C34431C2DEA9BCE4B4CC40A24E /* PipelineGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
-		49FF7440287FD30EFE218FF0FDB745E2 /* spectra_common.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = spectra_common.metal; sourceTree = "<group>"; };
 		4A97CC2B7DC114629E25D18CD78F0D56 /* Pods-Spectra_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4DAE1E16DD1A90EBE9C0B35EC6089F94 /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
-		51151EC9981D1EFD04D96AE36D04E0EB /* spectra_basic_triangle.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = spectra_basic_triangle.metal; sourceTree = "<group>"; };
 		544E5C80790FC65388A700B4511EB682 /* EZAudioFloatData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatData.m; path = EZAudio/EZAudioFloatData.m; sourceTree = "<group>"; };
 		5474FDE8D7B5CD7E8B5395E3F0699592 /* BufferPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BufferPool.swift; sourceTree = "<group>"; };
 		54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -400,16 +395,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		49EA308AA08F3C82A8324287383844A9 /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				51151EC9981D1EFD04D96AE36D04E0EB /* spectra_basic_triangle.metal */,
-				49FF7440287FD30EFE218FF0FDB745E2 /* spectra_common.metal */,
-				4351FC771BC298E900F5C876 /* spectra_color_shift.metal */,
-			);
-			path = Shaders;
-			sourceTree = "<group>";
-		};
 		5BA5D03FE94A82E27F9F1DDAA4F292A3 /* Pods-Spectra_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,7 +505,6 @@
 			children = (
 				F8FE1FE86430A08918CEA5BE7D64E8C7 /* Classes */,
 				927B83E48FBF1334ED7B81E43BC501A9 /* NodeGenerators */,
-				49EA308AA08F3C82A8324287383844A9 /* Shaders */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -832,10 +816,7 @@
 				E689E3F10BDF5C0769937830A601443A /* Spectra-dummy.m in Sources */,
 				C1B76B6F3AFC78808D3B30BA004A3032 /* Transform3D.swift in Sources */,
 				F24A5F411DA3651827468433DDB9F516 /* View.swift in Sources */,
-                4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */,
-				75A5566604BC15B72FCD08D48000FE10 /* spectra_basic_triangle.metal in Sources */,
-                9BA2F20CD7C87C535DF8101513E30800 /* spectra_common.metal in Sources */,
-                4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */,
+				43E90C101BC4562F009DBF99 /* InflightResourceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,7 +854,6 @@
 				50A36A6265CE4770D0A71BEC49CA61D9 /* EZMicrophone.m in Sources */,
 				DFA145693AA34149FA08CA5D71724234 /* EZOutput.m in Sources */,
 				6CCB716E9803E5CFB8312B64FFD86C38 /* EZPlot.m in Sources */,
-				4351FC781BC298E900F5C876 /* spectra_color_shift.metal in Sources */,
 				4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */,
 				D6600AD076DF939AB404338B94C6094A /* EZRecorder.m in Sources */,
 				A5CA6CED011609A0601B05AE06F11877 /* TPCircularBuffer.c in Sources */,

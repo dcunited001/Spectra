@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-25" y="-528"/>
         </scene>
-        <!--View Controller-->
+        <!--Metal View Controller-->
         <scene sceneID="Vg4-3y-FT6">
             <objects>
-                <viewController id="iCi-Qq-RJR" sceneMemberID="viewController">
+                <viewController id="iCi-Qq-RJR" customClass="MetalViewController" customModule="Spectra_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Igx-gj-Yf6"/>
                         <viewControllerLayoutGuide type="bottom" id="5ql-5O-Yqy"/>
