@@ -27,7 +27,7 @@ class CommandBufferPool {
         }
     }
     
-    func nextCommandBuffer() -> MTLCommandBuffer {
+    func getCommandBuffer() -> MTLCommandBuffer {
         var buffer = commandBuffers[buffersIndex]
         
         buffer.addCompletedHandler { (buffer) in

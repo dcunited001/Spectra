@@ -36,10 +36,12 @@ protocol BufferPool: class {
     func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer)
     func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> EncodableBuffer
     func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer) -> EncodableBuffer
-    func releaseBuffer(numBuffers:Int)
+    func releaseBuffer()
     
     func getBuffer() -> EncodableBuffer
 }
+
+//TODO: must dispatch_semaphore_signal from view render() !!!
 
 extension BufferPool {
     //    var bytecount:Int
@@ -64,9 +66,13 @@ extension BufferPool {
         }
     }
     
-    func releaseBuffer(numBuffers:Int) {
+    func releaseBuffer() {
+        dispatch_semaphore_signal(buffersSemaphore!)
+    }
+    
+    func releaseBuffers(numBuffers: Int) {
         for _ in 0...numBuffers-1 {
-            dispatch_semaphore_signal(buffersSemaphore!)
+            releaseBuffer()
         }
     }
     
@@ -106,7 +112,9 @@ class BaseBufferPool: BufferPool {
     }
     
     deinit {
-        releaseBuffer(buffersCount)
+        for _ in 0...buffersCount - 1 {
+            releaseBuffer()
+        }
     }
 }
 
@@ -118,7 +126,9 @@ class SingleBuffer: BufferPool {
     var buffers: [EncodableBuffer] = []
     
     deinit {
-        releaseBuffer(buffersCount)
+        for _ in 0...buffersCount - 1 {
+            releaseBuffer()
+        }
     }
     
     required init(device:MTLDevice, bytecount:Int, buffersCount:Int = 1, options: MTLResourceOptions = .StorageModeShared) {
