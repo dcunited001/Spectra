@@ -14,7 +14,7 @@ import Metal
 // - mutating state between renderers in the collection
 // - passes renderEncoder into encode(renderEncoder) for each renderer
 
-class Scene {
+class Scene { // ViewDelegate
     var renderers: [Renderer] = []
     
     //    init() {
@@ -22,5 +22,12 @@ class Scene {
     //    }
     
     
+//    func setupRenderStrategy
+    
+    func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer) {
+
+        // pass commandBuffer & renderPassDescriptor to renderStrategy
+        // - to create renderEncoder
+    }
     
 }
