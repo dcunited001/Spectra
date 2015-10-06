@@ -37,12 +37,11 @@ class BaseView: MTKView {
     weak var metalViewDelegate: ViewDelegate?
     
     override init(frame frameRect:CGRect, device:MTLDevice?) {
+        inflightResources = InflightResourceManager()
         super.init(frame: frameRect, device: device)
         //TODO: framebufferOnly might be why particleLab failed on OSX!
         framebufferOnly = false
         preferredFramesPerSecond = 60
-        
-        inflightResources = InflightResourceManager()
         
         beforeSetupMetal()
         setupMetal()
@@ -53,6 +52,7 @@ class BaseView: MTKView {
     }
     
     required init(coder: NSCoder) {
+        inflightResources = InflightResourceManager()
         super.init(coder: coder)
         //        fatalError("init(coder:) has not been implemented")
     }
