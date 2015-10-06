@@ -17,16 +17,21 @@ protocol Renderer {
 //    func encode(object)
 //}
 
-class BaseRenderer {
-    struct MetalInterfaceOrientation {
-        var LandscapeAngle:Float = 35.0
-        var PortraitAngle:Float = 50.0
-    }
+class RendererBase {
     
-    struct Perspective {
-        var Near:Float = 0.1
-        var Far:Float = 100.0
-    }
+}
+
+//struct MetalInterfaceOrientation {
+//    var LandscapeAngle:Float = 35.0
+//    var PortraitAngle:Float = 50.0
+//}
+//
+//struct Perspective {
+//    var Near:Float = 0.1
+//    var Far:Float = 100.0
+//}
+
+class BaseRenderer {
     
     var device: MTLDevice?
     var commandQueue: MTLCommandQueue?
@@ -157,7 +162,7 @@ class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspec
         pipelineStateDescriptor.vertexFunction = vertexProgram
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
         pipelineStateDescriptor.colorAttachments[0].pixelFormat = .BGRA8Unorm
-        
+//        MTLRenderPassDescriptor
         //setup render pipeline state
         do {
             try pipelineState = device!.newRenderPipelineStateWithDescriptor(pipelineStateDescriptor)
