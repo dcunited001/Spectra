@@ -25,9 +25,10 @@ protocol ViewDelegate: class {
 
 //TODO: MUST IMPLEMENT NSCODER & deinit to dealloc
 class BaseView: MTKView {
-    var commandBufferPool: CommandBufferPool?
-    var commandQueue: MTLCommandQueue!
     var defaultLibrary: MTLLibrary!
+    var commandQueue: MTLCommandQueue!
+    var commandBufferPool: CommandBufferPool?
+    var renderPassDescriptor: MTLRenderPassDescriptor?
     
     var startTime: CFAbsoluteTime!
     var lastFrameStart: CFAbsoluteTime!
@@ -79,15 +80,28 @@ class BaseView: MTKView {
     }
     
     func render() {
-        //move to scene renderer?
+        //N.B. the app does not need to use currentRenderPassDescriptor
+        let renderPassDescriptor = currentRenderPassDescriptor
+        let cmdBuffer = commandBufferPool!.getCommandBuffer()
+        
+        guard let drawable = currentDrawable else
+        {
+            Swift.print("currentDrawable returned nil")
+            return
+        }
+        
+        setupRenderPassDescriptor(drawable)
+        self.metalViewDelegate?.renderObjects(drawable, renderPassDescriptor: renderPassDescriptor!, commandBuffer: cmdBuffer)
+        
+        cmdBuffer.presentDrawable(drawable)
+        cmdBuffer.commit()
     }
     
     func setupRenderPipeline() {
         //move to scene renderer?
     }
     
-    var renderPassDescriptor: MTLRenderPassDescriptor?
-    func setupRenderPassDescriptor() {
+    func setupRenderPassDescriptor(drawable: CAMetalDrawable) {
         //move to scene renderer?
     }
     
