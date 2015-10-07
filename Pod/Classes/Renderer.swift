@@ -14,12 +14,34 @@ typealias RenderEncoderTransition = ((MTLRenderCommandEncoder) -> MTLRenderComma
 typealias RenderEncoderCreateMonad = ((MTLCommandBuffer, MTLRenderPassDescriptor) -> MTLRenderCommandEncoder)
 
 protocol Renderer {
-    var transitionMap: [String:RenderEncoderTransition] { get set }
-    
-    func encode(renderEncoder: MTLRenderCommandEncoder)
+    // Use enums for rendererType. use rendererTypes for transitionMap keys
+    var rendererType: Int { get set }
+    var transitionMap: [Int:RenderEncoderTransition] { get set }
+    var createRenderEncoderBlock: RenderEncoderCreateMonad? { get set }
+
     func encode(renderEncoder: MTLRenderCommandEncoder, encodeBlock: RendererEncodeBlock)
-    func transitionTo(renderer: Renderer?) -> Renderer
-    func defaultTransition(commandBuffer: MTLCommandBuffer) -> MTLRenderCommandEncoder
+    func transitionRenderEncoderTo(renderer: Renderer?) -> RenderEncoderTransition?
+    func defaultRenderEncoderTransition() -> RenderEncoderCreateMonad
+}
+
+extension Renderer {
+    
+    func encode(renderEncoder: MTLRenderCommandEncoder, encodeBlock: RendererEncodeBlock) {
+        
+    }
+    
+    func defaultRenderEncoderTransition() -> RenderEncoderCreateMonad {
+        return createRenderEncoderBlock!
+    }
+    
+    func transitionRenderEncoderTo(renderer: Renderer?) -> RenderEncoderTransition? {
+        if let rendererTypeId = renderer?.rendererType {
+            return transitionMap[rendererTypeId]
+        } else {
+            //TODO: better way to return here? or to structure these functions?
+            return nil
+        }
+    }
 }
 
 //typealias ComputeEncoderTransition = ((MTLCommandBuffer, MTLComputeCommandEncoder) -> MTLComputeCommandEncoder)
@@ -193,7 +215,7 @@ class MVPRenderer: BaseRenderer, Projectable, Uniformable, Perspectable {
         super.encode(renderEncoder)
         renderEncoder.pushDebugGroup(rendererDebugGroupName)
         renderEncoder.setRenderPipelineState(pipelineState!)
-        object!.encode(renderEncoder)
+//        object!.encode(renderEncoder)
         encodeVertexBuffers(renderEncoder)
         encodeFragmentBuffers(renderEncoder)
         encodeDraw(renderEncoder)
