@@ -8,14 +8,21 @@
 
 import Foundation
 
-protocol RenderStrategy {
+protocol RenderStrategy: class {
     var currentRenderStage: Int { get set }
     var renderStages: [RenderStage] { get set }
-    
 }
 
 extension RenderStrategy {
-    
+    func execRenderStage(commandBuffer: MTLCommandBuffer, renderPassDescriptor: MTLRenderPassDescriptor, renderEncoder: MTLRenderCommandEncoder, renderStage: RenderStage, renderer: Renderer, nextRenderer: Renderer?) {
+        
+        var nextRenderEncoder: MTLRenderCommandEncoder?
+        if let renderEncoderTransition = renderStage.transition(renderer, nextRenderer: nextRenderer) {
+            nextRenderEncoder = renderEncoderTransition(renderEncoder)
+        } else {
+            nextRenderEncoder = (renderer.defaultRenderEncoderTransition())(commandBuffer, renderPassDescriptor)
+        }
+    }
 }
 
 class BaseRenderStrategy: RenderStrategy {
