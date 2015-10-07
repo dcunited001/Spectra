@@ -18,8 +18,9 @@ import MetalKit
 // - or let the user of the lib override this?
 
 protocol RenderDelegate: class {
-    var pipelineStateMap: [String:MTLRenderPipelineState] { get set }
-    var rendererMap: [String:Renderer] { get set }
+    var pipelineStateMap: PipelineStateMap { get set }
+    var depthStencilStateMap: DepthStencilStateMap { get set }
+    var rendererMap: RendererMap { get set }
     
     func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer, inflightResourcesIndex: Int)
 }
