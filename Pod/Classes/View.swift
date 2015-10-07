@@ -91,7 +91,7 @@ class BaseView: MTKView {
         let cmdBuffer = commandQueue.commandBuffer()
         
         cmdBuffer.addCompletedHandler { (cmdBuffer) in
-            inflightResources.next()
+            self.inflightResources.next()
         }
         
         guard let drawable = currentDrawable else
