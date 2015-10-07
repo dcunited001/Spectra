@@ -71,6 +71,11 @@ class BaseView: MTKView {
         //override in subclass
     }
     
+    func mtkViewDefaults() {
+        colorPixelFormat = MTLPixelFormat.BGRA8Unorm
+        sampleCount = 1
+    }
+    
     func metalUnavailable() {
         //override in subclass
     }
