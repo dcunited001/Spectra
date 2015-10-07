@@ -15,6 +15,7 @@ typealias RenderStageEncodeBlock = ((Renderer, [Node], RenderStageNodeEncodeBloc
 typealias RenderStageTransitionBlock = ((Renderer, Renderer?) -> RenderEncoderTransition)
 
 protocol RenderStage: class {
+    var name: String? { get set }
     var nodes: [Node] { get set }
     var nodeSelectBlock: RenderStageNodeSelect? { get set }
     var encodeBlock: RenderStageEncodeBlock? { get set }
