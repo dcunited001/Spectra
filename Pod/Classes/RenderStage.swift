@@ -46,6 +46,7 @@ extension RenderStage {
 }
 
 class BaseRenderStage: RenderStage {
+    var name: String?
     var nodes: [Node] = []
     var nodeSelectBlock: RenderStageNodeSelect?
     var encodeBlock: RenderStageEncodeBlock?
