@@ -19,6 +19,7 @@ import Metal
 
 class Scene: RenderDelegate, UpdateDelegate {
     var pipelineStateMap: [String:MTLRenderPipelineState] = [:]
+    var depthStateMap: [String:MTLDepthStencilState] = [:]
     var rendererMap: [String:Renderer] = [:]
     var nodeMap: [String:[Node]] = [:]
     
