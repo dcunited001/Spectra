@@ -113,4 +113,8 @@ class SingleBuffer: BufferPool {
         return buffers.first!
     }
     
+    func getBuffer(bufferIndex: Int) -> EncodableBuffer {
+        return buffers.first!
+    }
+    
 }
