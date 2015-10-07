@@ -25,6 +25,7 @@
 		2AF0C869ADD7955CDDA81C8A0AEF7DCB /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421C948F566E2411584232610CA1041 /* Pods-Spectra_Tests-dummy.m */; };
 		360A7ED2E0F32D63696095B116D91213 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A450DFAF815C3F06EAD632203C377 /* Quad.swift */; };
 		3DA1249FDF11CC0BD57DE54A67AADE30 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = FB09BE101B788953A51E456EACA6B7CA /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		438D5ABC1BC570F700AAC638 /* RenderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D5ABA1BC570EE00AAC638 /* RenderStrategy.swift */; settings = {ASSET_TAGS = (); }; };
 		438D5ABF1BC5710500AAC638 /* RenderStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D5ABD1BC5710200AAC638 /* RenderStage.swift */; settings = {ASSET_TAGS = (); }; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43E90C101BC4562F009DBF99 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; };
@@ -161,6 +162,7 @@
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43327F8BC8FCC6F14187399F52E03B00 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
 		4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflightResourceManager.swift; sourceTree = "<group>"; };
+		438D5ABA1BC570EE00AAC638 /* RenderStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderStrategy.swift; sourceTree = "<group>"; };
 		438D5ABD1BC5710200AAC638 /* RenderStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderStage.swift; sourceTree = "<group>"; };
 		455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
 		482B60C34431C2DEA9BCE4B4CC40A24E /* PipelineGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
@@ -561,6 +563,7 @@
 				A3A18BB8E352105268BC5981DD755F5F /* Transform3D.swift */,
 				E52AD474ECA0AFB82032D4FF5C44E071 /* View.swift */,
 				4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */,
+				438D5ABA1BC570EE00AAC638 /* RenderStrategy.swift */,
 				438D5ABD1BC5710200AAC638 /* RenderStage.swift */,
 			);
 			path = Classes;
@@ -805,6 +808,7 @@
 			files = (
 				A1D0CA2474D0FDC65BA6F492E54CCAF8 /* BasicTriangle.swift in Sources */,
 				02ECFFAA687FB9EC15264B3AF4BAE6B4 /* BufferPool.swift in Sources */,
+				438D5ABC1BC570F700AAC638 /* RenderStrategy.swift in Sources */,
 				DE6D3C129A7AB16F2F56127A8FA276E1 /* BufferTexture.swift in Sources */,
 				438D5ABF1BC5710500AAC638 /* RenderStage.swift in Sources */,
 				C44A3CA649865B57F5D58F74AE81EF9B /* Cube.swift in Sources */,
