@@ -21,11 +21,11 @@ protocol RenderDelegate: class {
     var pipelineStateMap: [String:MTLRenderPipelineState] { get set }
     var rendererMap: [String:Renderer] { get set }
     
-    func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer)
+    func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer, inflightResourcesIndex: Int)
 }
 
 protocol UpdateDelegate: class {
-    func updateObjects(timeSinceLastUpdate: CFTimeInterval)
+    func updateObjects(timeSinceLastUpdate: CFTimeInterval, inflightResourcesIndex: Int)
 }
 
 //TODO: MUST IMPLEMENT NSCODER & deinit to dealloc
@@ -53,8 +53,8 @@ class BaseView: MTKView {
         setupMetal()
         afterSetupMetal()
         
-        //move to scene renderer?
-        //setupRenderPipeline()
+        // move to scene renderer?
+        // setupRenderPipeline()
     }
     
     required init(coder: NSCoder) {
@@ -102,7 +102,7 @@ class BaseView: MTKView {
         
         //N.B. the app does not necessarily need to use currentRenderPassDescriptor
         var renderPassDescriptor = setupRenderPassDescriptor(drawable, renderPassDescriptor: currentRenderPassDescriptor!)
-        self.renderDelegate?.renderObjects(drawable, renderPassDescriptor: renderPassDescriptor, commandBuffer: cmdBuffer)
+        self.renderDelegate?.renderObjects(drawable, renderPassDescriptor: renderPassDescriptor, commandBuffer: cmdBuffer, inflightResourcesIndex: inflightResources.index)
         
         cmdBuffer.presentDrawable(drawable)
         cmdBuffer.commit()
@@ -123,7 +123,7 @@ class BaseView: MTKView {
     override func drawRect(dirtyRect: CGRect) {
         lastFrameStart = thisFrameStart
         thisFrameStart = CFAbsoluteTimeGetCurrent()
-        self.updateDelegate?.updateObjects(CFTimeInterval(thisFrameStart - lastFrameStart))
+        self.updateDelegate?.updateObjects(CFTimeInterval(thisFrameStart - lastFrameStart), inflightResourcesIndex: inflightResources.index)
         
         autoreleasepool { () -> () in
             self.render()
