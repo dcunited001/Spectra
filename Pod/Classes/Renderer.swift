@@ -86,33 +86,6 @@ class BaseRenderer {
     // this value will cycle from 0 to kInFlightCommandBuffers whenever a display completes ensuring renderer clients
     // can synchronize between kInFlightCommandBuffers count buffers, and thus avoiding a constant buffer from being overwritten between draws
     
-    init() {
-        //        mConstantDataBufferIndex = 0
-        //        avaliableResourcesSemaphore = dispatch_semaphore_create(kInFlightCommandBuffers)
-    }
-    
-    deinit {
-        //        for i in 0...self.kInFlightCommandBuffers{
-        //            dispatch_semaphore_signal(avaliableResourcesSemaphore)
-        //        }
-    }
-    
-    func configure(view: MTKView) {
-        depthPixelFormat = .Depth32Float
-        view.colorPixelFormat = MTLPixelFormat.BGRA8Unorm // ?? correct
-        stencilPixelFormat = MTLPixelFormat.Invalid
-        view.sampleCount = 1
-        
-        guard let viewDevice = view.device else {
-            print("Failed retrieving device from view")
-            return
-        }
-        
-        device = viewDevice
-        commandQueue = device!.newCommandQueue()
-        shaderLibrary = device!.newDefaultLibrary()
-    }
-    
     func encode(renderEncoder: MTLRenderCommandEncoder) {
         renderEncoder.setCullMode(cullMode)
     }
@@ -161,7 +134,6 @@ class MVPRenderer: BaseRenderer, Projectable, Uniformable, Perspectable {
     }
     
     func configure(view: BaseView) {
-        super.configure(view)
         setPerspectiveDefaults()
         setProjectableDefaults()
         setUniformableDefaults()
