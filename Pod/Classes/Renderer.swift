@@ -10,7 +10,8 @@ import simd
 import MetalKit
 
 typealias RendererEncodeBlock = ((MTLRenderCommandEncoder) -> Void)
-typealias RenderEncoderTransition = ((MTLCommandBuffer, MTLRenderCommandEncoder, MTLRenderCommandEncoder?) -> MTLRenderCommandEncoder)
+typealias RenderEncoderTransition = ((MTLRenderCommandEncoder) -> MTLRenderCommandEncoder)
+typealias RenderEncoderCreateMonad = ((MTLCommandBuffer, MTLRenderPassDescriptor) -> MTLRenderCommandEncoder)
 
 protocol Renderer {
     var transitionMap: [String:RenderEncoderTransition] { get set }
