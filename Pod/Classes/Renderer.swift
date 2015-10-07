@@ -9,16 +9,25 @@
 import simd
 import MetalKit
 
+typealias RendererEncodeBlock = ((MTLRenderCommandEncoder) -> Void)
+typealias RenderEncoderTransition = ((MTLCommandBuffer, MTLRenderCommandEncoder, MTLRenderCommandEncoder?) -> MTLRenderCommandEncoder)
+
 protocol Renderer {
+    var transitionMap: [String:RenderEncoderTransition] { get set }
+    
     func encode(renderEncoder: MTLRenderCommandEncoder)
+    func encode(renderEncoder: MTLRenderCommandEncoder, encodeBlock: RendererEncodeBlock)
+    func transitionTo(renderer: Renderer?) -> Renderer
+    func defaultTransition(commandBuffer: MTLCommandBuffer) -> MTLRenderCommandEncoder
 }
 
-//protocol SpectraNodeEncodable {
-//    func encode(object)
-//}
+//typealias ComputeEncoderTransition = ((MTLCommandBuffer, MTLComputeCommandEncoder) -> MTLComputeCommandEncoder)
 
 class RendererBase {
     
+    func defaultTransition(commandBuffer: MTLCommandBuffer) -> Renderer {
+        
+    }
 }
 
 //struct MetalInterfaceOrientation {
@@ -80,7 +89,7 @@ class BaseRenderer {
     }
 }
 
-class MVPRenderer: BaseRenderer, ViewDelegate, Projectable, Uniformable, Perspectable {
+class MVPRenderer: BaseRenderer, Projectable, Uniformable, Perspectable {
     var pipelineState: MTLRenderPipelineState?
     var size = CGSize() // TODO: more descriptive name
     var startTime = CFAbsoluteTimeGetCurrent()
