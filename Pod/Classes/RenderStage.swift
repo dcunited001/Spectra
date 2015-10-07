@@ -12,7 +12,7 @@ typealias NodeGroup = [String:Node]
 typealias RenderStageNodeSelect = ((NodeGroup, [String]) -> [Node])
 typealias RenderStageNodeEncodeBlock = ((MTLRenderCommandEncoder, Node) -> Void)
 typealias RenderStageEncodeBlock = ((Renderer, [Node], RenderStageNodeEncodeBlock?) -> Void)
-typealias RenderStageTransitionBlock = ((Renderer, Renderer?) -> Renderer)
+typealias RenderStageTransitionBlock = ((Renderer, Renderer?) -> RenderEncoderTransition)
 
 protocol RenderStage: class {
     var nodes: [Node] { get set }
@@ -23,7 +23,7 @@ protocol RenderStage: class {
     
     func selectNodes(nodeGroup: NodeGroup, keys: [String])
     func encode(renderer: Renderer, nodes: [Node])
-    func transition(renderer: Renderer, nextRenderer: Renderer?) -> Renderer
+    func transition(renderer: Renderer, nextRenderer: Renderer?) -> RenderEncoderTransition?
 }
 
 extension RenderStage {
@@ -35,11 +35,11 @@ extension RenderStage {
         encodeBlock!(renderer, nodes, nodeEncodeBlock)
     }
     
-    func transition(renderer: Renderer, nextRenderer: Renderer?) -> Renderer {
+    func transition(renderer: Renderer, nextRenderer: Renderer?) -> RenderEncoderTransition? {
         if let transitionTo = transitionBlock {
             return transitionTo(renderer, nextRenderer)
         } else {
-            return renderer.transitionTo(nextRenderer)
+            return renderer.transitionRenderEncoderTo(nextRenderer)
         }
     }
 }
