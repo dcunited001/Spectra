@@ -25,7 +25,6 @@
 		2AF0C869ADD7955CDDA81C8A0AEF7DCB /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421C948F566E2411584232610CA1041 /* Pods-Spectra_Tests-dummy.m */; };
 		360A7ED2E0F32D63696095B116D91213 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A450DFAF815C3F06EAD632203C377 /* Quad.swift */; };
 		3DA1249FDF11CC0BD57DE54A67AADE30 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = FB09BE101B788953A51E456EACA6B7CA /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43E90C101BC4562F009DBF99 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351FC7D1BC43E9000F5C876 /* InflightResourceManager.swift */; };
 		444B698C8D7BA30488523D15A88D075A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D95671BB4ED89A269E8FD1C3D13844 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -180,7 +179,7 @@
 		7379BF0F3AA18A15E32176A5D6043F99 /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
 		73A5AB54443654208DB2B3C69B19FDC1 /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
 		76E125D86B39FA72E8725E8565017C7E /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
-		77C43F38566546F8B513026530943C4E /* BasicTriangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
+		77C43F38566546F8B513026530943C4E /* BasicTriangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasicTriangle.swift; path = ../Classes/BasicTriangle.swift; sourceTree = "<group>"; };
 		799B7E7CF448F9C6D48CD01AAC4863BE /* TPCircularBuffer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-prefix.pch"; sourceTree = "<group>"; };
 		82282F34C1931E15A1913A5186B027DF /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
 		825D4BA1967FD89726B698845C7FC564 /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
@@ -492,6 +491,7 @@
 		927B83E48FBF1334ED7B81E43BC501A9 /* NodeGenerators */ = {
 			isa = PBXGroup;
 			children = (
+				77C43F38566546F8B513026530943C4E /* BasicTriangle.swift */,
 				57101C678CA2851C52113046014DF1EB /* Cube.swift */,
 				82B64609D9751F38C1E53AD8F89C89D4 /* NodeGenerator.swift */,
 				E8C347A27777D7F6DB77BA32D24CB6B8 /* PlatonicSolids.swift */,
@@ -549,7 +549,6 @@
 		F8FE1FE86430A08918CEA5BE7D64E8C7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				77C43F38566546F8B513026530943C4E /* BasicTriangle.swift */,
 				5474FDE8D7B5CD7E8B5395E3F0699592 /* BufferPool.swift */,
 				998DD020F8810D74D44C124108070470 /* BufferTexture.swift */,
 				AEB727EA2D3AB3F34097F9BFBC4BA7A0 /* EncodableData.swift */,
@@ -854,7 +853,6 @@
 				50A36A6265CE4770D0A71BEC49CA61D9 /* EZMicrophone.m in Sources */,
 				DFA145693AA34149FA08CA5D71724234 /* EZOutput.m in Sources */,
 				6CCB716E9803E5CFB8312B64FFD86C38 /* EZPlot.m in Sources */,
-				4351FC7E1BC43E9000F5C876 /* InflightResourceManager.swift in Sources */,
 				D6600AD076DF939AB404338B94C6094A /* EZRecorder.m in Sources */,
 				A5CA6CED011609A0601B05AE06F11877 /* TPCircularBuffer.c in Sources */,
 			);

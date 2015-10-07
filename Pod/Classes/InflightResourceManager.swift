@@ -17,7 +17,7 @@ class InflightResourceManager {
         self.inflightResourceSemaphore = dispatch_semaphore_create(self.inflightResourceCount)
     }
     
-    func increment() {
+    func next() {
         dispatch_semaphore_signal(inflightResourceSemaphore)
         index = (index + 1) % inflightResourceCount
     }
