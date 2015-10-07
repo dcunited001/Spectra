@@ -39,7 +39,8 @@ class BaseView: MTKView {
     var lastFrameStart: CFAbsoluteTime!
     var thisFrameStart: CFAbsoluteTime!
     
-    weak var metalViewDelegate: ViewDelegate?
+    weak var renderDelegate: RenderDelegate?
+    weak var updateDelegate: UpdateDelegate?
     
     override init(frame frameRect:CGRect, device:MTLDevice?) {
         inflightResources = InflightResourceManager()
@@ -86,12 +87,11 @@ class BaseView: MTKView {
     }
     
     func render() {
-        //N.B. the app does not need to use currentRenderPassDescriptor
-        let renderPassDescriptor = currentRenderPassDescriptor
+        inflightResources.wait()
         let cmdBuffer = commandQueue.commandBuffer()
         
         cmdBuffer.addCompletedHandler { (cmdBuffer) in
-            // cycle commandBufferPool
+            inflightResources.next()
         }
         
         guard let drawable = currentDrawable else
@@ -100,8 +100,9 @@ class BaseView: MTKView {
             return
         }
         
-        setupRenderPassDescriptor(drawable)
-        self.metalViewDelegate?.renderObjects(drawable, renderPassDescriptor: renderPassDescriptor!, commandBuffer: cmdBuffer)
+        //N.B. the app does not necessarily need to use currentRenderPassDescriptor
+        var renderPassDescriptor = setupRenderPassDescriptor(drawable, renderPassDescriptor: currentRenderPassDescriptor!)
+        self.renderDelegate?.renderObjects(drawable, renderPassDescriptor: renderPassDescriptor, commandBuffer: cmdBuffer)
         
         cmdBuffer.presentDrawable(drawable)
         cmdBuffer.commit()
@@ -111,8 +112,8 @@ class BaseView: MTKView {
         //move to scene renderer?
     }
     
-    func setupRenderPassDescriptor(drawable: CAMetalDrawable) {
-        //move to scene renderer?
+    func setupRenderPassDescriptor(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor) -> MTLRenderPassDescriptor {
+        return renderPassDescriptor
     }
     
     func reshape(view:MTKView, drawableSizeWillChange size: CGSize) {
@@ -122,7 +123,7 @@ class BaseView: MTKView {
     override func drawRect(dirtyRect: CGRect) {
         lastFrameStart = thisFrameStart
         thisFrameStart = CFAbsoluteTimeGetCurrent()
-        self.metalViewDelegate?.updateLogic(CFTimeInterval(thisFrameStart - lastFrameStart))
+        self.updateDelegate?.updateObjects(CFTimeInterval(thisFrameStart - lastFrameStart))
         
         autoreleasepool { () -> () in
             self.render()
