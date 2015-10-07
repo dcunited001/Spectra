@@ -23,11 +23,17 @@ protocol Renderer {
 
 //typealias ComputeEncoderTransition = ((MTLCommandBuffer, MTLComputeCommandEncoder) -> MTLComputeCommandEncoder)
 
-class RendererBase {
+class RendererBase: Renderer {
+    var rendererType: Int = 0 // use enum for renderer types
+    var transitionMap: [Int:RenderEncoderTransition] = [:]
+    var createRenderEncoderBlock: RenderEncoderCreateMonad? = RendererBase.createRenderEncoderDefault()
     
-    func defaultTransition(commandBuffer: MTLCommandBuffer) -> Renderer {
-        
+    class func createRenderEncoderDefault() -> RenderEncoderCreateMonad {
+        return { (cmdBuffer, renderPassDescriptor) in
+            return cmdBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)
+        }
     }
+    
 }
 
 //struct MetalInterfaceOrientation {
