@@ -10,16 +10,20 @@ import simd
 import MetalKit
 
 typealias RendererEncodeBlock = ((MTLRenderCommandEncoder) -> Void)
+typealias RenderEncoderConfigureBlock = ((MTLRenderCommandEncoder) -> Void)
 typealias RenderEncoderTransition = ((MTLRenderCommandEncoder) -> MTLRenderCommandEncoder)
 typealias RenderEncoderCreateMonad = ((MTLCommandBuffer, MTLRenderPassDescriptor) -> MTLRenderCommandEncoder)
 
 protocol Renderer {
     // Use enums for rendererType. use rendererTypes for transitionMap keys
+    var name: String? { get set }
     var rendererType: Int { get set }
     var transitionMap: [Int:RenderEncoderTransition] { get set }
     var createRenderEncoderBlock: RenderEncoderCreateMonad? { get set }
+    var configureRenderEncoderBlock: RenderEncoderConfigureBlock? { get set }
 
     func encode(renderEncoder: MTLRenderCommandEncoder, encodeBlock: RendererEncodeBlock)
+    func configure(renderEncoder: MTLRenderCommandEncoder)
     func transitionRenderEncoderTo(renderer: Renderer?) -> RenderEncoderTransition?
     func defaultRenderEncoderTransition() -> RenderEncoderCreateMonad
 }
@@ -30,6 +34,10 @@ extension Renderer {
         
     }
     
+    func configure(renderEncoder: MTLRenderCommandEncoder) {
+        configureRenderEncoderBlock?(renderEncoder)
+    }
+
     func defaultRenderEncoderTransition() -> RenderEncoderCreateMonad {
         return createRenderEncoderBlock!
     }
@@ -47,9 +55,11 @@ extension Renderer {
 //typealias ComputeEncoderTransition = ((MTLCommandBuffer, MTLComputeCommandEncoder) -> MTLComputeCommandEncoder)
 
 class RendererBase: Renderer {
+    var name: String?
     var rendererType: Int = 0 // use enum for renderer types
     var transitionMap: [Int:RenderEncoderTransition] = [:]
     var createRenderEncoderBlock: RenderEncoderCreateMonad? = RendererBase.createRenderEncoderDefault()
+    var configureRenderEncoderBlock: RenderEncoderConfigureBlock?
     
     class func createRenderEncoderDefault() -> RenderEncoderCreateMonad {
         return { (cmdBuffer, renderPassDescriptor) in
