@@ -27,8 +27,7 @@ public class RenderPipelineGenerator {
         self.fragmentFunction = fragmentFunction
     }
     
-    //remove optional return and instead throw errors on program/pipeline load failures
-    func generate(device: MTLDevice, setupDescriptor: ((inout MTLRenderPipelineDescriptor) -> Void)? = nil) -> MTLRenderPipelineState? {
+    func generateDescriptor(device: MTLDevice, vertexFunction: String, fragmentFunction: String) -> MTLRenderPipelineDescriptor? {
         guard let vertexProgram = library.newFunctionWithName(vertexFunction) else {
             print("Couldn't load \(vertexFunction)")
             return nil
@@ -43,7 +42,22 @@ public class RenderPipelineGenerator {
         pipelineStateDescriptor.vertexFunction = vertexProgram
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
         
-        setupDescriptor?(&pipelineStateDescriptor)
+        return pipelineStateDescriptor
+    }
+    
+    //remove optional return and instead throw errors on program/pipeline load failures
+    func generate(device: MTLDevice, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineState? {
+        return generate(device, vertexFunction: self.vertexFunction, fragmentFunction: self.fragmentFunction, setupDescriptor: setupDescriptor)
+    }
+    
+    func generate(device: MTLDevice, vertexFunction: String, fragmentFunction: String, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineState? {
+        var pipelineStateDescriptor = generateDescriptor(device, vertexFunction: vertexFunction, fragmentFunction: fragmentFunction)
+        
+        setupDescriptor?(&pipelineStateDescriptor!)
+        return generateFromDescriptor(device, pipelineStateDescriptor: pipelineStateDescriptor!)
+    }
+    
+    func generateFromDescriptor(device: MTLDevice, pipelineStateDescriptor: MTLRenderPipelineDescriptor) -> MTLRenderPipelineState? {
         var pipelineState: MTLRenderPipelineState?
         
         do {
