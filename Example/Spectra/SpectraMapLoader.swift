@@ -15,5 +15,6 @@ class SpectraPipelineMapLoader {
     
     func loadDefaultLibraryDescriptors(device: MTLDevice, functionTuples: [(String, String)]) -> Spectra.RenderPipelineDescriptorMap {
         
+        return [:]
     }
 }
