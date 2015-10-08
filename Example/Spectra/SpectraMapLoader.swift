@@ -6,4 +6,14 @@
 //  Copyright © 2015 CocoaPods. All rights reserved.
 //
 
-import Foundation
+import Metal
+import simd
+import Spectra
+
+class SpectraPipelineMapLoader {
+    
+    
+    func loadDefaultLibraryDescriptors(device: MTLDevice, functionTuples: [(String, String)]) -> Spectra.RenderPipelineDescriptorMap {
+        
+    }
+}
