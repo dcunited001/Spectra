@@ -46,6 +46,18 @@ public class BaseView: MTKView {
     override public init(frame frameRect:CGRect, device:MTLDevice?) {
         inflightResources = InflightResourceManager()
         super.init(frame: frameRect, device: device)
+        
+        configureGraphics()
+    }
+    
+    required public init(coder: NSCoder) {
+        inflightResources = InflightResourceManager()
+        super.init(coder: coder)
+        
+        configureGraphics()
+    }
+    
+    public func configureGraphics() {
         //TODO: framebufferOnly might be why particleLab failed on OSX!
         framebufferOnly = false
         preferredFramesPerSecond = 60
@@ -56,12 +68,6 @@ public class BaseView: MTKView {
         
         // move to scene renderer?
         // setupRenderPipeline()
-    }
-    
-    required public init(coder: NSCoder) {
-        inflightResources = InflightResourceManager()
-        super.init(coder: coder)
-        //        fatalError("init(coder:) has not been implemented")
     }
     
     public func beforeSetupMetal() {

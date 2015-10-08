@@ -13,5 +13,10 @@ import Spectra
 
 class MetalViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("view loaded")
+    }
+    
 }
-

@@ -120,7 +120,7 @@
                         <viewControllerLayoutGuide type="top" id="Igx-gj-Yf6"/>
                         <viewControllerLayoutGuide type="bottom" id="5ql-5O-Yqy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pdz-Hg-7fo" customClass="MTKView">
+                    <view key="view" contentMode="scaleToFill" id="Pdz-Hg-7fo" customClass="BaseView" customModule="Spectra">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
