@@ -18,13 +18,9 @@ public typealias RenderPipelineDescriptorSetupBlock = ((inout MTLRenderPipelineD
 
 public class RenderPipelineGenerator {
     public var library: MTLLibrary
-    public var vertexFunction: String
-    public var fragmentFunction: String
     
-    init(library: MTLLibrary, vertexFunction: String, fragmentFunction: String) {
+    public init(library: MTLLibrary) {
         self.library = library
-        self.vertexFunction = vertexFunction
-        self.fragmentFunction = fragmentFunction
     }
     
     public func generateDescriptor(device: MTLDevice, vertexFunction: String, fragmentFunction: String) -> MTLRenderPipelineDescriptor? {
@@ -43,11 +39,6 @@ public class RenderPipelineGenerator {
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
         
         return pipelineStateDescriptor
-    }
-    
-    //remove optional return and instead throw errors on program/pipeline load failures
-    public func generate(device: MTLDevice, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineState? {
-        return generate(device, vertexFunction: self.vertexFunction, fragmentFunction: self.fragmentFunction, setupDescriptor: setupDescriptor)
     }
     
     public func generate(device: MTLDevice, vertexFunction: String, fragmentFunction: String, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineState? {
