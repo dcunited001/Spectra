@@ -26,9 +26,9 @@ public typealias DepthStencilDescriptorMap = [String:MTLDepthStencilDescriptor]
 public typealias ComputePipelineStateMap = [String:MTLComputePipelineState]
 
 public class Scene: RenderDelegate, UpdateDelegate {
-    var pipelineStateMap: RenderPipelineStateMap = [:]
-    var depthStencilStateMap: DepthStencilStateMap = [:]
-    var rendererMap: RendererMap = [:]
+    public var pipelineStateMap: RenderPipelineStateMap = [:]
+    public var depthStencilStateMap: DepthStencilStateMap = [:]
+    public var rendererMap: RendererMap = [:]
     var nodeMap: [String:Node] = [:]
     var nodeGroup:[String:[Node]] = [:]
     
@@ -43,13 +43,13 @@ public class Scene: RenderDelegate, UpdateDelegate {
     // - acquire or create a renderEncoder
     // - pass in objects & renderEncoder to an encode block for the renderer
     
-    func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer, inflightResourcesIndex: Int) {
+    public func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer, inflightResourcesIndex: Int) {
 
         // pass commandBuffer & renderPassDescriptor to renderStrategy
         // - to create renderEncoder
     }
     
-    func updateObjects(timeSinceLastUpdate: CFTimeInterval, inflightResourcesIndex: Int) {
+    public func updateObjects(timeSinceLastUpdate: CFTimeInterval, inflightResourcesIndex: Int) {
         
     }
 }

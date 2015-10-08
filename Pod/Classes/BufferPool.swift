@@ -41,32 +41,32 @@ public protocol BufferPool: class {
 //TODO: must dispatch_semaphore_signal from view render() !!!
 
 extension BufferPool {
-    func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
+    public func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
         for _ in 0...buffersCount-1 {
             let buffer = createBuffer(device, bytecount: self.bytecount, options: options)
             buffers.append(buffer)
         }
     }
     
-    func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache, createWith: (Self) -> EncodableBuffer) {
+    public func prepareBufferPool(device: MTLDevice, bytecount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache, createWith: (Self) -> EncodableBuffer) {
         for _ in 0...buffersCount-1 {
             let buffer = createBuffer(device, bytecount: self.bytecount, options: options, createWith: createWith)
             buffers.append(buffer)
         }
     }
     
-    func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> EncodableBuffer {
+    public func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions) -> EncodableBuffer {
         let thisBuffer = BaseEncodableBuffer()
         thisBuffer.bytecount = self.bytecount
         thisBuffer.prepareBuffer(device, options: options)
         return thisBuffer
     }
     
-    func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer) -> EncodableBuffer {
+    public func createBuffer(device: MTLDevice, bytecount: Int, options: MTLResourceOptions, createWith: (Self) -> EncodableBuffer) -> EncodableBuffer {
         return createWith(self)
     }
     
-    func getBuffer() -> EncodableBuffer {
+    public func getBuffer() -> EncodableBuffer {
         var buffer = buffers[buffersIndex]
         buffersIndex = (buffersIndex + 1) % buffersCount
         
@@ -74,7 +74,7 @@ extension BufferPool {
         return buffer
     }
     
-    func getBuffer(bufferIndex: Int) -> EncodableBuffer {
+    public func getBuffer(bufferIndex: Int) -> EncodableBuffer {
         return buffers[bufferIndex]
     }
 }
@@ -82,7 +82,7 @@ extension BufferPool {
 public class BaseBufferPool: BufferPool {
     // init with max bytecount needed
     // - E.G. in case # of vertices needed changes
-    var bytecount:Int
+    public var bytecount:Int
     var buffersCount:Int
     var buffersIndex:Int = 0
     internal var buffers: [EncodableBuffer] = []
