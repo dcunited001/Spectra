@@ -9,14 +9,14 @@
 import Metal
 import simd
 
-struct InputParams {
+public struct InputParams {
     var index:Int
     var offset:Int = 0
 }
 
 //static let baseBufferDefaultOptions = ["default": BufferOptions(index: 0, offset: 0) as! AnyObject]
 
-protocol EncodableData {
+public protocol EncodableData {
     
     // the advantage of this interface is that buffers, inputs & groups are all accessable under the same interface
     // - all input params can be passed in as hash under inputParams
@@ -36,19 +36,19 @@ protocol EncodableData {
     func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData])
 }
 
-protocol EncodableBuffer: EncodableData {
+public protocol EncodableBuffer: EncodableData {
     var buffer: MTLBuffer? { get set }
     var bytecount: Int? { get set }
     var resourceOptions: MTLResourceOptions? { get set }
     func prepareBuffer(device: MTLDevice, options: MTLResourceOptions)
 }
 
-protocol EncodableInput: EncodableData {
+public protocol EncodableInput: EncodableData {
     typealias InputType
     var data: InputType? { get set }
 }
 
-class BaseEncodableInput<T>: EncodableInput {
+public class BaseEncodableInput<T>: EncodableInput {
     typealias InputType = T
     var data: InputType?
     
@@ -65,7 +65,7 @@ class BaseEncodableInput<T>: EncodableInput {
     }
 }
 
-class BaseEncodableBuffer: EncodableBuffer {
+public class BaseEncodableBuffer: EncodableBuffer {
     // hmm or no EncodableBuffer protocol and just pass in buffers from inputData?
     var buffer: MTLBuffer?
     var bytecount: Int?
@@ -93,7 +93,7 @@ class BaseEncodableBuffer: EncodableBuffer {
 
 // iterates through the input data/params keys & runs write() on all of them,
 // and defaults to passing all data down through the tree
-class BaseEncodableGroup: EncodableData {
+public class BaseEncodableGroup: EncodableData {
     func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
         for (k,v) in inputData {
             v.writeCompute(encoder, inputParams: inputParams, inputData: inputData)

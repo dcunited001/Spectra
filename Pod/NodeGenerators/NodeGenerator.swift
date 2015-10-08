@@ -9,7 +9,7 @@
 import Metal
 import simd
 
-protocol NodeGenerator {
+public protocol NodeGenerator {
 //    func flattenMap(vertexMap: OrderedDictionary<Int, [Int]>) -> [Int]
 }
 

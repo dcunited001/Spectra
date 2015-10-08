@@ -9,7 +9,7 @@
 import Metal
 import simd
 
-class BufferTexture {
+public class BufferTexture {
     typealias ColorType = float4
     var size: CGSize
     var pixelSize = sizeof(ColorType)

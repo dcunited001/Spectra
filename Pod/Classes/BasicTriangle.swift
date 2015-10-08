@@ -8,7 +8,7 @@
 
 import simd
 
-class BasicTriangleGenerator: NodeGenerator {
+public class BasicTriangleGenerator: NodeGenerator {
     func getVertices() -> [float4] {
         return [
             // isosoles triangle

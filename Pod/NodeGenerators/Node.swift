@@ -29,19 +29,19 @@ import simd
 
 //TODO: evaluate new vertexable/colorable/textureable protocols
 // - do i really need to differentiate these protocols?
-protocol NodeVertexable {
+public protocol NodeVertexable {
     var vertexBuffer: EncodableBuffer? { get set }
 }
 
-protocol NodeColorable {
+public protocol NodeColorable {
     var colorBuffer: EncodableBuffer? { get set }
 }
 
-protocol NodeTextureable {
+public protocol NodeTextureable {
     var textureBuffer: EncodableBuffer { get set }
 }
 
-class Node: Modelable {
+public class Node: Modelable {
     var vertexBuffer: EncodableBuffer?
     var buffers: [EncodableBuffer] = []
     
@@ -56,7 +56,7 @@ class Node: Modelable {
     }
 }
 
-protocol Modelable: class {
+public protocol Modelable: class {
     var modelScale:float4 { get set }
     var modelPosition:float4 { get set }
     var modelRotation:float4 { get set }
@@ -95,7 +95,7 @@ extension Modelable {
     }
 }
 
-protocol Uniformable: class {
+public protocol Uniformable: class {
     //TODO: memoize uniformable matrix?
     var uniformScale:float4 { get set }
     var uniformPosition:float4 { get set }
@@ -150,7 +150,7 @@ extension Uniformable {
 }
 
 //TODO: rename (this is the view matrix, perspectable is the projectable matrix)
-protocol Projectable: class {
+public protocol Projectable: class {
     //TODO: memoize projectable matrix?
     var projectionEye:float3 { get set }
     var projectionCenter:float3 { get set }
@@ -161,7 +161,7 @@ protocol Projectable: class {
 }
 
 // TODO: must deinit resources?
-extension Projectable {
+public extension Projectable {
     func setProjectableDefaults() {
         projectionEye = [0.0, 0.0, 0.0]
         projectionCenter = [0.0, 0.0, 1.0]
@@ -173,7 +173,7 @@ extension Projectable {
     }
 }
 
-protocol Perspectable: class {
+public protocol Perspectable: class {
     var perspectiveFov:Float { get set }
     var perspectiveAngle:Float { get set } // view orientation to user in degrees =) 3d
     var perspectiveAspect:Float { get set } // update when view bounds change

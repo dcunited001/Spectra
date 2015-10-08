@@ -11,7 +11,7 @@ import simd
 //N.B. textures are 1-to-1 with vertex-face map
 // - for simple 3d objects
 
-class TetrahedronGenerator: NodeGenerator {
+public class TetrahedronGenerator: NodeGenerator {
     func getVertices() -> [float4] {
         return [
             float4( 1.0,  1.0,  1.0, 1.0),
@@ -57,7 +57,7 @@ class TetrahedronGenerator: NodeGenerator {
     }
 }
 
-class OctahedronGenerator: NodeGenerator {
+public class OctahedronGenerator: NodeGenerator {
     let A = Float(1 / (2 * sqrt(2.0)))
     let B = Float(1 / 2.0)
     
@@ -117,14 +117,14 @@ class OctahedronGenerator: NodeGenerator {
 }
 
 //http://paulbourke.net/geometry/platonic/
-//class Icosahedron: NodeGenerator { }
-//class Dodecahderon: NodeGenerator { }
-//class Dodecahderon2: NodeGenerator { } 
+//public class IcosahedronGenerator: NodeGenerator { }
+//public class DodecahderonGenerator: NodeGenerator { }
+//public class Dodecahderon2Generator: NodeGenerator { }
 // - where vertex in center of pentagons
 //class Dodecahderon3: NodeGenerator { }
 // - with overlapping triangles
 
-//class Tetrahedron: NodeGenerator {
+//public class TetrahedronGenerator: NodeGenerator {
 //    func getVertices() -> [float4] {
 //        return [
 //            

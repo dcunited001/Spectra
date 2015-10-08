@@ -7,7 +7,7 @@
 
 let kInflightResourceCountDefault = 3 // three is magic number
 
-class InflightResourceManager {
+public class InflightResourceManager {
     var inflightResourceCount:Int
     var index:Int = 0
     var inflightResourceSemaphore:dispatch_semaphore_t

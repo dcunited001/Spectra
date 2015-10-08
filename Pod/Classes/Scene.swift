@@ -17,13 +17,16 @@ import Metal
 //TODO: explore using a state machine for RenderStrategy, where states are dynamically defined for each renderer type, a default state transition is defined which calls endEncoding() and creates a new renderEncoder and custom state transitions can be defined to transition renderEncoders without creating new ones
 //TODO: exploring using a similar map for Update Objects, so top level controller can easily specify dynamic object behaviors without needing to subclass
 
-//use enums for id's!
-typealias RendererMap = [Int:Renderer]
-typealias PipelineStateMap = [Int:MTLRenderPipelineState]
-typealias DepthStencilStateMap = [Int:MTLDepthStencilState]
+//use enums descending from String for id's!
+public typealias RendererMap = [String:Renderer]
+public typealias RenderPipelineStateMap = [String:MTLRenderPipelineState]
+public typealias RenderPipelineDescriptorMap = [String:MTLRenderPipelineDescriptor]
+public typealias DepthStencilStateMap = [String:MTLDepthStencilState]
+public typealias DepthStencilDescriptorMap = [String:MTLDepthStencilDescriptor]
+public typealias ComputePipelineStateMap = [String:MTLComputePipelineState]
 
-class Scene: RenderDelegate, UpdateDelegate {
-    var pipelineStateMap: PipelineStateMap = [:]
+public class Scene: RenderDelegate, UpdateDelegate {
+    var pipelineStateMap: RenderPipelineStateMap = [:]
     var depthStencilStateMap: DepthStencilStateMap = [:]
     var rendererMap: RendererMap = [:]
     var nodeMap: [String:Node] = [:]

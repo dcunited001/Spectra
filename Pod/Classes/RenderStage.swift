@@ -8,13 +8,13 @@
 
 import Foundation
 
-typealias NodeGroup = [String:Node]
-typealias RenderStageNodeSelect = ((NodeGroup, [String]) -> [Node])
-typealias RenderStageNodeEncodeBlock = ((MTLRenderCommandEncoder, Node) -> Void)
-typealias RenderStageEncodeBlock = ((Renderer, [Node], RenderStageNodeEncodeBlock?) -> Void)
-typealias RenderStageTransitionBlock = ((Renderer, Renderer?) -> RenderEncoderTransition)
+public typealias NodeGroup = [String:Node]
+public typealias RenderStageNodeSelect = ((NodeGroup, [String]) -> [Node])
+public typealias RenderStageNodeEncodeBlock = ((MTLRenderCommandEncoder, Node) -> Void)
+public typealias RenderStageEncodeBlock = ((Renderer, [Node], RenderStageNodeEncodeBlock?) -> Void)
+public typealias RenderStageTransitionBlock = ((Renderer, Renderer?) -> RenderEncoderTransition)
 
-protocol RenderStage: class {
+public protocol RenderStage: class {
     var name: String? { get set }
     var nodes: [Node] { get set }
     var nodeSelectBlock: RenderStageNodeSelect? { get set }
@@ -45,7 +45,7 @@ extension RenderStage {
     }
 }
 
-class BaseRenderStage: RenderStage {
+public class BaseRenderStage: RenderStage {
     var name: String?
     var nodes: [Node] = []
     var nodeSelectBlock: RenderStageNodeSelect?

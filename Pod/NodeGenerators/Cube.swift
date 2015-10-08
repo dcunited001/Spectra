@@ -8,7 +8,7 @@
 
 import simd
 
-class CubeGenerator: NodeGenerator {
+public class CubeGenerator: NodeGenerator {
     
     // return a node
     // - with a list of vertices

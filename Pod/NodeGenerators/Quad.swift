@@ -8,7 +8,7 @@
 
 import simd
 
-class QuadGenerator: NodeGenerator {
+public class QuadGenerator: NodeGenerator {
     func getVertices() -> [float4] {
         return [
             float4(-1.0, -1.0, 0.0, 1.0),

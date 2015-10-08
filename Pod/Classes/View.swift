@@ -17,20 +17,20 @@ import MetalKit
 // - need to override setFrameSize() on OSX
 // - or let the user of the lib override this?
 
-protocol RenderDelegate: class {
-    var pipelineStateMap: PipelineStateMap { get set }
+public protocol RenderDelegate: class {
+    var pipelineStateMap: RenderPipelineStateMap { get set }
     var depthStencilStateMap: DepthStencilStateMap { get set }
     var rendererMap: RendererMap { get set }
     
     func renderObjects(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor, commandBuffer: MTLCommandBuffer, inflightResourcesIndex: Int)
 }
 
-protocol UpdateDelegate: class {
+public protocol UpdateDelegate: class {
     func updateObjects(timeSinceLastUpdate: CFTimeInterval, inflightResourcesIndex: Int)
 }
 
 //TODO: MUST IMPLEMENT NSCODER & deinit to dealloc
-class BaseView: MTKView {
+public class BaseView: MTKView {
     var defaultLibrary: MTLLibrary!
     var commandQueue: MTLCommandQueue!
     var renderPassDescriptor: MTLRenderPassDescriptor?

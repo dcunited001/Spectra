@@ -14,7 +14,9 @@ import Metal
 
 //TODO: generators for DepthStencilState & SamplerState
 
-class RenderPipelineGenerator {
+public typealias RenderPipelineDescriptorSetupBlock = ((inout MTLRenderPipelineDescriptor) -> Void)
+
+public class RenderPipelineGenerator {
     var library: MTLLibrary
     var vertexFunction: String
     var fragmentFunction: String
@@ -55,7 +57,7 @@ class RenderPipelineGenerator {
     }
 }
 
-class ComputePipelineGenerator {
+public class ComputePipelineGenerator {
     var library: MTLLibrary
     var computeFunction: String
     

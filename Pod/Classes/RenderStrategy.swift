@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RenderStrategy: class {
+public protocol RenderStrategy: class {
     var currentRenderStage: Int { get set }
     var renderStages: [RenderStage] { get set }
 }
@@ -25,7 +25,7 @@ extension RenderStrategy {
     }
 }
 
-class BaseRenderStrategy: RenderStrategy {
+public class BaseRenderStrategy: RenderStrategy {
     var currentRenderStage: Int = 0
     var renderStages: [RenderStage] = []
 }

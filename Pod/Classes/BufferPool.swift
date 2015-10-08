@@ -20,7 +20,7 @@ import Metal
 // N.B. planning on always accessing Buffer via BufferProvider (and MTLBuffer via Buffer)
 // - so that interface is consistent and so that stuff can easily be built on top of one thing
 
-protocol BufferPool: class {
+public protocol BufferPool: class {
     var bytecount:Int { get set }
     var buffersCount:Int { get set }
     var buffersIndex:Int { get set }
@@ -79,7 +79,7 @@ extension BufferPool {
     }
 }
 
-class BaseBufferPool: BufferPool {
+public class BaseBufferPool: BufferPool {
     // init with max bytecount needed
     // - E.G. in case # of vertices needed changes
     var bytecount:Int
@@ -97,7 +97,7 @@ class BaseBufferPool: BufferPool {
     //}
 }
 
-class SingleBuffer: BufferPool {
+public class SingleBuffer: BufferPool {
     var bytecount:Int
     var buffersCount:Int
     var buffersIndex:Int = 0
