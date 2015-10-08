@@ -31,19 +31,19 @@ public protocol UpdateDelegate: class {
 
 //TODO: MUST IMPLEMENT NSCODER & deinit to dealloc
 public class BaseView: MTKView {
-    var defaultLibrary: MTLLibrary!
-    var commandQueue: MTLCommandQueue!
-    var renderPassDescriptor: MTLRenderPassDescriptor?
-    var inflightResources: InflightResourceManager
+    public var defaultLibrary: MTLLibrary!
+    public var commandQueue: MTLCommandQueue!
+    public var renderPassDescriptor: MTLRenderPassDescriptor?
+    public var inflightResources: InflightResourceManager
     
-    var startTime: CFAbsoluteTime!
-    var lastFrameStart: CFAbsoluteTime!
-    var thisFrameStart: CFAbsoluteTime!
+    public var startTime: CFAbsoluteTime!
+    public var lastFrameStart: CFAbsoluteTime!
+    public var thisFrameStart: CFAbsoluteTime!
     
-    weak var renderDelegate: RenderDelegate?
-    weak var updateDelegate: UpdateDelegate?
+    public weak var renderDelegate: RenderDelegate?
+    public weak var updateDelegate: UpdateDelegate?
     
-    override init(frame frameRect:CGRect, device:MTLDevice?) {
+    override public init(frame frameRect:CGRect, device:MTLDevice?) {
         inflightResources = InflightResourceManager()
         super.init(frame: frameRect, device: device)
         //TODO: framebufferOnly might be why particleLab failed on OSX!
@@ -58,30 +58,30 @@ public class BaseView: MTKView {
         // setupRenderPipeline()
     }
     
-    required init(coder: NSCoder) {
+    required public init(coder: NSCoder) {
         inflightResources = InflightResourceManager()
         super.init(coder: coder)
         //        fatalError("init(coder:) has not been implemented")
     }
     
-    func beforeSetupMetal() {
+    public func beforeSetupMetal() {
         //override in subclass
     }
     
-    func afterSetupMetal() {
+    public func afterSetupMetal() {
         //override in subclass
     }
     
-    func mtkViewDefaults() {
+    public func mtkViewDefaults() {
         colorPixelFormat = MTLPixelFormat.BGRA8Unorm
         sampleCount = 1
     }
     
-    func metalUnavailable() {
+    public func metalUnavailable() {
         //override in subclass
     }
     
-    func setupMetal() {
+    public func setupMetal() {
         guard let device = MTLCreateSystemDefaultDevice() else {
             self.metalUnavailable()
             return
@@ -92,7 +92,7 @@ public class BaseView: MTKView {
         commandQueue = device.newCommandQueue()
     }
     
-    func render() {
+    public func render() {
         inflightResources.wait()
         let cmdBuffer = commandQueue.commandBuffer()
         
@@ -114,19 +114,19 @@ public class BaseView: MTKView {
         cmdBuffer.commit()
     }
     
-    func setupRenderPipeline() {
+    public func setupRenderPipeline() {
         //move to scene renderer?
     }
     
-    func setupRenderPassDescriptor(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor) -> MTLRenderPassDescriptor {
+    public func setupRenderPassDescriptor(drawable: CAMetalDrawable, renderPassDescriptor: MTLRenderPassDescriptor) -> MTLRenderPassDescriptor {
         return renderPassDescriptor
     }
     
-    func reshape(view:MTKView, drawableSizeWillChange size: CGSize) {
+    public func reshape(view:MTKView, drawableSizeWillChange size: CGSize) {
         
     }
     
-    override func drawRect(dirtyRect: CGRect) {
+    override public func drawRect(dirtyRect: CGRect) {
         lastFrameStart = thisFrameStart
         thisFrameStart = CFAbsoluteTimeGetCurrent()
         self.updateDelegate?.updateObjects(CFTimeInterval(thisFrameStart - lastFrameStart), inflightResourcesIndex: inflightResources.index)
