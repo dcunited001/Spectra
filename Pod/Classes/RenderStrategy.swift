@@ -26,6 +26,6 @@ extension RenderStrategy {
 }
 
 public class BaseRenderStrategy: RenderStrategy {
-    var currentRenderStage: Int = 0
-    var renderStages: [RenderStage] = []
+    public var currentRenderStage: Int = 0
+    public var renderStages: [RenderStage] = []
 }

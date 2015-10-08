@@ -28,15 +28,15 @@ public protocol RenderStage: class {
 }
 
 extension RenderStage {
-    func selectNodes(nodeGroup: NodeGroup, keys: [String]) {
+    public func selectNodes(nodeGroup: NodeGroup, keys: [String]) {
         nodes = nodeSelectBlock!(nodeGroup, keys)
     }
     
-    func encode(renderer: Renderer, nodes: [Node]) {
+    public func encode(renderer: Renderer, nodes: [Node]) {
         encodeBlock!(renderer, nodes, nodeEncodeBlock)
     }
     
-    func transition(renderer: Renderer, nextRenderer: Renderer?) -> RenderEncoderTransition? {
+    public func transition(renderer: Renderer, nextRenderer: Renderer?) -> RenderEncoderTransition? {
         if let transitionTo = transitionBlock {
             return transitionTo(renderer, nextRenderer)
         } else {
@@ -46,11 +46,11 @@ extension RenderStage {
 }
 
 public class BaseRenderStage: RenderStage {
-    var name: String?
-    var nodes: [Node] = []
-    var nodeSelectBlock: RenderStageNodeSelect?
-    var encodeBlock: RenderStageEncodeBlock?
-    var nodeEncodeBlock: RenderStageNodeEncodeBlock?
-    var transitionBlock: RenderStageTransitionBlock?
+    public var name: String?
+    public var nodes: [Node] = []
+    public var nodeSelectBlock: RenderStageNodeSelect?
+    public var encodeBlock: RenderStageEncodeBlock?
+    public var nodeEncodeBlock: RenderStageNodeEncodeBlock?
+    public var transitionBlock: RenderStageTransitionBlock?
 }
 

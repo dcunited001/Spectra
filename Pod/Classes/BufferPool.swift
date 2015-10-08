@@ -83,11 +83,11 @@ public class BaseBufferPool: BufferPool {
     // init with max bytecount needed
     // - E.G. in case # of vertices needed changes
     public var bytecount:Int
-    var buffersCount:Int
-    var buffersIndex:Int = 0
-    internal var buffers: [EncodableBuffer] = []
+    public var buffersCount:Int
+    public var buffersIndex:Int = 0
+    public var buffers: [EncodableBuffer] = []
     
-    required init(device: MTLDevice, bytecount: Int, buffersCount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
+    required public init(device: MTLDevice, bytecount: Int, buffersCount: Int, options: MTLResourceOptions = .CPUCacheModeDefaultCache) {
         self.bytecount = bytecount
         self.buffersCount = buffersCount
     }
@@ -98,22 +98,22 @@ public class BaseBufferPool: BufferPool {
 }
 
 public class SingleBuffer: BufferPool {
-    var bytecount:Int
-    var buffersCount:Int
-    var buffersIndex:Int = 0
-    var buffersSemaphore:dispatch_semaphore_t?
-    var buffers: [EncodableBuffer] = []
+    public var bytecount:Int
+    public var buffersCount:Int
+    public var buffersIndex:Int = 0
+    public var buffersSemaphore:dispatch_semaphore_t?
+    public var buffers: [EncodableBuffer] = []
     
-    required init(device:MTLDevice, bytecount:Int, buffersCount:Int = 1, options: MTLResourceOptions = .StorageModeShared) {
+    required public init(device:MTLDevice, bytecount:Int, buffersCount:Int = 1, options: MTLResourceOptions = .StorageModeShared) {
         self.bytecount = bytecount
         self.buffersCount = buffersCount
     }
     
-    func getBuffer() -> EncodableBuffer {
+    public func getBuffer() -> EncodableBuffer {
         return buffers.first!
     }
     
-    func getBuffer(bufferIndex: Int) -> EncodableBuffer {
+    public func getBuffer(bufferIndex: Int) -> EncodableBuffer {
         return buffers.first!
     }
     

@@ -46,10 +46,10 @@ public class Node: Modelable {
     var buffers: [EncodableBuffer] = []
     
     // Modelable
-    var modelScale = float4(1.0, 1.0, 1.0, 1.0)
-    var modelPosition = float4(0.0, 0.0, 0.0, 1.0)
-    var modelRotation = float4(1.0, 1.0, 1.0, 90)
-    var modelMatrix: float4x4 = float4x4(diagonal: float4(1.0,1.0,1.0,1.0))
+    public var modelScale = float4(1.0, 1.0, 1.0, 1.0)
+    public var modelPosition = float4(0.0, 0.0, 0.0, 1.0)
+    public var modelRotation = float4(1.0, 1.0, 1.0, 90)
+    public var modelMatrix: float4x4 = float4x4(diagonal: float4(1.0,1.0,1.0,1.0))
     
     init() {
         updateModelMatrix()
@@ -69,13 +69,13 @@ public protocol Modelable: class {
 }
 
 extension Modelable {
-    func setModelableDefaults() {
+    public func setModelableDefaults() {
         modelPosition = float4(1.0, 1.0, 1.0, 1.0)
         modelScale = float4(1.0, 1.0, 1.0, 1.0)
         modelRotation = float4(1.0, 1.0, 1.0, 90.0)
     }
     
-    func calcModelMatrix() -> float4x4 {
+    public func calcModelMatrix() -> float4x4 {
         // scale, then rotate, then translate!!
         // - but it looks cooler identity * translate, rotate, scale
         return Transform3D.translate(modelPosition) *
@@ -83,11 +83,11 @@ extension Modelable {
             Transform3D.scale(modelScale) // <== N.B. this scales first!!
     }
     
-    func updateModelMatrix() {
+    public func updateModelMatrix() {
         modelMatrix = calcModelMatrix()
     }
     
-    func setModelUniformsFrom(model: Modelable) {
+    public func setModelUniformsFrom(model: Modelable) {
         modelPosition = model.modelPosition
         modelRotation = model.modelRotation
         modelScale = model.modelScale
@@ -118,13 +118,13 @@ public protocol Uniformable: class {
 
 //must deinit resources
 extension Uniformable {
-    func setUniformableDefaults() {
+    public func setUniformableDefaults() {
         uniformScale = float4(1.0, 1.0, 1.0, 1.0) // provides more range to place objects in world
         uniformPosition = float4(0.0, 0.0, 1.0, 1.0)
         uniformRotation = float4(1.0, 1.0, 1.0, 90)
     }
     
-    func calcUniformMatrix() -> float4x4 {
+    public func calcUniformMatrix() -> float4x4 {
         // scale, then rotate, then translate!!
         // - but it looks cooler identity * translate, rotate, scale
         return Transform3D.translate(uniformPosition) *
@@ -132,19 +132,20 @@ extension Uniformable {
             Transform3D.scale(uniformScale) // <== N.B. this scales first!!
     }
     
-    func updateMvpMatrix(modelMatrix: float4x4) {
+    public func updateMvpMatrix(modelMatrix: float4x4) {
         self.mvpMatrix = calcMvpMatrix(modelMatrix)
     }
     
-    func prepareMvpPointer() {
+    public func prepareMvpPointer() {
         self.mvpPointer = mvpBuffer!.contents()
     }
-    func prepareMvpBuffer(device: MTLDevice) {
+    
+    public func prepareMvpBuffer(device: MTLDevice) {
         self.mvpBuffer = device.newBufferWithLength(sizeof(float4x4), options: .CPUCacheModeDefaultCache)
         self.mvpBuffer?.label = "MVP Buffer"
     }
     
-    func updateMvpBuffer() {
+    public func updateMvpBuffer() {
         memcpy(mvpPointer!, &self.mvpMatrix, sizeof(float4x4))
     }
 }
@@ -162,13 +163,13 @@ public protocol Projectable: class {
 
 // TODO: must deinit resources?
 public extension Projectable {
-    func setProjectableDefaults() {
+    public func setProjectableDefaults() {
         projectionEye = [0.0, 0.0, 0.0]
         projectionCenter = [0.0, 0.0, 1.0]
         projectionUp = [0.0, 1.0, 0.0]
     }
     
-    func calcProjectionMatrix() -> float4x4 {
+    public func calcProjectionMatrix() -> float4x4 {
         return Transform3D.lookAt(projectionEye, center: projectionCenter, up: projectionUp)
     }
 }
@@ -185,7 +186,7 @@ public protocol Perspectable: class {
 }
 
 extension Perspectable {
-    func setPerspectiveDefaults() {
+    public func setPerspectiveDefaults() {
         perspectiveFov = 65.0
         perspectiveAngle = 35.0 // 35.0 for landscape
         perspectiveAspect = 1
@@ -193,7 +194,7 @@ extension Perspectable {
         perspectiveFar = 100.0
     }
     
-    func calcPerspectiveMatrix() -> float4x4 {
+    public func calcPerspectiveMatrix() -> float4x4 {
         let rAngle = Transform3D.toRadians(perspectiveAngle)
         let length = perspectiveNear * tan(rAngle)
         
@@ -222,14 +223,14 @@ protocol Rotatable: Modelable {
 }
 
 extension Rotatable {
-    func rotateForTime(t: CFTimeInterval, block: (Rotatable -> Float)?) {
+    public func rotateForTime(t: CFTimeInterval, block: (Rotatable -> Float)?) {
         // TODO: clean this up.  add applyRotation? as default extension to protocol?
         // - or set up 3D transforms as a protocol?
         let rotation = (rotationRate * Float(t)) * (block?(self) ?? 1)
         self.modelRotation.w += rotation
     }
     
-    func updateRotationalVectorForTime(t: CFTimeInterval, block: (Rotatable -> float4)?) {
+    public func updateRotationalVectorForTime(t: CFTimeInterval, block: (Rotatable -> float4)?) {
         let rVector = (rotationRate * Float(t)) * (block?(self) ?? float4(1.0, 1.0, 1.0, 0.0))
         self.modelRotation += rVector
     }
@@ -241,7 +242,7 @@ protocol Translatable: Modelable {
 }
 
 extension Translatable {
-    func translateForTime(t: CFTimeInterval, block: (Translatable -> float4)?) {
+    public func translateForTime(t: CFTimeInterval, block: (Translatable -> float4)?) {
         let translation = (translationRate * Float(t)) * (block?(self) ?? float4(0.0, 0.0, 0.0, 0.0))
         self.modelPosition += translation
     }
@@ -253,7 +254,7 @@ protocol Scalable: Modelable {
 }
 
 extension Scalable {
-    func scaleForTime(t: CFTimeInterval, block: (Scalable -> float4)?) {
+    public func scaleForTime(t: CFTimeInterval, block: (Scalable -> float4)?) {
         let scaleAmount = (scaleRate * Float(t)) * (block?(self) ?? float4(0.0, 0.0, 0.0, 0.0))
         self.modelScale += scaleAmount
     }

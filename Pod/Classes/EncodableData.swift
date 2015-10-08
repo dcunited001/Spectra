@@ -10,8 +10,8 @@ import Metal
 import simd
 
 public struct InputParams {
-    var index:Int
-    var offset:Int = 0
+    public var index:Int
+    public var offset:Int = 0
 }
 
 //static let baseBufferDefaultOptions = ["default": BufferOptions(index: 0, offset: 0) as! AnyObject]
@@ -49,43 +49,43 @@ public protocol EncodableInput: EncodableData {
 }
 
 public class BaseEncodableInput<T>: EncodableInput {
-    typealias InputType = T
-    var data: InputType?
+    public typealias InputType = T
+    public var data: InputType?
     
-    func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
+    public func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
         encoder.setBytes(&data!, length: sizeof(T), atIndex: inputParams.values.first!.index)
     }
     
-    func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
+    public func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
         encoder.setVertexBytes(&data!, length: sizeof(T), atIndex: inputParams.values.first!.index)
     }
     
-    func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
+    public func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
         encoder.setFragmentBytes(&data!, length: sizeof(T), atIndex: inputParams.values.first!.index)
     }
 }
 
 public class BaseEncodableBuffer: EncodableBuffer {
     // hmm or no EncodableBuffer protocol and just pass in buffers from inputData?
-    var buffer: MTLBuffer?
-    var bytecount: Int?
-    var resourceOptions: MTLResourceOptions?
+    public var buffer: MTLBuffer?
+    public var bytecount: Int?
+    public var resourceOptions: MTLResourceOptions?
     
-    func prepareBuffer(device: MTLDevice, options: MTLResourceOptions) {
+    public func prepareBuffer(device: MTLDevice, options: MTLResourceOptions) {
         buffer = device.newBufferWithLength(bytecount!, options: options)
     }
     
-    func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
+    public func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
         let defaultInputParams = inputParams.values.first!
         encoder.setBuffer(buffer!, offset: defaultInputParams.offset, atIndex: defaultInputParams.index)
     }
     
-    func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
+    public func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
         let defaultInputParams = inputParams.values.first!
         encoder.setVertexBuffer(buffer!, offset: defaultInputParams.offset, atIndex: defaultInputParams.index)
     }
     
-    func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
+    public func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData] = [:]) {
         let defaultInputParams = inputParams.values.first!
         encoder.setFragmentBuffer(buffer!, offset: defaultInputParams.offset, atIndex: defaultInputParams.index)
     }
@@ -94,19 +94,19 @@ public class BaseEncodableBuffer: EncodableBuffer {
 // iterates through the input data/params keys & runs write() on all of them,
 // and defaults to passing all data down through the tree
 public class BaseEncodableGroup: EncodableData {
-    func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
+    public func writeCompute(encoder: MTLComputeCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
         for (k,v) in inputData {
             v.writeCompute(encoder, inputParams: inputParams, inputData: inputData)
         }
     }
     
-    func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
+    public func writeVertex(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
         for (k,v) in inputData {
             v.writeVertex(encoder, inputParams: inputParams, inputData: inputData)
         }
     }
     
-    func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
+    public func writeFragment(encoder: MTLRenderCommandEncoder, inputParams: [String:InputParams], inputData: [String:EncodableData]) {
         for (k,v) in inputData {
             v.writeFragment(encoder, inputParams: inputParams, inputData: inputData)
         }

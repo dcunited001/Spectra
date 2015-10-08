@@ -36,20 +36,20 @@ public protocol Renderer {
 
 extension Renderer {
     
-    func encode(renderEncoder: MTLRenderCommandEncoder, encodeBlock: RendererEncodeBlock) {
+    public func encode(renderEncoder: MTLRenderCommandEncoder, encodeBlock: RendererEncodeBlock) {
         
     }
     
-    func configure(renderEncoder: MTLRenderCommandEncoder) {
+    public func configure(renderEncoder: MTLRenderCommandEncoder) {
         renderEncoder.setCullMode(cullMode)
         configureRenderEncoderBlock?(renderEncoder)
     }
 
-    func defaultRenderEncoderTransition() -> RenderEncoderCreateMonad {
+    public func defaultRenderEncoderTransition() -> RenderEncoderCreateMonad {
         return createRenderEncoderBlock!
     }
     
-    func transitionRenderEncoderTo(renderer: Renderer?) -> RenderEncoderTransition? {
+    public func transitionRenderEncoderTo(renderer: Renderer?) -> RenderEncoderTransition? {
         if let rendererTypeId = renderer?.rendererType {
             return transitionMap[rendererTypeId]
         } else {
@@ -63,13 +63,13 @@ extension Renderer {
 //typealias ComputeEncoderTransition = ((MTLCommandBuffer, MTLComputeCommandEncoder) -> MTLComputeCommandEncoder)
 
 public class RendererBase: Renderer {
-    var name: String?
-    var rendererType: Int = 0 // use enum for renderer types
-    var transitionMap: [Int:RenderEncoderTransition] = [:]
-    var createRenderEncoderBlock: RenderEncoderCreateMonad? = RendererBase.createRenderEncoderDefault()
-    var configureRenderEncoderBlock: RenderEncoderConfigureBlock?
+    public var name: String?
+    public var rendererType: Int = 0 // use enum for renderer types
+    public var transitionMap: [Int:RenderEncoderTransition] = [:]
+    public var createRenderEncoderBlock: RenderEncoderCreateMonad? = RendererBase.createRenderEncoderDefault()
+    public var configureRenderEncoderBlock: RenderEncoderConfigureBlock?
     
-    var cullMode: MTLCullMode = .Front
+    public var cullMode: MTLCullMode = .Front
     
     class func createRenderEncoderDefault() -> RenderEncoderCreateMonad {
         return { (cmdBuffer, renderPassDescriptor) in

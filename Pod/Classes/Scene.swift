@@ -29,8 +29,8 @@ public class Scene: RenderDelegate, UpdateDelegate {
     public var pipelineStateMap: RenderPipelineStateMap = [:]
     public var depthStencilStateMap: DepthStencilStateMap = [:]
     public var rendererMap: RendererMap = [:]
-    var nodeMap: [String:Node] = [:]
-    var nodeGroup:[String:[Node]] = [:]
+    public var nodeMap: [String:Node] = [:]
+    public var nodeGroup:[String:[Node]] = [:]
     
     //    init() {
     //
