@@ -10,7 +10,13 @@ import Metal
 import SWXMLHash
 import simd
 
+public typealias SceneNodeMap = [String:Node]
+public typealias SceneNodeSelectorMap = [String:NodeSelector]
+
 public class Node: Modelable {
+    public var data: [String:[float4]] = [:]
+    public var dataMaps: [String:[[Int]]] = [:]
+    
     public var modelScale = float4(1.0, 1.0, 1.0, 1.0)
     public var modelPosition = float4(0.0, 0.0, 0.0, 1.0)
     public var modelRotation = float4(1.0, 1.0, 1.0, 90)
@@ -19,15 +25,9 @@ public class Node: Modelable {
     public init() {
         updateModelMatrix()
     }
-    
 }
 
-public protocol NodeTreeable {
-    
-}
-
-//TODO: extend XMLElement
-public class SceneGraph {
+public class NodeSelector {
     
 }
 

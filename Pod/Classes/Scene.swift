@@ -24,14 +24,14 @@ public typealias RenderPipelineDescriptorMap = [String:MTLRenderPipelineDescript
 public typealias DepthStencilStateMap = [String:MTLDepthStencilState]
 public typealias DepthStencilDescriptorMap = [String:MTLDepthStencilDescriptor]
 public typealias ComputePipelineStateMap = [String:MTLComputePipelineState]
-public typealias SceneNodeMap = [String:Node]
 
 public class Scene: RenderDelegate, UpdateDelegate {
     public var pipelineStateMap: RenderPipelineStateMap = [:]
     public var depthStencilStateMap: DepthStencilStateMap = [:]
     public var rendererMap: RendererMap = [:]
     public var nodeMap: SceneNodeMap = [:]
-    public var nodeGroup:[String:[Node]] = [:]
+//    public var sceneGraph: SceneGraph?
+
     
     public init() {
 
