@@ -10,6 +10,10 @@ import simd
 
 public class CubeGenerator: NodeGenerator {
     
+    public init() {
+        
+    }
+    
     // return a node
     // - with a list of vertices
     // - with a list of colorvertices
@@ -17,7 +21,7 @@ public class CubeGenerator: NodeGenerator {
     // - a map of vertices to triangles (& reverse?)
     // - a map of vertices to faces (& reverse?)
     
-    func getVertices() -> [float4] {
+    public func getVertices() -> [float4] {
         return [
             float4(-1.0,  1.0,  1.0, 1.0),
             float4(-1.0, -1.0,  1.0, 1.0),
@@ -30,7 +34,7 @@ public class CubeGenerator: NodeGenerator {
         ]
     }
     
-    func getColorCoords() -> [float4] {
+    public func getColorCoords() -> [float4] {
         return [
             float4(1.0, 1.0, 1.0, 1.0),
             float4(0.0, 1.0, 1.0, 1.0),
@@ -43,7 +47,7 @@ public class CubeGenerator: NodeGenerator {
         ]
     }
     
-    func getTexCoords() -> [float4] {
+    public func getTexCoords() -> [float4] {
         return [
             float4(0.0, 0.0, 0.0, 0.0),
             float4(0.0, 1.0, 0.0, 0.0),
@@ -63,7 +67,7 @@ public class CubeGenerator: NodeGenerator {
     // |/    |/
     // D --- C
     
-    func getTriangleVertexMap() -> [[Int]] {
+    public func getTriangleVertexMap() -> [[Int]] {
         let A = 0
         let B = 1
         let C = 2
@@ -85,7 +89,7 @@ public class CubeGenerator: NodeGenerator {
         ]
     }
     
-    func getFaceVertexMap() -> [[Int]] {
+    public func getFaceVertexMap() -> [[Int]] {
         let A = 0
         let B = 1
         let C = 2
@@ -109,7 +113,7 @@ public class CubeGenerator: NodeGenerator {
         ]
     }
     
-    func getFaceTriangleMap() -> [[Int]] {
+    public func getFaceTriangleMap() -> [[Int]] {
         return (0...5).map { [2 * $0, 2 * $0 + 1] }
     }
     

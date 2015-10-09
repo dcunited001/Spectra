@@ -12,7 +12,12 @@ import simd
 // - for simple 3d objects
 
 public class TetrahedronGenerator: NodeGenerator {
-    func getVertices() -> [float4] {
+    
+    public init() {
+        
+    }
+    
+    public func getVertices() -> [float4] {
         return [
             float4( 1.0,  1.0,  1.0, 1.0),
             float4(-1.0,  1.0, -1.0, 1.0),
@@ -21,7 +26,7 @@ public class TetrahedronGenerator: NodeGenerator {
         ]
     }
     
-    func getColorCoords() -> [float4] {
+    public func getColorCoords() -> [float4] {
         return [
             float4(1.0, 1.0, 1.0, 1.0),
             float4(1.0, 0.0, 0.0, 1.0),
@@ -30,7 +35,7 @@ public class TetrahedronGenerator: NodeGenerator {
         ]
     }
     
-    func getTexCoords() -> [float4] {
+    public func getTexCoords() -> [float4] {
         return [
             float4(1.0, 1.0, 0.0, 0.0),
             float4(1.0, 0.0, 0.0, 0.0),
@@ -39,7 +44,7 @@ public class TetrahedronGenerator: NodeGenerator {
         ]
     }
     
-    func getTriangleVertexMap() -> [[Int]] {
+    public func getTriangleVertexMap() -> [[Int]] {
         return [
             [0,1,2],
             [1,3,2],
@@ -48,20 +53,25 @@ public class TetrahedronGenerator: NodeGenerator {
         ]
     }
     
-    func getFaceVertexMap() -> [[Int]] {
+    public func getFaceVertexMap() -> [[Int]] {
         return getTriangleVertexMap()
     }
     
-    func getFaceTriangleMap() -> [[Int]] {
+    public func getFaceTriangleMap() -> [[Int]] {
         return (0...3).map { [$0] }
     }
 }
 
 public class OctahedronGenerator: NodeGenerator {
+    
+    public init() {
+        
+    }
+    
     let A = Float(1 / (2 * sqrt(2.0)))
     let B = Float(1 / 2.0)
     
-    func getVertices() -> [float4] {
+    public func getVertices() -> [float4] {
         return [
             float4( 0,  B,  0, 1.0),
             float4( A,  0,  A, 1.0),
@@ -72,7 +82,7 @@ public class OctahedronGenerator: NodeGenerator {
         ]
     }
 
-    func getColorCoords() -> [float4] {
+    public func getColorCoords() -> [float4] {
         return [
             float4(1.0, 1.0, 1.0, 1.0), // white
             float4(1.0, 0.0, 0.0, 1.0), // red
@@ -83,7 +93,7 @@ public class OctahedronGenerator: NodeGenerator {
         ]
     }
 
-    func getTexCoords() -> [float4] {
+    public func getTexCoords() -> [float4] {
         return [
             float4(0.0, 0.0, 0.0, 0.0),
             float4(0.0, 1.0, 0.0, 0.0),
@@ -94,7 +104,7 @@ public class OctahedronGenerator: NodeGenerator {
         ]
     }
 
-    func getTriangleVertexMap() -> [[Int]] {
+    public func getTriangleVertexMap() -> [[Int]] {
         return [
             [0,1,2],
             [0,2,3],
@@ -107,11 +117,11 @@ public class OctahedronGenerator: NodeGenerator {
         ]
     }
 
-    func getFaceVertexMap() -> [[Int]] {
+    public func getFaceVertexMap() -> [[Int]] {
         return getTriangleVertexMap()
     }
     
-    func getFaceTriangleMap() -> [[Int]] {
+    public func getFaceTriangleMap() -> [[Int]] {
         return (0...7).map { [$0] }
     }
 }
