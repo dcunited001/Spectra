@@ -35,12 +35,12 @@ class CubeViewController: MetalViewController {
     ]
     
     var depthStencilStateMap: Spectra.DepthStencilStateMap = [:]
-    
+    var vertexDescriptorMap: Spectra.VertexDescriptorMap = [:]
     let cubeKey = "spectra_cube"
-    var nodeMap: Spectra.SceneNodeMap
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadVertexDescriptorMap()
         loadPipelineStateMap()
         loadDepthStencilMap()
         
@@ -49,9 +49,16 @@ class CubeViewController: MetalViewController {
         setupScene()
     }
     
+    func loadVertexDescriptorMap() {
+        vertexDescriptorMap["commonVertex"] = VertexDescriptorGenerator.commonVertexDescriptor()
+    }
+    
     func loadPipelineStateMap() {
         let pipelineGenerator = Spectra.RenderPipelineGenerator(library: spectraView.defaultLibrary)
-        pipelineStateMap = pipelineGenerator.generatePipelineMap(spectraView.device!, functionMap: CubeViewController.renderFunctionMap)
+        pipelineStateMap = pipelineGenerator.generatePipelineMap(spectraView.device!, functionMap: CubeViewController.renderFunctionMap, setupDescriptor: { (desc) in
+            desc.colorAttachments[0].pixelFormat = .BGRA8Unorm
+            desc.vertexDescriptor = self.vertexDescriptorMap["commonVertex"]
+        })
     }
     
     func loadDepthStencilMap() {
