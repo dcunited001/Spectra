@@ -10,11 +10,11 @@ import UIKit
 import MetalKit
 import Spectra
 import simd
+import SWXMLHash
 
 class CubeViewController: MetalViewController {
     
     @IBOutlet weak var spectraView: Spectra.BaseView! //TODO: weak?
-    
     var scene: Spectra.Scene?
     
     // i wish i could more strongly constrain the keys for these maps
@@ -35,12 +35,17 @@ class CubeViewController: MetalViewController {
     ]
     
     var depthStencilStateMap: Spectra.DepthStencilStateMap = [:]
-    var nodeMap: Spectra.SceneNodeMap = [:]
+    
+    let cubeKey = "spectra_cube"
+    var nodeMap: Spectra.SceneNodeMap
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPipelineStateMap()
         loadDepthStencilMap()
+        
+        scene = Spectra.Scene()
+        setupObjects()
         setupScene()
     }
     
@@ -56,11 +61,33 @@ class CubeViewController: MetalViewController {
         depthStencilStateMap["default"] = spectraView.device?.newDepthStencilStateWithDescriptor(depthStateDesc)
     }
     
-    func setupScene() {
-        scene = Spectra.Scene()
-        scene!.pipelineStateMap = pipelineStateMap
-        scene!.nodeMap = nodeMap
+    func setupObjects() {
+        // parse Cube.XML
+        let bundle = NSBundle(forClass: CubeViewController.self)
+        let path = bundle.pathForResource("Cube", ofType: "xml")
+        let data = NSData(contentsOfFile: path!)
+        let xml = SWXMLHash.parse(data!)
         
+        let cube = try! xml["root"].withAttr("id", cubeKey)
+        
+        // attach position, color and vertex data to nodes
+        
+    }
+    
+    func setupCube(cubeKey: String, xmlCube: XMLElement) {
+        let cubeNode = Spectra.Node()
+        let cubeGen = Spectra.CubeGenerator()
+        cubeNode.data["position"] = cubeGen.getVertices()
+        cubeNode.data["texcoords"] = cubeGen.getTexCoords()
+        cubeNode.data["colorcoords"] = cubeGen.getColorCoords()
+        cubeNode.dataMaps["triangle_vertex"] = cubeGen.getTriangleVertexMap()
+        nodeMap[cubeKey] = cubeNode
+        //nodeMap[cubeKey] =
+    }
+    
+    func setupScene() {
+        scene!.pipelineStateMap = pipelineStateMap
+
     }
     
 }
