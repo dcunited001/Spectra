@@ -74,7 +74,7 @@ vertex ColorVertex basicColorShiftedVertex
 {
     ColorVertex vout;
     vout.position = mvp * vin[vid];
-    //    vout.color = shiftColorWithMVP(*cin, mvp);
+        vout.color = shiftColorWithMVP(*cin, mvp);
     
     return vout;
 }
@@ -89,7 +89,7 @@ vertex ColorVertex basicColorShiftedContinuousVertex
     ColorVertex vout;
     
     vout.position = mvp * vin[vid];
-    //    vout.color = shiftColorContinuousWithMVP(*cin, mvp);
+        vout.color = shiftColorContinuousWithMVP(*cin, mvp);
     
     return vout;
 }
