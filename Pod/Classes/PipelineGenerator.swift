@@ -39,7 +39,7 @@ public class RenderPipelineGenerator {
         pipelineStateDescriptor.vertexFunction = vertexProgram
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
         
-        setupDescriptor?(&pipelineStateDescriptor)
+        setupDescriptor?(&pipelineStateDescriptor) ?? setupDefaultDescriptor(pipelineStateDescriptor)
         return pipelineStateDescriptor
     }
     
@@ -81,8 +81,8 @@ public class RenderPipelineGenerator {
         return pipelineState!
     }
     
-    private func defaultDescriptor() {
-        
+    private func setupDefaultDescriptor(var descriptor: MTLRenderPipelineDescriptor) {
+        descriptor.colorAttachments[0].pixelFormat = .BGRA8Unorm
     }
 }
 
