@@ -53,11 +53,13 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Spectra_Example/EZAudio.framework'
+  install_framework 'Pods-Spectra_Example/SWXMLHash.framework'
   install_framework 'Pods-Spectra_Example/Spectra.framework'
   install_framework 'Pods-Spectra_Example/TPCircularBuffer.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Spectra_Example/EZAudio.framework'
+  install_framework 'Pods-Spectra_Example/SWXMLHash.framework'
   install_framework 'Pods-Spectra_Example/Spectra.framework'
   install_framework 'Pods-Spectra_Example/TPCircularBuffer.framework'
 fi

@@ -28,6 +28,7 @@ you've been warned.
   s.osx.deployment_target = "10.11"
   s.requires_arc = true
 
+  s.dependency "SWXMLHash", "~> 2.0.0"
   s.ios.frameworks = "MetalKit", "Metal", "Accelerate"
   s.osx.frameworks = "MetalKit", "Metal", "Accelerate"
 
@@ -42,6 +43,5 @@ you've been warned.
 
   # s.exclude_files = "Classes/Exclude"
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
   # s.public_header_files = 'Pod/Classes/**/*.h'
 end
