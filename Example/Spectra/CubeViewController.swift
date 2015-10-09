@@ -21,27 +21,18 @@ class CubeViewController: MetalViewController {
     // - but i can't create a protocol for enums 
     // - AND type constraints apply to function params, regardless of whether those types are functionally equivalent
     // - ... womp, womp
-    enum CubePipelineKey: String {
-        case Basic = "basic"
-        case ColorShift = "colorShift"
-        case ColorShiftContinuous = "colorShiftContinuous"
-    }
+//    enum CubePipelineKey: String {
+//        case Basic = "basic"
+//        case ColorShift = "colorShift"
+//        case ColorShiftContinuous = "colorShiftContinuous"
+//    }
     
     var pipelineStateMap: Spectra.RenderPipelineStateMap = [:]
-    static let renderFunctionMap: [CubePipelineKey: (String, String)] = [ //Spectra.RenderPipelineFunctionMap = [
-        .Basic: ("basicColorVertex", "basicColorFragment"),
-        .ColorShift: ("basicColorShiftedVertex", "basicColorFragment"),
-        .ColorShiftContinuous: ("basicColorShiftedContinuousVertex", "basicColorFragment")
+    static let renderFunctionMap: Spectra.RenderPipelineFunctionMap = [
+        "basic": ("basicColorVertex", "basicColorFragment"),
+        "colorShift": ("basicColorShiftedVertex", "basicColorFragment"),
+        "colorShiftContinuous": ("basicColorShiftedContinuousVertex", "basicColorFragment")
     ]
-    
-//    enum CubeNodeKey: String {
-//        case Cubez = "Cubez"
-//    }
-//    
-//    static let nodeMap: Spectra.SceneNodeMap = [
-//    
-//    ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
