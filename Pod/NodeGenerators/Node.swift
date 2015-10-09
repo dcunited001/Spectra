@@ -39,37 +39,7 @@ public class SceneGraphResourceWriters {
     
 }
 
-// TODO: for cube (and other polygons),
-// - determine indexing functions for textures
-// TODO: multi-perspective renderer
-//
-//protocol VertexBufferable {
-//    var vCount:Int { get set }
-//    var vBytes:Int { get set }
-//    var vertexBufferId:Int { get set }
-//    var vertexBuffer:MTLBuffer { get set }
-//    var device:MTLDevice { get set }
-//
-//    func getVertexSize() -> Int
-//    static func getVertexSize() -> Int
-//    func getRawVertices() -> [protocol<Vertexable, Chunkable>]
-//    func setVertexBuffer(vertices: [Vertexable])
-//    static func calculateBytes(vertexCount: Int) -> Int
-//}
 
-//TODO: evaluate new vertexable/colorable/textureable protocols
-// - do i really need to differentiate these protocols?
-public protocol NodeVertexable {
-    var vertexBuffer: EncodableBuffer? { get set }
-}
-
-public protocol NodeColorable {
-    var colorBuffer: EncodableBuffer? { get set }
-}
-
-public protocol NodeTextureable {
-    var textureBuffer: EncodableBuffer { get set }
-}
 
 public protocol Modelable: class {
     var modelScale:float4 { get set }
