@@ -1,4 +1,4 @@
-<xml3d id="Cube" xmlns=\"http://www.xml3d.org/2009/xml3d/\">
+<root id="Cube" xmlns="http://www.xml3d.org/2009/xml3d/">
     <!-- kind of based on xml3d, but mostly just using XML bc:
      - it has tree-like nature
      - and CSS selectability -->
@@ -43,13 +43,13 @@
         </data>
     </defs>
     
-    <mesh  id="cube_xml3d" type="triangles">
+    <mesh id="cube_xml3d" type="triangles">
         <int name="index"></int>
         <float3 name="position"></float3>
         <float3 name="texcoords"></float3>
     </mesh>
     
-    <mesh id="cube_spectra" type="triangles">
+    <mesh id="spectra_cube" type="triangles">
         
     </mesh>
-</xml3d>
+</root>
