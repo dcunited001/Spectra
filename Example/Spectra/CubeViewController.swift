@@ -58,6 +58,7 @@ class CubeViewController: MetalViewController {
         pipelineStateMap = pipelineGenerator.generatePipelineMap(spectraView.device!, functionMap: CubeViewController.renderFunctionMap, setupDescriptor: { (desc) in
             desc.colorAttachments[0].pixelFormat = .BGRA8Unorm
             desc.vertexDescriptor = self.vertexDescriptorMap["commonVertex"]
+            return desc
         })
     }
     

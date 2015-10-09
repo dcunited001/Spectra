@@ -14,7 +14,7 @@ import Metal
 
 //TODO: generators for DepthStencilState & SamplerState
 
-public typealias RenderPipelineDescriptorSetupBlock = ((inout MTLRenderPipelineDescriptor) -> Void)
+public typealias RenderPipelineDescriptorSetupBlock = ((MTLRenderPipelineDescriptor) -> MTLRenderPipelineDescriptor)
 public typealias RenderPipelineFunctionMap = [String:(String,String)]
 
 public class RenderPipelineGenerator {
@@ -38,8 +38,7 @@ public class RenderPipelineGenerator {
         var pipelineStateDescriptor = MTLRenderPipelineDescriptor()
         pipelineStateDescriptor.vertexFunction = vertexProgram
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
-        
-        setupDescriptor?(&pipelineStateDescriptor) ?? setupDefaultDescriptor(pipelineStateDescriptor)
+        pipelineStateDescriptor = setupDescriptor?(pipelineStateDescriptor) ?? setupDefaultDescriptor(pipelineStateDescriptor)
         return pipelineStateDescriptor
     }
     
@@ -81,8 +80,9 @@ public class RenderPipelineGenerator {
         return pipelineState!
     }
     
-    private func setupDefaultDescriptor(var descriptor: MTLRenderPipelineDescriptor) {
+    private func setupDefaultDescriptor(descriptor: MTLRenderPipelineDescriptor) -> MTLRenderPipelineDescriptor {
         descriptor.colorAttachments[0].pixelFormat = .BGRA8Unorm
+        return descriptor
     }
 }
 
