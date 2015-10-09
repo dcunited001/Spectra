@@ -16,6 +16,7 @@ struct CommonVertex {
     var extra: float2
 }
 
+//TODO: port this stuff to Obj-C, so i can use offsetof()
 // swift equivalent to offsetof() ??
 // if i just had offsetof() i could mostly generate everything dynamically, given the struct name
 
@@ -29,17 +30,17 @@ class VertexDescriptorGenerator {
         
         let rgbaDesc = MTLVertexAttributeDescriptor()
         rgbaDesc.format = .Float4
-        rgbaDesc.offset = 32
+        rgbaDesc.offset = 16
         rgbaDesc.bufferIndex = 0
         
         let texDesc = MTLVertexAttributeDescriptor()
         texDesc.format = .Float2
-        texDesc.offset = 64
+        texDesc.offset = 32
         texDesc.bufferIndex = 0
         
         let extraDesc = MTLVertexAttributeDescriptor()
         extraDesc.format = .Float2
-        extraDesc.offset = 80
+        extraDesc.offset = 40
         extraDesc.bufferIndex = 0
         
         vertexDesc.attributes[0] = positionDesc
