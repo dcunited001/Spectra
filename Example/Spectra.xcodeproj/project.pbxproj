@@ -11,6 +11,7 @@
 		436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06741BBFB3AE007C738A /* MetalViewController.swift */; };
 		436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B068A1BC23328007C738A /* SpectrogramTextureController.swift */; };
 		438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ACE011BC7163D0008C59E /* CubeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		43D8BAA91BC82100004323ED /* Cube.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43D8BAA81BC82100004323ED /* Cube.xml */; settings = {ASSET_TAGS = (); }; };
 		43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43E90C191BC45AC9009DBF99 /* color_shift.metal */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		436B06741BBFB3AE007C738A /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
 		436B068A1BC23328007C738A /* SpectrogramTextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrogramTextureController.swift; sourceTree = "<group>"; };
 		438ACE011BC7163D0008C59E /* CubeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeViewController.swift; sourceTree = "<group>"; };
+		43D8BAA81BC82100004323ED /* Cube.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cube.xml; sourceTree = "<group>"; };
 		43E90C191BC45AC9009DBF99 /* color_shift.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = color_shift.metal; sourceTree = "<group>"; };
 		45209440FD1512ABEF566A1A /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spectra_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Spectra_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectra_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43D8BAA71BC820AB004323ED /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				438ACE011BC7163D0008C59E /* CubeViewController.swift */,
+				43D8BAA81BC82100004323ED /* Cube.xml */,
+			);
+			name = Cube;
+			sourceTree = "<group>";
+		};
 		43E90C181BC45A83009DBF99 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +120,7 @@
 		607FACD21AFB9204008FA782 /* Example for Spectra */ = {
 			isa = PBXGroup;
 			children = (
+				43D8BAA71BC820AB004323ED /* Cube */,
 				43E90C181BC45A83009DBF99 /* Shaders */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
@@ -118,7 +130,6 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				436B06741BBFB3AE007C738A /* MetalViewController.swift */,
 				436B068A1BC23328007C738A /* SpectrogramTextureController.swift */,
-				438ACE011BC7163D0008C59E /* CubeViewController.swift */,
 			);
 			name = "Example for Spectra";
 			path = Spectra;
@@ -269,6 +280,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				43D8BAA91BC82100004323ED /* Cube.xml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
