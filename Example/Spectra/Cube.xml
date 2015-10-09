@@ -1,0 +1,55 @@
+<xml3d id="Cube" xmlns=\"http://www.xml3d.org/2009/xml3d/\">
+    <!-- kind of based on xml3d, but mostly just using XML bc:
+     - it has tree-like nature
+     - and CSS selectability -->
+    
+    <defs>
+        <!-- reusable data definitions go here ... 
+         ... but needs to be implemented in XML parser =/ -->
+        <data id="cube_data">
+            <int name="index">
+                <!-- going to do this later, not even sure if i want to use strict x3d -->
+            </int>
+            <float4 name="position">
+                -1  1  1 1
+                -1 -1  1 1
+                 1 -1  1 1
+                 1  1  1 1
+                -1  1 -1 1
+                 1  1 -1 1
+                -1 -1 -1 1
+                 1 -1 -1 1
+            </float4>
+            <float4 name="colorcoords">
+                1 1 1 1
+                0 1 1 1
+                1 0 1 1
+                1 0 0 1
+                0 0 1 1
+                1 1 0 1
+                0 1 0 1
+                0 0 0 1
+            </float4>
+            <float4 name="texcoords">
+                0 0 0 0
+                0 1 0 0
+                1 0 0 0
+                1 1 0 0
+                1 1 0 0
+                0 1 0 0
+                1 0 0 0
+                0 1 0 0
+            </float4>
+        </data>
+    </defs>
+    
+    <mesh  id="cube_xml3d" type="triangles">
+        <int name="index"></int>
+        <float3 name="position"></float3>
+        <float3 name="texcoords"></float3>
+    </mesh>
+    
+    <mesh id="cube_spectra" type="triangles">
+        
+    </mesh>
+</xml3d>
