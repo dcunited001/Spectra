@@ -95,9 +95,9 @@ public class Transform3D {
     }
     
     class func lookAt(eye: float4, center: float4, up: float4) -> float4x4 {
-        let eye:float3 = [pEye[0], pEye[1], pEye[2]]
-        let center:float3 = [pCenter[0], pCenter[1], pCenter[2]]
-        let up:float3 = [pUp[0], pUp[1], pUp[2]]
+        let eye:float3 = [eye[0], eye[1], eye[2]]
+        let center:float3 = [center[0], center[1], center[2]]
+        let up:float3 = [up[0], up[1], up[2]]
         
         return lookAt(eye, center: center, up: up)
     }
