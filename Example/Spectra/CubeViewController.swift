@@ -27,16 +27,18 @@ class CubeViewController: MetalViewController {
 //        case ColorShiftContinuous = "colorShiftContinuous"
 //    }
     
+    let cubeKey = "spectra_cube"
+    
     var pipelineStateMap: Spectra.RenderPipelineStateMap = [:]
+    var depthStencilStateMap: Spectra.DepthStencilStateMap = [:]
+    var vertexDescriptorMap: Spectra.VertexDescriptorMap = [:]
     static let renderFunctionMap: Spectra.RenderPipelineFunctionMap = [
         "basic": ("basicColorVertex", "basicColorFragment"),
         "colorShift": ("basicColorShiftedVertex", "basicColorFragment"),
         "colorShiftContinuous": ("basicColorShiftedContinuousVertex", "basicColorFragment")
     ]
     
-    var depthStencilStateMap: Spectra.DepthStencilStateMap = [:]
-    var vertexDescriptorMap: Spectra.VertexDescriptorMap = [:]
-    let cubeKey = "spectra_cube"
+    var encodableDataMap: Spectra.SceneEncodableDataMap = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,7 @@ class CubeViewController: MetalViewController {
         loadDepthStencilMap()
         
         scene = Spectra.Scene()
+        setupPerspective()
         setupObjects()
         setupScene()
     }
@@ -67,6 +70,10 @@ class CubeViewController: MetalViewController {
         depthStateDesc.depthCompareFunction = .Always
         depthStateDesc.depthWriteEnabled = true
         depthStencilStateMap["default"] = spectraView.device?.newDepthStencilStateWithDescriptor(depthStateDesc)
+    }
+    
+    func setupPerspective() {
+        //create encodable inputs for camera/etc
     }
     
     func setupObjects() {
