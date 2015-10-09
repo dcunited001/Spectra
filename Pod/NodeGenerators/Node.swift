@@ -13,6 +13,11 @@ import simd
 public typealias SceneNodeMap = [String:Node]
 public typealias SceneNodeSelectorMap = [String:NodeSelector]
 
+
+//TODO: separate node primitives from nodes to conserve memory
+// - need to add a var with a reference to another node, from which data/dataMaps can be accessed
+// - but separate uniforms/perspective/etc can be applied
+// - this isn't necessary but would be awesome
 public class Node: Modelable {
     public var data: [String:[float4]] = [:]
     public var dataMaps: [String:[[Int]]] = [:]
@@ -28,6 +33,10 @@ public class Node: Modelable {
 }
 
 public class NodeSelector {
+    
+}
+
+public class SceneGraphResourceWriters {
     
 }
 

@@ -14,6 +14,8 @@ public struct InputParams {
     public var offset:Int = 0
 }
 
+public typealias SceneResourcesMap = [String: EncodableData]
+
 //static let baseBufferDefaultOptions = ["default": BufferOptions(index: 0, offset: 0) as! AnyObject]
 
 public protocol EncodableData {
