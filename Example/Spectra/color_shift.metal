@@ -10,15 +10,18 @@
 using namespace metal;
 
 typedef struct {
-    float4 position [[attribute(0)]];
+    float4 pos [[attribute(0)]];
     float4 rgba [[attribute(1)]];
-    float4 texcoord [[attribute(2)]];
-} ColorVertex;
+    float2 tex [[attribute(2)]];
+    float2 extra [[attribute(3)]];
+} CommonVertex;
 
 typedef struct {
-    float4 position [[ position ]];
+    float4 pos [[ position ]];
     float4 rgba;
-} ColorVertexOut;
+    float2 tex;
+    float2 extra;
+} CommonVertexOut;
 
 //typedef struct {
 //    float2 position [[attribute(0)]];
@@ -60,15 +63,15 @@ extern float4 shiftColorContinuousWithMVP
 
 //float4 colorShiftByDistance
 
-vertex ColorVertexOut basicColorVertex
+vertex CommonVertexOut basicColorVertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
  const device float4x4& mvp [[ buffer(2) ]],
  unsigned int vid [[ vertex_id ]])
 {
-    ColorVertexOut vOut;
-    vOut.position = mvp * vin[vid];
+    CommonVertexOut vOut;
+    vOut.pos = mvp * vin[vid];
     vOut.rgba = cin[vid];
     
     return vOut;
@@ -76,35 +79,35 @@ vertex ColorVertexOut basicColorVertex
 
 fragment half4 basicColorFragment
 (
- ColorVertexOut interpolated [[ stage_in ]])
+ CommonVertexOut interpolated [[ stage_in ]])
 {
     return half4(interpolated.rgba[0], interpolated.rgba[1], interpolated.rgba[2], interpolated.rgba[3]);
 }
 
-vertex ColorVertexOut basicColorShiftedVertex
+vertex CommonVertexOut basicColorShiftedVertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
  const device float4x4& mvp [[ buffer(2) ]],
  unsigned int vid [[ vertex_id ]])
 {
-    ColorVertexOut vout;
-    vout.position = mvp * vin[vid];
+    CommonVertexOut vout;
+    vout.pos = mvp * vin[vid];
         vout.rgba = shiftColorWithMVP(*cin, mvp);
     
     return vout;
 }
 
-vertex ColorVertexOut basicColorShiftedContinuousVertex
+vertex CommonVertexOut basicColorShiftedContinuousVertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
  const device float4x4& mvp [[ buffer(2) ]],
  unsigned int vid [[ vertex_id ]])
 {
-    ColorVertexOut vout;
+    CommonVertexOut vout;
     
-    vout.position = mvp * vin[vid];
+    vout.pos = mvp * vin[vid];
         vout.rgba = shiftColorContinuousWithMVP(*cin, mvp);
     
     return vout;
