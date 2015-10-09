@@ -15,6 +15,7 @@ import Metal
 //TODO: generators for DepthStencilState & SamplerState
 
 public typealias RenderPipelineDescriptorSetupBlock = ((inout MTLRenderPipelineDescriptor) -> Void)
+public typealias RenderPipelineFunctionMap = [String:(String,String)]
 
 public class RenderPipelineGenerator {
     public var library: MTLLibrary
@@ -23,7 +24,7 @@ public class RenderPipelineGenerator {
         self.library = library
     }
     
-    public func generateDescriptor(device: MTLDevice, vertexFunction: String, fragmentFunction: String) -> MTLRenderPipelineDescriptor? {
+    public func generateDescriptor(vertexFunction: String, fragmentFunction: String, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineDescriptor? {
         guard let vertexProgram = library.newFunctionWithName(vertexFunction) else {
             print("Couldn't load \(vertexFunction)")
             return nil
@@ -38,13 +39,32 @@ public class RenderPipelineGenerator {
         pipelineStateDescriptor.vertexFunction = vertexProgram
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
         
+        setupDescriptor?(&pipelineStateDescriptor)
         return pipelineStateDescriptor
     }
     
-    public func generate(device: MTLDevice, vertexFunction: String, fragmentFunction: String, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineState? {
-        var pipelineStateDescriptor = generateDescriptor(device, vertexFunction: vertexFunction, fragmentFunction: fragmentFunction)
+    public func generateDescriptorMap(functionMap: RenderPipelineFunctionMap, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> RenderPipelineDescriptorMap {
+        return functionMap.reduce(RenderPipelineDescriptorMap()) { (var hash, kv) in
+            let key = kv.0
+            let tuple = kv.1 // i wish reduce had nested tuple syntax or destructuring
+            hash[key] = self.generateDescriptor(tuple.0, fragmentFunction: tuple.1, setupDescriptor: setupDescriptor)
+            return hash
+        }
+    }
+    
+    public func generatePipelineMap(device: MTLDevice, functionMap: RenderPipelineFunctionMap, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> RenderPipelineStateMap {
+        let descriptorMap = generateDescriptorMap(functionMap, setupDescriptor: setupDescriptor)
         
-        setupDescriptor?(&pipelineStateDescriptor!)
+        return descriptorMap.reduce(RenderPipelineStateMap()) { (var hash, kv) in
+            let key = kv.0
+            let descriptor = kv.1
+            hash[key] = self.generateFromDescriptor(device, pipelineStateDescriptor: descriptor)
+            return hash
+        }
+    }
+    
+    public func generate(device: MTLDevice, vertexFunction: String, fragmentFunction: String, setupDescriptor: RenderPipelineDescriptorSetupBlock? = nil) -> MTLRenderPipelineState? {
+        var pipelineStateDescriptor = generateDescriptor(vertexFunction, fragmentFunction: fragmentFunction, setupDescriptor: setupDescriptor)
         return generateFromDescriptor(device, pipelineStateDescriptor: pipelineStateDescriptor!)
     }
     
@@ -59,6 +79,10 @@ public class RenderPipelineGenerator {
         }
         
         return pipelineState!
+    }
+    
+    private func defaultDescriptor() {
+        
     }
 }
 
