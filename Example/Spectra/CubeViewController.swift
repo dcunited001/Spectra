@@ -34,10 +34,13 @@ class CubeViewController: MetalViewController {
         "colorShiftContinuous": ("basicColorShiftedContinuousVertex", "basicColorFragment")
     ]
     
+    var depthStencilStateMap: Spectra.DepthStencilStateMap = [:]
+    var nodeMap: Spectra.SceneNodeMap = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPipelineStateMap()
-        
+        loadDepthStencilMap()
         setupScene()
     }
     
@@ -46,9 +49,18 @@ class CubeViewController: MetalViewController {
         pipelineStateMap = pipelineGenerator.generatePipelineMap(spectraView.device!, functionMap: CubeViewController.renderFunctionMap)
     }
     
+    func loadDepthStencilMap() {
+        let depthStateDesc = MTLDepthStencilDescriptor()
+        depthStateDesc.depthCompareFunction = .Always
+        depthStateDesc.depthWriteEnabled = true
+        depthStencilStateMap["default"] = spectraView.device?.newDepthStencilStateWithDescriptor(depthStateDesc)
+    }
+    
     func setupScene() {
         scene = Spectra.Scene()
         scene!.pipelineStateMap = pipelineStateMap
+        scene!.nodeMap = nodeMap
+        
     }
     
 }
