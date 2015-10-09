@@ -13,6 +13,7 @@
 		438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ACE011BC7163D0008C59E /* CubeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAA91BC82100004323ED /* Cube.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43D8BAA81BC82100004323ED /* Cube.xml */; settings = {ASSET_TAGS = (); }; };
 		43D8BAAD1BC85B02004323ED /* DataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAC1BC85B02004323ED /* DataEncoding.swift */; settings = {ASSET_TAGS = (); }; };
+		43D8BAB01BC87A97004323ED /* TexturedQuadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */; settings = {ASSET_TAGS = (); }; };
 		43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43E90C191BC45AC9009DBF99 /* color_shift.metal */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		438ACE011BC7163D0008C59E /* CubeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeViewController.swift; sourceTree = "<group>"; };
 		43D8BAA81BC82100004323ED /* Cube.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cube.xml; sourceTree = "<group>"; };
 		43D8BAAC1BC85B02004323ED /* DataEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncoding.swift; sourceTree = "<group>"; };
+		43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturedQuadController.swift; sourceTree = "<group>"; };
 		43E90C191BC45AC9009DBF99 /* color_shift.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = color_shift.metal; sourceTree = "<group>"; };
 		45209440FD1512ABEF566A1A /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spectra_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Spectra_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectra_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,14 @@
 			name = Cube;
 			sourceTree = "<group>";
 		};
+		43D8BAAE1BC87A50004323ED /* TexturedQuad */ = {
+			isa = PBXGroup;
+			children = (
+				43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */,
+			);
+			name = TexturedQuad;
+			sourceTree = "<group>";
+		};
 		43E90C181BC45A83009DBF99 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		607FACD21AFB9204008FA782 /* Example for Spectra */ = {
 			isa = PBXGroup;
 			children = (
+				43D8BAAE1BC87A50004323ED /* TexturedQuad */,
 				43D8BAA71BC820AB004323ED /* Cube */,
 				43E90C181BC45A83009DBF99 /* Shaders */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -398,6 +409,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */,
 				43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */,
+				43D8BAB01BC87A97004323ED /* TexturedQuadController.swift in Sources */,
 				436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */,
 				43D8BAAD1BC85B02004323ED /* DataEncoding.swift in Sources */,
 				436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */,
