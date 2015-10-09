@@ -29,6 +29,8 @@ Spectra is available under the MIT license. See the LICENSE file for more info.
 
 ### READ: [Metal Programming Guide](https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221-CH1-SW1)
 
+### READ: [Caltech Geometry Papers](http://www.geometry.caltech.edu/pubs.html)
+
 - [Vertex Descriptor for Data Organization](https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW44)
 
 ### Questions:
