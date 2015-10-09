@@ -13,7 +13,6 @@ import simd
 public typealias SceneNodeMap = [String:Node]
 public typealias SceneNodeSelectorMap = [String:NodeSelector]
 
-
 //TODO: separate node primitives from nodes to conserve memory
 // - need to add a var with a reference to another node, from which data/dataMaps can be accessed
 // - but separate uniforms/perspective/etc can be applied
@@ -167,26 +166,26 @@ extension Uniformable {
 }
 
 //TODO: rename (this is the view matrix, perspectable is the projectable matrix)
-public protocol Projectable: class {
+public protocol Camable: class {
     //TODO: memoize projectable matrix?
-    var projectionEye:float3 { get set }
-    var projectionCenter:float3 { get set }
-    var projectionUp:float3 { get set }
+    var camEye:float4 { get set }
+    var camCenter:float4 { get set }
+    var camUp:float4 { get set }
     
     func setProjectableDefaults()
     func calcProjectionMatrix() -> float4x4
 }
 
 // TODO: must deinit resources?
-public extension Projectable {
+public extension Camable {
     public func setProjectableDefaults() {
-        projectionEye = [0.0, 0.0, 0.0]
-        projectionCenter = [0.0, 0.0, 1.0]
-        projectionUp = [0.0, 1.0, 0.0]
+        camEye =    [0.0, 0.0, 0.0, 1.0] //position
+        camCenter = [0.0, 0.0, 1.0, 1.0] //position
+        camUp =     [0.0, 1.0, 0.0, 0.0] //direction
     }
-    
+
     public func calcProjectionMatrix() -> float4x4 {
-        return Transform3D.lookAt(projectionEye, center: projectionCenter, up: projectionUp)
+        return Transform3D.lookAt(camEye, center: camCenter, up: camUp)
     }
 }
 
