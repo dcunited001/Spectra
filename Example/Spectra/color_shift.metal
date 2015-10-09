@@ -9,10 +9,26 @@
 #include <metal_stdlib>
 using namespace metal;
 
-struct ColorVertex {
+typedef struct {
+    float4 position [[attribute(0)]];
+    float4 rgba [[attribute(1)]];
+    float4 texcoord [[attribute(2)]];
+} ColorVertex;
+
+typedef struct {
     float4 position [[ position ]];
-    float4 color;
-};
+    float4 rgba;
+} ColorVertexOut;
+
+//typedef struct {
+//    float2 position [[attribute(0)]];
+//    float2 texCoord [[attribute(1)]];
+//} VertexData;
+//
+//typedef struct {
+//    float4 position [[position]];
+//    float2 texCoord;
+//} VertexOut;
 
 // reuses the uniforms matrix to shift color as though it's a coordinate system
 extern float4 shiftColorWithMVP
@@ -44,52 +60,52 @@ extern float4 shiftColorContinuousWithMVP
 
 //float4 colorShiftByDistance
 
-vertex ColorVertex basicColorVertex
+vertex ColorVertexOut basicColorVertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
  const device float4x4& mvp [[ buffer(2) ]],
  unsigned int vid [[ vertex_id ]])
 {
-    ColorVertex vOut;
+    ColorVertexOut vOut;
     vOut.position = mvp * vin[vid];
-    vOut.color = cin[vid];
+    vOut.rgba = cin[vid];
     
     return vOut;
 }
 
 fragment half4 basicColorFragment
 (
- ColorVertex interpolated [[ stage_in ]])
+ ColorVertexOut interpolated [[ stage_in ]])
 {
-    return half4(interpolated.color[0], interpolated.color[1], interpolated.color[2], interpolated.color[3]);
+    return half4(interpolated.rgba[0], interpolated.rgba[1], interpolated.rgba[2], interpolated.rgba[3]);
 }
 
-vertex ColorVertex basicColorShiftedVertex
+vertex ColorVertexOut basicColorShiftedVertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
  const device float4x4& mvp [[ buffer(2) ]],
  unsigned int vid [[ vertex_id ]])
 {
-    ColorVertex vout;
+    ColorVertexOut vout;
     vout.position = mvp * vin[vid];
-        vout.color = shiftColorWithMVP(*cin, mvp);
+        vout.rgba = shiftColorWithMVP(*cin, mvp);
     
     return vout;
 }
 
-vertex ColorVertex basicColorShiftedContinuousVertex
+vertex ColorVertexOut basicColorShiftedContinuousVertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
  const device float4x4& mvp [[ buffer(2) ]],
  unsigned int vid [[ vertex_id ]])
 {
-    ColorVertex vout;
+    ColorVertexOut vout;
     
     vout.position = mvp * vin[vid];
-        vout.color = shiftColorContinuousWithMVP(*cin, mvp);
+        vout.rgba = shiftColorContinuousWithMVP(*cin, mvp);
     
     return vout;
 }
