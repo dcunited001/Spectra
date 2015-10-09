@@ -7,7 +7,29 @@
 //
 
 import Metal
+import SWXMLHash
 import simd
+
+public class Node: Modelable {
+    public var modelScale = float4(1.0, 1.0, 1.0, 1.0)
+    public var modelPosition = float4(0.0, 0.0, 0.0, 1.0)
+    public var modelRotation = float4(1.0, 1.0, 1.0, 90)
+    public var modelMatrix: float4x4 = float4x4(diagonal: float4(1.0,1.0,1.0,1.0))
+    
+    public init() {
+        updateModelMatrix()
+    }
+    
+}
+
+public protocol NodeTreeable {
+    
+}
+
+//TODO: extend XMLElement
+public class SceneGraph {
+    
+}
 
 // TODO: for cube (and other polygons),
 // - determine indexing functions for textures
@@ -39,21 +61,6 @@ public protocol NodeColorable {
 
 public protocol NodeTextureable {
     var textureBuffer: EncodableBuffer { get set }
-}
-
-public class Node: Modelable {
-    var vertexBuffer: EncodableBuffer?
-    var buffers: [EncodableBuffer] = []
-    
-    // Modelable
-    public var modelScale = float4(1.0, 1.0, 1.0, 1.0)
-    public var modelPosition = float4(0.0, 0.0, 0.0, 1.0)
-    public var modelRotation = float4(1.0, 1.0, 1.0, 90)
-    public var modelMatrix: float4x4 = float4x4(diagonal: float4(1.0,1.0,1.0,1.0))
-    
-    init() {
-        updateModelMatrix()
-    }
 }
 
 public protocol Modelable: class {
