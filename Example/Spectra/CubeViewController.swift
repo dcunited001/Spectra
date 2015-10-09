@@ -68,26 +68,23 @@ class CubeViewController: MetalViewController {
         let data = NSData(contentsOfFile: path!)
         let xml = SWXMLHash.parse(data!)
         
-        let cube = try! xml["root"].withAttr("id", cubeKey)
-        
-        // attach position, color and vertex data to nodes
-        
+        let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
+        setupCube(cubeKey, xml: cubeXml)
     }
     
-    func setupCube(cubeKey: String, xmlCube: XMLElement) {
+    func setupCube(cubeKey: String, xml: XMLIndexer) {
         let cubeNode = Spectra.Node()
         let cubeGen = Spectra.CubeGenerator()
         cubeNode.data["position"] = cubeGen.getVertices()
         cubeNode.data["texcoords"] = cubeGen.getTexCoords()
         cubeNode.data["colorcoords"] = cubeGen.getColorCoords()
         cubeNode.dataMaps["triangle_vertex"] = cubeGen.getTriangleVertexMap()
-        nodeMap[cubeKey] = cubeNode
+        scene!.nodeMap[cubeKey] = cubeNode
         //nodeMap[cubeKey] =
     }
     
     func setupScene() {
         scene!.pipelineStateMap = pipelineStateMap
-
     }
     
 }
