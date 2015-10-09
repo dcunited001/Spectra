@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-25" y="-528"/>
         </scene>
-        <!--Metal View Controller-->
+        <!--Cube View Controller-->
         <scene sceneID="Vg4-3y-FT6">
             <objects>
-                <viewController id="iCi-Qq-RJR" customClass="MetalViewController" customModule="Spectra_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iCi-Qq-RJR" customClass="CubeViewController" customModule="Spectra_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Igx-gj-Yf6"/>
                         <viewControllerLayoutGuide type="bottom" id="5ql-5O-Yqy"/>
@@ -126,6 +126,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="spectraView" destination="Pdz-Hg-7fo" id="gjF-t3-Av7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyl-fH-EL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
