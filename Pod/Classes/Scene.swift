@@ -34,6 +34,8 @@ public class Scene: RenderDelegate, UpdateDelegate {
     public var nodeMap: SceneNodeMap = [:]
 //    public var sceneGraph: SceneGraph?
     
+    public var worldUniforms = WorldUniforms()
+    
     public init() {
 
     }
