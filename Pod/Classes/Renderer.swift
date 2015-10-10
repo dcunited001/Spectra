@@ -160,10 +160,6 @@ public class BaseRenderer {
 //        uniformScale *= float4(1.0, Float(view.frame.width / view.frame.height), 1.0, 1.0)
 //    }
 //    
-//    func calcMvpMatrix(modelMatrix: float4x4) -> float4x4 {
-//        return calcPerspectiveMatrix() * calcProjectionMatrix() * calcUniformMatrix() * modelMatrix
-//    }
-//    
 //    func preparePipelineState(view: BaseView) -> Bool {
 //        guard let vertexProgram = shaderLibrary?.newFunctionWithName(vertexShaderName) else {
 //            print("Couldn't load \(vertexShaderName)")

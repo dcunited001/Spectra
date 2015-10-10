@@ -44,15 +44,14 @@ public class WorldUniforms: Uniformable {
     }
 }
 
-public protocol MVPMatrix: class {
-    var mvpMatrix: float4x4 { get set }
+public protocol HasMVPInput: class {
     var mvpInput: BaseEncodableInput<float4x4>? { get set }
-    func calcMvpMatrix(modelMatrix: float4x4) -> float4x4
-    func updateMvpMatrix(modelMatrix: float4x4)
+    func calcMvp() -> float4x4
+    func updateMvp()
 }
 
-extension MVPMatrix {
-    public func updateMvpMatrix(modelMatrix: float4x4) {
-        self.mvpMatrix = calcMvpMatrix(modelMatrix)
+extension HasMVPInput {
+    public func updateMvp() {
+        self.mvpInput?.data = calcMvp()
     }
 }

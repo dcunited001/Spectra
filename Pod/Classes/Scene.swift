@@ -7,6 +7,7 @@
 //
 
 import Metal
+import simd
 
 // SpectraScene
 // - render is called
@@ -34,10 +35,12 @@ public class Scene: RenderDelegate, UpdateDelegate {
     public var nodeMap: SceneNodeMap = [:]
 //    public var sceneGraph: SceneGraph?
     
-    public var worldUniforms = WorldUniforms()
+    public var activeCamara: Camable = BaseCamera()
+    public var worldUniforms: Uniformable = WorldUniforms()
+    public var mvpInput: BaseEncodableInput<float4x4>?
     
     public init() {
-
+        updateMvp()
     }
 
 //    func setupRenderStrategy
@@ -55,5 +58,12 @@ public class Scene: RenderDelegate, UpdateDelegate {
     
     public func updateObjects(timeSinceLastUpdate: CFTimeInterval, inflightResourcesIndex: Int) {
         
+    }
+}
+
+extension Scene: HasMVPInput {
+    public func calcMvp() -> float4x4 {
+        return float4x4()
+        //        return calcPerspectiveMatrix() * calcProjectionMatrix() * calcUniformMatrix()
     }
 }
