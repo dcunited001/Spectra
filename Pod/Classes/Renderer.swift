@@ -12,13 +12,12 @@ import MetalKit
 public typealias RendererEncodeBlock = ((MTLRenderCommandEncoder) -> Void)
 public typealias RenderEncoderConfigureBlock = ((MTLRenderCommandEncoder) -> Void)
 public typealias RenderEncoderTransition = ((MTLRenderCommandEncoder) -> MTLRenderCommandEncoder)
+public typealias RenderEncoderTransitionMap = [String:RenderEncoderTransition]
 public typealias RenderEncoderCreateMonad = ((MTLCommandBuffer, MTLRenderPassDescriptor) -> MTLRenderCommandEncoder)
 
 public protocol Renderer {
-    // Use enums for rendererType. use rendererTypes for transitionMap keys
     var name: String? { get set }
-    var rendererType: Int { get set }
-    var transitionMap: [Int:RenderEncoderTransition] { get set }
+    var transitionMap: RenderEncoderTransitionMap { get set }
     var createRenderEncoderBlock: RenderEncoderCreateMonad? { get set }
     
     // should these kinds of properties only be set from inside blocks?
@@ -50,8 +49,8 @@ extension Renderer {
     }
     
     public func transitionRenderEncoderTo(renderer: Renderer?) -> RenderEncoderTransition? {
-        if let rendererTypeId = renderer?.rendererType {
-            return transitionMap[rendererTypeId]
+        if let rendererType = renderer?.name {
+            return transitionMap[rendererType]
         } else {
             //TODO: more 'eloquent' way to return here? or to structure this functions?
             return nil
@@ -62,11 +61,10 @@ extension Renderer {
 
 //typealias ComputeEncoderTransition = ((MTLCommandBuffer, MTLComputeCommandEncoder) -> MTLComputeCommandEncoder)
 
-public class RendererBase: Renderer {
+public class BaseRenderer: Renderer {
     public var name: String?
-    public var rendererType: Int = 0 // use enum for renderer types
-    public var transitionMap: [Int:RenderEncoderTransition] = [:]
-    public var createRenderEncoderBlock: RenderEncoderCreateMonad? = RendererBase.createRenderEncoderDefault()
+    public var transitionMap: RenderEncoderTransitionMap = [:]
+    public var createRenderEncoderBlock: RenderEncoderCreateMonad? = BaseRenderer.createRenderEncoderDefault()
     public var configureRenderEncoderBlock: RenderEncoderConfigureBlock?
     
     public var cullMode: MTLCullMode = .Front
@@ -89,15 +87,15 @@ public class RendererBase: Renderer {
 //    var Far:Float = 100.0
 //}
 
-public class BaseRenderer {
-    
+//public class BaseRenderer {
+
 //    var colorPixelFormat: MTLPixelFormat? = .BGRA8Unorm
 //    var depthPixelFormat: MTLPixelFormat? = .Depth32Float
 //    var stencilPixelFormat: MTLPixelFormat?
     
     // this value will cycle from 0 to kInFlightCommandBuffers whenever a display completes ensuring renderer clients
     // can synchronize between kInFlightCommandBuffers count buffers, and thus avoiding a constant buffer from being overwritten between draws
-}
+//}
 
 //class MVPRenderer: BaseRenderer, Projectable, Uniformable, Perspectable {
 //    var pipelineState: MTLRenderPipelineState?
