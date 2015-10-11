@@ -32,6 +32,8 @@
 		392DE7D19E1CB92B1DA0839CF5F669EC /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */; };
 		39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5259095864EA30CB78E92DA90A1FD981 /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40489E0BC1BF46430106029567CC4F00 /* BufferTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */; };
+		4338943C1BCB2C3500CE1002 /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338943A1BCB2C3500CE1002 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
+		4338943D1BCB2C3500CE1002 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338943B1BCB2C3500CE1002 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
 		459689BFB01A7FCD8AC323ECBF8F6EAC /* Pods-Spectra_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C86907F1AD7399D570DE20B287DD927A /* Pods-Spectra_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BA5C9D17C8C5B5E81D507E0A424568 /* EZAudioUtilities.m */; };
 		51C5259C250858B22E54B40A8561CC66 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */; };
@@ -193,6 +195,8 @@
 		3B7C3C3577C49797E605A4B9139CD926 /* Spectra-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spectra-dummy.m"; sourceTree = "<group>"; };
 		42057939E133617D26137C651010F924 /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4338943A1BCB2C3500CE1002 /* NodeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NodeResource.swift; path = Node/NodeResource.swift; sourceTree = "<group>"; };
+		4338943B1BCB2C3500CE1002 /* Vertexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vertexable.swift; path = Node/Vertexable.swift; sourceTree = "<group>"; };
 		44CBC2321DD3A35CB3A9A2E312E5C489 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		46E7546B9CCCAFD3E4D0FDD395AA7282 /* ONOXMLDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ONOXMLDocument.m; path = Source/ONOXMLDocument.m; sourceTree = "<group>"; };
 		4AA9F67E14107C1A8D0AAAF286E80004 /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
@@ -237,7 +241,7 @@
 		B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderStage.swift; sourceTree = "<group>"; };
 		B58175C2F29B6883A57BCB05C37F082B /* Spectra-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spectra-prefix.pch"; sourceTree = "<group>"; };
 		B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* Scene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		B6E9DB61D20F83987255820881364EBB /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		B6E9DB61D20F83987255820881364EBB /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = NodeGenerators/Node.swift; sourceTree = "<group>"; };
 		B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
 		BA22EE8E581145B208214047A67A7ED3 /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -245,7 +249,7 @@
 		BEBEB9CF8032C8D238E760E768770489 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFA97BB83A6D9AE8D897C476FF2DA885 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
 		C2BA6C0EE0E496A321ABAD4A00023C23 /* Pods-Spectra_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Perspectable.swift; sourceTree = "<group>"; };
+		C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Perspectable.swift; path = Classes/Perspectable.swift; sourceTree = "<group>"; };
 		C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		C4733EDB1032BE5248AA16161160B145 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
 		C6E284C272725CB7B36E2ABD04B973B4 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
@@ -258,7 +262,7 @@
 		D4A4EFA5270C14B95D1CFE3BF3F66ED9 /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
 		D654AC65663A9C896B32285EDDAD0ABA /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
 		D6D476C1EE48C67ABC8D92BEAD4118A0 /* Ono.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Ono.h; path = Source/Ono.h; sourceTree = "<group>"; };
-		D712C820B53F3093F1B14258E21307AA /* Modelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
+		D712C820B53F3093F1B14258E21307AA /* Modelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Modelable.swift; path = Classes/Modelable.swift; sourceTree = "<group>"; };
 		D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncodableData.swift; sourceTree = "<group>"; };
 		D9926C8E1CAEA40A146DA1B80B1541B7 /* Pods-Spectra_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DAC874FBDC4CC0260FD179C5CBD93D2A /* Pods-Spectra_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Example-resources.sh"; sourceTree = "<group>"; };
@@ -280,8 +284,8 @@
 		EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
 		F0BC4D786251D812FF2DD5F148FF5F76 /* Pods-Spectra_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spectra_Tests.modulemap"; sourceTree = "<group>"; };
 		F108D57478A0D5BE83B3E6C3698EBD8C /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
-		F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Camable.swift; sourceTree = "<group>"; };
-		F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Uniformable.swift; sourceTree = "<group>"; };
+		F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Camable.swift; path = Classes/Camable.swift; sourceTree = "<group>"; };
+		F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Uniformable.swift; path = Classes/Uniformable.swift; sourceTree = "<group>"; };
 		F6D89F67BCE7A0CC1E04DE33F004C7A1 /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB222CBE853E72EA153A21FECF187FEB /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
 		FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
@@ -430,6 +434,20 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		433894391BCB2BDD00CE1002 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				4338943A1BCB2C3500CE1002 /* NodeResource.swift */,
+				4338943B1BCB2C3500CE1002 /* Vertexable.swift */,
+				B6E9DB61D20F83987255820881364EBB /* Node.swift */,
+				F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */,
+				D712C820B53F3093F1B14258E21307AA /* Modelable.swift */,
+				C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */,
+				F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */,
+			);
+			name = Node;
+			sourceTree = "<group>";
+		};
 		464AECAED15D88F51AD416AE6C7796B3 /* Ono */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +492,7 @@
 		691CE617B3E1F53254AA50BE014632FF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				433894391BCB2BDD00CE1002 /* Node */,
 				A2CB3054EF319A6DF631F54C41555968 /* Classes */,
 				A86240A6F9DDD8BA5628ED0805C540F7 /* NodeGenerators */,
 			);
@@ -560,18 +579,14 @@
 				B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */,
 				EC83479D69D2CB8868C5E04DE0C53A89 /* BufferPool.swift */,
 				09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */,
-				F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */,
 				D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */,
 				E3EBB52204E7038A228276A578E2F3CA /* InflightResourceManager.swift */,
-				D712C820B53F3093F1B14258E21307AA /* Modelable.swift */,
-				C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */,
 				1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */,
 				A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */,
 				B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */,
 				9B67E3F96763F07CB3DC05BFDF2101CF /* RenderStrategy.swift */,
 				B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* Scene.swift */,
 				FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */,
-				F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */,
 				E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */,
 			);
 			path = Classes;
@@ -581,7 +596,6 @@
 			isa = PBXGroup;
 			children = (
 				C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */,
-				B6E9DB61D20F83987255820881364EBB /* Node.swift */,
 				EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */,
 				BC38FAA951A82C2526B063FA8AB23EA2 /* PlatonicSolids.swift */,
 				053087C481AA0EE027EAA4BC29CDA9FF /* Quad.swift */,
@@ -910,6 +924,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */,
+				4338943C1BCB2C3500CE1002 /* NodeResource.swift in Sources */,
 				F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */,
 				F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */,
 				D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */,
@@ -923,6 +938,7 @@
 				4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */,
 				9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */,
 				0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */,
+				4338943D1BCB2C3500CE1002 /* Vertexable.swift in Sources */,
 				048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */,
 				5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */,
 				1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */,
@@ -1119,6 +1135,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E29C4ABE5621F1A96EF142F5832250EF /* EZAudio.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1136,6 +1153,7 @@
 				PRODUCT_NAME = EZAudio;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1473,6 +1491,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E29C4ABE5621F1A96EF142F5832250EF /* EZAudio.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
