@@ -37,6 +37,7 @@ you've been warned.
   s.source_files = [
     'Pod/Classes/**/*',
     'Pod/Shaders/**/*',
+    'Pod/Node/**/*',
     'Pod/NodeGenerators/**/*']
 
   s.resource_bundles = {
