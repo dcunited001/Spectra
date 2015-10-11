@@ -24,6 +24,8 @@
 		420B06758452A00A846C0D8873C96C64 /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF90F282E7362AEBA37EE64D9BFB4C2 /* EZAudioPlot.m */; };
 		42E90C5C2CDF60B8639B59834C16CDC0 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 477303D250FCCD9DF7A8E2757DF4283D /* EZMicrophone.m */; };
 		4353BB1DF532E2C269473335AAB2091A /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BA415F70765D3B4EEC1B1CCEA3224 /* EZAudioFFT.m */; };
+		435E6E901BCAFAB100962E09 /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E8E1BCAF94400962E09 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
+		435E6E921BCB09C100962E09 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E911BCB09C100962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
 		4376973916602DA5A20F78608F53358E /* Spectra-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD372BB215D99705E9B606021B43696 /* Spectra-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43D8BAB51BC87F4B004323ED /* Camable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAB11BC87EDC004323ED /* Camable.swift */; settings = {ASSET_TAGS = (); }; };
@@ -191,14 +193,16 @@
 		354CC245C3F4A7B86977C87AD8B8FC31 /* SWXMLHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWXMLHash.xcconfig; sourceTree = "<group>"; };
 		364F92E789DF98D889C8B1DD86B56C7A /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3594F1B142D51796A1219BFCCB0E3 /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
-		3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = NodeGenerators/Node.swift; sourceTree = "<group>"; };
 		3DCCF44AF75CEC9BAB33AF8737F86F5A /* Pods_Spectra_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4DB793537A062680D9EB82E1002A51 /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		43D8BAB11BC87EDC004323ED /* Camable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camable.swift; sourceTree = "<group>"; };
-		43D8BAB31BC87EEC004323ED /* Perspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perspectable.swift; sourceTree = "<group>"; };
-		43D8BAB71BC88114004323ED /* Modelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
-		43D8BAB91BC8812C004323ED /* Uniformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniformable.swift; sourceTree = "<group>"; };
+		435E6E8E1BCAF94400962E09 /* NodeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeResource.swift; sourceTree = "<group>"; };
+		435E6E911BCB09C100962E09 /* Vertexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertexable.swift; sourceTree = "<group>"; };
+		43D8BAB11BC87EDC004323ED /* Camable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camable.swift; path = Classes/Camable.swift; sourceTree = "<group>"; };
+		43D8BAB31BC87EEC004323ED /* Perspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Perspectable.swift; path = Classes/Perspectable.swift; sourceTree = "<group>"; };
+		43D8BAB71BC88114004323ED /* Modelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Modelable.swift; path = Classes/Modelable.swift; sourceTree = "<group>"; };
+		43D8BAB91BC8812C004323ED /* Uniformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Uniformable.swift; path = Classes/Uniformable.swift; sourceTree = "<group>"; };
 		455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
 		462B148DB50097BF0EA883418308144F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477303D250FCCD9DF7A8E2757DF4283D /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
@@ -422,6 +426,20 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		435E6E8D1BCAF92800962E09 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */,
+				43D8BAB11BC87EDC004323ED /* Camable.swift */,
+				43D8BAB31BC87EEC004323ED /* Perspectable.swift */,
+				43D8BAB71BC88114004323ED /* Modelable.swift */,
+				43D8BAB91BC8812C004323ED /* Uniformable.swift */,
+				435E6E8E1BCAF94400962E09 /* NodeResource.swift */,
+				435E6E911BCB09C100962E09 /* Vertexable.swift */,
+			);
+			name = Node;
+			sourceTree = "<group>";
+		};
 		4AD117E77725F7CACD901315C11B716C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,7 +521,6 @@
 			isa = PBXGroup;
 			children = (
 				03740E04C0502F97D59A346BFD22AD62 /* Cube.swift */,
-				3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */,
 				9208E11C80D08AA343C87257636C21CB /* NodeGenerator.swift */,
 				169E7B806673274FDA87B999E810D5B7 /* PlatonicSolids.swift */,
 				55722C3FC13DF7B5B33703692E07F079 /* Quad.swift */,
@@ -596,10 +613,6 @@
 				74CF7DDFCD9E0D7B16C45102B47D0A70 /* Scene.swift */,
 				E44DB1E279F0746200A3B543C239149A /* Transform3D.swift */,
 				F92B02954EF8F4FCEAFD78C015B29738 /* View.swift */,
-				43D8BAB11BC87EDC004323ED /* Camable.swift */,
-				43D8BAB31BC87EEC004323ED /* Perspectable.swift */,
-				43D8BAB71BC88114004323ED /* Modelable.swift */,
-				43D8BAB91BC8812C004323ED /* Uniformable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -647,6 +660,7 @@
 		F401B9BCF74D01026865838C109A8888 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				435E6E8D1BCAF92800962E09 /* Node */,
 				A8ADE5205B0A7AE749AB4167F1B8E434 /* Classes */,
 				79885A9A440BEB1E30790D30EC7AA0DB /* NodeGenerators */,
 			);
@@ -922,6 +936,7 @@
 				D5D3C0D1F128CBE5374D32E373D2A78C /* EZAudioDevice.m in Sources */,
 				53AFE56096147A33BD968E62508D5A4E /* EZAudioDisplayLink.m in Sources */,
 				4353BB1DF532E2C269473335AAB2091A /* EZAudioFFT.m in Sources */,
+				435E6E921BCB09C100962E09 /* Vertexable.swift in Sources */,
 				B73267CEC296C91FF19DE227C07A27E4 /* EZAudioFile.m in Sources */,
 				BFB031F3804A2EE8685B4E02C30D3C2D /* EZAudioFloatConverter.m in Sources */,
 				1209ABF42A1B6602B4B0236F4687CB3E /* EZAudioFloatData.m in Sources */,
@@ -978,6 +993,7 @@
 				E0BA9EB3C2677FCADCC47D56AAADA927 /* BasicTriangle.swift in Sources */,
 				89BFB53A255175397B42F1B5D06F6F1D /* BufferPool.swift in Sources */,
 				144F02E4427B5DC81216CFA01DD6C25A /* BufferTexture.swift in Sources */,
+				435E6E901BCAFAB100962E09 /* NodeResource.swift in Sources */,
 				F03A086AF57E3D5200A50780E318E121 /* Cube.swift in Sources */,
 				43D8BABB1BC88159004323ED /* Modelable.swift in Sources */,
 				BF5349617F11C12FC648152E4A2CC8C6 /* EncodableData.swift in Sources */,
