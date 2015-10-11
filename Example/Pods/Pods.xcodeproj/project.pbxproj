@@ -24,7 +24,6 @@
 		2A0F0A2508E908917F12CE0243517A28 /* TPCircularBuffer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF1151B0135F3BCBF8747EC3EFE2E04 /* TPCircularBuffer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2AEA61ED085850C9DE731404FDD2A511 /* Ono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1808DADF985E16A092B60348A4169166 /* Ono.framework */; };
 		2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D9DA4E9A9CEEF06F19B96938CD1555 /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		308A7EB927D4F81182D91214C5E52E26 /* SceneGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* SceneGraph.swift */; };
 		32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = BFA97BB83A6D9AE8D897C476FF2DA885 /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3491E7A91C1660F4CD5AF76002E8FC91 /* ONOXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 14BCDFE00AB6933943E11A245D66C055 /* ONOXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		376214D05C5B1624E87616B8444D4EDE /* Camable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */; };
@@ -242,7 +241,6 @@
 		B13B1608D188570BF902EB9130A2E4AA /* Ono.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ono.xcconfig; sourceTree = "<group>"; };
 		B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderStage.swift; sourceTree = "<group>"; };
 		B58175C2F29B6883A57BCB05C37F082B /* Spectra-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spectra-prefix.pch"; sourceTree = "<group>"; };
-		B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* SceneGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneGraph.swift; path = ../Node/SceneGraph.swift; sourceTree = "<group>"; };
 		B6E9DB61D20F83987255820881364EBB /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = Node/Node.swift; sourceTree = "<group>"; };
 		B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
 		BA22EE8E581145B208214047A67A7ED3 /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -588,7 +586,6 @@
 				A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */,
 				B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */,
 				9B67E3F96763F07CB3DC05BFDF2101CF /* RenderStrategy.swift */,
-				B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* SceneGraph.swift */,
 				FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */,
 				E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */,
 			);
