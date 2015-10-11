@@ -35,7 +35,7 @@ public class Scene: RenderDelegate, UpdateDelegate {
     public var nodeMap: SceneNodeMap = [:]
 //    public var sceneGraph: SceneGraph?
     
-    public var activeCamara: Camable = BaseCamera()
+    public var activeCamera: Camable = BaseCamera()
     public var worldUniforms: Uniformable = WorldUniforms()
     public var mvpInput: BaseEncodableInput<float4x4>?
     
