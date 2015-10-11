@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435FB03E1BCB232C0017F50C /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 435FB0321BCB21D00017F50C /* libxml2.2.tbd */; };
 		7E1878CA19ECB7DC00487429 /* GlimpseXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1878BE19ECB7DC00487429 /* GlimpseXML.framework */; };
 		7E1878D119ECB7DC00487429 /* GlimpseXMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878D019ECB7DC00487429 /* GlimpseXMLTests.swift */; };
 		7E1878DB19ECB82B00487429 /* GlimpseXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878DA19ECB82B00487429 /* GlimpseXML.swift */; };
-		7E794B4F1B4C0C9800ADD651 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E794B4E1B4C0C9800ADD651 /* libxml2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		435FB0321BCB21D00017F50C /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		435FB0341BCB21F50017F50C /* libxml */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libxml; path = ../../../../../../usr/include/libxml2/libxml; sourceTree = "<group>"; };
+		435FB0361BCB22050017F50C /* libxml2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libxml2; path = ../../../../../../usr/include/libxml2; sourceTree = "<group>"; };
 		7E0E4D441A8CEDEF00D3830F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7E1878BE19ECB7DC00487429 /* GlimpseXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlimpseXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1878C219ECB7DC00487429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E794B4F1B4C0C9800ADD651 /* libxml2.tbd in Frameworks */,
+				435FB03E1BCB232C0017F50C /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,9 @@
 		7E1878B419ECB7DC00487429 = {
 			isa = PBXGroup;
 			children = (
+				435FB0361BCB22050017F50C /* libxml2 */,
+				435FB0341BCB21F50017F50C /* libxml */,
+				435FB0321BCB21D00017F50C /* libxml2.2.tbd */,
 				7E0E4D441A8CEDEF00D3830F /* README.md */,
 				7E1878C019ECB7DC00487429 /* GlimpseXML */,
 				7E1878CD19ECB7DC00487429 /* GlimpseXMLTests */,
@@ -317,7 +323,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = GLIMPSEXML_FRAMEWORK;
 				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
+					"/usr/include/libxml2/**",
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
@@ -343,7 +349,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = GLIMPSEXML_FRAMEWORK;
 				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
+					"/usr/include/libxml2/**",
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);

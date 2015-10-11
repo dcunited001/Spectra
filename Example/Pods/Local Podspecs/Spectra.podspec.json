@@ -35,6 +35,7 @@
   "source_files": [
     "Pod/Classes/**/*",
     "Pod/Shaders/**/*",
+    "Pod/Node/**/*",
     "Pod/NodeGenerators/**/*"
   ],
   "resource_bundles": {

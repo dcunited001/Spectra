@@ -28,9 +28,6 @@
 		38A62A8A4E77FC9504F79735972CF51C /* TPCircularBuffer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3128B11F137251E813EBB2ECCA16298 /* TPCircularBuffer-dummy.m */; };
 		39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C5544857118A361657188855BFE10E24 /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E543941C337828C4B212CB8CB65DC62 /* PipelineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */; };
-		435FB02F1BCB1F240017F50C /* GlimpseXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435FB02C1BCB1F010017F50C /* GlimpseXML.framework */; };
-		435FB0301BCB207C0017F50C /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E9D1BCB1A4700962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
-		435FB0311BCB20800017F50C /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E9C1BCB1A4700962E09 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
 		4F22CFCF543ECC697E673ECB3EA5BE5E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */; };
 		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CC7BF97F85354045D9E2C179F42FAC /* EZAudioUtilities.m */; };
 		52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = E67A91F111D542D07124F5912CF538F5 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,20 +92,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		435FB02B1BCB1F010017F50C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 435FB0261BCB1F010017F50C /* GlimpseXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E1878BE19ECB7DC00487429;
-			remoteInfo = GlimpseXML;
-		};
-		435FB02D1BCB1F010017F50C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 435FB0261BCB1F010017F50C /* GlimpseXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E1878C919ECB7DC00487429;
-			remoteInfo = GlimpseXMLTests;
-		};
 		6824A2D9F8C8B082B0B44DABFFF20F9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -181,10 +164,6 @@
 		3C887D5F5C782D7D6D8A2673861255D4 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
 		3E3C2C64D8A1F738E9874CA59672B8BF /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		435E6E991BCB198700962E09 /* GlimpseXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GlimpseXML.framework; path = ../../GlimpseXML/build/Debug/GlimpseXML.framework; sourceTree = "<group>"; };
-		435E6E9C1BCB1A4700962E09 /* NodeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeResource.swift; sourceTree = "<group>"; };
-		435E6E9D1BCB1A4700962E09 /* Vertexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertexable.swift; sourceTree = "<group>"; };
-		435FB0261BCB1F010017F50C /* GlimpseXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GlimpseXML.xcodeproj; path = ../../GlimpseXML/GlimpseXML.xcodeproj; sourceTree = "<group>"; };
 		44C53716414645FAA377812776C725F9 /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
 		48397F505DC01546BB59E1C67BBAAD45 /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
 		4848AD70BFE94ABAD3BE71033CB2837F /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -231,7 +210,7 @@
 		BC38FAA951A82C2526B063FA8AB23EA2 /* PlatonicSolids.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
 		BEBEB9CF8032C8D238E760E768770489 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2BA6C0EE0E496A321ABAD4A00023C23 /* Pods-Spectra_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Perspectable.swift; path = Classes/Perspectable.swift; sourceTree = "<group>"; };
+		C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Perspectable.swift; sourceTree = "<group>"; };
 		C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		C5544857118A361657188855BFE10E24 /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
 		C86907F1AD7399D570DE20B287DD927A /* Pods-Spectra_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -240,7 +219,7 @@
 		D310092D29FCB94B74F9A56D832F8224 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A34CC88A0B8B4A6E9CA0811BDF9566 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
 		D415D849036EB13B1039B19CD2BCD0A8 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
-		D712C820B53F3093F1B14258E21307AA /* Modelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Modelable.swift; path = Classes/Modelable.swift; sourceTree = "<group>"; };
+		D712C820B53F3093F1B14258E21307AA /* Modelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
 		D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncodableData.swift; sourceTree = "<group>"; };
 		D9926C8E1CAEA40A146DA1B80B1541B7 /* Pods-Spectra_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D9A0B781C28D8D6B322D6707143391F5 /* EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-umbrella.h"; sourceTree = "<group>"; };
@@ -262,8 +241,8 @@
 		EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
 		F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F0BC4D786251D812FF2DD5F148FF5F76 /* Pods-Spectra_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spectra_Tests.modulemap"; sourceTree = "<group>"; };
-		F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Camable.swift; path = Classes/Camable.swift; sourceTree = "<group>"; };
-		F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Uniformable.swift; path = Classes/Uniformable.swift; sourceTree = "<group>"; };
+		F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Camable.swift; sourceTree = "<group>"; };
+		F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Uniformable.swift; sourceTree = "<group>"; };
 		F52FFF571F804E549AAE7E820D60BAD2 /* TPCircularBuffer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TPCircularBuffer.modulemap; sourceTree = "<group>"; };
 		FD161CA00ACB036A462F4379D6BEE97B /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
 		FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
@@ -275,7 +254,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				435FB02F1BCB1F240017F50C /* GlimpseXML.framework in Frameworks */,
 				BFA711F4D522E220AE7C3EDE699E0361 /* Accelerate.framework in Frameworks */,
 				F65C12F1638F7A63A9BA885B88B602F3 /* Foundation.framework in Frameworks */,
 				F6CB8CA16BE9973E0637BC0F9166D0EF /* Metal.framework in Frameworks */,
@@ -351,7 +329,6 @@
 		21640BD6763FF7F687141661B0A8B06A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				435E6E991BCB198700962E09 /* GlimpseXML.framework */,
 				74941211ED7BBF3670B5365A9DDE7BF0 /* TPCircularBuffer.framework */,
 				22AD620D2301764AB2DB269069CF3AA6 /* iOS */,
 			);
@@ -399,28 +376,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		435E6E9B1BCB1A3300962E09 /* Node */ = {
-			isa = PBXGroup;
-			children = (
-				F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */,
-				D712C820B53F3093F1B14258E21307AA /* Modelable.swift */,
-				C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */,
-				F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */,
-				435E6E9C1BCB1A4700962E09 /* NodeResource.swift */,
-				435E6E9D1BCB1A4700962E09 /* Vertexable.swift */,
-			);
-			name = Node;
-			sourceTree = "<group>";
-		};
-		435FB0271BCB1F010017F50C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				435FB02C1BCB1F010017F50C /* GlimpseXML.framework */,
-				435FB02E1BCB1F010017F50C /* GlimpseXMLTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4777930D774F53CF1BC2A6E31B96026E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,7 +411,6 @@
 		691CE617B3E1F53254AA50BE014632FF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				435E6E9B1BCB1A3300962E09 /* Node */,
 				A2CB3054EF319A6DF631F54C41555968 /* Classes */,
 				A86240A6F9DDD8BA5628ED0805C540F7 /* NodeGenerators */,
 			);
@@ -515,7 +469,6 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				435FB0261BCB1F010017F50C /* GlimpseXML.xcodeproj */,
 				057BF3709F8766C4CC4F7EC084D7BB1D /* Development Pods */,
 				21640BD6763FF7F687141661B0A8B06A /* Frameworks */,
 				7C57FA91A4188381F5A04A6F83E77D76 /* Pods */,
@@ -558,14 +511,18 @@
 				B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */,
 				EC83479D69D2CB8868C5E04DE0C53A89 /* BufferPool.swift */,
 				09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */,
+				F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */,
 				D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */,
 				E3EBB52204E7038A228276A578E2F3CA /* InflightResourceManager.swift */,
+				D712C820B53F3093F1B14258E21307AA /* Modelable.swift */,
+				C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */,
 				1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */,
 				A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */,
 				B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */,
 				9B67E3F96763F07CB3DC05BFDF2101CF /* RenderStrategy.swift */,
 				B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* Scene.swift */,
 				FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */,
+				F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */,
 				E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */,
 			);
 			path = Classes;
@@ -810,12 +767,6 @@
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 3506E0C37E8D1D475AC7EF16E0424C2B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 435FB0271BCB1F010017F50C /* Products */;
-					ProjectRef = 435FB0261BCB1F010017F50C /* GlimpseXML.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */,
@@ -827,23 +778,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		435FB02C1BCB1F010017F50C /* GlimpseXML.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GlimpseXML.framework;
-			remoteRef = 435FB02B1BCB1F010017F50C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		435FB02E1BCB1F010017F50C /* GlimpseXMLTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GlimpseXMLTests.xctest;
-			remoteRef = 435FB02D1BCB1F010017F50C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6B02AE96CB897CFA7516EA1B652751CD /* Resources */ = {
@@ -887,11 +821,9 @@
 				0A7039E0C11FB487D7D98BCB465EFFF2 /* RenderStrategy.swift in Sources */,
 				71D343FDFC42A4F315BE09482E66703C /* Scene.swift in Sources */,
 				65BF426197097837936BF3BA4EC2BFC3 /* Spectra-dummy.m in Sources */,
-				435FB0311BCB20800017F50C /* NodeResource.swift in Sources */,
 				BDC20A9CFEA2FBA5485C78DCC0EBD80C /* Transform3D.swift in Sources */,
 				F79C1014BD0A80BABCAC36C0C09F4232 /* Uniformable.swift in Sources */,
 				4F22CFCF543ECC697E673ECB3EA5BE5E /* View.swift in Sources */,
-				435FB0301BCB207C0017F50C /* Vertexable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,7 +930,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C2718371CA6818722CEBD50AE842A72 /* EZAudio.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1016,7 +947,6 @@
 				PRODUCT_NAME = EZAudio;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1355,7 +1285,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C2718371CA6818722CEBD50AE842A72 /* EZAudio.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
