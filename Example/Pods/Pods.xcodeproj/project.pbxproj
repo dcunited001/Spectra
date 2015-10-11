@@ -28,9 +28,9 @@
 		38A62A8A4E77FC9504F79735972CF51C /* TPCircularBuffer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3128B11F137251E813EBB2ECCA16298 /* TPCircularBuffer-dummy.m */; };
 		39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C5544857118A361657188855BFE10E24 /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E543941C337828C4B212CB8CB65DC62 /* PipelineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */; };
-		435E6E9E1BCB1A4700962E09 /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E9C1BCB1A4700962E09 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
-		435E6E9F1BCB1A4700962E09 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E9D1BCB1A4700962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
 		435FB02F1BCB1F240017F50C /* GlimpseXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435FB02C1BCB1F010017F50C /* GlimpseXML.framework */; };
+		435FB0301BCB207C0017F50C /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E9D1BCB1A4700962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
+		435FB0311BCB20800017F50C /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E9C1BCB1A4700962E09 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
 		4F22CFCF543ECC697E673ECB3EA5BE5E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */; };
 		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CC7BF97F85354045D9E2C179F42FAC /* EZAudioUtilities.m */; };
 		52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = E67A91F111D542D07124F5912CF538F5 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -887,9 +887,11 @@
 				0A7039E0C11FB487D7D98BCB465EFFF2 /* RenderStrategy.swift in Sources */,
 				71D343FDFC42A4F315BE09482E66703C /* Scene.swift in Sources */,
 				65BF426197097837936BF3BA4EC2BFC3 /* Spectra-dummy.m in Sources */,
+				435FB0311BCB20800017F50C /* NodeResource.swift in Sources */,
 				BDC20A9CFEA2FBA5485C78DCC0EBD80C /* Transform3D.swift in Sources */,
 				F79C1014BD0A80BABCAC36C0C09F4232 /* Uniformable.swift in Sources */,
 				4F22CFCF543ECC697E673ECB3EA5BE5E /* View.swift in Sources */,
+				435FB0301BCB207C0017F50C /* Vertexable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,7 +908,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */,
-				435E6E9E1BCB1A4700962E09 /* NodeResource.swift in Sources */,
 				F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */,
 				F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */,
 				D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */,
@@ -920,7 +921,6 @@
 				4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */,
 				9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */,
 				0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */,
-				435E6E9F1BCB1A4700962E09 /* Vertexable.swift in Sources */,
 				048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */,
 				5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */,
 				1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */,
