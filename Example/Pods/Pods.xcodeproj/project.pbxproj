@@ -23,9 +23,9 @@
 		3C9D5381ADBBD2F6BBDB08553738DDE1 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA521B49CACAEE3AFC8629825FA6987 /* EZPlot.m */; };
 		420B06758452A00A846C0D8873C96C64 /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF90F282E7362AEBA37EE64D9BFB4C2 /* EZAudioPlot.m */; };
 		42E90C5C2CDF60B8639B59834C16CDC0 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 477303D250FCCD9DF7A8E2757DF4283D /* EZMicrophone.m */; };
+		433894381BCB26EA00CE1002 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E911BCB09C100962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
 		4353BB1DF532E2C269473335AAB2091A /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BA415F70765D3B4EEC1B1CCEA3224 /* EZAudioFFT.m */; };
 		435E6E901BCAFAB100962E09 /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E8E1BCAF94400962E09 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
-		435E6E921BCB09C100962E09 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E911BCB09C100962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
 		4376973916602DA5A20F78608F53358E /* Spectra-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD372BB215D99705E9B606021B43696 /* Spectra-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43D8BAB51BC87F4B004323ED /* Camable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAB11BC87EDC004323ED /* Camable.swift */; settings = {ASSET_TAGS = (); }; };
@@ -936,7 +936,6 @@
 				D5D3C0D1F128CBE5374D32E373D2A78C /* EZAudioDevice.m in Sources */,
 				53AFE56096147A33BD968E62508D5A4E /* EZAudioDisplayLink.m in Sources */,
 				4353BB1DF532E2C269473335AAB2091A /* EZAudioFFT.m in Sources */,
-				435E6E921BCB09C100962E09 /* Vertexable.swift in Sources */,
 				B73267CEC296C91FF19DE227C07A27E4 /* EZAudioFile.m in Sources */,
 				BFB031F3804A2EE8685B4E02C30D3C2D /* EZAudioFloatConverter.m in Sources */,
 				1209ABF42A1B6602B4B0236F4687CB3E /* EZAudioFloatData.m in Sources */,
@@ -995,6 +994,7 @@
 				144F02E4427B5DC81216CFA01DD6C25A /* BufferTexture.swift in Sources */,
 				435E6E901BCAFAB100962E09 /* NodeResource.swift in Sources */,
 				F03A086AF57E3D5200A50780E318E121 /* Cube.swift in Sources */,
+				433894381BCB26EA00CE1002 /* Vertexable.swift in Sources */,
 				43D8BABB1BC88159004323ED /* Modelable.swift in Sources */,
 				BF5349617F11C12FC648152E4A2CC8C6 /* EncodableData.swift in Sources */,
 				010D5EEDCB7A449C0A5EB5D348C56B1F /* InflightResourceManager.swift in Sources */,
