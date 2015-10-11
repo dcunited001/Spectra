@@ -7,354 +7,305 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		010D5EEDCB7A449C0A5EB5D348C56B1F /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABF3CFCD073977FBE8196C49F7E7A9 /* InflightResourceManager.swift */; };
-		02F03C7B89BDA83CA67BBF70C7B51135 /* EZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED18E1F8CC7607871453386C73488F /* EZAudioPlayer.m */; };
-		090028A9DE59F5B82EB2855A702E3E2C /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = C4188B2B8C5C87EE5903D5116025FEFE /* EZAudio.m */; };
-		0B649C7054EB880D9E437E3244020ACD /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8D0E967E5035FE0EA0F3CFBF66C55 /* Pods-Spectra_Tests-dummy.m */; };
-		0CF9C66BE0F647AEB635F01E972DAE39 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CED635250C284D1D32EEF539D1FE79 /* SWXMLHash.framework */; };
-		1209ABF42A1B6602B4B0236F4687CB3E /* EZAudioFloatData.m in Sources */ = {isa = PBXBuildFile; fileRef = A37A8D4145DEEA1C891F730114C2B57E /* EZAudioFloatData.m */; };
-		144F02E4427B5DC81216CFA01DD6C25A /* BufferTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7E1998262F6E281AB7FD293B0B156 /* BufferTexture.swift */; };
-		1A39CE4F472433FBA7E8424C8B371C3E /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = FCB474FB09D5FF0A1A215C695BE79240 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2257C2F8793EA377C328C384C506ECB1 /* TPCircularBuffer+AudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FF678CE75F3F32FC6F39FB0D0DEF6E /* TPCircularBuffer+AudioBufferList.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24FE7D0D53D2FFB14DF34C06BD74F20F /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B359E60B25967471250CB2C1A077072A /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		259E752BA15FAC3D8A1C0D4EEAC4D224 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B247EB2936E639824A6A67DD7370172 /* AVFoundation.framework */; };
-		30ADA8E4D05B97FBFEB19E90936A5E8B /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4DB793537A062680D9EB82E1002A51 /* Renderer.swift */; };
-		3896BEE62EE012043B991740279E1DAA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ECC39A7964A4614BD69AF855444A81 /* Accelerate.framework */; };
-		3C9D5381ADBBD2F6BBDB08553738DDE1 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA521B49CACAEE3AFC8629825FA6987 /* EZPlot.m */; };
-		420B06758452A00A846C0D8873C96C64 /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF90F282E7362AEBA37EE64D9BFB4C2 /* EZAudioPlot.m */; };
-		42E90C5C2CDF60B8639B59834C16CDC0 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 477303D250FCCD9DF7A8E2757DF4283D /* EZMicrophone.m */; };
-		4353BB1DF532E2C269473335AAB2091A /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BA415F70765D3B4EEC1B1CCEA3224 /* EZAudioFFT.m */; };
-		435E6E901BCAFAB100962E09 /* NodeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E8E1BCAF94400962E09 /* NodeResource.swift */; settings = {ASSET_TAGS = (); }; };
-		435E6E921BCB09C100962E09 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435E6E911BCB09C100962E09 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
-		4376973916602DA5A20F78608F53358E /* Spectra-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD372BB215D99705E9B606021B43696 /* Spectra-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		43D8BAB51BC87F4B004323ED /* Camable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAB11BC87EDC004323ED /* Camable.swift */; settings = {ASSET_TAGS = (); }; };
-		43D8BAB61BC87FD2004323ED /* Perspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAB31BC87EEC004323ED /* Perspectable.swift */; settings = {ASSET_TAGS = (); }; };
-		43D8BABB1BC88159004323ED /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAB71BC88114004323ED /* Modelable.swift */; settings = {ASSET_TAGS = (); }; };
-		43D8BABC1BC8815D004323ED /* Uniformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAB91BC8812C004323ED /* Uniformable.swift */; settings = {ASSET_TAGS = (); }; };
-		4E614DF2579440EFFFD102398BEEFF64 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = DFC4DE22D8180ED4AE64D880E8C23695 /* TPCircularBuffer.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		53AFE56096147A33BD968E62508D5A4E /* EZAudioDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F74218CACF53F4141B78AE6A2506F7 /* EZAudioDisplayLink.m */; };
-		55633956B9302CB7FFDE30EB7522EBDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
-		55FA9BCADA86CA46E2437B6CBCDEA71C /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB1E279F0746200A3B543C239149A /* Transform3D.swift */; };
-		564A6FEFE5AD9F8C017E2686345AB68A /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6AEDBB6BD987CF83683097D3DC4182 /* MetalKit.framework */; };
-		57FC51C790CC2046933E418C576ABA4A /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A32D262658833265F423266A1DF6C2B /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		58FDBC2FE26E8F938EDEE2A68DE458C8 /* EZAudioDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 073BCCBE45C1EF91B6D55C61F7AC6D39 /* EZAudioDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AEEBF640B5C74FA2E10CEC0E80C2F79 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3BB55E5DFCD7C2A4137EA66310BD50 /* EZAudioUtilities.m */; };
-		60C7FEA477CB09968C399DBDDCF93554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
-		669FDE3466F6D853A6E9F5A4F90CFEC1 /* Spectra-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B533E0ACC8E204D81BC5BE16D21BE2C7 /* Spectra-dummy.m */; };
-		7028E700B7E129BD91264CEA04C81919 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B440DBB47F4467CB6E0D085F801E2F4 /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7057374FA12A1E7DD12B36317F226D7F /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0966A4923D9DD4B3066EC0D58EFF7CED /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72B3F6B411AF68273656E903F2B6D41C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92B02954EF8F4FCEAFD78C015B29738 /* View.swift */; };
-		78CA8AD89FD7D8800939F5A247025141 /* RenderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994FE1F94BA7459445429980EF51FF47 /* RenderStrategy.swift */; };
-		7FA4158034EF8ADAEE2ABFA1E44A6CA5 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7DDFCD9E0D7B16C45102B47D0A70 /* Scene.swift */; };
-		805E2EE9A782A5CA63BBAADA9704D867 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ECC39A7964A4614BD69AF855444A81 /* Accelerate.framework */; };
-		81390AC11703EB369BB55709966927DE /* EZPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = D8C99D34069C4820E594E65075A8F348 /* EZPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89BFB53A255175397B42F1B5D06F6F1D /* BufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC5E0D1A047500930651EDCAC0971 /* BufferPool.swift */; };
-		92DB57FFE018721BEEE4BE444EAE4A07 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */; };
-		95D03994446226847345EB5F468EFBE6 /* EZAudioUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 501DE227B92C601A244DD796A13DA4C5 /* EZAudioUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BFC0179D59C01A4A5FBDA2E636D5307 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55722C3FC13DF7B5B33703692E07F079 /* Quad.swift */; };
-		A3A91733E3F6849C4A88AB83E8A5F820 /* EZAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D0F983C46F72CC13894D45284CFF8E /* EZAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A550B097D6A5775D7B727F16377BE120 /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC5DE227A78C137069E4406C1697B81 /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A91CE69A79FD20CB99AF4EE507653C2E /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = FC5F9EE00497C4D3862E04F48847A618 /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A93059FA68407DEA91860BF4E62A39C5 /* SWXMLHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 145E452B742B20A65841FB3588F63C39 /* SWXMLHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB65775649D2181479DECE0C4E90CA0F /* TPCircularBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16E7591187A46995BC2E4BF5798C09 /* TPCircularBuffer.framework */; };
-		AE2BACB489C5634BA371DA363500B330 /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C22DCD1457AC64CC485CF4009D0E7D /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2557BB34E05D2F86E980229439A5F6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
-		B415C975500B202DE4D34D08A39F31F5 /* Spectra.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C3FA30429824669EB6606EE7EE8C33B /* Spectra.bundle */; };
-		B5A7F4D82DABCF2A03DA84870ECC33B2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */; };
-		B64C5488693B8A33630325D1241EFCB0 /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F1504CE6BDBA97F5102B01AEF767D /* EZAudioPlotGL.m */; };
-		B73267CEC296C91FF19DE227C07A27E4 /* EZAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B451C9B384C71483F9D578B2FAD20BC1 /* EZAudioFile.m */; };
-		B79D312928A0F68981D9CCFA20E81A0C /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7668AF08D47BB7B52AD0868A324BD6 /* SWXMLHash.swift */; };
-		B8A54EC7979A7272C879E67914D8FFD2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */; };
-		BA535991CBBF662D29DD1228213D1902 /* NodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208E11C80D08AA343C87257636C21CB /* NodeGenerator.swift */; };
-		BB0795145021ECA2B218036AA37CF0EB /* TPCircularBuffer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B38F6B1DA31C16FABC5EB8DE48FA3FCC /* TPCircularBuffer-dummy.m */; };
-		BD5FE6A8B0EA2108FC9B1A3DE1B15713 /* PipelineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E300183CBA3E73BB21A0BCBFAA71E35 /* PipelineGenerator.swift */; };
-		BE661A884C6C566F991E2B5B0D843042 /* EZOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3594F1B142D51796A1219BFCCB0E3 /* EZOutput.m */; };
-		BF5349617F11C12FC648152E4A2CC8C6 /* EncodableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E49FCC2FE8E828D1CB53E308CB489E /* EncodableData.swift */; };
-		BFB031F3804A2EE8685B4E02C30D3C2D /* EZAudioFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDEC567B578FFF1814DAB57F9A35B21 /* EZAudioFloatConverter.m */; };
-		C0CBCF8C7895461461270F149C1B2AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
-		C707F8B3A3BC7CF5A4C831CB71385538 /* EZAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB3F714D81ABAB586F1390ED74C44 /* EZAudio-dummy.m */; };
-		CCBD2E84FE5651A02D572B7863EC23FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
-		CF792D9273B52DBC4F9BF45DF2EFCF6E /* TPCircularBuffer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF4606E3B5AA6199F0E2DCF06EC1CB2B /* TPCircularBuffer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D30539EAE797FBB6AF925E6803D950AA /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD1D6C0F8D962757F7A90F10670F5D /* EZRecorder.m */; };
-		D3F567C34C3276F9A67DF6EDD217CA98 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0B608D10323F439BF735F78DB1FF47 /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D446DBE49AA33181F55BC33444B27D82 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = E2AE10A52872414B1661253AE650CA4E /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5D3C0D1F128CBE5374D32E373D2A78C /* EZAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBD5ECE2CF1789832708BE54DE0758 /* EZAudioDevice.m */; };
-		DA4667EC75E6797C1A321C187604C33F /* RenderStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3188FD2A43351143632B048F2E6F447 /* RenderStage.swift */; };
-		DCBF6B965AE732BEEE7DBA0DDB22083B /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = E11EC05BCE8B45A422DF717BF5C2C13C /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD52501F853F864173049EBA328C9FCB /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AE87C26E512C5741FC748057AF9DD15 /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF16D888E16CC4E59D3D5A9A32C5107C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C88B0548C0F1D2E68E6C85C465BA63 /* GLKit.framework */; };
-		E0BA9EB3C2677FCADCC47D56AAADA927 /* BasicTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9996791641E20A7FBA159109D3A2078 /* BasicTriangle.swift */; };
-		E104AB4F865059C84F82F807FEA25AB4 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F19F404FC2925CF200F60FF5920C80F /* Metal.framework */; };
-		E27B55FBBED42578B1BE4DF25B669F0A /* PlatonicSolids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E7B806673274FDA87B999E810D5B7 /* PlatonicSolids.swift */; };
-		E3D3E7A21372869AB6AFBF667F00F4BC /* EZAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC69A210779F9C624434BA168677CE03 /* EZAudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5ACDE1031CFE5986D39126C362D6407 /* SWXMLHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7DFE3F81AE9F9B1339E5D2F2E5E45 /* SWXMLHash-dummy.m */; };
-		EBF1EC426E866A70A5775AC5A1AD0A38 /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CFF802C48D991C1DFA460815E1BB9069 /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE2A1EB12748882ECDAAB4322A68FFA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */; };
-		F03A086AF57E3D5200A50780E318E121 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03740E04C0502F97D59A346BFD22AD62 /* Cube.swift */; };
-		F6484589C1549F1A9B64A9950BCA8C5B /* Pods-Spectra_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 240F2F94518637F71E0643F54DB776A4 /* Pods-Spectra_Example-dummy.m */; };
-		FA047A3B1CD499FA82F56C0F4D8F13DE /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 215779FEB4CE4E54ED84C5464332D6C9 /* TPCircularBuffer.c */; };
-		FA6CDE7A2CE56FB9A9129ECDEE169B61 /* Pods-Spectra_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5D9F529BDAD3C0AF16A824E2CD4953 /* Pods-Spectra_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FED5E88EE3A1933413F025A4B6DFB960 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C96CCEB7BD1C2106D3F4BA11146FCAA /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = EA67C2E6EA971F7104CF3D6363DCDD30 /* EZPlot.m */; };
+		0A7039E0C11FB487D7D98BCB465EFFF2 /* RenderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67E3F96763F07CB3DC05BFDF2101CF /* RenderStrategy.swift */; };
+		0D53BB4D52199B94291FFA3B7E3429F8 /* Perspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */; };
+		0D58BDE3907BA7DE4055DF97E844EDA8 /* EZAudioFloatData.m in Sources */ = {isa = PBXBuildFile; fileRef = A209F35042B3C4F2AE304E5BE5FA8658 /* EZAudioFloatData.m */; };
+		0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = FD161CA00ACB036A462F4379D6BEE97B /* EZOutput.m */; };
+		144647B98725CD3445178F02C5C7593B /* EZAudioFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BA6528E8F408D66993E43E0757DCE /* EZAudioFloatConverter.m */; };
+		15877FA49BC87E1F00230263514C2CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */; };
+		160564F40D913B70CDC5F842C20587A9 /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6219B2FF82C0AE9FE70C2C7FBF7AEC /* EZAudioFFT.m */; };
+		1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 88CCE8D63C43E1A267237654E0614A52 /* TPCircularBuffer.c */; };
+		1ED0EDBB88737B03559CD427F701A629 /* Pods-Spectra_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E1D86E6430547E064EA527ADBE616B /* Pods-Spectra_Tests-dummy.m */; };
+		20F47D3CFB1BF8B28404EB06E17DA983 /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C887D5F5C782D7D6D8A2673861255D4 /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21052F39840C000451336BDDE087DEA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */; };
+		25A10C375FB3A17D00BD0D394C345070 /* NodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */; };
+		279725D27633FC93DAD75142E0CA4C21 /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AE6928D0DA20C15F43403DA8B457D1F /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A0F0A2508E908917F12CE0243517A28 /* TPCircularBuffer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AEA60E029500168FDD5CEB128513461 /* TPCircularBuffer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 19813C62773C1BB3374615B29C4AAB3A /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = D415D849036EB13B1039B19CD2BCD0A8 /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33F0D889D30C753FD27DB312097F1A79 /* InflightResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EBB52204E7038A228276A578E2F3CA /* InflightResourceManager.swift */; };
+		38A62A8A4E77FC9504F79735972CF51C /* TPCircularBuffer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3128B11F137251E813EBB2ECCA16298 /* TPCircularBuffer-dummy.m */; };
+		39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C5544857118A361657188855BFE10E24 /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E543941C337828C4B212CB8CB65DC62 /* PipelineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */; };
+		435E6E941BCB162F00962E09 /* GlimpseXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435E6E931BCB162F00962E09 /* GlimpseXML.framework */; };
+		4F22CFCF543ECC697E673ECB3EA5BE5E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */; };
+		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CC7BF97F85354045D9E2C179F42FAC /* EZAudioUtilities.m */; };
+		52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = E67A91F111D542D07124F5912CF538F5 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53756E04D22B3624CC61816A34FDEB10 /* Pods-Spectra_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF9C5D9BAA79B5C201473BEBCAFA91C9 /* Pods-Spectra_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		555EDB63D0933185850181BB795D1757 /* EZAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 955BAB1249639AAB67DFC48CAAC6A955 /* EZAudioFile.m */; };
+		5759E1633AB2AF8D732882034BE6A0EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */; };
+		593CC7717DE07063E27DFC943986913C /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 4946BFCD826F48335244DC5819C24A27 /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		598A0B4737982C0D493CE82C396971DB /* Camable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */; };
+		59E09171382D6891D9A33F22E847E131 /* EZAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9A0B781C28D8D6B322D6707143391F5 /* EZAudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B9AF696C3DA1C8D0FFB1BC72736F24D /* EZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DC70562EE8C9D99147AC871383C76E /* EZAudioPlayer.m */; };
+		5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9803328ECE9F62F14929DF9C456027 /* EZRecorder.m */; };
+		5E7ED9B81F4DFE68C1B1F777AFC6B1FB /* EncodableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */; };
+		65BF426197097837936BF3BA4EC2BFC3 /* Spectra-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C3C3577C49797E605A4B9139CD926 /* Spectra-dummy.m */; };
+		6D2C5F1BC28D8BA676BC798D445AC7E8 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = D3A34CC88A0B8B4A6E9CA0811BDF9566 /* TPCircularBuffer.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = 52C48FCCA29F15E74AF1309E29B0B23E /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F9C968B05D02757F0B477D341C879F7 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F53A4AEE6A7DCC4ACB244837A673446 /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FA27CA062C4B2E3567BCB8A2F4EA76F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */; };
+		71D343FDFC42A4F315BE09482E66703C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* Scene.swift */; };
+		72EC1ECA88D2DCC3DCABA09ECB087D9F /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A362D1E561E2CE8438C2653DD5927D /* EZAudioPlot.m */; };
+		7339973BB9036086B69D7BEAD2D01984 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053087C481AA0EE027EAA4BC29CDA9FF /* Quad.swift */; };
+		8104DD7FBD379692CB2E76178AA61D98 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4848AD70BFE94ABAD3BE71033CB2837F /* MetalKit.framework */; };
+		82D88EC77FD734D0DBD5547DE857B377 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC2576F1714158B74E7F01CBB35665E /* Accelerate.framework */; };
+		84FEF3DF870A7333ADDEC3F0E2C5D1C1 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8011539A0DC2DB1A6A5BA909B8F9D802 /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86D303C98C39D2076C8F28C660C452E3 /* EZAudioDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = B37E94F927FFA451E48CB2C92C829782 /* EZAudioDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F6964629CECB7A8CB10B3EAB0B86F9A /* TPCircularBuffer+AudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = DA01E01346A4ECFC160A2D5C16387EE8 /* TPCircularBuffer+AudioBufferList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9504F6C58BFE0BD0F71F0E22AD50ED73 /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415913A7D6D02C40CB1B902B833B9A2 /* EZAudioPlotGL.m */; };
+		9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2C64D8A1F738E9874CA59672B8BF /* EZMicrophone.m */; };
+		99FAA199A9D54C69CCF011631C90306C /* PlatonicSolids.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC38FAA951A82C2526B063FA8AB23EA2 /* PlatonicSolids.swift */; };
+		A1D943CB8A4C64CF85FDCBE113171ACE /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A61CC5F878C9DCE1A1D2FAC67EEB /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A209D7201C65A1FC8D28A1D29C801264 /* BufferTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */; };
+		A3B9523881ACB11E14EAFFA567154F66 /* BufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC83479D69D2CB8868C5E04DE0C53A89 /* BufferPool.swift */; };
+		A7114123845731BEB62F911783CB3A1C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93B63D8CA7CB3E966A05138C9AB450D /* GLKit.framework */; };
+		A7210D4A5CFCF388D5DFCA603FA860CA /* Pods-Spectra_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D992CBD687090205124E1844F5452FA /* Pods-Spectra_Example-dummy.m */; };
+		A9E55B79610B0DA9694E5B85F3309889 /* EZAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 48397F505DC01546BB59E1C67BBAAD45 /* EZAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AECD157D67D5476DD7E36F49946CC09A /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = FF95FCABCBF8D3BE131D37384CD4FBEF /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B16F1321E047054651BA451A6F9EB7A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A911439DD24552CE533862AF51629B0 /* AudioToolbox.framework */; };
+		B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1107916DEA006B16DB4F1DF9793BB8 /* EZAudio-dummy.m */; };
+		B5B5CF67FA52B01C0D711664AD687BD3 /* Pods-Spectra_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C86907F1AD7399D570DE20B287DD927A /* Pods-Spectra_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B950D61809F1FE73B009AD6CEC57E396 /* EZPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5FFABC14849584247CD7A5A1E01432 /* EZPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD6752FF69879F57E20AFF591F605531 /* EZAudioUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6FC7EC4F7E96F684D9F11DF93E1109 /* EZAudioUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDC20A9CFEA2FBA5485C78DCC0EBD80C /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */; };
+		BFA711F4D522E220AE7C3EDE699E0361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC2576F1714158B74E7F01CBB35665E /* Accelerate.framework */; };
+		C7FD0DA960952310EC684C8E38432A65 /* Spectra.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB9375831AB670E173F615039E6F8194 /* Spectra.bundle */; };
+		D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 667488D8A372735596857C6C9C411185 /* EZAudioDisplayLink.m */; };
+		D72CA8A65DE025E2A76FFB6CB93E4946 /* RenderStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */; };
+		D8066517E6029512E485DD79B9C12CD1 /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = B15CD4905188AB2C7750CF7C25D0EC1D /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9AB665A15F310A5C4493F2484B35BA6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9DB61D20F83987255820881364EBB /* Node.swift */; };
+		DB83702EE715B2773D78BA8F805B9F20 /* Spectra-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D895A151F7777D019D82EB978CD462 /* Spectra-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE298A80D3B623C0CFC5240DF1A2C0E7 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */; };
+		DF2620A17006BE1EA4CFDF1391951FB4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A911439DD24552CE533862AF51629B0 /* AudioToolbox.framework */; };
+		E271900ACC3DC181E0EDC656B0EB267E /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */; };
+		E9C1D762DECCCD579AD9A877F3CA7801 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712C820B53F3093F1B14258E21307AA /* Modelable.swift */; };
+		F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA306EFBD4453FE23CFA51E57B8652F /* EZAudioDevice.m */; };
+		F307A784C6DB630B885E1FD28DF468AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0449762ED0A6ECDAE9C471B1EDE8D44 /* AVFoundation.framework */; };
+		F330F40464BBCD50479F04D5DBBA5585 /* TPCircularBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74941211ED7BBF3670B5365A9DDE7BF0 /* TPCircularBuffer.framework */; };
+		F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E0387FDC9E0F45CDF9F6DB26BA08EC /* EZAudio.m */; };
+		F65C12F1638F7A63A9BA885B88B602F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */; };
+		F6CB8CA16BE9973E0637BC0F9166D0EF /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BBDD4506AEC6EE1571E0292B6A3C8A /* Metal.framework */; };
+		F79C1014BD0A80BABCAC36C0C09F4232 /* Uniformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */; };
+		F8197F17F632235C2EE6B3BD9AF6B042 /* BasicTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */; };
+		F8F61DAE346C6B0BD7CCB10DCA43AC78 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = EAA87D1CEC37F05C3AE86F840CA7E726 /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		06D1A53F1422FC09E79A2046771FD454 /* PBXContainerItemProxy */ = {
+		6824A2D9F8C8B082B0B44DABFFF20F9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 61DA5C8687C577EC778C5DDB0692C8BA;
-			remoteInfo = SWXMLHash;
-		};
-		3D22E099F3B58C711112CD02E9B00FB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9E8669A4548C7F352B63615D6BC0CBFD;
-			remoteInfo = Spectra;
-		};
-		62D37BBF6EEA3287CE906A0540444C95 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6BFE26E8CE7C5CEDF29C9FF3A401D8EE;
-			remoteInfo = "Spectra-Spectra";
-		};
-		64CAF5665F0E1EBDDDBEC3D1A0A0FB45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07ADC5D54261AA954D761105A33B061F;
+			remoteGlobalIDString = A065AE49C9E63F308170DB1B8FA6DC6C;
 			remoteInfo = TPCircularBuffer;
 		};
-		7269BAEE8E40BFE842638C20AB107796 /* PBXContainerItemProxy */ = {
+		746E2A15C43770CEA2EF5AA2BE56B763 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0F28EF1708EEEA18D0329628180F2CF5;
+			remoteGlobalIDString = E76DDCA89B7922203EBFF0342A517464;
+			remoteInfo = Spectra;
+		};
+		8B2D01318A79F04C132C36B50FC0666D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 001DFDFFBDE1DAFDF55B9CFE184B2781;
 			remoteInfo = EZAudio;
 		};
-		82F5C1F464256D1C14553A0C5427F248 /* PBXContainerItemProxy */ = {
+		93FAE5578A61D79A6A5BAF13A4920927 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 61DA5C8687C577EC778C5DDB0692C8BA;
-			remoteInfo = SWXMLHash;
+			remoteGlobalIDString = E76DDCA89B7922203EBFF0342A517464;
+			remoteInfo = Spectra;
 		};
-		A5E995F62C0664B361DB8E72BEDDCD6B /* PBXContainerItemProxy */ = {
+		DEAB8DE93DD57504348D45BC1669BFCD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 07ADC5D54261AA954D761105A33B061F;
+			remoteGlobalIDString = A065AE49C9E63F308170DB1B8FA6DC6C;
 			remoteInfo = TPCircularBuffer;
 		};
-		AC219C0A836FB9E5CD1801EDA0433FB0 /* PBXContainerItemProxy */ = {
+		F979BBE687CF4EB74DCD21416587EFDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 61DA5C8687C577EC778C5DDB0692C8BA;
-			remoteInfo = SWXMLHash;
-		};
-		BE0513CC0CAC89AA7661D9D4031A639F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9E8669A4548C7F352B63615D6BC0CBFD;
-			remoteInfo = Spectra;
+			remoteGlobalIDString = 99FBA05F457F0BD7B30B9FEB57E3C042;
+			remoteInfo = "Spectra-Spectra";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03740E04C0502F97D59A346BFD22AD62 /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		003BA6528E8F408D66993E43E0757DCE /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
+		004B585B5630A80A5C2924EAEC2B7CF8 /* Pods_Spectra_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		042A476A3BFC9D49A6564DC7EF6FF435 /* Pods-Spectra_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Example-frameworks.sh"; sourceTree = "<group>"; };
+		053087C481AA0EE027EAA4BC29CDA9FF /* Quad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		0592732552D131B6638E4A4DA3761FBE /* Pods_Spectra_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05EF13B2905EA49E256F4DB41BA4A4BF /* Pods-Spectra_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		073BCCBE45C1EF91B6D55C61F7AC6D39 /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = EZAudio/EZAudioDisplayLink.h; sourceTree = "<group>"; };
-		0829E2D581D2CC1A021E7432D79FCB9A /* EZAudio-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "EZAudio-Private.xcconfig"; sourceTree = "<group>"; };
-		0966A4923D9DD4B3066EC0D58EFF7CED /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
-		0F2C685B6CB8A9D5B5A83CF9584F99A5 /* TPCircularBuffer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TPCircularBuffer.modulemap; sourceTree = "<group>"; };
-		0F4EC07975A60C256E380D34E3B88C90 /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
-		145E452B742B20A65841FB3588F63C39 /* SWXMLHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWXMLHash-umbrella.h"; sourceTree = "<group>"; };
-		169E7B806673274FDA87B999E810D5B7 /* PlatonicSolids.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
-		1B440DBB47F4467CB6E0D085F801E2F4 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = EZAudio/TPCircularBuffer.h; sourceTree = "<group>"; };
-		1CD81B21E12C30D9C2A952E3174FE704 /* Spectra-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spectra-prefix.pch"; sourceTree = "<group>"; };
-		1D3BB55E5DFCD7C2A4137EA66310BD50 /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
+		09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BufferTexture.swift; sourceTree = "<group>"; };
+		0F948A3D9944375E87027B75603878FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13BBDD4506AEC6EE1571E0292B6A3C8A /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
+		1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
+		1955F60E68D30590E02F8D45813FFA98 /* Spectra.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spectra.modulemap; sourceTree = "<group>"; };
+		19813C62773C1BB3374615B29C4AAB3A /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
+		1D1107916DEA006B16DB4F1DF9793BB8 /* EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZAudio-dummy.m"; sourceTree = "<group>"; };
+		1D992CBD687090205124E1844F5452FA /* Pods-Spectra_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spectra_Example-dummy.m"; sourceTree = "<group>"; };
+		1E25F45F2C5E33D3191C331B52F6C0CB /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6219B2FF82C0AE9FE70C2C7FBF7AEC /* EZAudioFFT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFFT.m; path = EZAudio/EZAudioFFT.m; sourceTree = "<group>"; };
+		1F9803328ECE9F62F14929DF9C456027 /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
 		1FF8EC8FE8725299355644217037B20F /* Pods-Spectra_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spectra_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		215779FEB4CE4E54ED84C5464332D6C9 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = EZAudio/TPCircularBuffer.c; sourceTree = "<group>"; };
-		21C89114CEB010BC6C491DF8B03C35D8 /* TPCircularBuffer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPCircularBuffer.xcconfig; sourceTree = "<group>"; };
-		240F2F94518637F71E0643F54DB776A4 /* Pods-Spectra_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spectra_Example-dummy.m"; sourceTree = "<group>"; };
-		248785C762ACC7BAD870B045684625FC /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
-		24C22DCD1457AC64CC485CF4009D0E7D /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = EZAudio/EZAudioDevice.h; sourceTree = "<group>"; };
-		288E620EAEA274778E1EC7780247C1D9 /* SWXMLHash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWXMLHash-prefix.pch"; sourceTree = "<group>"; };
-		28D7DFE3F81AE9F9B1339E5D2F2E5E45 /* SWXMLHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWXMLHash-dummy.m"; sourceTree = "<group>"; };
-		2B247EB2936E639824A6A67DD7370172 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		2DE8D0E967E5035FE0EA0F3CFBF66C55 /* Pods-Spectra_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spectra_Tests-dummy.m"; sourceTree = "<group>"; };
-		2F19F404FC2925CF200F60FF5920C80F /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
-		309A61804A871CC761257568129B5A19 /* TPCircularBuffer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TPCircularBuffer-Private.xcconfig"; sourceTree = "<group>"; };
-		354CC245C3F4A7B86977C87AD8B8FC31 /* SWXMLHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWXMLHash.xcconfig; sourceTree = "<group>"; };
-		364F92E789DF98D889C8B1DD86B56C7A /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36C3594F1B142D51796A1219BFCCB0E3 /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
-		3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = NodeGenerators/Node.swift; sourceTree = "<group>"; };
-		3DCCF44AF75CEC9BAB33AF8737F86F5A /* Pods_Spectra_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E4DB793537A062680D9EB82E1002A51 /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		2415913A7D6D02C40CB1B902B833B9A2 /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
+		2F53A4AEE6A7DCC4ACB244837A673446 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
+		33F1E16E881C0B32A21BDCD69F16B7A0 /* Spectra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spectra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A911439DD24552CE533862AF51629B0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		3B7C3C3577C49797E605A4B9139CD926 /* Spectra-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spectra-dummy.m"; sourceTree = "<group>"; };
+		3C2718371CA6818722CEBD50AE842A72 /* EZAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZAudio.xcconfig; sourceTree = "<group>"; };
+		3C887D5F5C782D7D6D8A2673861255D4 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
+		3E3C2C64D8A1F738E9874CA59672B8BF /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
 		4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spectra_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		435E6E8E1BCAF94400962E09 /* NodeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeResource.swift; sourceTree = "<group>"; };
-		435E6E911BCB09C100962E09 /* Vertexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertexable.swift; sourceTree = "<group>"; };
-		43D8BAB11BC87EDC004323ED /* Camable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camable.swift; path = Classes/Camable.swift; sourceTree = "<group>"; };
-		43D8BAB31BC87EEC004323ED /* Perspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Perspectable.swift; path = Classes/Perspectable.swift; sourceTree = "<group>"; };
-		43D8BAB71BC88114004323ED /* Modelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Modelable.swift; path = Classes/Modelable.swift; sourceTree = "<group>"; };
-		43D8BAB91BC8812C004323ED /* Uniformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Uniformable.swift; path = Classes/Uniformable.swift; sourceTree = "<group>"; };
-		455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
-		462B148DB50097BF0EA883418308144F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		477303D250FCCD9DF7A8E2757DF4283D /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
-		4C96CCEB7BD1C2106D3F4BA11146FCAA /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
-		501DE227B92C601A244DD796A13DA4C5 /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = EZAudio/EZAudioUtilities.h; sourceTree = "<group>"; };
-		516CE60A41B4FB7A37956E8DAD68ACB1 /* EZAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZAudio.xcconfig; sourceTree = "<group>"; };
-		5421225993ECDF11A096B57B4769E561 /* Spectra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spectra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54ABF3CFCD073977FBE8196C49F7E7A9 /* InflightResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflightResourceManager.swift; sourceTree = "<group>"; };
-		54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
-		55722C3FC13DF7B5B33703692E07F079 /* Quad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
-		5721B453B5969C29FEB113F3BE874AAE /* SWXMLHash-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SWXMLHash-Private.xcconfig"; sourceTree = "<group>"; };
-		5C3FA30429824669EB6606EE7EE8C33B /* Spectra.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spectra.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F7668AF08D47BB7B52AD0868A324BD6 /* SWXMLHash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = Source/SWXMLHash.swift; sourceTree = "<group>"; };
-		62F4BD2B14AA55C199F636821AB64601 /* TPCircularBuffer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-prefix.pch"; sourceTree = "<group>"; };
-		6A9F1504CE6BDBA97F5102B01AEF767D /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
-		6E300183CBA3E73BB21A0BCBFAA71E35 /* PipelineGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PipelineGenerator.swift; sourceTree = "<group>"; };
-		73A62E695BF60E75A81E5EDA0F6FAE90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74CF7DDFCD9E0D7B16C45102B47D0A70 /* Scene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		74EEA94C0F9202ADAA6156925EA45CF9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77029B7677AF7DFB2106306C3E207279 /* Pods-Spectra_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		78E49FCC2FE8E828D1CB53E308CB489E /* EncodableData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncodableData.swift; sourceTree = "<group>"; };
-		7A32D262658833265F423266A1DF6C2B /* Pods-Spectra_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Tests-umbrella.h"; sourceTree = "<group>"; };
-		84ED18E1F8CC7607871453386C73488F /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
-		84FF678CE75F3F32FC6F39FB0D0DEF6E /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
-		866EFC29BFEEA29BA647CCA579B4E8A7 /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AADB3F714D81ABAB586F1390ED74C44 /* EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZAudio-dummy.m"; sourceTree = "<group>"; };
-		8AE87C26E512C5741FC748057AF9DD15 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
-		915F48FED98682368574DDBF967E555F /* Spectra-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Spectra-Private.xcconfig"; sourceTree = "<group>"; };
-		91D01FF50BA7ADB2C49DAF5999965F2A /* Spectra.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spectra.modulemap; sourceTree = "<group>"; };
-		91DBD5ECE2CF1789832708BE54DE0758 /* EZAudioDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDevice.m; path = EZAudio/EZAudioDevice.m; sourceTree = "<group>"; };
-		9208E11C80D08AA343C87257636C21CB /* NodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
+		435E6E931BCB162F00962E09 /* GlimpseXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GlimpseXML.framework; path = ../../../GlimpseXML/build/Debug/GlimpseXML.framework; sourceTree = "<group>"; };
+		44C53716414645FAA377812776C725F9 /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
+		48397F505DC01546BB59E1C67BBAAD45 /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
+		4848AD70BFE94ABAD3BE71033CB2837F /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
+		48A362D1E561E2CE8438C2653DD5927D /* EZAudioPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlot.m; path = EZAudio/EZAudioPlot.m; sourceTree = "<group>"; };
+		4946BFCD826F48335244DC5819C24A27 /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
+		4F5FFABC14849584247CD7A5A1E01432 /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = EZAudio/EZPlot.h; sourceTree = "<group>"; };
+		52C48FCCA29F15E74AF1309E29B0B23E /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
+		5D6FC7EC4F7E96F684D9F11DF93E1109 /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = EZAudio/EZAudioUtilities.h; sourceTree = "<group>"; };
+		618A6CB65ADBC8C7512ECF253F61C388 /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
+		61E1D86E6430547E064EA527ADBE616B /* Pods-Spectra_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spectra_Tests-dummy.m"; sourceTree = "<group>"; };
+		667488D8A372735596857C6C9C411185 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
+		70DC70562EE8C9D99147AC871383C76E /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
+		73C5A61CC5F878C9DCE1A1D2FAC67EEB /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
+		74941211ED7BBF3670B5365A9DDE7BF0 /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75318195397D4177A7CCF9C03DB9B411 /* Pods-Spectra_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7AE6928D0DA20C15F43403DA8B457D1F /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = EZAudio/EZAudioFloatConverter.h; sourceTree = "<group>"; };
+		8011539A0DC2DB1A6A5BA909B8F9D802 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = EZAudio/TPCircularBuffer.h; sourceTree = "<group>"; };
+		81CC7BF97F85354045D9E2C179F42FAC /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
+		866401E011E5526FCCC8EDA9D1B7FE22 /* TPCircularBuffer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-prefix.pch"; sourceTree = "<group>"; };
+		88CCE8D63C43E1A267237654E0614A52 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = EZAudio/TPCircularBuffer.c; sourceTree = "<group>"; };
+		8AA306EFBD4453FE23CFA51E57B8652F /* EZAudioDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDevice.m; path = EZAudio/EZAudioDevice.m; sourceTree = "<group>"; };
+		91E0387FDC9E0F45CDF9F6DB26BA08EC /* EZAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudio.m; path = EZAudio/EZAudio.m; sourceTree = "<group>"; };
 		93AEA7F178EE510B104A697F570CE632 /* Pods-Spectra_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spectra_Example.modulemap"; sourceTree = "<group>"; };
-		994FE1F94BA7459445429980EF51FF47 /* RenderStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderStrategy.swift; sourceTree = "<group>"; };
-		9A5968FA8306F17ECD7A2F4852AE0AFF /* Spectra.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spectra.xcconfig; sourceTree = "<group>"; };
+		955BAB1249639AAB67DFC48CAAC6A955 /* EZAudioFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFile.m; path = EZAudio/EZAudioFile.m; sourceTree = "<group>"; };
+		9AEA60E029500168FDD5CEB128513461 /* TPCircularBuffer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-umbrella.h"; sourceTree = "<group>"; };
 		9B553CF65000FC58A75CD07F4643B45E /* Pods-Spectra_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spectra_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9C16E7591187A46995BC2E4BF5798C09 /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DAD1D6C0F8D962757F7A90F10670F5D /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
-		A1ECC39A7964A4614BD69AF855444A81 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		A37A8D4145DEEA1C891F730114C2B57E /* EZAudioFloatData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatData.m; path = EZAudio/EZAudioFloatData.m; sourceTree = "<group>"; };
-		A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A8D7E1998262F6E281AB7FD293B0B156 /* BufferTexture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BufferTexture.swift; sourceTree = "<group>"; };
-		AAA521B49CACAEE3AFC8629825FA6987 /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
-		AF4606E3B5AA6199F0E2DCF06EC1CB2B /* TPCircularBuffer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-umbrella.h"; sourceTree = "<group>"; };
-		B359E60B25967471250CB2C1A077072A /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = EZAudio/EZAudioFloatConverter.h; sourceTree = "<group>"; };
-		B38F6B1DA31C16FABC5EB8DE48FA3FCC /* TPCircularBuffer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPCircularBuffer-dummy.m"; sourceTree = "<group>"; };
-		B451C9B384C71483F9D578B2FAD20BC1 /* EZAudioFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFile.m; path = EZAudio/EZAudioFile.m; sourceTree = "<group>"; };
-		B4D0F983C46F72CC13894D45284CFF8E /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
-		B533E0ACC8E204D81BC5BE16D21BE2C7 /* Spectra-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spectra-dummy.m"; sourceTree = "<group>"; };
+		9B67E3F96763F07CB3DC05BFDF2101CF /* RenderStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderStrategy.swift; sourceTree = "<group>"; };
+		9DF1A1F72440C42DAF31D81754521B2A /* Pods-Spectra_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A209F35042B3C4F2AE304E5BE5FA8658 /* EZAudioFloatData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatData.m; path = EZAudio/EZAudioFloatData.m; sourceTree = "<group>"; };
+		A3128B11F137251E813EBB2ECCA16298 /* TPCircularBuffer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPCircularBuffer-dummy.m"; sourceTree = "<group>"; };
+		A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		A93B63D8CA7CB3E966A05138C9AB450D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		ABF71DEE1D3A5A727685B2F9E986E0F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC2576F1714158B74E7F01CBB35665E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		B15CD4905188AB2C7750CF7C25D0EC1D /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = EZAudio/EZAudioFFT.h; sourceTree = "<group>"; };
+		B37E94F927FFA451E48CB2C92C829782 /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = EZAudio/EZAudioDisplayLink.h; sourceTree = "<group>"; };
+		B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderStage.swift; sourceTree = "<group>"; };
+		B58175C2F29B6883A57BCB05C37F082B /* Spectra-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spectra-prefix.pch"; sourceTree = "<group>"; };
+		B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* Scene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		B6E9DB61D20F83987255820881364EBB /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
+		BA22EE8E581145B208214047A67A7ED3 /* Pods-Spectra_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD240B44B1BB6D3DF95D4ABB2DAFEAFF /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDE70E20BC0D346C14D3883088E7CE89 /* Pods-Spectra_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC38FAA951A82C2526B063FA8AB23EA2 /* PlatonicSolids.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
 		BEBEB9CF8032C8D238E760E768770489 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF5D9F529BDAD3C0AF16A824E2CD4953 /* Pods-Spectra_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Example-umbrella.h"; sourceTree = "<group>"; };
-		BFC5DE227A78C137069E4406C1697B81 /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
 		C2BA6C0EE0E496A321ABAD4A00023C23 /* Pods-Spectra_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		C3C88B0548C0F1D2E68E6C85C465BA63 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
-		C4188B2B8C5C87EE5903D5116025FEFE /* EZAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudio.m; path = EZAudio/EZAudio.m; sourceTree = "<group>"; };
-		C94BA415F70765D3B4EEC1B1CCEA3224 /* EZAudioFFT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFFT.m; path = EZAudio/EZAudioFFT.m; sourceTree = "<group>"; };
-		CCDEC567B578FFF1814DAB57F9A35B21 /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
-		CFF802C48D991C1DFA460815E1BB9069 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
+		C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Perspectable.swift; sourceTree = "<group>"; };
+		C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		C5544857118A361657188855BFE10E24 /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
+		C86907F1AD7399D570DE20B287DD927A /* Pods-Spectra_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Example-umbrella.h"; sourceTree = "<group>"; };
+		CB9375831AB670E173F615039E6F8194 /* Spectra.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spectra.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D214E6B24AE57C81F7E95D771EF4ABDF /* Pods-Spectra_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-resources.sh"; sourceTree = "<group>"; };
-		D8C99D34069C4820E594E65075A8F348 /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = EZAudio/EZPlot.h; sourceTree = "<group>"; };
+		D310092D29FCB94B74F9A56D832F8224 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3A34CC88A0B8B4A6E9CA0811BDF9566 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
+		D415D849036EB13B1039B19CD2BCD0A8 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
+		D712C820B53F3093F1B14258E21307AA /* Modelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
+		D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncodableData.swift; sourceTree = "<group>"; };
+		D9926C8E1CAEA40A146DA1B80B1541B7 /* Pods-Spectra_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D9A0B781C28D8D6B322D6707143391F5 /* EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-umbrella.h"; sourceTree = "<group>"; };
+		DA01E01346A4ECFC160A2D5C16387EE8 /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
 		DAC874FBDC4CC0260FD179C5CBD93D2A /* Pods-Spectra_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Example-resources.sh"; sourceTree = "<group>"; };
-		DC0B608D10323F439BF735F78DB1FF47 /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = EZAudio/EZAudioFloatData.h; sourceTree = "<group>"; };
 		DDF60FDF614A2745E6EC9CD1A0D43AE8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFC4DE22D8180ED4AE64D880E8C23695 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
-		E11EC05BCE8B45A422DF717BF5C2C13C /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
-		E20ACA659CEFCE180D3FC3FB0352CB52 /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
-		E2AE10A52872414B1661253AE650CA4E /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
-		E3188FD2A43351143632B048F2E6F447 /* RenderStage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RenderStage.swift; sourceTree = "<group>"; };
-		E337C33C69757C424924C23FED22E92E /* SWXMLHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWXMLHash.modulemap; sourceTree = "<group>"; };
-		E44DB1E279F0746200A3B543C239149A /* Transform3D.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
-		E4F74218CACF53F4141B78AE6A2506F7 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
-		E8CED635250C284D1D32EEF539D1FE79 /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9996791641E20A7FBA159109D3A2078 /* BasicTriangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicTriangle.swift; sourceTree = "<group>"; };
-		EC69A210779F9C624434BA168677CE03 /* EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-umbrella.h"; sourceTree = "<group>"; };
-		EDD372BB215D99705E9B606021B43696 /* Spectra-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spectra-umbrella.h"; sourceTree = "<group>"; };
-		EE6AEDBB6BD987CF83683097D3DC4182 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
-		EFF90F282E7362AEBA37EE64D9BFB4C2 /* EZAudioPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlot.m; path = EZAudio/EZAudioPlot.m; sourceTree = "<group>"; };
+		DE93D411D896C9A9369113A6C83AD516 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9C5D9BAA79B5C201473BEBCAFA91C9 /* Pods-Spectra_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spectra_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E0449762ED0A6ECDAE9C471B1EDE8D44 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		E3EBB52204E7038A228276A578E2F3CA /* InflightResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflightResourceManager.swift; sourceTree = "<group>"; };
+		E4D895A151F7777D019D82EB978CD462 /* Spectra-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spectra-umbrella.h"; sourceTree = "<group>"; };
+		E66090D483C75E260F81E7AC20D64F65 /* Spectra.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spectra.xcconfig; sourceTree = "<group>"; };
+		E67A91F111D542D07124F5912CF538F5 /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = EZAudio/EZAudioPlotGL.h; sourceTree = "<group>"; };
+		E8ABD8A50AAF5E7932B4BA70B2F58E0B /* TPCircularBuffer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPCircularBuffer.xcconfig; sourceTree = "<group>"; };
+		E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		EA67C2E6EA971F7104CF3D6363DCDD30 /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
+		EAA87D1CEC37F05C3AE86F840CA7E726 /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = EZAudio/EZAudioFloatData.h; sourceTree = "<group>"; };
+		EC83479D69D2CB8868C5E04DE0C53A89 /* BufferPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BufferPool.swift; sourceTree = "<group>"; };
+		EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
+		F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F0BC4D786251D812FF2DD5F148FF5F76 /* Pods-Spectra_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spectra_Tests.modulemap"; sourceTree = "<group>"; };
-		F47CB565D3F386C08DD3CB57547C26AB /* Pods_Spectra_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spectra_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6BD9B0B7DC98D7597615F87482B5929 /* Pods-Spectra_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spectra_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F92B02954EF8F4FCEAFD78C015B29738 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		F9CD42811149344CE4AAF304BEC68470 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC5F9EE00497C4D3862E04F48847A618 /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = EZAudio/EZAudioFFT.h; sourceTree = "<group>"; };
-		FCB474FB09D5FF0A1A215C695BE79240 /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = EZAudio/EZAudioPlotGL.h; sourceTree = "<group>"; };
-		FCBCC5E0D1A047500930651EDCAC0971 /* BufferPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BufferPool.swift; sourceTree = "<group>"; };
+		F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Camable.swift; sourceTree = "<group>"; };
+		F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Uniformable.swift; sourceTree = "<group>"; };
+		F52FFF571F804E549AAE7E820D60BAD2 /* TPCircularBuffer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TPCircularBuffer.modulemap; sourceTree = "<group>"; };
+		FD161CA00ACB036A462F4379D6BEE97B /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
+		FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
+		FF95FCABCBF8D3BE131D37384CD4FBEF /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = EZAudio/EZAudioDevice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2C9F5CA59157F5C366B58A634EB8E06A /* Frameworks */ = {
+		7A18DA27D06F8EC84BE8ECE62E0C07BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92DB57FFE018721BEEE4BE444EAE4A07 /* AudioToolbox.framework in Frameworks */,
-				EE2A1EB12748882ECDAAB4322A68FFA5 /* Foundation.framework in Frameworks */,
+				BFA711F4D522E220AE7C3EDE699E0361 /* Accelerate.framework in Frameworks */,
+				F65C12F1638F7A63A9BA885B88B602F3 /* Foundation.framework in Frameworks */,
+				F6CB8CA16BE9973E0637BC0F9166D0EF /* Metal.framework in Frameworks */,
+				8104DD7FBD379692CB2E76178AA61D98 /* MetalKit.framework in Frameworks */,
+				435E6E941BCB162F00962E09 /* GlimpseXML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37AA4AE7182DE6538DACA2A837D2E72D /* Frameworks */ = {
+		7B39E1612FB288650D4607FB8FE489B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				259E752BA15FAC3D8A1C0D4EEAC4D224 /* AVFoundation.framework in Frameworks */,
-				3896BEE62EE012043B991740279E1DAA /* Accelerate.framework in Frameworks */,
-				B5A7F4D82DABCF2A03DA84870ECC33B2 /* AudioToolbox.framework in Frameworks */,
-				55633956B9302CB7FFDE30EB7522EBDA /* Foundation.framework in Frameworks */,
-				DF16D888E16CC4E59D3D5A9A32C5107C /* GLKit.framework in Frameworks */,
-				AB65775649D2181479DECE0C4E90CA0F /* TPCircularBuffer.framework in Frameworks */,
+				B16F1321E047054651BA451A6F9EB7A6 /* AudioToolbox.framework in Frameworks */,
+				21052F39840C000451336BDDE087DEA3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AAA0FA123180F929CAA055C0C8B5B0B /* Frameworks */ = {
+		83BE78C73BCB77F57717480CAB7E06E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0CBCF8C7895461461270F149C1B2AF9 /* Foundation.framework in Frameworks */,
+				6FA27CA062C4B2E3567BCB8A2F4EA76F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97761F3E027CE1ED3B1D30CC75BD39C8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CCBD2E84FE5651A02D572B7863EC23FE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC0BC6F3E3E2806C1EAB93028FA5BB1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				805E2EE9A782A5CA63BBAADA9704D867 /* Accelerate.framework in Frameworks */,
-				60C7FEA477CB09968C399DBDDCF93554 /* Foundation.framework in Frameworks */,
-				E104AB4F865059C84F82F807FEA25AB4 /* Metal.framework in Frameworks */,
-				564A6FEFE5AD9F8C017E2686345AB68A /* MetalKit.framework in Frameworks */,
-				0CF9C66BE0F647AEB635F01E972DAE39 /* SWXMLHash.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B52F1DC4418166F42E7C3C5CD96CCFFB /* Frameworks */ = {
+		900AF44CB9B16390AC1757370779AE15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C803C96E23967B38069CAB3A0C9F62E4 /* Frameworks */ = {
+		C404AD1F58C53C46B5169460AA382063 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2557BB34E05D2F86E980229439A5F6E /* Foundation.framework in Frameworks */,
+				15877FA49BC87E1F00230263514C2CE7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC58AFD2104C1BA0DD4166015D73112A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82D88EC77FD734D0DBD5547DE857B377 /* Accelerate.framework in Frameworks */,
+				DF2620A17006BE1EA4CFDF1391951FB4 /* AudioToolbox.framework in Frameworks */,
+				F307A784C6DB630B885E1FD28DF468AB /* AVFoundation.framework in Frameworks */,
+				5759E1633AB2AF8D732882034BE6A0EE /* Foundation.framework in Frameworks */,
+				A7114123845731BEB62F911783CB3A1C /* GLKit.framework in Frameworks */,
+				F330F40464BBCD50479F04D5DBBA5585 /* TPCircularBuffer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +315,7 @@
 		057BF3709F8766C4CC4F7EC084D7BB1D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				70DAC782E6453D34E22928825E0F79DB /* Spectra */,
+				8F0FE298B745F77103E28F3DD5074720 /* Spectra */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -378,100 +329,69 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		32E0FAB3C4466F8D50C55827A10BC204 /* SWXMLHash */ = {
+		21640BD6763FF7F687141661B0A8B06A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F7668AF08D47BB7B52AD0868A324BD6 /* SWXMLHash.swift */,
-				6A17D7EC0C488D4E64CB622D0B1BE302 /* Support Files */,
-			);
-			path = SWXMLHash;
-			sourceTree = "<group>";
-		};
-		3E27D622AD76C5B7E4DD61C46531CFAD /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E2AE10A52872414B1661253AE650CA4E /* EZAudio.h */,
-				C4188B2B8C5C87EE5903D5116025FEFE /* EZAudio.m */,
-				24C22DCD1457AC64CC485CF4009D0E7D /* EZAudioDevice.h */,
-				91DBD5ECE2CF1789832708BE54DE0758 /* EZAudioDevice.m */,
-				073BCCBE45C1EF91B6D55C61F7AC6D39 /* EZAudioDisplayLink.h */,
-				E4F74218CACF53F4141B78AE6A2506F7 /* EZAudioDisplayLink.m */,
-				FC5F9EE00497C4D3862E04F48847A618 /* EZAudioFFT.h */,
-				C94BA415F70765D3B4EEC1B1CCEA3224 /* EZAudioFFT.m */,
-				B4D0F983C46F72CC13894D45284CFF8E /* EZAudioFile.h */,
-				B451C9B384C71483F9D578B2FAD20BC1 /* EZAudioFile.m */,
-				B359E60B25967471250CB2C1A077072A /* EZAudioFloatConverter.h */,
-				CCDEC567B578FFF1814DAB57F9A35B21 /* EZAudioFloatConverter.m */,
-				DC0B608D10323F439BF735F78DB1FF47 /* EZAudioFloatData.h */,
-				A37A8D4145DEEA1C891F730114C2B57E /* EZAudioFloatData.m */,
-				CFF802C48D991C1DFA460815E1BB9069 /* EZAudioPlayer.h */,
-				84ED18E1F8CC7607871453386C73488F /* EZAudioPlayer.m */,
-				BFC5DE227A78C137069E4406C1697B81 /* EZAudioPlot.h */,
-				EFF90F282E7362AEBA37EE64D9BFB4C2 /* EZAudioPlot.m */,
-				FCB474FB09D5FF0A1A215C695BE79240 /* EZAudioPlotGL.h */,
-				6A9F1504CE6BDBA97F5102B01AEF767D /* EZAudioPlotGL.m */,
-				501DE227B92C601A244DD796A13DA4C5 /* EZAudioUtilities.h */,
-				1D3BB55E5DFCD7C2A4137EA66310BD50 /* EZAudioUtilities.m */,
-				E11EC05BCE8B45A422DF717BF5C2C13C /* EZMicrophone.h */,
-				477303D250FCCD9DF7A8E2757DF4283D /* EZMicrophone.m */,
-				4C96CCEB7BD1C2106D3F4BA11146FCAA /* EZOutput.h */,
-				36C3594F1B142D51796A1219BFCCB0E3 /* EZOutput.m */,
-				D8C99D34069C4820E594E65075A8F348 /* EZPlot.h */,
-				AAA521B49CACAEE3AFC8629825FA6987 /* EZPlot.m */,
-				0966A4923D9DD4B3066EC0D58EFF7CED /* EZRecorder.h */,
-				9DAD1D6C0F8D962757F7A90F10670F5D /* EZRecorder.m */,
-				215779FEB4CE4E54ED84C5464332D6C9 /* TPCircularBuffer.c */,
-				1B440DBB47F4467CB6E0D085F801E2F4 /* TPCircularBuffer.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		435E6E8D1BCAF92800962E09 /* Node */ = {
-			isa = PBXGroup;
-			children = (
-				3ACF0A9D8DE15B2749CE9FBC471CEC8E /* Node.swift */,
-				43D8BAB11BC87EDC004323ED /* Camable.swift */,
-				43D8BAB31BC87EEC004323ED /* Perspectable.swift */,
-				43D8BAB71BC88114004323ED /* Modelable.swift */,
-				43D8BAB91BC8812C004323ED /* Uniformable.swift */,
-				435E6E8E1BCAF94400962E09 /* NodeResource.swift */,
-				435E6E911BCB09C100962E09 /* Vertexable.swift */,
-			);
-			name = Node;
-			sourceTree = "<group>";
-		};
-		4AD117E77725F7CACD901315C11B716C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				74EEA94C0F9202ADAA6156925EA45CF9 /* Info.plist */,
-				0F2C685B6CB8A9D5B5A83CF9584F99A5 /* TPCircularBuffer.modulemap */,
-				21C89114CEB010BC6C491DF8B03C35D8 /* TPCircularBuffer.xcconfig */,
-				309A61804A871CC761257568129B5A19 /* TPCircularBuffer-Private.xcconfig */,
-				B38F6B1DA31C16FABC5EB8DE48FA3FCC /* TPCircularBuffer-dummy.m */,
-				62F4BD2B14AA55C199F636821AB64601 /* TPCircularBuffer-prefix.pch */,
-				AF4606E3B5AA6199F0E2DCF06EC1CB2B /* TPCircularBuffer-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TPCircularBuffer";
-			sourceTree = "<group>";
-		};
-		55585DF0742E801ECB996DE268571452 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E8CED635250C284D1D32EEF539D1FE79 /* SWXMLHash.framework */,
-				9C16E7591187A46995BC2E4BF5798C09 /* TPCircularBuffer.framework */,
-				B9701FE3B5D4513EF88ECB05A5C58700 /* iOS */,
+				435E6E931BCB162F00962E09 /* GlimpseXML.framework */,
+				74941211ED7BBF3670B5365A9DDE7BF0 /* TPCircularBuffer.framework */,
+				22AD620D2301764AB2DB269069CF3AA6 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5A6AF170D7FE1EC240A3A787B141E8AD /* EZAudio */ = {
+		22AD620D2301764AB2DB269069CF3AA6 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3E27D622AD76C5B7E4DD61C46531CFAD /* Core */,
-				7B72B42F1F2565008840A8F1408FC545 /* Support Files */,
+				AFC2576F1714158B74E7F01CBB35665E /* Accelerate.framework */,
+				3A911439DD24552CE533862AF51629B0 /* AudioToolbox.framework */,
+				E0449762ED0A6ECDAE9C471B1EDE8D44 /* AVFoundation.framework */,
+				F05EAFE2758FD9B65ECC419070DEACFC /* Foundation.framework */,
+				A93B63D8CA7CB3E966A05138C9AB450D /* GLKit.framework */,
+				13BBDD4506AEC6EE1571E0292B6A3C8A /* Metal.framework */,
+				4848AD70BFE94ABAD3BE71033CB2837F /* MetalKit.framework */,
 			);
-			path = EZAudio;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2F4FC5F4AA728E99B7276004A45365A5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				618A6CB65ADBC8C7512ECF253F61C388 /* EZAudio.modulemap */,
+				3C2718371CA6818722CEBD50AE842A72 /* EZAudio.xcconfig */,
+				1D1107916DEA006B16DB4F1DF9793BB8 /* EZAudio-dummy.m */,
+				44C53716414645FAA377812776C725F9 /* EZAudio-prefix.pch */,
+				D9A0B781C28D8D6B322D6707143391F5 /* EZAudio-umbrella.h */,
+				ABF71DEE1D3A5A727685B2F9E986E0F1 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EZAudio";
+			sourceTree = "<group>";
+		};
+		3506E0C37E8D1D475AC7EF16E0424C2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE93D411D896C9A9369113A6C83AD516 /* EZAudio.framework */,
+				0592732552D131B6638E4A4DA3761FBE /* Pods_Spectra_Example.framework */,
+				004B585B5630A80A5C2924EAEC2B7CF8 /* Pods_Spectra_Tests.framework */,
+				CB9375831AB670E173F615039E6F8194 /* Spectra.bundle */,
+				33F1E16E881C0B32A21BDCD69F16B7A0 /* Spectra.framework */,
+				1E25F45F2C5E33D3191C331B52F6C0CB /* TPCircularBuffer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4777930D774F53CF1BC2A6E31B96026E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0F948A3D9944375E87027B75603878FE /* Info.plist */,
+				F52FFF571F804E549AAE7E820D60BAD2 /* TPCircularBuffer.modulemap */,
+				E8ABD8A50AAF5E7932B4BA70B2F58E0B /* TPCircularBuffer.xcconfig */,
+				A3128B11F137251E813EBB2ECCA16298 /* TPCircularBuffer-dummy.m */,
+				866401E011E5526FCCC8EDA9D1B7FE22 /* TPCircularBuffer-prefix.pch */,
+				9AEA60E029500168FDD5CEB128513461 /* TPCircularBuffer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TPCircularBuffer";
 			sourceTree = "<group>";
 		};
 		5BA5D03FE94A82E27F9F1DDAA4F292A3 /* Pods-Spectra_Tests */ = {
@@ -481,66 +401,72 @@
 				F0BC4D786251D812FF2DD5F148FF5F76 /* Pods-Spectra_Tests.modulemap */,
 				4324303055FF95A433CA86E21EE6E986 /* Pods-Spectra_Tests-acknowledgements.markdown */,
 				9B553CF65000FC58A75CD07F4643B45E /* Pods-Spectra_Tests-acknowledgements.plist */,
-				2DE8D0E967E5035FE0EA0F3CFBF66C55 /* Pods-Spectra_Tests-dummy.m */,
+				61E1D86E6430547E064EA527ADBE616B /* Pods-Spectra_Tests-dummy.m */,
 				C2BA6C0EE0E496A321ABAD4A00023C23 /* Pods-Spectra_Tests-frameworks.sh */,
 				D214E6B24AE57C81F7E95D771EF4ABDF /* Pods-Spectra_Tests-resources.sh */,
-				7A32D262658833265F423266A1DF6C2B /* Pods-Spectra_Tests-umbrella.h */,
-				BDE70E20BC0D346C14D3883088E7CE89 /* Pods-Spectra_Tests.debug.xcconfig */,
-				F6BD9B0B7DC98D7597615F87482B5929 /* Pods-Spectra_Tests.release.xcconfig */,
+				DF9C5D9BAA79B5C201473BEBCAFA91C9 /* Pods-Spectra_Tests-umbrella.h */,
+				75318195397D4177A7CCF9C03DB9B411 /* Pods-Spectra_Tests.debug.xcconfig */,
+				9DF1A1F72440C42DAF31D81754521B2A /* Pods-Spectra_Tests.release.xcconfig */,
 			);
 			name = "Pods-Spectra_Tests";
 			path = "Target Support Files/Pods-Spectra_Tests";
 			sourceTree = "<group>";
 		};
-		6A17D7EC0C488D4E64CB622D0B1BE302 /* Support Files */ = {
+		691CE617B3E1F53254AA50BE014632FF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				73A62E695BF60E75A81E5EDA0F6FAE90 /* Info.plist */,
-				E337C33C69757C424924C23FED22E92E /* SWXMLHash.modulemap */,
-				354CC245C3F4A7B86977C87AD8B8FC31 /* SWXMLHash.xcconfig */,
-				5721B453B5969C29FEB113F3BE874AAE /* SWXMLHash-Private.xcconfig */,
-				28D7DFE3F81AE9F9B1339E5D2F2E5E45 /* SWXMLHash-dummy.m */,
-				288E620EAEA274778E1EC7780247C1D9 /* SWXMLHash-prefix.pch */,
-				145E452B742B20A65841FB3588F63C39 /* SWXMLHash-umbrella.h */,
+				A2CB3054EF319A6DF631F54C41555968 /* Classes */,
+				A86240A6F9DDD8BA5628ED0805C540F7 /* NodeGenerators */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SWXMLHash";
+			path = Pod;
 			sourceTree = "<group>";
 		};
-		70DAC782E6453D34E22928825E0F79DB /* Spectra */ = {
+		784214F4D22C583FB5BDEEDEFF938669 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F401B9BCF74D01026865838C109A8888 /* Pod */,
-				84A995D612E9D9F1FD46D98A55C931B4 /* Support Files */,
+				D415D849036EB13B1039B19CD2BCD0A8 /* EZAudio.h */,
+				91E0387FDC9E0F45CDF9F6DB26BA08EC /* EZAudio.m */,
+				FF95FCABCBF8D3BE131D37384CD4FBEF /* EZAudioDevice.h */,
+				8AA306EFBD4453FE23CFA51E57B8652F /* EZAudioDevice.m */,
+				B37E94F927FFA451E48CB2C92C829782 /* EZAudioDisplayLink.h */,
+				667488D8A372735596857C6C9C411185 /* EZAudioDisplayLink.m */,
+				B15CD4905188AB2C7750CF7C25D0EC1D /* EZAudioFFT.h */,
+				1E6219B2FF82C0AE9FE70C2C7FBF7AEC /* EZAudioFFT.m */,
+				48397F505DC01546BB59E1C67BBAAD45 /* EZAudioFile.h */,
+				955BAB1249639AAB67DFC48CAAC6A955 /* EZAudioFile.m */,
+				7AE6928D0DA20C15F43403DA8B457D1F /* EZAudioFloatConverter.h */,
+				003BA6528E8F408D66993E43E0757DCE /* EZAudioFloatConverter.m */,
+				EAA87D1CEC37F05C3AE86F840CA7E726 /* EZAudioFloatData.h */,
+				A209F35042B3C4F2AE304E5BE5FA8658 /* EZAudioFloatData.m */,
+				3C887D5F5C782D7D6D8A2673861255D4 /* EZAudioPlayer.h */,
+				70DC70562EE8C9D99147AC871383C76E /* EZAudioPlayer.m */,
+				4946BFCD826F48335244DC5819C24A27 /* EZAudioPlot.h */,
+				48A362D1E561E2CE8438C2653DD5927D /* EZAudioPlot.m */,
+				E67A91F111D542D07124F5912CF538F5 /* EZAudioPlotGL.h */,
+				2415913A7D6D02C40CB1B902B833B9A2 /* EZAudioPlotGL.m */,
+				5D6FC7EC4F7E96F684D9F11DF93E1109 /* EZAudioUtilities.h */,
+				81CC7BF97F85354045D9E2C179F42FAC /* EZAudioUtilities.m */,
+				52C48FCCA29F15E74AF1309E29B0B23E /* EZMicrophone.h */,
+				3E3C2C64D8A1F738E9874CA59672B8BF /* EZMicrophone.m */,
+				19813C62773C1BB3374615B29C4AAB3A /* EZOutput.h */,
+				FD161CA00ACB036A462F4379D6BEE97B /* EZOutput.m */,
+				4F5FFABC14849584247CD7A5A1E01432 /* EZPlot.h */,
+				EA67C2E6EA971F7104CF3D6363DCDD30 /* EZPlot.m */,
+				C5544857118A361657188855BFE10E24 /* EZRecorder.h */,
+				1F9803328ECE9F62F14929DF9C456027 /* EZRecorder.m */,
+				88CCE8D63C43E1A267237654E0614A52 /* TPCircularBuffer.c */,
+				8011539A0DC2DB1A6A5BA909B8F9D802 /* TPCircularBuffer.h */,
 			);
-			name = Spectra;
-			path = ../..;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		79885A9A440BEB1E30790D30EC7AA0DB /* NodeGenerators */ = {
+		7C57FA91A4188381F5A04A6F83E77D76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03740E04C0502F97D59A346BFD22AD62 /* Cube.swift */,
-				9208E11C80D08AA343C87257636C21CB /* NodeGenerator.swift */,
-				169E7B806673274FDA87B999E810D5B7 /* PlatonicSolids.swift */,
-				55722C3FC13DF7B5B33703692E07F079 /* Quad.swift */,
+				EC968F6274E14C2FCB76AB0F54DC5184 /* EZAudio */,
+				EB8998EBF7F917814ABF07FBF985A85E /* TPCircularBuffer */,
 			);
-			path = NodeGenerators;
-			sourceTree = "<group>";
-		};
-		7B72B42F1F2565008840A8F1408FC545 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E20ACA659CEFCE180D3FC3FB0352CB52 /* EZAudio.modulemap */,
-				516CE60A41B4FB7A37956E8DAD68ACB1 /* EZAudio.xcconfig */,
-				0829E2D581D2CC1A021E7432D79FCB9A /* EZAudio-Private.xcconfig */,
-				8AADB3F714D81ABAB586F1390ED74C44 /* EZAudio-dummy.m */,
-				248785C762ACC7BAD870B045684625FC /* EZAudio-prefix.pch */,
-				EC69A210779F9C624434BA168677CE03 /* EZAudio-umbrella.h */,
-				462B148DB50097BF0EA883418308144F /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/EZAudio";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -548,9 +474,9 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				057BF3709F8766C4CC4F7EC084D7BB1D /* Development Pods */,
-				55585DF0742E801ECB996DE268571452 /* Frameworks */,
-				9E08F6F56C6D24BFBEBAEBFE93D291E0 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				21640BD6763FF7F687141661B0A8B06A /* Frameworks */,
+				7C57FA91A4188381F5A04A6F83E77D76 /* Pods */,
+				3506E0C37E8D1D475AC7EF16E0424C2B /* Products */,
 				1EA4016395D461162E35274FA7DE8144 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -562,242 +488,224 @@
 				93AEA7F178EE510B104A697F570CE632 /* Pods-Spectra_Example.modulemap */,
 				05EF13B2905EA49E256F4DB41BA4A4BF /* Pods-Spectra_Example-acknowledgements.markdown */,
 				1FF8EC8FE8725299355644217037B20F /* Pods-Spectra_Example-acknowledgements.plist */,
-				240F2F94518637F71E0643F54DB776A4 /* Pods-Spectra_Example-dummy.m */,
+				1D992CBD687090205124E1844F5452FA /* Pods-Spectra_Example-dummy.m */,
 				042A476A3BFC9D49A6564DC7EF6FF435 /* Pods-Spectra_Example-frameworks.sh */,
 				DAC874FBDC4CC0260FD179C5CBD93D2A /* Pods-Spectra_Example-resources.sh */,
-				BF5D9F529BDAD3C0AF16A824E2CD4953 /* Pods-Spectra_Example-umbrella.h */,
-				77029B7677AF7DFB2106306C3E207279 /* Pods-Spectra_Example.debug.xcconfig */,
-				0F4EC07975A60C256E380D34E3B88C90 /* Pods-Spectra_Example.release.xcconfig */,
+				C86907F1AD7399D570DE20B287DD927A /* Pods-Spectra_Example-umbrella.h */,
+				D9926C8E1CAEA40A146DA1B80B1541B7 /* Pods-Spectra_Example.debug.xcconfig */,
+				BA22EE8E581145B208214047A67A7ED3 /* Pods-Spectra_Example.release.xcconfig */,
 			);
 			name = "Pods-Spectra_Example";
 			path = "Target Support Files/Pods-Spectra_Example";
 			sourceTree = "<group>";
 		};
-		84A995D612E9D9F1FD46D98A55C931B4 /* Support Files */ = {
+		8F0FE298B745F77103E28F3DD5074720 /* Spectra */ = {
 			isa = PBXGroup;
 			children = (
-				F9CD42811149344CE4AAF304BEC68470 /* Info.plist */,
-				91D01FF50BA7ADB2C49DAF5999965F2A /* Spectra.modulemap */,
-				9A5968FA8306F17ECD7A2F4852AE0AFF /* Spectra.xcconfig */,
-				915F48FED98682368574DDBF967E555F /* Spectra-Private.xcconfig */,
-				B533E0ACC8E204D81BC5BE16D21BE2C7 /* Spectra-dummy.m */,
-				1CD81B21E12C30D9C2A952E3174FE704 /* Spectra-prefix.pch */,
-				EDD372BB215D99705E9B606021B43696 /* Spectra-umbrella.h */,
+				691CE617B3E1F53254AA50BE014632FF /* Pod */,
+				FD6B4964A0D78698C55A12BA2D8E910B /* Support Files */,
+			);
+			name = Spectra;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		A2CB3054EF319A6DF631F54C41555968 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */,
+				EC83479D69D2CB8868C5E04DE0C53A89 /* BufferPool.swift */,
+				09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */,
+				F34264E8560D85DAFE41768E714B7DD5 /* Camable.swift */,
+				D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */,
+				E3EBB52204E7038A228276A578E2F3CA /* InflightResourceManager.swift */,
+				D712C820B53F3093F1B14258E21307AA /* Modelable.swift */,
+				C379FE5685FC6A300480A43C5F8381E1 /* Perspectable.swift */,
+				1734DF08D3A286528861798052CF324F /* PipelineGenerator.swift */,
+				A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */,
+				B54B25E794FB5B79172A4C27C84E2EDD /* RenderStage.swift */,
+				9B67E3F96763F07CB3DC05BFDF2101CF /* RenderStrategy.swift */,
+				B6AC4760C80B63C7D4F9B9BD7FE2E7EC /* Scene.swift */,
+				FD68633AB78F44435C55567E5E34D25E /* Transform3D.swift */,
+				F3DC40EBAFC88C360D08F2F5C8A95904 /* Uniformable.swift */,
+				E9CF6779B7788E5277078C9D119DBCA5 /* View.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A86240A6F9DDD8BA5628ED0805C540F7 /* NodeGenerators */ = {
+			isa = PBXGroup;
+			children = (
+				C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */,
+				B6E9DB61D20F83987255820881364EBB /* Node.swift */,
+				EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */,
+				BC38FAA951A82C2526B063FA8AB23EA2 /* PlatonicSolids.swift */,
+				053087C481AA0EE027EAA4BC29CDA9FF /* Quad.swift */,
+			);
+			path = NodeGenerators;
+			sourceTree = "<group>";
+		};
+		EB8998EBF7F917814ABF07FBF985A85E /* TPCircularBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				D3A34CC88A0B8B4A6E9CA0811BDF9566 /* TPCircularBuffer.c */,
+				2F53A4AEE6A7DCC4ACB244837A673446 /* TPCircularBuffer.h */,
+				73C5A61CC5F878C9DCE1A1D2FAC67EEB /* TPCircularBuffer+AudioBufferList.c */,
+				DA01E01346A4ECFC160A2D5C16387EE8 /* TPCircularBuffer+AudioBufferList.h */,
+				4777930D774F53CF1BC2A6E31B96026E /* Support Files */,
+			);
+			path = TPCircularBuffer;
+			sourceTree = "<group>";
+		};
+		EC968F6274E14C2FCB76AB0F54DC5184 /* EZAudio */ = {
+			isa = PBXGroup;
+			children = (
+				784214F4D22C583FB5BDEEDEFF938669 /* Core */,
+				2F4FC5F4AA728E99B7276004A45365A5 /* Support Files */,
+			);
+			path = EZAudio;
+			sourceTree = "<group>";
+		};
+		FD6B4964A0D78698C55A12BA2D8E910B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D310092D29FCB94B74F9A56D832F8224 /* Info.plist */,
+				1955F60E68D30590E02F8D45813FFA98 /* Spectra.modulemap */,
+				E66090D483C75E260F81E7AC20D64F65 /* Spectra.xcconfig */,
+				3B7C3C3577C49797E605A4B9139CD926 /* Spectra-dummy.m */,
+				B58175C2F29B6883A57BCB05C37F082B /* Spectra-prefix.pch */,
+				E4D895A151F7777D019D82EB978CD462 /* Spectra-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Spectra";
 			sourceTree = "<group>";
 		};
-		9E08F6F56C6D24BFBEBAEBFE93D291E0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5A6AF170D7FE1EC240A3A787B141E8AD /* EZAudio */,
-				32E0FAB3C4466F8D50C55827A10BC204 /* SWXMLHash */,
-				E02C40F51B476DECAB3D63A82D983141 /* TPCircularBuffer */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A8ADE5205B0A7AE749AB4167F1B8E434 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E9996791641E20A7FBA159109D3A2078 /* BasicTriangle.swift */,
-				FCBCC5E0D1A047500930651EDCAC0971 /* BufferPool.swift */,
-				A8D7E1998262F6E281AB7FD293B0B156 /* BufferTexture.swift */,
-				78E49FCC2FE8E828D1CB53E308CB489E /* EncodableData.swift */,
-				54ABF3CFCD073977FBE8196C49F7E7A9 /* InflightResourceManager.swift */,
-				6E300183CBA3E73BB21A0BCBFAA71E35 /* PipelineGenerator.swift */,
-				E3188FD2A43351143632B048F2E6F447 /* RenderStage.swift */,
-				994FE1F94BA7459445429980EF51FF47 /* RenderStrategy.swift */,
-				3E4DB793537A062680D9EB82E1002A51 /* Renderer.swift */,
-				74CF7DDFCD9E0D7B16C45102B47D0A70 /* Scene.swift */,
-				E44DB1E279F0746200A3B543C239149A /* Transform3D.swift */,
-				F92B02954EF8F4FCEAFD78C015B29738 /* View.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		B9701FE3B5D4513EF88ECB05A5C58700 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2B247EB2936E639824A6A67DD7370172 /* AVFoundation.framework */,
-				A1ECC39A7964A4614BD69AF855444A81 /* Accelerate.framework */,
-				54CF4B89561FFDE44560F59919B47F49 /* AudioToolbox.framework */,
-				A4F8FF149E7CBF06E3D8F58978EFC1E8 /* Foundation.framework */,
-				C3C88B0548C0F1D2E68E6C85C465BA63 /* GLKit.framework */,
-				2F19F404FC2925CF200F60FF5920C80F /* Metal.framework */,
-				EE6AEDBB6BD987CF83683097D3DC4182 /* MetalKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				364F92E789DF98D889C8B1DD86B56C7A /* EZAudio.framework */,
-				3DCCF44AF75CEC9BAB33AF8737F86F5A /* Pods_Spectra_Example.framework */,
-				F47CB565D3F386C08DD3CB57547C26AB /* Pods_Spectra_Tests.framework */,
-				866EFC29BFEEA29BA647CCA579B4E8A7 /* SWXMLHash.framework */,
-				5C3FA30429824669EB6606EE7EE8C33B /* Spectra.bundle */,
-				5421225993ECDF11A096B57B4769E561 /* Spectra.framework */,
-				BD240B44B1BB6D3DF95D4ABB2DAFEAFF /* TPCircularBuffer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E02C40F51B476DECAB3D63A82D983141 /* TPCircularBuffer */ = {
-			isa = PBXGroup;
-			children = (
-				DFC4DE22D8180ED4AE64D880E8C23695 /* TPCircularBuffer.c */,
-				8AE87C26E512C5741FC748057AF9DD15 /* TPCircularBuffer.h */,
-				455D2C86AACDAEC7489ABD759D7DEACB /* TPCircularBuffer+AudioBufferList.c */,
-				84FF678CE75F3F32FC6F39FB0D0DEF6E /* TPCircularBuffer+AudioBufferList.h */,
-				4AD117E77725F7CACD901315C11B716C /* Support Files */,
-			);
-			path = TPCircularBuffer;
-			sourceTree = "<group>";
-		};
-		F401B9BCF74D01026865838C109A8888 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				435E6E8D1BCAF92800962E09 /* Node */,
-				A8ADE5205B0A7AE749AB4167F1B8E434 /* Classes */,
-				79885A9A440BEB1E30790D30EC7AA0DB /* NodeGenerators */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		696120D70C6E108794CD96957854A78F /* Headers */ = {
+		33433E4626D3DB99F9570254CC977AA8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D3E7A21372869AB6AFBF667F00F4BC /* EZAudio-umbrella.h in Headers */,
-				D446DBE49AA33181F55BC33444B27D82 /* EZAudio.h in Headers */,
-				AE2BACB489C5634BA371DA363500B330 /* EZAudioDevice.h in Headers */,
-				58FDBC2FE26E8F938EDEE2A68DE458C8 /* EZAudioDisplayLink.h in Headers */,
-				A91CE69A79FD20CB99AF4EE507653C2E /* EZAudioFFT.h in Headers */,
-				A3A91733E3F6849C4A88AB83E8A5F820 /* EZAudioFile.h in Headers */,
-				24FE7D0D53D2FFB14DF34C06BD74F20F /* EZAudioFloatConverter.h in Headers */,
-				D3F567C34C3276F9A67DF6EDD217CA98 /* EZAudioFloatData.h in Headers */,
-				EBF1EC426E866A70A5775AC5A1AD0A38 /* EZAudioPlayer.h in Headers */,
-				A550B097D6A5775D7B727F16377BE120 /* EZAudioPlot.h in Headers */,
-				1A39CE4F472433FBA7E8424C8B371C3E /* EZAudioPlotGL.h in Headers */,
-				95D03994446226847345EB5F468EFBE6 /* EZAudioUtilities.h in Headers */,
-				DCBF6B965AE732BEEE7DBA0DDB22083B /* EZMicrophone.h in Headers */,
-				FED5E88EE3A1933413F025A4B6DFB960 /* EZOutput.h in Headers */,
-				81390AC11703EB369BB55709966927DE /* EZPlot.h in Headers */,
-				7057374FA12A1E7DD12B36317F226D7F /* EZRecorder.h in Headers */,
-				7028E700B7E129BD91264CEA04C81919 /* TPCircularBuffer.h in Headers */,
+				DB83702EE715B2773D78BA8F805B9F20 /* Spectra-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7010D6232F6EE47CDBA1A5A7D2328868 /* Headers */ = {
+		5DE77307E080450316AA79870B564763 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93059FA68407DEA91860BF4E62A39C5 /* SWXMLHash-umbrella.h in Headers */,
+				B5B5CF67FA52B01C0D711664AD687BD3 /* Pods-Spectra_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8556F01C72F3D170F7FC63A037C9D78F /* Headers */ = {
+		79BA9F4BE461607BF66A1A873DBC989D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FC51C790CC2046933E418C576ABA4A /* Pods-Spectra_Tests-umbrella.h in Headers */,
+				53756E04D22B3624CC61816A34FDEB10 /* Pods-Spectra_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E48B78ABEBE251063C481EC79899CB2F /* Headers */ = {
+		CEBA339127917E209C75C1CD350CF53A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4376973916602DA5A20F78608F53358E /* Spectra-umbrella.h in Headers */,
+				59E09171382D6891D9A33F22E847E131 /* EZAudio-umbrella.h in Headers */,
+				32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */,
+				AECD157D67D5476DD7E36F49946CC09A /* EZAudioDevice.h in Headers */,
+				86D303C98C39D2076C8F28C660C452E3 /* EZAudioDisplayLink.h in Headers */,
+				D8066517E6029512E485DD79B9C12CD1 /* EZAudioFFT.h in Headers */,
+				A9E55B79610B0DA9694E5B85F3309889 /* EZAudioFile.h in Headers */,
+				279725D27633FC93DAD75142E0CA4C21 /* EZAudioFloatConverter.h in Headers */,
+				F8F61DAE346C6B0BD7CCB10DCA43AC78 /* EZAudioFloatData.h in Headers */,
+				20F47D3CFB1BF8B28404EB06E17DA983 /* EZAudioPlayer.h in Headers */,
+				593CC7717DE07063E27DFC943986913C /* EZAudioPlot.h in Headers */,
+				52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */,
+				BD6752FF69879F57E20AFF591F605531 /* EZAudioUtilities.h in Headers */,
+				6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */,
+				2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */,
+				B950D61809F1FE73B009AD6CEC57E396 /* EZPlot.h in Headers */,
+				39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */,
+				84FEF3DF870A7333ADDEC3F0E2C5D1C1 /* TPCircularBuffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E82B850293347858FD96E04D96145C5B /* Headers */ = {
+		D09E1AFA7912B388CB967B9A97B2638A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6CDE7A2CE56FB9A9129ECDEE169B61 /* Pods-Spectra_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF2E4EA4C82748AAE93C051A53CA136C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2257C2F8793EA377C328C384C506ECB1 /* TPCircularBuffer+AudioBufferList.h in Headers */,
-				CF792D9273B52DBC4F9BF45DF2EFCF6E /* TPCircularBuffer-umbrella.h in Headers */,
-				DD52501F853F864173049EBA328C9FCB /* TPCircularBuffer.h in Headers */,
+				8F6964629CECB7A8CB10B3EAB0B86F9A /* TPCircularBuffer+AudioBufferList.h in Headers */,
+				2A0F0A2508E908917F12CE0243517A28 /* TPCircularBuffer-umbrella.h in Headers */,
+				6F9C968B05D02757F0B477D341C879F7 /* TPCircularBuffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		07ADC5D54261AA954D761105A33B061F /* TPCircularBuffer */ = {
+		001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11536F472CC9FE466F616A5B700DAFD0 /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */;
+			buildConfigurationList = CB53830DCDB9CCC560962769E044284E /* Build configuration list for PBXNativeTarget "EZAudio" */;
 			buildPhases = (
-				8423AF1909F13F4143A1DD42522DF6B4 /* Sources */,
-				2C9F5CA59157F5C366B58A634EB8E06A /* Frameworks */,
-				FF2E4EA4C82748AAE93C051A53CA136C /* Headers */,
+				1D8398944ED0221D02D46C25ED617450 /* Sources */,
+				FC58AFD2104C1BA0DD4166015D73112A /* Frameworks */,
+				CEBA339127917E209C75C1CD350CF53A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = TPCircularBuffer;
-			productName = TPCircularBuffer;
-			productReference = BD240B44B1BB6D3DF95D4ABB2DAFEAFF /* TPCircularBuffer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		0F28EF1708EEEA18D0329628180F2CF5 /* EZAudio */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7EE14BD1FBFE93FFC9600634C16D3CCF /* Build configuration list for PBXNativeTarget "EZAudio" */;
-			buildPhases = (
-				2B932FB71DDDDA8F9AEAC84A522DB589 /* Sources */,
-				37AA4AE7182DE6538DACA2A837D2E72D /* Frameworks */,
-				696120D70C6E108794CD96957854A78F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				570836FF6BB4CC2E86646B387CC862AA /* PBXTargetDependency */,
+				B5A87059A1D25494E4D13D434313CD90 /* PBXTargetDependency */,
 			);
 			name = EZAudio;
 			productName = EZAudio;
-			productReference = 364F92E789DF98D889C8B1DD86B56C7A /* EZAudio.framework */;
+			productReference = DE93D411D896C9A9369113A6C83AD516 /* EZAudio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		61DA5C8687C577EC778C5DDB0692C8BA /* SWXMLHash */ = {
+		00910DBD0327C082B268844D0551048B /* Pods-Spectra_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8445031CEB4A3DCE6B7CF97A9F3CAEC /* Build configuration list for PBXNativeTarget "SWXMLHash" */;
+			buildConfigurationList = 8232FFE8B5433CE72E7D1ACB90C44D5A /* Build configuration list for PBXNativeTarget "Pods-Spectra_Example" */;
 			buildPhases = (
-				CB67A28D30084FF309CE61471A7AFC81 /* Sources */,
-				C803C96E23967B38069CAB3A0C9F62E4 /* Frameworks */,
-				7010D6232F6EE47CDBA1A5A7D2328868 /* Headers */,
+				6F7F640EA0814E8443ACC21E0A3199E4 /* Sources */,
+				C404AD1F58C53C46B5169460AA382063 /* Frameworks */,
+				5DE77307E080450316AA79870B564763 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7E6407C4F891FA7E4F267B6D97EAB082 /* PBXTargetDependency */,
+				96417081EB8B8631CC3BF484A1050E96 /* PBXTargetDependency */,
+				FF8EA5A865BBF47A91F5227FD796ABC9 /* PBXTargetDependency */,
 			);
-			name = SWXMLHash;
-			productName = SWXMLHash;
-			productReference = 866EFC29BFEEA29BA647CCA579B4E8A7 /* SWXMLHash.framework */;
+			name = "Pods-Spectra_Example";
+			productName = "Pods-Spectra_Example";
+			productReference = 0592732552D131B6638E4A4DA3761FBE /* Pods_Spectra_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6BFE26E8CE7C5CEDF29C9FF3A401D8EE /* Spectra-Spectra */ = {
+		6DEE6681162D16F4AA0F406FC0961ECB /* Pods-Spectra_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7AFDD7FEADF1AAE681AB7EA298D474D /* Build configuration list for PBXNativeTarget "Spectra-Spectra" */;
+			buildConfigurationList = F8FDD3DE91BD8AC22A8B6668D312C4A1 /* Build configuration list for PBXNativeTarget "Pods-Spectra_Tests" */;
 			buildPhases = (
-				ABA7E1B93CEC754D57A1663B6EED44F0 /* Sources */,
-				B52F1DC4418166F42E7C3C5CD96CCFFB /* Frameworks */,
-				130BDA3AB1DD67CB5AA14872CADAC119 /* Resources */,
+				181B319E1263876284192E4343EBA6D5 /* Sources */,
+				83BE78C73BCB77F57717480CAB7E06E5 /* Frameworks */,
+				79BA9F4BE461607BF66A1A873DBC989D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE1209D3F4D3804ACDF0514B6F24510C /* PBXTargetDependency */,
+			);
+			name = "Pods-Spectra_Tests";
+			productName = "Pods-Spectra_Tests";
+			productReference = 004B585B5630A80A5C2924EAEC2B7CF8 /* Pods_Spectra_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		99FBA05F457F0BD7B30B9FEB57E3C042 /* Spectra-Spectra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB6018BE8FD66F9C794797A855DE4B79 /* Build configuration list for PBXNativeTarget "Spectra-Spectra" */;
+			buildPhases = (
+				24B3FFD232D06AD46EF82A82446A7072 /* Sources */,
+				900AF44CB9B16390AC1757370779AE15 /* Frameworks */,
+				6B02AE96CB897CFA7516EA1B652751CD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -805,67 +713,43 @@
 			);
 			name = "Spectra-Spectra";
 			productName = "Spectra-Spectra";
-			productReference = 5C3FA30429824669EB6606EE7EE8C33B /* Spectra.bundle */;
+			productReference = CB9375831AB670E173F615039E6F8194 /* Spectra.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		88D2A6EBA5F8A74DFF35DCD497875588 /* Pods-Spectra_Tests */ = {
+		A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A84192B583078D34A3CD9BE1009E9274 /* Build configuration list for PBXNativeTarget "Pods-Spectra_Tests" */;
+			buildConfigurationList = 652B6E36CEBEB54B74D699A7F2BDD86D /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */;
 			buildPhases = (
-				4B77A72733B5A597B51FF286E594C779 /* Sources */,
-				5AAA0FA123180F929CAA055C0C8B5B0B /* Frameworks */,
-				8556F01C72F3D170F7FC63A037C9D78F /* Headers */,
+				37382C1F0A38B21268D74ACB5487C061 /* Sources */,
+				7B39E1612FB288650D4607FB8FE489B8 /* Frameworks */,
+				D09E1AFA7912B388CB967B9A97B2638A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5EE35484ABD52C011DF861C2B3B81D72 /* PBXTargetDependency */,
-				F041F70DB0F1E0BE199D31B59458915B /* PBXTargetDependency */,
 			);
-			name = "Pods-Spectra_Tests";
-			productName = "Pods-Spectra_Tests";
-			productReference = F47CB565D3F386C08DD3CB57547C26AB /* Pods_Spectra_Tests.framework */;
+			name = TPCircularBuffer;
+			productName = TPCircularBuffer;
+			productReference = 1E25F45F2C5E33D3191C331B52F6C0CB /* TPCircularBuffer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9E8669A4548C7F352B63615D6BC0CBFD /* Spectra */ = {
+		E76DDCA89B7922203EBFF0342A517464 /* Spectra */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FBAEAD27515E37DBFC73F79128020E5 /* Build configuration list for PBXNativeTarget "Spectra" */;
+			buildConfigurationList = 05E2DC2ED124A446042B4DB0CC867FCE /* Build configuration list for PBXNativeTarget "Spectra" */;
 			buildPhases = (
-				E5ADB328B1B64AAC09B198EB022D57FB /* Sources */,
-				ACC0BC6F3E3E2806C1EAB93028FA5BB1 /* Frameworks */,
-				22B481FECAAC01CD4EB1F521876EFDF0 /* Resources */,
-				E48B78ABEBE251063C481EC79899CB2F /* Headers */,
+				0F4B9FF433868476AB703590D4A3664E /* Sources */,
+				7A18DA27D06F8EC84BE8ECE62E0C07BF /* Frameworks */,
+				A22053F19762B5AE8A7BB21D57865056 /* Resources */,
+				33433E4626D3DB99F9570254CC977AA8 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B708B48D3B7C794391FC35F2F4E0F566 /* PBXTargetDependency */,
-				B2BBA41AECC18E9F163F7D657D063958 /* PBXTargetDependency */,
+				64849E4F378140502634C698383D5F95 /* PBXTargetDependency */,
 			);
 			name = Spectra;
 			productName = Spectra;
-			productReference = 5421225993ECDF11A096B57B4769E561 /* Spectra.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FF7A959EF8063A7D2413E789E9BDECB2 /* Pods-Spectra_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 825DC2994B9C01AFC0389ED7FED16A3B /* Build configuration list for PBXNativeTarget "Pods-Spectra_Example" */;
-			buildPhases = (
-				018890A2DE1CF4316785F5F7794FEBE3 /* Sources */,
-				97761F3E027CE1ED3B1D30CC75BD39C8 /* Frameworks */,
-				E82B850293347858FD96E04D96145C5B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				08F9C2478D3DBAC5BC2C2B6E594AC045 /* PBXTargetDependency */,
-				0E33B15B7C0C8BF4921F6D4884A29F65 /* PBXTargetDependency */,
-				47C20C912CD2166BC2FFEF09907776A5 /* PBXTargetDependency */,
-				60CFB36FDA88BF882518BA9EC0E9B9A2 /* PBXTargetDependency */,
-			);
-			name = "Pods-Spectra_Example";
-			productName = "Pods-Spectra_Example";
-			productReference = 3DCCF44AF75CEC9BAB33AF8737F86F5A /* Pods_Spectra_Example.framework */;
+			productReference = 33F1E16E881C0B32A21BDCD69F16B7A0 /* Spectra.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -885,321 +769,176 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = 3506E0C37E8D1D475AC7EF16E0424C2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0F28EF1708EEEA18D0329628180F2CF5 /* EZAudio */,
-				FF7A959EF8063A7D2413E789E9BDECB2 /* Pods-Spectra_Example */,
-				88D2A6EBA5F8A74DFF35DCD497875588 /* Pods-Spectra_Tests */,
-				61DA5C8687C577EC778C5DDB0692C8BA /* SWXMLHash */,
-				9E8669A4548C7F352B63615D6BC0CBFD /* Spectra */,
-				6BFE26E8CE7C5CEDF29C9FF3A401D8EE /* Spectra-Spectra */,
-				07ADC5D54261AA954D761105A33B061F /* TPCircularBuffer */,
+				001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */,
+				00910DBD0327C082B268844D0551048B /* Pods-Spectra_Example */,
+				6DEE6681162D16F4AA0F406FC0961ECB /* Pods-Spectra_Tests */,
+				E76DDCA89B7922203EBFF0342A517464 /* Spectra */,
+				99FBA05F457F0BD7B30B9FEB57E3C042 /* Spectra-Spectra */,
+				A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		130BDA3AB1DD67CB5AA14872CADAC119 /* Resources */ = {
+		6B02AE96CB897CFA7516EA1B652751CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22B481FECAAC01CD4EB1F521876EFDF0 /* Resources */ = {
+		A22053F19762B5AE8A7BB21D57865056 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B415C975500B202DE4D34D08A39F31F5 /* Spectra.bundle in Resources */,
+				C7FD0DA960952310EC684C8E38432A65 /* Spectra.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		018890A2DE1CF4316785F5F7794FEBE3 /* Sources */ = {
+		0F4B9FF433868476AB703590D4A3664E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6484589C1549F1A9B64A9950BCA8C5B /* Pods-Spectra_Example-dummy.m in Sources */,
+				F8197F17F632235C2EE6B3BD9AF6B042 /* BasicTriangle.swift in Sources */,
+				A3B9523881ACB11E14EAFFA567154F66 /* BufferPool.swift in Sources */,
+				A209D7201C65A1FC8D28A1D29C801264 /* BufferTexture.swift in Sources */,
+				598A0B4737982C0D493CE82C396971DB /* Camable.swift in Sources */,
+				DE298A80D3B623C0CFC5240DF1A2C0E7 /* Cube.swift in Sources */,
+				5E7ED9B81F4DFE68C1B1F777AFC6B1FB /* EncodableData.swift in Sources */,
+				33F0D889D30C753FD27DB312097F1A79 /* InflightResourceManager.swift in Sources */,
+				E9C1D762DECCCD579AD9A877F3CA7801 /* Modelable.swift in Sources */,
+				D9AB665A15F310A5C4493F2484B35BA6 /* Node.swift in Sources */,
+				25A10C375FB3A17D00BD0D394C345070 /* NodeGenerator.swift in Sources */,
+				0D53BB4D52199B94291FFA3B7E3429F8 /* Perspectable.swift in Sources */,
+				3E543941C337828C4B212CB8CB65DC62 /* PipelineGenerator.swift in Sources */,
+				99FAA199A9D54C69CCF011631C90306C /* PlatonicSolids.swift in Sources */,
+				7339973BB9036086B69D7BEAD2D01984 /* Quad.swift in Sources */,
+				E271900ACC3DC181E0EDC656B0EB267E /* Renderer.swift in Sources */,
+				D72CA8A65DE025E2A76FFB6CB93E4946 /* RenderStage.swift in Sources */,
+				0A7039E0C11FB487D7D98BCB465EFFF2 /* RenderStrategy.swift in Sources */,
+				71D343FDFC42A4F315BE09482E66703C /* Scene.swift in Sources */,
+				65BF426197097837936BF3BA4EC2BFC3 /* Spectra-dummy.m in Sources */,
+				BDC20A9CFEA2FBA5485C78DCC0EBD80C /* Transform3D.swift in Sources */,
+				F79C1014BD0A80BABCAC36C0C09F4232 /* Uniformable.swift in Sources */,
+				4F22CFCF543ECC697E673ECB3EA5BE5E /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B932FB71DDDDA8F9AEAC84A522DB589 /* Sources */ = {
+		181B319E1263876284192E4343EBA6D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C707F8B3A3BC7CF5A4C831CB71385538 /* EZAudio-dummy.m in Sources */,
-				090028A9DE59F5B82EB2855A702E3E2C /* EZAudio.m in Sources */,
-				D5D3C0D1F128CBE5374D32E373D2A78C /* EZAudioDevice.m in Sources */,
-				53AFE56096147A33BD968E62508D5A4E /* EZAudioDisplayLink.m in Sources */,
-				4353BB1DF532E2C269473335AAB2091A /* EZAudioFFT.m in Sources */,
-				435E6E921BCB09C100962E09 /* Vertexable.swift in Sources */,
-				B73267CEC296C91FF19DE227C07A27E4 /* EZAudioFile.m in Sources */,
-				BFB031F3804A2EE8685B4E02C30D3C2D /* EZAudioFloatConverter.m in Sources */,
-				1209ABF42A1B6602B4B0236F4687CB3E /* EZAudioFloatData.m in Sources */,
-				02F03C7B89BDA83CA67BBF70C7B51135 /* EZAudioPlayer.m in Sources */,
-				420B06758452A00A846C0D8873C96C64 /* EZAudioPlot.m in Sources */,
-				B64C5488693B8A33630325D1241EFCB0 /* EZAudioPlotGL.m in Sources */,
-				5AEEBF640B5C74FA2E10CEC0E80C2F79 /* EZAudioUtilities.m in Sources */,
-				42E90C5C2CDF60B8639B59834C16CDC0 /* EZMicrophone.m in Sources */,
-				BE661A884C6C566F991E2B5B0D843042 /* EZOutput.m in Sources */,
-				3C9D5381ADBBD2F6BBDB08553738DDE1 /* EZPlot.m in Sources */,
-				D30539EAE797FBB6AF925E6803D950AA /* EZRecorder.m in Sources */,
-				FA047A3B1CD499FA82F56C0F4D8F13DE /* TPCircularBuffer.c in Sources */,
+				1ED0EDBB88737B03559CD427F701A629 /* Pods-Spectra_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B77A72733B5A597B51FF286E594C779 /* Sources */ = {
+		1D8398944ED0221D02D46C25ED617450 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B649C7054EB880D9E437E3244020ACD /* Pods-Spectra_Tests-dummy.m in Sources */,
+				B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */,
+				F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */,
+				F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */,
+				D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */,
+				160564F40D913B70CDC5F842C20587A9 /* EZAudioFFT.m in Sources */,
+				555EDB63D0933185850181BB795D1757 /* EZAudioFile.m in Sources */,
+				144647B98725CD3445178F02C5C7593B /* EZAudioFloatConverter.m in Sources */,
+				0D58BDE3907BA7DE4055DF97E844EDA8 /* EZAudioFloatData.m in Sources */,
+				5B9AF696C3DA1C8D0FFB1BC72736F24D /* EZAudioPlayer.m in Sources */,
+				72EC1ECA88D2DCC3DCABA09ECB087D9F /* EZAudioPlot.m in Sources */,
+				9504F6C58BFE0BD0F71F0E22AD50ED73 /* EZAudioPlotGL.m in Sources */,
+				4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */,
+				9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */,
+				0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */,
+				048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */,
+				5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */,
+				1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8423AF1909F13F4143A1DD42522DF6B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43C04FC7BA9453061B64D38149DD118E /* TPCircularBuffer+AudioBufferList.c in Sources */,
-				BB0795145021ECA2B218036AA37CF0EB /* TPCircularBuffer-dummy.m in Sources */,
-				4E614DF2579440EFFFD102398BEEFF64 /* TPCircularBuffer.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABA7E1B93CEC754D57A1663B6EED44F0 /* Sources */ = {
+		24B3FFD232D06AD46EF82A82446A7072 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB67A28D30084FF309CE61471A7AFC81 /* Sources */ = {
+		37382C1F0A38B21268D74ACB5487C061 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5ACDE1031CFE5986D39126C362D6407 /* SWXMLHash-dummy.m in Sources */,
-				B79D312928A0F68981D9CCFA20E81A0C /* SWXMLHash.swift in Sources */,
+				A1D943CB8A4C64CF85FDCBE113171ACE /* TPCircularBuffer+AudioBufferList.c in Sources */,
+				38A62A8A4E77FC9504F79735972CF51C /* TPCircularBuffer-dummy.m in Sources */,
+				6D2C5F1BC28D8BA676BC798D445AC7E8 /* TPCircularBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5ADB328B1B64AAC09B198EB022D57FB /* Sources */ = {
+		6F7F640EA0814E8443ACC21E0A3199E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0BA9EB3C2677FCADCC47D56AAADA927 /* BasicTriangle.swift in Sources */,
-				89BFB53A255175397B42F1B5D06F6F1D /* BufferPool.swift in Sources */,
-				144F02E4427B5DC81216CFA01DD6C25A /* BufferTexture.swift in Sources */,
-				435E6E901BCAFAB100962E09 /* NodeResource.swift in Sources */,
-				F03A086AF57E3D5200A50780E318E121 /* Cube.swift in Sources */,
-				43D8BABB1BC88159004323ED /* Modelable.swift in Sources */,
-				BF5349617F11C12FC648152E4A2CC8C6 /* EncodableData.swift in Sources */,
-				010D5EEDCB7A449C0A5EB5D348C56B1F /* InflightResourceManager.swift in Sources */,
-				B8A54EC7979A7272C879E67914D8FFD2 /* Node.swift in Sources */,
-				BA535991CBBF662D29DD1228213D1902 /* NodeGenerator.swift in Sources */,
-				BD5FE6A8B0EA2108FC9B1A3DE1B15713 /* PipelineGenerator.swift in Sources */,
-				43D8BAB51BC87F4B004323ED /* Camable.swift in Sources */,
-				E27B55FBBED42578B1BE4DF25B669F0A /* PlatonicSolids.swift in Sources */,
-				43D8BABC1BC8815D004323ED /* Uniformable.swift in Sources */,
-				9BFC0179D59C01A4A5FBDA2E636D5307 /* Quad.swift in Sources */,
-				DA4667EC75E6797C1A321C187604C33F /* RenderStage.swift in Sources */,
-				78CA8AD89FD7D8800939F5A247025141 /* RenderStrategy.swift in Sources */,
-				30ADA8E4D05B97FBFEB19E90936A5E8B /* Renderer.swift in Sources */,
-				7FA4158034EF8ADAEE2ABFA1E44A6CA5 /* Scene.swift in Sources */,
-				669FDE3466F6D853A6E9F5A4F90CFEC1 /* Spectra-dummy.m in Sources */,
-				55FA9BCADA86CA46E2437B6CBCDEA71C /* Transform3D.swift in Sources */,
-				72B3F6B411AF68273656E903F2B6D41C /* View.swift in Sources */,
-				43D8BAB61BC87FD2004323ED /* Perspectable.swift in Sources */,
+				A7210D4A5CFCF388D5DFCA603FA860CA /* Pods-Spectra_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		08F9C2478D3DBAC5BC2C2B6E594AC045 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EZAudio;
-			target = 0F28EF1708EEEA18D0329628180F2CF5 /* EZAudio */;
-			targetProxy = 7269BAEE8E40BFE842638C20AB107796 /* PBXContainerItemProxy */;
-		};
-		0E33B15B7C0C8BF4921F6D4884A29F65 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SWXMLHash;
-			target = 61DA5C8687C577EC778C5DDB0692C8BA /* SWXMLHash */;
-			targetProxy = AC219C0A836FB9E5CD1801EDA0433FB0 /* PBXContainerItemProxy */;
-		};
-		47C20C912CD2166BC2FFEF09907776A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Spectra;
-			target = 9E8669A4548C7F352B63615D6BC0CBFD /* Spectra */;
-			targetProxy = BE0513CC0CAC89AA7661D9D4031A639F /* PBXContainerItemProxy */;
-		};
-		570836FF6BB4CC2E86646B387CC862AA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TPCircularBuffer;
-			target = 07ADC5D54261AA954D761105A33B061F /* TPCircularBuffer */;
-			targetProxy = 64CAF5665F0E1EBDDDBEC3D1A0A0FB45 /* PBXContainerItemProxy */;
-		};
-		5EE35484ABD52C011DF861C2B3B81D72 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SWXMLHash;
-			target = 61DA5C8687C577EC778C5DDB0692C8BA /* SWXMLHash */;
-			targetProxy = 82F5C1F464256D1C14553A0C5427F248 /* PBXContainerItemProxy */;
-		};
-		60CFB36FDA88BF882518BA9EC0E9B9A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TPCircularBuffer;
-			target = 07ADC5D54261AA954D761105A33B061F /* TPCircularBuffer */;
-			targetProxy = A5E995F62C0664B361DB8E72BEDDCD6B /* PBXContainerItemProxy */;
-		};
-		B2BBA41AECC18E9F163F7D657D063958 /* PBXTargetDependency */ = {
+		64849E4F378140502634C698383D5F95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Spectra-Spectra";
-			target = 6BFE26E8CE7C5CEDF29C9FF3A401D8EE /* Spectra-Spectra */;
-			targetProxy = 62D37BBF6EEA3287CE906A0540444C95 /* PBXContainerItemProxy */;
+			target = 99FBA05F457F0BD7B30B9FEB57E3C042 /* Spectra-Spectra */;
+			targetProxy = F979BBE687CF4EB74DCD21416587EFDF /* PBXContainerItemProxy */;
 		};
-		B708B48D3B7C794391FC35F2F4E0F566 /* PBXTargetDependency */ = {
+		7E6407C4F891FA7E4F267B6D97EAB082 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SWXMLHash;
-			target = 61DA5C8687C577EC778C5DDB0692C8BA /* SWXMLHash */;
-			targetProxy = 06D1A53F1422FC09E79A2046771FD454 /* PBXContainerItemProxy */;
+			name = EZAudio;
+			target = 001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */;
+			targetProxy = 8B2D01318A79F04C132C36B50FC0666D /* PBXContainerItemProxy */;
 		};
-		F041F70DB0F1E0BE199D31B59458915B /* PBXTargetDependency */ = {
+		96417081EB8B8631CC3BF484A1050E96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Spectra;
-			target = 9E8669A4548C7F352B63615D6BC0CBFD /* Spectra */;
-			targetProxy = 3D22E099F3B58C711112CD02E9B00FB5 /* PBXContainerItemProxy */;
+			target = E76DDCA89B7922203EBFF0342A517464 /* Spectra */;
+			targetProxy = 93FAE5578A61D79A6A5BAF13A4920927 /* PBXContainerItemProxy */;
+		};
+		B5A87059A1D25494E4D13D434313CD90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPCircularBuffer;
+			target = A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */;
+			targetProxy = 6824A2D9F8C8B082B0B44DABFFF20F9F /* PBXContainerItemProxy */;
+		};
+		CE1209D3F4D3804ACDF0514B6F24510C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spectra;
+			target = E76DDCA89B7922203EBFF0342A517464 /* Spectra */;
+			targetProxy = 746E2A15C43770CEA2EF5AA2BE56B763 /* PBXContainerItemProxy */;
+		};
+		FF8EA5A865BBF47A91F5227FD796ABC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPCircularBuffer;
+			target = A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */;
+			targetProxy = DEAB8DE93DD57504348D45BC1669BFCD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BAD0BF92B86FC03B57E2FBB7821412C /* Debug */ = {
+		1351CB5537287252478D509973087160 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDE70E20BC0D346C14D3883088E7CE89 /* Pods-Spectra_Tests.debug.xcconfig */;
+			baseConfigurationReference = 3C2718371CA6818722CEBD50AE842A72 /* EZAudio.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Tests/Pods-Spectra_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Spectra_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0F7BE99AD903FCE40F13F286D692450F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F4EC07975A60C256E380D34E3B88C90 /* Pods-Spectra_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Spectra_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		118D504F16EABCD3EF25AB585317516F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 309A61804A871CC761257568129B5A19 /* TPCircularBuffer-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = TPCircularBuffer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		175695EB5C60B7ACCDB87AED08E60BC4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 915F48FED98682368574DDBF967E555F /* Spectra-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Spectra/Spectra-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Spectra/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Spectra/Spectra.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Spectra;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1DAD786F257949E784C1BCB3F68AE614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0829E2D581D2CC1A021E7432D79FCB9A /* EZAudio-Private.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.1.2;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
@@ -1208,8 +947,47 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		226AFF8E4686FAE7A2244C8546E9F563 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E66090D483C75E260F81E7AC20D64F65 /* Spectra.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Spectra;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		24F5A3B1A9F0314F959862A32D37C3F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E66090D483C75E260F81E7AC20D64F65 /* Spectra.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spectra/Spectra-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spectra/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spectra/Spectra.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spectra;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1218,89 +996,15 @@
 			};
 			name = Release;
 		};
-		2BC825E2B26792A9B54370572F336188 /* Debug */ = {
+		5C65554B2D130DBC90854E8AD0A6BEBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77029B7677AF7DFB2106306C3E207279 /* Pods-Spectra_Example.debug.xcconfig */;
+			baseConfigurationReference = E66090D483C75E260F81E7AC20D64F65 /* Spectra.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Spectra_Example;
+				PRODUCT_NAME = Spectra;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		30F7F16997DD6911CD70A37EA158EA05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 309A61804A871CC761257568129B5A19 /* TPCircularBuffer-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TPCircularBuffer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		363245302772EA2AD8A9B97BE33EBBF9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6BD9B0B7DC98D7597615F87482B5929 /* Pods-Spectra_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Tests/Pods-Spectra_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Spectra_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -1343,6 +1047,37 @@
 			};
 			name = Debug;
 		};
+		694E9C674D56A6AD0334F9B25046AB6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9926C8E1CAEA40A146DA1B80B1541B7 /* Pods-Spectra_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Spectra_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1377,76 +1112,28 @@
 			};
 			name = Release;
 		};
-		A29860A6D4741960D27A12CF7D7BFEE5 /* Debug */ = {
+		9978CF71117F2669DDDBD4C603A93016 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 915F48FED98682368574DDBF967E555F /* Spectra-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Spectra;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		B49C9683C407C8764F5C12BBC3F8FACC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 915F48FED98682368574DDBF967E555F /* Spectra-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Spectra;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		CF2E386C6F145152A4ACF50E790D6A31 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5721B453B5969C29FEB113F3BE874AAE /* SWXMLHash-Private.xcconfig */;
+			baseConfigurationReference = 75318195397D4177A7CCF9C03DB9B411 /* Pods-Spectra_Tests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.0.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWXMLHash/SWXMLHash-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWXMLHash/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWXMLHash/SWXMLHash.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SWXMLHash;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D22FFC643720B8697B6CE7810EB525B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5721B453B5969C29FEB113F3BE874AAE /* SWXMLHash-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.0.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWXMLHash/SWXMLHash-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWXMLHash/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWXMLHash/SWXMLHash.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Tests/Pods-Spectra_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SWXMLHash;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Spectra_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1456,15 +1143,15 @@
 			};
 			name = Debug;
 		};
-		D8314694628F49DF0518689B05E419DE /* Release */ = {
+		9D6EB9FE8CB7BC476DBAC88E07227308 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 915F48FED98682368574DDBF967E555F /* Spectra-Private.xcconfig */;
+			baseConfigurationReference = E66090D483C75E260F81E7AC20D64F65 /* Spectra.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Spectra/Spectra-prefix.pch";
@@ -1473,36 +1160,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Spectra/Spectra.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Spectra;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FAB5B4B38E860CAE2ED0C3197D303D48 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0829E2D581D2CC1A021E7432D79FCB9A /* EZAudio-Private.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.1.2;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EZAudio/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EZAudio;
+				PRODUCT_NAME = Spectra;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1512,14 +1171,155 @@
 			};
 			name = Debug;
 		};
+		A44F16E4A79D14F0692C4B0C2EE6AFA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8ABD8A50AAF5E7932B4BA70B2F58E0B /* TPCircularBuffer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A57C9689D406DB6F2C453284427882FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA22EE8E581145B208214047A67A7ED3 /* Pods-Spectra_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Example/Pods-Spectra_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Spectra_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE218BED1918753D3E1446508204BED9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8ABD8A50AAF5E7932B4BA70B2F58E0B /* TPCircularBuffer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E55BFBB5FD3DA232D3F2D5CE12E37AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF1A1F72440C42DAF31D81754521B2A /* Pods-Spectra_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spectra_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spectra_Tests/Pods-Spectra_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Spectra_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FFE2C8C885C42F06D84463E3BBE44152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C2718371CA6818722CEBD50AE842A72 /* EZAudio.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EZAudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11536F472CC9FE466F616A5B700DAFD0 /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */ = {
+		05E2DC2ED124A446042B4DB0CC867FCE /* Build configuration list for PBXNativeTarget "Spectra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				30F7F16997DD6911CD70A37EA158EA05 /* Debug */,
-				118D504F16EABCD3EF25AB585317516F /* Release */,
+				9D6EB9FE8CB7BC476DBAC88E07227308 /* Debug */,
+				24F5A3B1A9F0314F959862A32D37C3F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1533,56 +1333,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FBAEAD27515E37DBFC73F79128020E5 /* Build configuration list for PBXNativeTarget "Spectra" */ = {
+		652B6E36CEBEB54B74D699A7F2BDD86D /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				175695EB5C60B7ACCDB87AED08E60BC4 /* Debug */,
-				D8314694628F49DF0518689B05E419DE /* Release */,
+				A44F16E4A79D14F0692C4B0C2EE6AFA0 /* Debug */,
+				BE218BED1918753D3E1446508204BED9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7EE14BD1FBFE93FFC9600634C16D3CCF /* Build configuration list for PBXNativeTarget "EZAudio" */ = {
+		8232FFE8B5433CE72E7D1ACB90C44D5A /* Build configuration list for PBXNativeTarget "Pods-Spectra_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FAB5B4B38E860CAE2ED0C3197D303D48 /* Debug */,
-				1DAD786F257949E784C1BCB3F68AE614 /* Release */,
+				694E9C674D56A6AD0334F9B25046AB6D /* Debug */,
+				A57C9689D406DB6F2C453284427882FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		825DC2994B9C01AFC0389ED7FED16A3B /* Build configuration list for PBXNativeTarget "Pods-Spectra_Example" */ = {
+		CB53830DCDB9CCC560962769E044284E /* Build configuration list for PBXNativeTarget "EZAudio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2BC825E2B26792A9B54370572F336188 /* Debug */,
-				0F7BE99AD903FCE40F13F286D692450F /* Release */,
+				1351CB5537287252478D509973087160 /* Debug */,
+				FFE2C8C885C42F06D84463E3BBE44152 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A84192B583078D34A3CD9BE1009E9274 /* Build configuration list for PBXNativeTarget "Pods-Spectra_Tests" */ = {
+		F8FDD3DE91BD8AC22A8B6668D312C4A1 /* Build configuration list for PBXNativeTarget "Pods-Spectra_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BAD0BF92B86FC03B57E2FBB7821412C /* Debug */,
-				363245302772EA2AD8A9B97BE33EBBF9 /* Release */,
+				9978CF71117F2669DDDBD4C603A93016 /* Debug */,
+				E55BFBB5FD3DA232D3F2D5CE12E37AA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7AFDD7FEADF1AAE681AB7EA298D474D /* Build configuration list for PBXNativeTarget "Spectra-Spectra" */ = {
+		FB6018BE8FD66F9C794797A855DE4B79 /* Build configuration list for PBXNativeTarget "Spectra-Spectra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A29860A6D4741960D27A12CF7D7BFEE5 /* Debug */,
-				B49C9683C407C8764F5C12BBC3F8FACC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E8445031CEB4A3DCE6B7CF97A9F3CAEC /* Build configuration list for PBXNativeTarget "SWXMLHash" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D22FFC643720B8697B6CE7810EB525B6 /* Debug */,
-				CF2E386C6F145152A4ACF50E790D6A31 /* Release */,
+				226AFF8E4686FAE7A2244C8546E9F563 /* Debug */,
+				5C65554B2D130DBC90854E8AD0A6BEBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
