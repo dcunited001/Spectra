@@ -19,8 +19,8 @@
   },
   "requires_arc": true,
   "dependencies": {
-    "SWXMLHash": [
-      "~> 2.0.0"
+    "Ono": [
+      "~> 1.2.2"
     ]
   },
   "ios": {
@@ -40,6 +40,7 @@
   "source_files": [
     "Pod/Classes/**/*",
     "Pod/Shaders/**/*",
+    "Pod/Node/**/*",
     "Pod/NodeGenerators/**/*"
   ],
   "resource_bundles": {

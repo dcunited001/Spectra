@@ -28,7 +28,7 @@ you've been warned.
   s.osx.deployment_target = "10.11"
   s.requires_arc = true
 
-  s.dependency "SWXMLHash", "~> 2.0.0"
+  s.dependency "Ono", "~> 1.2.2"
   s.ios.frameworks = "MetalKit", "Metal", "Accelerate"
   s.osx.frameworks = "MetalKit", "Metal", "Accelerate"
 

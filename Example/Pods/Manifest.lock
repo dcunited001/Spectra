@@ -5,9 +5,9 @@ PODS:
   - EZAudio/Full (1.1.2):
     - EZAudio/Core
     - TPCircularBuffer (~> 0.0)
+  - Ono (1.2.2)
   - Spectra (0.0.1.alpha):
-    - SWXMLHash (~> 2.0.0)
-  - SWXMLHash (2.0.1)
+    - Ono (~> 1.2.2)
   - TPCircularBuffer (0.0.1)
 
 DEPENDENCIES:
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   EZAudio: 01373de2b1257b77be1bf13753fb1c4ea8a9777e
-  Spectra: ffcd2419cd746bf1351043804af7dfd38deb3134
-  SWXMLHash: 2211e0593047ef0aacfcad2fb40c1978f2f0f2e2
+  Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+  Spectra: 86faa9ed7ea1471e8dcfc74b465f1ec2d79be228
   TPCircularBuffer: 949e9632b9fb99b7274d7b2296ee22bff5841e35
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
