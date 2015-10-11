@@ -9,12 +9,12 @@
 import Foundation
 
 public protocol RenderStrategy: class {
-    var currentRenderStage: Int { get set }
     var renderStages: [RenderStage] { get set }
+    func execRenderStage(commandBuffer: MTLCommandBuffer, renderPassDescriptor: MTLRenderPassDescriptor, renderEncoder: MTLRenderCommandEncoder, renderStage: RenderStage, renderer: Renderer, nextRenderer: Renderer?)
 }
 
 extension RenderStrategy {
-    func execRenderStage(commandBuffer: MTLCommandBuffer, renderPassDescriptor: MTLRenderPassDescriptor, renderEncoder: MTLRenderCommandEncoder, renderStage: RenderStage, renderer: Renderer, nextRenderer: Renderer?) {
+    public func execRenderStage(commandBuffer: MTLCommandBuffer, renderPassDescriptor: MTLRenderPassDescriptor, renderEncoder: MTLRenderCommandEncoder, renderStage: RenderStage, renderer: Renderer, nextRenderer: Renderer?) {
         
         var nextRenderEncoder: MTLRenderCommandEncoder?
         if let renderEncoderTransition = renderStage.transition(renderer, nextRenderer: nextRenderer) {
