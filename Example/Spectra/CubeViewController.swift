@@ -10,7 +10,6 @@ import UIKit
 import MetalKit
 import Spectra
 import simd
-import SWXMLHash
 
 class CubeViewController: MetalViewController {
     
@@ -48,6 +47,7 @@ class CubeViewController: MetalViewController {
         
         scene = Spectra.Scene()
         setupPerspective()
+        setupSceneGraph()
         setupObjects()
         setupScene()
     }
@@ -76,18 +76,22 @@ class CubeViewController: MetalViewController {
         //create encodable inputs for camera/etc
     }
     
-    func setupObjects() {
-        // parse Cube.XML
+    func setupSceneGraph() {
         let bundle = NSBundle(forClass: CubeViewController.self)
         let path = bundle.pathForResource("Cube", ofType: "xml")
         let data = NSData(contentsOfFile: path!)
-        let xml = SWXMLHash.parse(data!)
+//        let xml = SWXMLHash.parse(data!)
         
-        let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
-        setupCube(cubeKey, xml: cubeXml)
     }
     
-    func setupCube(cubeKey: String, xml: XMLIndexer) {
+    func setupObjects() {
+//        let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
+//        setupCube(cubeKey, xml: cubeXml)
+    }
+    
+    func setupCube(cubeKey: String//,
+//        xml: XMLIndexer
+        ) {
         let cubeNode = Spectra.Node()
         let cubeGen = Spectra.CubeGenerator()
         cubeNode.data["position"] = cubeGen.getVertices()

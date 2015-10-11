@@ -8,6 +8,7 @@
 
 import Metal
 import simd
+import GlimpseXML
 
 // SpectraScene
 // - render is called
