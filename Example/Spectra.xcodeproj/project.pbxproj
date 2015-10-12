@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		066BB154BA24C4DCEF4642F1 /* Pods_Spectra_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A033ED2BE8059D67C63C7076 /* Pods_Spectra_Tests.framework */; };
+		433894481BCB676A00CE1002 /* Spectra3D.xml in Resources */ = {isa = PBXBuildFile; fileRef = 433894471BCB676A00CE1002 /* Spectra3D.xml */; settings = {ASSET_TAGS = (); }; };
 		436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06741BBFB3AE007C738A /* MetalViewController.swift */; };
 		436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B068A1BC23328007C738A /* SpectrogramTextureController.swift */; };
 		438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ACE011BC7163D0008C59E /* CubeViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -38,6 +39,7 @@
 		0A504692F105E6A7CFDAC5DC /* Pods-Spectra_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spectra_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spectra_Tests/Pods-Spectra_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0BD99D9098A196B696963522 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		1328903B16E792FD233D3B8E /* Spectra.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Spectra.podspec; path = ../Spectra.podspec; sourceTree = "<group>"; };
+		433894471BCB676A00CE1002 /* Spectra3D.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Spectra3D.xml; sourceTree = "<group>"; };
 		436B06741BBFB3AE007C738A /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
 		436B068A1BC23328007C738A /* SpectrogramTextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrogramTextureController.swift; sourceTree = "<group>"; };
 		438ACE011BC7163D0008C59E /* CubeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				436B06741BBFB3AE007C738A /* MetalViewController.swift */,
 				436B068A1BC23328007C738A /* SpectrogramTextureController.swift */,
 				43D8BAAC1BC85B02004323ED /* DataEncoding.swift */,
+				433894471BCB676A00CE1002 /* Spectra3D.xml */,
 			);
 			name = "Example for Spectra";
 			path = Spectra;
@@ -295,6 +298,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				43D8BAA91BC82100004323ED /* Cube.xml in Resources */,
+				433894481BCB676A00CE1002 /* Spectra3D.xml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

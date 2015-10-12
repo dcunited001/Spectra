@@ -200,6 +200,7 @@
 		4338943B1BCB2C3500CE1002 /* Vertexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vertexable.swift; path = Node/Vertexable.swift; sourceTree = "<group>"; };
 		433894401BCB2D5D00CE1002 /* SceneGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneGraph.swift; path = Node/SceneGraph.swift; sourceTree = "<group>"; };
 		433894431BCB2EFD00CE1002 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		433894491BCB6FC000CE1002 /* Spectra3D.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spectra3D.xsd; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		44CBC2321DD3A35CB3A9A2E312E5C489 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		46E7546B9CCCAFD3E4D0FDD395AA7282 /* ONOXMLDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ONOXMLDocument.m; path = Source/ONOXMLDocument.m; sourceTree = "<group>"; };
 		4AA9F67E14107C1A8D0AAAF286E80004 /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
@@ -663,6 +664,7 @@
 				3B7C3C3577C49797E605A4B9139CD926 /* Spectra-dummy.m */,
 				B58175C2F29B6883A57BCB05C37F082B /* Spectra-prefix.pch */,
 				E4D895A151F7777D019D82EB978CD462 /* Spectra-umbrella.h */,
+				433894491BCB6FC000CE1002 /* Spectra3D.xsd */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Spectra";
