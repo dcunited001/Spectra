@@ -33,7 +33,8 @@ public class Scene: RenderDelegate, UpdateDelegate {
     public var depthStencilStateMap: DepthStencilStateMap = [:]
     public var rendererMap: RendererMap = [:]
     public var nodeMap: SceneNodeMap = [:]
-//    public var sceneGraph: SceneGraph?
+    public var nodeGeneratorMap: SceneNodeGeneratorMap = [:]
+    public var sceneGraph: SceneGraph?
     
     public var activeCamera: Camable = BaseCamera()
     public var worldUniforms: Uniformable = WorldUniforms()

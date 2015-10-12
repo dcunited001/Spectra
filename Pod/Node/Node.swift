@@ -11,6 +11,7 @@ import SWXMLHash
 import simd
 
 public typealias SceneNodeMap = [String:Node]
+public typealias SceneNodeGeneratorMap = [String:NodeGenerator]
 public typealias SceneNodeSelectorMap = [String:NodeSelector]
 
 //TODO: separate node primitives from nodes to conserve memory
