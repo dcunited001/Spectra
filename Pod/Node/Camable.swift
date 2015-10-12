@@ -32,9 +32,9 @@ public extension Camable {
 }
 
 public class BaseCamera: Camable {
-    public var camEye: float4 = []
-    public var camCenter: float4 = []
-    public var camUp: float4 = []
+    public var camEye = float4()
+    public var camCenter = float4()
+    public var camUp = float4()
     
     public init() {
         setCamDefaults()

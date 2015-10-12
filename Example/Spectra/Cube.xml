@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xml3d id="Cube" xmlns="http://www.xml3d.org/2009/xml3d/">
+<root id="Cube" xmlns="http://www.xml3d.org/2009/xml3d/">
     <!-- kind of based on xml3d, but mostly just using XML bc:
      - it has tree-like nature
      - and CSS selectability -->
@@ -10,6 +10,18 @@
      -->
     <view position="0 0 1"></view>
     
+
+<!-- 
+ TODO: reusable transforms
+ -->
+
+<!--    <transform id="xfm" rotation="0 0 1 0.5" scale="1 2 3"-->
+<!--    translation="4 5 6" center="0 0 5" scaleOrientation="0 0 1 0.785398163" />-->
+<!--    -->
+<!--    <group transform="#xfm" >-->
+<!--        -->
+<!--    </group>-->
+
     <mesh id="spectra_cube" type="triangles" spectra-node-gen="cube">
         
     </mesh>
@@ -67,4 +79,4 @@
             </float4>
         </data>
     </defs>
-</xml3d>
+</root>
