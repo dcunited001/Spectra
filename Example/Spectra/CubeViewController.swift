@@ -48,6 +48,7 @@ class CubeViewController: MetalViewController {
         
         scene = Spectra.Scene()
         setupPerspective()
+        setupSceneGraph()
         setupObjects()
         setupScene()
     }
@@ -76,12 +77,21 @@ class CubeViewController: MetalViewController {
         //create encodable inputs for camera/etc
     }
     
-    func setupObjects() {
-        // parse Cube.XML
+    func setupSceneGraph() {
         let bundle = NSBundle(forClass: CubeViewController.self)
         let path = bundle.pathForResource("Cube", ofType: "xml")
+        
         let data = NSData(contentsOfFile: path!)
-        let xml = SWXMLHash.parse(data!)
+        let sceneGraph = SceneGraph(xmlData: data!)
+        
+        scene!.sceneGraph = sceneGraph
+    }
+    
+    func setupNodeGeneratorMap() {
+        scene!.nodeGeneratorMap["cube"] = Spectra.CubeGenerator()
+    }
+    func setupObjects() {
+        // parse Cube.XML
         
         let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
         setupCube(cubeKey, xml: cubeXml)
@@ -90,10 +100,12 @@ class CubeViewController: MetalViewController {
     func setupCube(cubeKey: String, xml: XMLIndexer) {
         let cubeNode = Spectra.Node()
         let cubeGen = Spectra.CubeGenerator()
-        cubeNode.data["position"] = cubeGen.getVertices()
-        cubeNode.data["texcoords"] = cubeGen.getTexCoords()
-        cubeNode.data["colorcoords"] = cubeGen.getColorCoords()
-        cubeNode.dataMaps["triangle_vertex"] = cubeGen.getTriangleVertexMap()
+        
+        
+        cubeNode.data["pos"] = cubeGen.getVertices()
+        cubeNode.data["tex"] = cubeGen.getTexCoords()
+        cubeNode.data["rgba"] = cubeGen.getColorCoords()
+        cubeNode.dataMaps["triangle_vertex_map"] = cubeGen.getTriangleVertexMap()
         scene!.nodeMap[cubeKey] = cubeNode
         //nodeMap[cubeKey] =
     }
