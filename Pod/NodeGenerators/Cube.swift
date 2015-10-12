@@ -14,28 +14,6 @@ public class CubeGenerator: NodeGenerator {
         
     }
     
-    public func generate() -> Node {
-        let node = Node()
-        node.data = getData()
-        node.dataMaps = getDataMaps()
-        return node
-    }
-    
-    public func getData() -> [String:[float4]] {
-        return [
-            "pos": getVertices(),
-            "rgba": getColorCoords(),
-            "tex": getTexCoords()
-        ]
-    }
-    
-    public func getDataMaps() -> [String:[[Int]]] {
-        return [
-            "triangle_vertex_map": getTriangleVertexMap(),
-            "face_vertex_map": getFaceTriangleMap()
-        ]
-    }
-    
     // return a node
     // - with a list of vertices
     // - with a list of colorvertices

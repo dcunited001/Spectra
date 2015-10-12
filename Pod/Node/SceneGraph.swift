@@ -26,11 +26,6 @@ public class SceneGraph {
         xml = try! ONOXMLDocument(data: xmlData)
     }
     
-    
-    public func createNodeWithGenerator(generatorMap: [String:NodeGenerator], generatorKey: String) -> Node {
-        return generatorMap[generatorKey]!.generate()
-    }
-    
     public func createGeneratedNodes(generatorMap: [String:NodeGenerator], var nodeMap: SceneNodeMap) -> SceneNodeMap {
         
         xml!.enumerateElementsWithCSS("mesh[\(nodeGenAttr)]", block: { (elem) -> Void in

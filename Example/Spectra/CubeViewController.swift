@@ -49,6 +49,8 @@ class CubeViewController: MetalViewController {
         scene = Spectra.Scene()
         setupPerspective()
         setupSceneGraph()
+        setupNodeGeneratorMap()
+        setupNodeMap()
         setupObjects()
         setupScene()
     }
@@ -92,8 +94,8 @@ class CubeViewController: MetalViewController {
     }
     
     func setupNodeMap() {
-        scene!.nodeMap = scene!.sceneGraph!.createGeneratedNodes(scene!.nodeGeneratorMap, nodeMap: scene!.nodeMap)
-        scene!.nodeMap = scene!.sceneGraph!.createRefNodes(scene!.nodeMap)
+        scene!.sceneGraph!.createGeneratedNodes(scene!.nodeGeneratorMap, nodeMap: scene!.nodeMap)
+        scene!.sceneGraph!.createRefNodes(scene!.nodeMap)
     }
     
     func setupObjects() {
@@ -101,19 +103,6 @@ class CubeViewController: MetalViewController {
         
 //        let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
 //        setupCube(cubeKey, xml: cubeXml)
-    }
-    
-    func setupCube(cubeKey: String, xml: XMLIndexer) {
-        let cubeNode = Spectra.Node()
-        let cubeGen = Spectra.CubeGenerator()
-        
-        
-        cubeNode.data["pos"] = cubeGen.getVertices()
-        cubeNode.data["tex"] = cubeGen.getTexCoords()
-        cubeNode.data["rgba"] = cubeGen.getColorCoords()
-        cubeNode.dataMaps["triangle_vertex_map"] = cubeGen.getTriangleVertexMap()
-        scene!.nodeMap[cubeKey] = cubeNode
-        //nodeMap[cubeKey] =
     }
     
     func setupScene() {
