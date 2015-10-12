@@ -1,10 +1,35 @@
-<root id="Cube" xmlns="http://www.xml3d.org/2009/xml3d/">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xml3d id="Cube" xmlns="http://www.xml3d.org/2009/xml3d/">
     <!-- kind of based on xml3d, but mostly just using XML bc:
      - it has tree-like nature
      - and CSS selectability -->
     
+    <!-- 
+     TODO: setup view to control worldUniforms for scene
+     -->
+    <view position="0 0 1"></view>
+    
+    <mesh id="spectra_cube" type="triangles" spectra-generator="cube">
+        
+    </mesh>
+    
+    <mesh id="spectra_cube2" type="triangles" spectra-node="spectra_cube">
+        
+    </mesh>
+    
+<!--    <mesh id="cube_xml3d" type="triangles">-->
+<!--        <int name="index"></int>-->
+<!--        <float3 name="position"></float3>-->
+<!--        <float3 name="texcoords"></float3>-->
+<!--    </mesh>-->
+
+    <!-- 
+     TODO: parse defs to provide primitive data other nodes can use
+     TODO: setup defs to either declare data -or- pass arguments to a node/compute generator
+     -->
     <defs>
-        <!-- reusable data definitions go here ... 
+        <!-- reusable data definitions go here ...
          ... but needs to be implemented in XML parser =/ -->
         <data id="cube_data">
             <int name="index">
@@ -42,14 +67,4 @@
             </float4>
         </data>
     </defs>
-    
-    <mesh id="cube_xml3d" type="triangles">
-        <int name="index"></int>
-        <float3 name="position"></float3>
-        <float3 name="texcoords"></float3>
-    </mesh>
-    
-    <mesh id="spectra_cube" type="triangles">
-        
-    </mesh>
-</root>
+</xml3d>
