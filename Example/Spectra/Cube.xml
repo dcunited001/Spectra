@@ -10,11 +10,11 @@
      -->
     <view position="0 0 1"></view>
     
-    <mesh id="spectra_cube" type="triangles" spectra-generator="cube">
+    <mesh id="spectra_cube" type="triangles" spectra-node-gen="cube">
         
     </mesh>
     
-    <mesh id="spectra_cube2" type="triangles" spectra-node="spectra_cube">
+    <mesh id="spectra_cube2" type="triangles" spectra-node-ref="spectra_cube">
         
     </mesh>
     

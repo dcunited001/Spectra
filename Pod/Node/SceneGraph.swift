@@ -19,6 +19,9 @@ import Ono
 public class SceneGraph {
     public var xml: ONOXMLDocument?
     
+    let nodeGenAttr = "spectra-node-gen"
+    let nodeRefAttr = "spectra-node-ref"
+    
     public init(xmlData: NSData) {
         xml = try! ONOXMLDocument(data: xmlData)
     }
@@ -28,11 +31,24 @@ public class SceneGraph {
         return generatorMap[generatorKey]!.generate()
     }
     
-    public func createGeneratedNodes(generatorMap: [String:NodeGenerator], nodeMap: SceneNodeMap) -> SceneNodeMap {
+    public func createGeneratedNodes(generatorMap: [String:NodeGenerator], var nodeMap: SceneNodeMap) -> SceneNodeMap {
+        
+        xml!.enumerateElementsWithCSS("mesh[\(nodeGenAttr)]", block: { (elem) -> Void in
+            let nodeGenName = elem.valueForAttribute(self.nodeGenAttr) as! String
+            let nodeId = elem.valueForAttribute("id") as! String
+            nodeMap[nodeId] = generatorMap[nodeGenName]!.generate()
+        })
+        
         return nodeMap
     }
     
-    public func createDependentNodes(nodeMap: SceneNodeMap) -> SceneNodeMap {
+    public func createRefNodes(var nodeMap: SceneNodeMap) -> SceneNodeMap {
+        xml!.enumerateElementsWithCSS("mesh[\(nodeRefAttr)]", block: { (elem) -> Void in
+            let nodeRefName = elem.valueForAttribute(self.nodeRefAttr) as! String
+            let nodeId = elem.valueForAttribute("id") as! String
+            nodeMap[nodeId] = nodeMap[nodeRefName]
+        })
+        
         return nodeMap
     }
 }

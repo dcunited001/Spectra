@@ -90,11 +90,17 @@ class CubeViewController: MetalViewController {
     func setupNodeGeneratorMap() {
         scene!.nodeGeneratorMap["cube"] = Spectra.CubeGenerator()
     }
+    
+    func setupNodeMap() {
+        scene!.nodeMap = scene!.sceneGraph!.createGeneratedNodes(scene!.nodeGeneratorMap, nodeMap: scene!.nodeMap)
+        scene!.nodeMap = scene!.sceneGraph!.createRefNodes(scene!.nodeMap)
+    }
+    
     func setupObjects() {
         // parse Cube.XML
         
-        let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
-        setupCube(cubeKey, xml: cubeXml)
+//        let cubeXml = try! xml["root"]["mesh"].withAttr("id", cubeKey)
+//        setupCube(cubeKey, xml: cubeXml)
     }
     
     func setupCube(cubeKey: String, xml: XMLIndexer) {
