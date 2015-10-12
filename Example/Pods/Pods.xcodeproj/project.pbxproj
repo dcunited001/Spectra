@@ -580,7 +580,6 @@
 			isa = PBXGroup;
 			children = (
 				433894431BCB2EFD00CE1002 /* Scene.swift */,
-				B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */,
 				EC83479D69D2CB8868C5E04DE0C53A89 /* BufferPool.swift */,
 				09FA38E59853CB899EC526E2B542CE6B /* BufferTexture.swift */,
 				D86A6FC6F6588A66919B35DAAE911A37 /* EncodableData.swift */,
@@ -600,6 +599,7 @@
 			children = (
 				C38777B0372C31EEFEC2453DC89E92FA /* Cube.swift */,
 				EEB220BE7B9B14C937289CDA6BC5C410 /* NodeGenerator.swift */,
+				B8787110A72D0699BE8594B2F61807AE /* BasicTriangle.swift */,
 				BC38FAA951A82C2526B063FA8AB23EA2 /* PlatonicSolids.swift */,
 				053087C481AA0EE027EAA4BC29CDA9FF /* Quad.swift */,
 			);

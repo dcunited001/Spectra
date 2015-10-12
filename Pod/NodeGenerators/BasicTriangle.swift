@@ -9,7 +9,12 @@
 import simd
 
 public class BasicTriangleGenerator: NodeGenerator {
-    func getVertices() -> [float4] {
+    
+    public init() {
+        
+    }
+    
+    public func getVertices() -> [float4] {
         return [
             // isosoles triangle
             float4(0.0,  0.0, 0.0, 1.0),
@@ -18,7 +23,7 @@ public class BasicTriangleGenerator: NodeGenerator {
         ]
     }
     
-    func getColorCoords() -> [float4] {
+    public func getColorCoords() -> [float4] {
         return [
             float4(1.0, 0.0, 0.0, 1.0),
             float4(0.0, 1.0, 0.0, 1.0),
@@ -26,7 +31,7 @@ public class BasicTriangleGenerator: NodeGenerator {
         ]
     }
     
-    func getTexCoords() -> [float4] {
+    public func getTexCoords() -> [float4] {
         return [
             float4(0.5, 0.0, 0.0, 1.0),
             float4(0.0, 1.0, 0.0, 1.0),
@@ -34,15 +39,15 @@ public class BasicTriangleGenerator: NodeGenerator {
         ]
     }
     
-    func getTriangleVertexMap() -> [[Int]] {
+    public func getTriangleVertexMap() -> [[Int]] {
         return [[0,1,2]]
     }
     
-    func getFaceVertexMap() -> [[Int]] {
+    public func getFaceVertexMap() -> [[Int]] {
         return [[0,1,2]]
     }
     
-    func getFaceTriangleMap() -> [[Int]] {
+    public func getFaceTriangleMap() -> [[Int]] {
         return [[0]]
     }
 }
