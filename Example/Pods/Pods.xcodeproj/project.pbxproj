@@ -35,6 +35,8 @@
 		4338943F1BCB2D1D00CE1002 /* Vertexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338943B1BCB2C3500CE1002 /* Vertexable.swift */; settings = {ASSET_TAGS = (); }; };
 		433894421BCB2D6D00CE1002 /* SceneGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433894401BCB2D5D00CE1002 /* SceneGraph.swift */; settings = {ASSET_TAGS = (); }; };
 		433894451BCB2F0F00CE1002 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433894431BCB2EFD00CE1002 /* Scene.swift */; settings = {ASSET_TAGS = (); }; };
+		433894531BCC7A8F00CE1002 /* S3DXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433894511BCC7A8000CE1002 /* S3DXML.swift */; settings = {ASSET_TAGS = (); }; };
+		433894561BCC7A9700CE1002 /* S3DXSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338944B1BCC6C6F00CE1002 /* S3DXSD.swift */; settings = {ASSET_TAGS = (); }; };
 		459689BFB01A7FCD8AC323ECBF8F6EAC /* Pods-Spectra_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C86907F1AD7399D570DE20B287DD927A /* Pods-Spectra_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BA5C9D17C8C5B5E81D507E0A424568 /* EZAudioUtilities.m */; };
 		51C5259C250858B22E54B40A8561CC66 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B203DFA8F135C7133783CB64DB4C0D /* Renderer.swift */; };
@@ -201,6 +203,8 @@
 		433894401BCB2D5D00CE1002 /* SceneGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneGraph.swift; path = Node/SceneGraph.swift; sourceTree = "<group>"; };
 		433894431BCB2EFD00CE1002 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		433894491BCB6FC000CE1002 /* Spectra3D.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spectra3D.xsd; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
+		4338944B1BCC6C6F00CE1002 /* S3DXSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3DXSD.swift; sourceTree = "<group>"; };
+		433894511BCC7A8000CE1002 /* S3DXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3DXML.swift; sourceTree = "<group>"; };
 		44CBC2321DD3A35CB3A9A2E312E5C489 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		46E7546B9CCCAFD3E4D0FDD395AA7282 /* ONOXMLDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ONOXMLDocument.m; path = Source/ONOXMLDocument.m; sourceTree = "<group>"; };
 		4AA9F67E14107C1A8D0AAAF286E80004 /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
@@ -452,6 +456,15 @@
 			name = Node;
 			sourceTree = "<group>";
 		};
+		4338944A1BCC6C4700CE1002 /* S3DXML */ = {
+			isa = PBXGroup;
+			children = (
+				4338944B1BCC6C6F00CE1002 /* S3DXSD.swift */,
+				433894511BCC7A8000CE1002 /* S3DXML.swift */,
+			);
+			name = S3DXML;
+			sourceTree = "<group>";
+		};
 		464AECAED15D88F51AD416AE6C7796B3 /* Ono */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +509,7 @@
 		691CE617B3E1F53254AA50BE014632FF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				4338944A1BCC6C4700CE1002 /* S3DXML */,
 				433894391BCB2BDD00CE1002 /* Node */,
 				A2CB3054EF319A6DF631F54C41555968 /* Classes */,
 				A86240A6F9DDD8BA5628ED0805C540F7 /* NodeGenerators */,
@@ -982,6 +996,7 @@
 				84C50FF13153A6E59B1538FE01610BB1 /* BasicTriangle.swift in Sources */,
 				67D05936E36357CDAC0F80D7207C5438 /* BufferPool.swift in Sources */,
 				433894451BCB2F0F00CE1002 /* Scene.swift in Sources */,
+				433894561BCC7A9700CE1002 /* S3DXSD.swift in Sources */,
 				40489E0BC1BF46430106029567CC4F00 /* BufferTexture.swift in Sources */,
 				433894421BCB2D6D00CE1002 /* SceneGraph.swift in Sources */,
 				4338943E1BCB2D1A00CE1002 /* NodeResource.swift in Sources */,
@@ -995,6 +1010,7 @@
 				80FA9D591CA8DE745066B6BE1E124136 /* NodeGenerator.swift in Sources */,
 				8AD32F0A90F232617B8B2BDB4BB4309B /* Perspectable.swift in Sources */,
 				E22E7F7BDE935F957FD99CB5B4108E0E /* PipelineGenerator.swift in Sources */,
+				433894531BCC7A8F00CE1002 /* S3DXML.swift in Sources */,
 				B3C8AC0A79F7900588F1A17489452E73 /* PlatonicSolids.swift in Sources */,
 				C44230F7C06E6CB75ECC8F2A1449885D /* Quad.swift in Sources */,
 				51C5259C250858B22E54B40A8561CC66 /* Renderer.swift in Sources */,
