@@ -84,14 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Spectra_Example/Ono.framework"
-  install_framework "Pods-Spectra_Example/Spectra.framework"
-  install_framework "Pods-Spectra_Example/EZAudio.framework"
-  install_framework "Pods-Spectra_Example/TPCircularBuffer.framework"
+  install_framework "Pods/Ono.framework"
+  install_framework "Pods/Spectra.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Spectra_Example/Ono.framework"
-  install_framework "Pods-Spectra_Example/Spectra.framework"
-  install_framework "Pods-Spectra_Example/EZAudio.framework"
-  install_framework "Pods-Spectra_Example/TPCircularBuffer.framework"
+  install_framework "Pods/Ono.framework"
+  install_framework "Pods/Spectra.framework"
 fi

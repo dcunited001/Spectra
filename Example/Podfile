@@ -1,14 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'Spectra_Example', :exclusive => true do
-  pod "Spectra", :path => "../"
+pod "Spectra", :path => "../"
+
+target 'Spectra_Example' do
   pod "EZAudio"
 end
 
-target 'Spectra_Tests', :exclusive => true do
-  pod "Spectra", :path => "../"
-
+target 'Spectra_Tests' do
   pod 'Quick', '~> 0.6.0'
   pod 'Nimble', '~> 2.0.0-rc.3'
 end
