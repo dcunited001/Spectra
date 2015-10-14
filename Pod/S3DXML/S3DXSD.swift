@@ -87,14 +87,16 @@ public class S3DMtlEnum {
     
     public init(elem: ONOXMLElement) {
         self.name = elem.valueForAttribute("name") as! String
+        parseEnumValues(elem)
     }
     
     public func parseEnumValues(elem: ONOXMLElement) {
+        values = [:]
         let valuesSelector = "xs:restriction > xs:enumeration"
-        elem.enumerateElementsWithCSS(valuesSelector) { (el,idx, stop) -> Void in
-            let val = el.valueForAttribute("id") as! Int
+        elem.enumerateElementsWithCSS(valuesSelector) { (el, idx, stop) -> Void in
+            let val = el.valueForAttribute("id") as! String
             let key = el.valueForAttribute("value") as! String
-            self.values[key] = val
+            self.values[key] = Int(val)
         }
     }
 }
