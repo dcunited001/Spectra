@@ -13,56 +13,57 @@ import Ono
 import Quick
 import Nimble
 
-class TableOfContentsSpec: QuickSpec {
+class S3DXSDSpec: QuickSpec {
     override func spec() {
         let xmlData = S3DXSD.readXSD("Spectra3D")
         let xsd: ONOXMLDocument? = try! ONOXMLDocument(data: xmlData)
         
         describe("S3DAttributeGroup") {
+            let refableName = "refable"
+            let refableSelector = "xs:attributeGroup[name=\(refableName)]"
+            var attrGroup: S3DAttributeGroup?
             
+            beforeEach {
+                let attrGroupElem = xsd!.firstChildWithCSS(refableSelector)
+                attrGroup = S3DAttributeGroup(elem: attrGroupElem)
+            }
+            
+            it("has a name") {
+                expect(attrGroup!.name) == refableName
+            }
+            
+            it("has attributes with name and type") {
+                expect(attrGroup!.attributes["key"]!) == "xs:string"
+                expect(attrGroup!.attributes["ref"]!) == "xs:string"
+            }
+        }
+        
+        describe("S3DMtlEnum") {
+            let enumName = "mtlStepFunction"
+            let enumSelector = "xs:simpleType[name=\(enumName)][mtl-enum=true]"
+            var mtlEnum: S3DMtlEnum?
+            
+            beforeEach {
+                let mtlEnumElem = xsd!.firstChildWithCSS(enumSelector)
+                mtlEnum = S3DMtlEnum(elem: mtlEnumElem)
+            }
+            
+            it("has a name") {
+                expect(mtlEnum!.name) == enumName
+            }
+            
+            it("has a map of enumerations") {
+                expect(mtlEnum!.values["Constant"]!) == 0
+                expect(mtlEnum!.values["PerInstance"]!) == 2
+            }
+        }
+        
+        describe("S3DMtlDescriptorType") {
             
         }
         
-        
-        describe("these will fail") {
+        describe("S3DMtlDescriptorElement") {
             
-            it("can do maths") {
-                expect(1) == 2
-            }
-            
-            it("can read") {
-                expect("number") == "string"
-            }
-            
-            it("will eventually fail") {
-                expect("time").toEventually( equal("done") )
-            }
-            
-            context("these will pass") {
-                
-                it("can do maths") {
-                    expect(23) == 23
-                }
-                
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
-                
-                it("will eventually pass") {
-                    var time = "passing"
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        time = "done"
-                    }
-                    
-                    waitUntil { done in
-                        NSThread.sleepForTimeInterval(0.5)
-                        expect(time) == "done"
-                        
-                        done()
-                    }
-                }
-            }
         }
     }
 }
