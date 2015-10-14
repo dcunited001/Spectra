@@ -22,6 +22,13 @@ public class S3DXSD {
         xml = try! ONOXMLDocument(data: data)
     }
     
+    public class func readXSD(filename: String) -> NSData {
+        let bundle = NSBundle(forClass: S3DXSD.self)
+        let path = bundle.pathForResource("Spectra3D", ofType: "xsd")
+        let data = NSData(contentsOfFile: path!)
+        return data!
+    }
+    
     public func parseEnumTypes() {
         let enumTypesSelector = "xs:simpleType[mtl-enum=true]"
         xml!.enumerateElementsWithCSS(enumTypesSelector) { (elem, idx, stop) -> Void in

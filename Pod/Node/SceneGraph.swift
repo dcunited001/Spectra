@@ -24,10 +24,8 @@ public class SceneGraph {
     let nodeRefAttr = "spectra-node-ref"
     
     public init(xmlData: NSData) {
-        let bundle = NSBundle(forClass: S3DXSD.self)
-        let path = bundle.pathForResource("Spectra3D", ofType: "xsd")
-        let data = NSData(contentsOfFile: path!)
-        self.s3dDefinitions = S3DXSD(data: data)
+        let xmlData = S3DXSD.readXSD("Spectra3D")
+        self.s3dDefinitions = S3DXSD(data: xmlData)
     }
     
     public func getS3DDefinitions() {
