@@ -23,8 +23,10 @@ public class S3DXSD {
     }
     
     public class func readXSD(filename: String) -> NSData {
-        let bundle = NSBundle(forClass: S3DXSD.self)
-        let path = bundle.pathForResource("Spectra3D", ofType: "xsd")
+        let podBundle = NSBundle(forClass: S3DXSD.self)
+        let bundleUrl = podBundle.URLForResource("Spectra", withExtension: "bundle")
+        let bundle = NSBundle(URL: bundleUrl!)
+        let path = bundle!.pathForResource("Spectra3D", ofType: "xsd")
         let data = NSData(contentsOfFile: path!)
         return data!
     }
@@ -32,18 +34,16 @@ public class S3DXSD {
     public func parseEnumTypes() {
         let enumTypesSelector = "xs:simpleType[mtl-enum=true]"
         xml!.enumerateElementsWithCSS(enumTypesSelector) { (elem, idx, stop) -> Void in
-            let enumName = elem.valueForAttribute("name") as! String
-            let enumType = S3DMtlEnum(name: enumName, elem: elem)
-            self.enumTypes[enumName] = enumType
+            let enumType = S3DMtlEnum(elem: elem)
+            self.enumTypes[enumType.name] = enumType
         }
     }
     
     public func parseAttributeGroups() {
-        let attributeGroupsSelector = "xs:attributeGroup"
+        let attributeGroupsSelector = "xs:attributeGroup[name]"
         xml!.enumerateElementsWithCSS(attributeGroupsSelector) { (elem, idx, stop) -> Void in
-            let groupName = elem.valueForAttribute("name") as! String
-            let attrGroup = S3DAttributeGroup(name: groupName, elem: elem)
-            self.attributeGroups[groupName] = attrGroup
+            let attrGroup = S3DAttributeGroup(elem: elem)
+            self.attributeGroups[attrGroup.name] = attrGroup
         }
     }
     
@@ -51,19 +51,18 @@ public class S3DXSD {
         // TODO: force XSD to process in stages by using multiple complexTypesSelector's
         let complexTypesSelector = "xs:complexType"
         xml!.enumerateElementsWithCSS(complexTypesSelector) { (elem, idx, stop) -> Void in
-            let descriptorName = elem.valueForAttribute("name") as! String
-            let descriptorType = S3DMtlDescriptorType(name: descriptorName, elem: elem)
-            self.descriptorTypes[descriptorName] = descriptorType
+            let descriptorType = S3DMtlDescriptorType(elem: elem)
+            self.descriptorTypes[descriptorType.name] = descriptorType
         }
     }
 }
 
 public class S3DAttributeGroup {
-    var name: String
-    var attributes: [String: String] = [:] // name, type ... needs more?
+    public var name: String
+    public var attributes: [String: String] = [:] // name, type ... needs more?
     
-    public init(name: String, elem: ONOXMLElement) {
-        self.name = name
+    public init(elem: ONOXMLElement) {
+        self.name = elem.valueForAttribute("name") as! String
         parseGroup(elem)
     }
     
@@ -86,8 +85,8 @@ public class S3DMtlEnum {
     public var name: String
     public var values: [String:Int] = [:]
     
-    public init(name: String, elem: ONOXMLElement) {
-        self.name = name
+    public init(elem: ONOXMLElement) {
+        self.name = elem.valueForAttribute("name") as! String
     }
     
     public func parseEnumValues(elem: ONOXMLElement) {
@@ -112,7 +111,8 @@ public class S3DMtlDescriptorElement {
 public class S3DMtlDescriptorType {
     public var name: String
     
-    public init(name: String, elem: ONOXMLElement) {
-        self.name = name
+    public init(elem: ONOXMLElement) {
+        self.name = elem.valueForAttribute("name") as! String
+        
     }
 }
