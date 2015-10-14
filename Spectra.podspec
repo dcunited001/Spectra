@@ -34,12 +34,12 @@ you've been warned.
 
   s.source_files = [
     'Pod/Classes/**/*',
-    'Pod/Shaders/**/*',
     'Pod/Node/**/*',
+    'Pod/S3DXML/**/*',
     'Pod/NodeGenerators/**/*']
 
   s.resource_bundles = {
-    'Spectra' => ['Pod/Assets/*.png']
+    'Spectra' => ['Pod/Assets/*.png', 'Pod/Assets/Spectra3D.xsd']
   }
 
   # s.exclude_files = "Classes/Exclude"
