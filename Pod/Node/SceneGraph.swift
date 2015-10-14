@@ -17,17 +17,25 @@
 import Ono
 
 public class SceneGraph {
+    public var s3dDefinitions: S3DXSD
     public var xml: ONOXMLDocument?
     
     let nodeGenAttr = "spectra-node-gen"
     let nodeRefAttr = "spectra-node-ref"
     
     public init(xmlData: NSData) {
-        xml = try! ONOXMLDocument(data: xmlData)
+        let bundle = NSBundle(forClass: S3DXSD.self)
+        let path = bundle.pathForResource("Spectra3D", ofType: "xsd")
+        let data = NSData(contentsOfFile: path!)
+        self.s3dDefinitions = S3DXSD(data: data)
+    }
+    
+    public func getS3DDefinitions() {
+        // make s3dDefinitions optional?
+        
     }
     
     public func createGeneratedNodes(generatorMap: [String:NodeGenerator], var nodeMap: SceneNodeMap) -> SceneNodeMap {
-        
         xml!.enumerateElementsWithCSS("mesh[\(nodeGenAttr)]", block: { (elem) -> Void in
             let nodeGenName = elem.valueForAttribute(self.nodeGenAttr) as! String
             let nodeId = elem.valueForAttribute("id") as! String
