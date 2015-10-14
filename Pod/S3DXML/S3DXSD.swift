@@ -8,19 +8,23 @@
 
 import Ono
 
+// TODO: Schema Validation? https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/NSXML_Concepts/Articles/CreatingXMLDoc.html
+// TODO: Event Driven XML programming in iOS: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/XMLParsing/Articles/HandlingElements.html#//apple_ref/doc/uid/20002265-1001887
+
 public class S3DXSD {
     public var xml: ONOXMLDocument?
     public var attributeGroups: [String:S3DAttributeGroup] = [:]
     public var enumTypes: [String:S3DMtlEnum] = [:]
-    public var descriptorTypes: [String:S3DMtlDescriptor] = [:]
+    public var descriptorTypes: [String:S3DMtlDescriptorType] = [:]
+    public var descriptorElements: [String:S3DMtlDescriptorElement] = [:]
     
     public init(data: NSData!) {
-        //parse xml
+        xml = try! ONOXMLDocument(data: data)
     }
     
     public func parseEnumTypes() {
         let enumTypesSelector = "xs:simpleType[mtl-enum=true]"
-        xml?.enumerateElementsWithCSS(enumTypesSelector) { (elem, idx, stop) -> Void in
+        xml!.enumerateElementsWithCSS(enumTypesSelector) { (elem, idx, stop) -> Void in
             let enumName = elem.valueForAttribute("name") as! String
             let enumType = S3DMtlEnum(name: enumName, elem: elem)
             self.enumTypes[enumName] = enumType
@@ -29,7 +33,7 @@ public class S3DXSD {
     
     public func parseAttributeGroups() {
         let attributeGroupsSelector = "xs:attributeGroup"
-        xml?.enumerateElementsWithCSS(attributeGroupsSelector) { (elem, idx, stop) -> Void in
+        xml!.enumerateElementsWithCSS(attributeGroupsSelector) { (elem, idx, stop) -> Void in
             let groupName = elem.valueForAttribute("name") as! String
             let attrGroup = S3DAttributeGroup(name: groupName, elem: elem)
             self.attributeGroups[groupName] = attrGroup
@@ -37,7 +41,13 @@ public class S3DXSD {
     }
     
     public func parseDescriptorTypes() {
-        
+        // TODO: force XSD to process in stages by using multiple complexTypesSelector's
+        let complexTypesSelector = "xs:complexType"
+        xml!.enumerateElementsWithCSS(complexTypesSelector) { (elem, idx, stop) -> Void in
+            let descriptorName = elem.valueForAttribute("name") as! String
+            let descriptorType = S3DMtlDescriptorType(name: descriptorName, elem: elem)
+            self.descriptorTypes[descriptorName] = descriptorType
+        }
     }
 }
 
@@ -83,6 +93,19 @@ public class S3DMtlEnum {
     }
 }
 
-public class S3DMtlDescriptor {
+public class S3DMtlDescriptorElement {
+    public var name: String
+    public var descriptorTypeMap: [String: String] = [:]
     
+    public init(name:String) {
+        self.name = name
+    }
+}
+
+public class S3DMtlDescriptorType {
+    public var name: String
+    
+    public init(name: String, elem: ONOXMLElement) {
+        self.name = name
+    }
 }
