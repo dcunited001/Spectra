@@ -5,13 +5,17 @@ PODS:
   - EZAudio/Full (1.1.2):
     - EZAudio/Core
     - TPCircularBuffer (~> 0.0)
+  - Nimble (2.0.0)
   - Ono (1.2.2)
+  - Quick (0.6.0)
   - Spectra (0.0.1.alpha):
     - Ono (~> 1.2.2)
   - TPCircularBuffer (0.0.1)
 
 DEPENDENCIES:
   - EZAudio
+  - Nimble (~> 2.0.0-rc.3)
+  - Quick (~> 0.6.0)
   - Spectra (from `../`)
 
 EXTERNAL SOURCES:
@@ -20,8 +24,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   EZAudio: 01373de2b1257b77be1bf13753fb1c4ea8a9777e
+  Nimble: 472e75466819eb8c06299233e87c694a9b51328a
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Spectra: 86faa9ed7ea1471e8dcfc74b465f1ec2d79be228
+  Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
+  Spectra: ae27b589c23dfa28dd732148482aa82e78a09e7d
   TPCircularBuffer: 949e9632b9fb99b7274d7b2296ee22bff5841e35
 
 COCOAPODS: 0.39.0

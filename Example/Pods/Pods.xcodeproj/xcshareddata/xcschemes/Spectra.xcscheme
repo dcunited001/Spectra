@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EDDE642FB339310B5F642DFE'
+               BlueprintIdentifier = '6E315BAFF7800EC347A4C12D'
                BlueprintName = 'Spectra'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Spectra.framework'>

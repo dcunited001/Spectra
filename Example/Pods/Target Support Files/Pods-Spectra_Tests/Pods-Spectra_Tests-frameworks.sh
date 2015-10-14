@@ -86,8 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Spectra_Tests/Ono.framework"
   install_framework "Pods-Spectra_Tests/Spectra.framework"
+  install_framework "Pods-Spectra_Tests/Nimble.framework"
+  install_framework "Pods-Spectra_Tests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Spectra_Tests/Ono.framework"
   install_framework "Pods-Spectra_Tests/Spectra.framework"
+  install_framework "Pods-Spectra_Tests/Nimble.framework"
+  install_framework "Pods-Spectra_Tests/Quick.framework"
 fi
