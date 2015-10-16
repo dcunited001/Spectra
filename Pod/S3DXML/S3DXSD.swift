@@ -16,7 +16,7 @@ public enum S3DXSDType {
     case MtlDescriptorElement(name: String)
     case MtlDescriptorType(name: String)
 //    case XSDAttribute(name: String) // do i realllly need attribute?
-    case XSDAttributeGroup(name: String)
+//    case XSDAttributeGroup(name: String)
     
     //methods to construct document selector for dependency
     
@@ -28,8 +28,8 @@ public enum S3DXSDType {
             return "xs:element[name=\(name)]"
         case .MtlDescriptorType(let name):
             return "xs:complexType[name=\(name)]"
-        case .XSDAttributeGroup(let name):
-            return "xs:attributeGroup[name=\(name)]"
+//        case .XSDAttributeGroup(let name):
+//            return "xs:attributeGroup[name=\(name)]"
         }
     }
     
@@ -37,8 +37,8 @@ public enum S3DXSDType {
         switch tag {
 //        case "xs:attribute": //don't need it in parseXSD()
 //            return .XSDAttribute(name: name)
-        case "xs:attributeGroup":
-            return .XSDAttributeGroup(name: name)
+//        case "xs:attributeGroup":
+//            return .XSDAttributeGroup(name: name)
         case "xs:element":
             return .MtlDescriptorElement(name: name)
         case "xs:complexType":
@@ -65,23 +65,24 @@ public protocol S3DXSDNode {
 //    func apply(elem: ONOXMLElement)
 }
 
-public class S3DXSDAttribute: S3DXSDNode {
-    public var name: String
-    public var type: S3DXSDType
-    // public var value: AnyObject
-    public var attributes: [String: S3DXSDNode] = [:]
-    
-    public required init(type: S3DXSDType, elem: ONOXMLElement) {
-        self.type = type
-        self.name = elem.valueForAttribute("name") as! String
-    }
-    
-}
+//public class S3DXSDAttribute: S3DXSDNode {
+//    public var name: String
+//    public var type: S3DXSDType
+//    // public var value: AnyObject
+//    public var attributes: [String: S3DXSDNode] = [:]
+//    
+//    public required init(type: S3DXSDType, elem: ONOXMLElement) {
+//        self.type = type
+//        self.name = elem.valueForAttribute("name") as! String
+//    }
+//    
+//}
 
 public class S3DMtlEnum: S3DXSDNode {
     public var name: String
     public var type: S3DXSDType
     public var attributes: [String: S3DXSDNode] = [:]
+    public var children: [String: S3DXSDNode] = [:]
     public var values: [String:Int] = [:]
     
     public required init(type: S3DXSDType, elem: ONOXMLElement) {
@@ -126,7 +127,6 @@ public class S3DMtlDescriptorType: S3DXSDNode {
 
 public class S3DXSD {
     public var xml: ONOXMLDocument?
-    public var attributeGroups: [String:S3DXSDAttributeGroup] = [:]
     public var enumTypes: [String:S3DMtlEnum] = [:]
     public var descriptorTypes: [String:S3DMtlDescriptorType] = [:]
     public var descriptorElements: [String:S3DMtlDescriptorElement] = [:]
@@ -150,7 +150,6 @@ public class S3DXSD {
     //    }
     
     public func resetNodes() {
-        attributeGroups = [:]
         enumTypes = [:]
         descriptorTypes = [:]
         descriptorElements = [:]
@@ -166,7 +165,6 @@ public class S3DXSD {
             if let node = getNode(nodeType) {
             } else {
                 let node = createNode(nodeType, elem: el)
-                
             }
             
             // - check for node definition already
@@ -193,8 +191,8 @@ public class S3DXSD {
             return descriptorElements[name]
         case .MtlDescriptorType(let name):
             return descriptorTypes[name]
-        case .XSDAttributeGroup(let name):
-            return attributeGroups[name]
+//        case .XSDAttributeGroup(let name):
+//            return attributeGroups[name]
         }
     }
     
@@ -206,8 +204,8 @@ public class S3DXSD {
             return S3DMtlDescriptorElement(type: nodeType, elem: elem)
         case .MtlDescriptorType:
             return S3DMtlDescriptorType(type: nodeType, elem: elem)
-        case .XSDAttributeGroup:
-            return S3DXSDAttributeGroup(type: nodeType, elem: elem)
+//        case .XSDAttributeGroup:
+//            return S3DXSDAttributeGroup(type: nodeType, elem: elem)
         }
     }
     
