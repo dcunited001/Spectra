@@ -33,6 +33,8 @@ Spectra is available under the MIT license. See the LICENSE file for more info.
 
 - [Vertex Descriptor for Data Organization](https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW44)
 
+- explore Swinject or Dip dependency injection
+
 ### Questions:
 
 I wrote this basic OSX app [MetalSpectrograph](https://github.com/dcunited001/MetalSpectrograph)
