@@ -18,26 +18,6 @@ class S3DXSDSpec: QuickSpec {
         let xmlData = S3DXSD.readXSD("Spectra3D")
         let xsd: ONOXMLDocument? = try! ONOXMLDocument(data: xmlData)
         
-        describe("S3DAttributeGroup") {
-            let refableName = "refable"
-            let refableSelector = "xs:attributeGroup[name=\(refableName)]"
-            var attrGroup: S3DAttributeGroup?
-            
-            beforeEach {
-                let attrGroupElem = xsd!.firstChildWithCSS(refableSelector)
-                attrGroup = S3DAttributeGroup(elem: attrGroupElem)
-            }
-            
-            it("has a name") {
-                expect(attrGroup!.name) == refableName
-            }
-            
-            it("has attributes with name and type") {
-                expect(attrGroup!.attributes["key"]!) == "xs:string"
-                expect(attrGroup!.attributes["ref"]!) == "xs:string"
-            }
-        }
-        
         describe("S3DMtlEnum") {
             let enumName = "mtlStepFunction"
             let enumSelector = "xs:simpleType[name=\(enumName)][mtl-enum=true]"
@@ -58,13 +38,60 @@ class S3DXSDSpec: QuickSpec {
             }
         }
         
-        describe("S3DMtlDescriptorType") {
-            
+        describe("S3DMtlDescriptorElement") {
+            //TODO: parse top-level elements with type next
+            // - these are really just maps to the descriptor types
         }
         
-        describe("S3DMtlDescriptorElement") {
-            
+        describe("S3DMtlDescriptorType") {
+            //TODO: first lazily load all top-level types into a map
+            // - then load each in order, deleting from the toLoad map when each is defined
+            // - when loading currently unsatisfied dependencies, then skip to loading that next type
+            // - this should account for most of the xsd parsing that i will deal with
         }
     }
 }
+
+
+
+//        describe("these will fail") {
+//
+//            it("can do maths") {
+//                expect(1) == 2
+//            }
+//
+//            it("can read") {
+//                expect("number") == "string"
+//            }
+//
+//            it("will eventually fail") {
+//                expect("time").toEventually( equal("done") )
+//            }
+//
+//            context("these will pass") {
+//
+//                it("can do maths") {
+//                    expect(23) == 23
+//                }
+//
+//                it("can read") {
+//                    expect("🐮") == "🐮"
+//                }
+//
+//                it("will eventually pass") {
+//                    var time = "passing"
+//
+//                    dispatch_async(dispatch_get_main_queue()) {
+//                        time = "done"
+//                    }
+//
+//                    waitUntil { done in
+//                        NSThread.sleepForTimeInterval(0.5)
+//                        expect(time) == "done"
+//
+//                        done()
+//                    }
+//                }
+//            }
+//        }
 
