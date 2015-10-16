@@ -9,11 +9,6 @@
      * OptionSet types, where value is bitmasked
      -->
     
-    <xs:attributeGroup name="refable">
-        <xs:attribute name="key" type="xs:string" />
-        <xs:attribute name="ref" type="xs:string" />
-    </xs:attribute-group>
-    
     <xs:complexType name="mtlFunction">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
@@ -375,14 +370,12 @@
         </xs:restriction>
     </xs:simpleType>
     
-    
     <xs:simpleType name="mtlSamplerMinMagFilter" mtl-enum="true">
         <xs:restriction base="xs:string">
             <xs:enumeration id="0"  value="Nearest"/>
             <xs:enumeration id="1"  value="Linear"/>
         </xs:restriction>
     </xs:simpleType>
-    
     
     <xs:simpleType name="mtlSamplerAddressMode" mtl-enum="true">
         <xs:restriction base="xs:string">
@@ -462,7 +455,6 @@
             <!-- TODO:
              * finish adding color formats
              -->
-            
         </xs:restriction>
     </xs:simpleType>
     
