@@ -15,23 +15,26 @@
     </xs:attribute-group>
     
     <xs:complexType name="mtlFunction">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="name" type="xs:string" />
     </xs:complexType>
-    <xs:element name="vertex-function" type="mtlFunction"/>
-    <xs:element name="fragment-function" type="mtlFunction"/>
-    <xs:element name="compute-function" type="mtlFunction"/>
+    <xs:element name="vertex-function" type="mtlFunction" />
+    <xs:element name="fragment-function" type="mtlFunction" />
+    <xs:element name="compute-function" type="mtlFunction" />
     
     <xs:complexType name="mtlVertexBufferLayoutDescriptor">
-        <xs:attributeGroup ref="refable"/>
-        <xs:attribute name="stride" type="xs:integer" default="0"/> <!-- restriction: multiple of 4 bytes -->
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
+        <xs:attribute name="stride" type="xs:integer" default="0" /> <!-- restriction: multiple of 4 bytes -->
         <xs:attribute name="step-function" type="mtlStepFunction" default="PerVertex" />
-        <xs:attribute name="step-rate" type="xs:integer" default="1"/>
+        <xs:attribute name="step-rate" type="xs:integer" default="1" />
     </xs:complexType>
     <xs:element name="vertex-buffer-layout-descriptor" type="mtlVertexBufferLayoutDescriptor" />
     
     <xs:complexType name="mtlVertexAttributeDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="name" type="xs:string" />
         <xs:attribute name="format" type="mtlVertexFormat" />
         <xs:attribute name="offset" type="xs:integer" />
@@ -48,22 +51,24 @@
     
     <xs:complexType name="mtlVertexBufferLayoutDescriptorArray">
         <xs:sequence>
-            <xs:element ref="mtlVertexBufferLayoutDescriptor" maxOccurs="unbounded"/>
+            <xs:element ref="mtlVertexBufferLayoutDescriptor" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:element name="vertex-buffer-layout-descriptors" type="mtlVertexBufferLayoutDescriptorArray" />
     
     <xs:complexType name="mtlVertexDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:all>
             <xs:element ref="vertex-attribute-descriptors" />
             <xs:element ref="vertex-buffer-layout-descriptors" />
         </xs:all>
     </xs:complexType>
-    <xs:element name="vertex-descriptor" type="mtlVertexDescriptor"/>
+    <xs:element name="vertex-descriptor" type="mtlVertexDescriptor" />
     
     <xs:complexType name="mtlTextureDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-type" type="mtlTextureType" />
         <xs:attribute name="pixel-format" type="mtlPixelFormat" />
         <xs:attribute name="width" type="xs:integer" />
@@ -80,7 +85,8 @@
     <xs:element name="texture-descriptor" type="mtlTextureDescriptor" />
     
     <xs:complexType name="mtlSamplerDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="min-filter" type="mtlSamplerMinMagFilter" default="Nearest" />
         <xs:attribute name="mag-filter" type="mtlSamplerMinMagFilter" default="Nearest" />
@@ -98,7 +104,8 @@
     <xs:element name="sampler-descriptor" type="mtlSamplerDescriptor" />
     
     <xs:complexType name="mtlStencilDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="stencil-compare-function" type="mtlCompareFunction" />
         <xs:attribute name="stencil-failure-operation" type="mtlStencilOperation" />
         <xs:attribute name="depth-failure-operation" type="mtlStencilOperation" />
@@ -109,7 +116,8 @@
     <xs:element name="stencil-descriptor" type="mltStencilDescriptor" />
     
     <xs:complexType name="mtlDepthStencilDescriptor"> <!-- complexType -->
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="depth-compare-function" type="mtlCompareFunction" />
         <xs:attribute name="depth-write-enabled" type="xs:boolean" />
@@ -119,7 +127,8 @@
     <xs:element name="depth-stencil-descriptor" type="mtlDepthStencilDescriptor" />
     
     <xs:complexType name="mtlRenderPipelineColorAttachmentDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="pixel-format" type="mtlPixelFormat" />
         <xs:attribute name="blending-enabled" type="xs:boolean" />
@@ -134,7 +143,8 @@
     <xs:element name="render-pipeline-color-attachment-descriptor" type="mtlRenderPipelineColorAttachmentDescriptor"/>
     
     <xs:complexType name="mtlRenderPipelineDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="vertex-function-ref" type="xs:string" />  <!-- complexType -->
         <xs:attribute name="fragment-function-ref" type="xs:string" />  <!-- complexType -->
@@ -152,7 +162,8 @@
     <xs:element name="render-pipeline-descriptor" type="mtlRenderPipelineDescriptor"/>
     
     <xs:complexType name="mtlRenderPassAttachmentDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
         <xs:attribute name="level" type="xs:integer" />
         <xs:attribute name="slice" type="xs:integer" />
@@ -167,7 +178,8 @@
     <xs:element name="render-pass-attachment-descriptor" type="mtlRenderPassAttachmentDescriptor" />
     
     <xs:complexType name="mtlRenderPassColorAttachmentDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
         <xs:attribute name="level" type="xs:integer" />
         <xs:attribute name="slice" type="xs:integer" />
@@ -183,7 +195,8 @@
     <xs:element name="render-pass-color-attachment-descriptor" type="mtlRenderPassColorAttachmentDescriptor" />
     
     <xs:complexType name="mtlRenderPassDepthAttachmentDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
         <xs:attribute name="level" type="xs:integer" />
         <xs:attribute name="slice" type="xs:integer" />
@@ -200,7 +213,8 @@
     <xs:element name="render-pass-depth-attachment-descriptor" type="mtlRenderPassDepthAttachmntDescriptor" />
     
     <xs:complexType name="mtlRenderPassStencilAttachmentDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
         <xs:attribute name="level" type="xs:integer" />
         <xs:attribute name="slice" type="xs:integer" />
@@ -216,7 +230,8 @@
     <xs:element name="render-pass-stencil-attachment-descriptor" type="mtlRenderPassStencilAttachmentDescriptor" />
     
     <xs:complexType name="mtlComputePipelineDescriptor">
-        <xs:attributeGroup ref="refable"/>
+        <xs:attribute name="key" type="xs:string" />
+        <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="compute-function-ref" type="xs:string" /> <!-- complexType -->
         <xs:attribute name="thread-group-size-is-multiple-of-thread-execution-width" type="xs:string" />
@@ -435,6 +450,7 @@
      * MTLResourceOptions (it's OptionSetType)
      * MTLColorWriteMask (just set to int?)
      * MTLClearColor (Double x 4, red, green, blue, alpha)
+     * mostly use order that xs:enumeration is read in, instead of id
      -->
     
     <xs:simpleType name="mtlPixelFormat" mtl-enum="true">
