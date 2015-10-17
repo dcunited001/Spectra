@@ -6,6 +6,7 @@
 //  Copyright © 2015 CocoaPods. All rights reserved.
 //
 
+import Foundation
 import Spectra
 import Ono
 import Quick

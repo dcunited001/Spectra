@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import Ono
 
 // TODO: Schema Validation? https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/NSXML_Concepts/Articles/CreatingXMLDoc.html
