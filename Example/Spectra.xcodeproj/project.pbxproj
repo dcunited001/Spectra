@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		066BB154BA24C4DCEF4642F1 /* Pods_Spectra_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A033ED2BE8059D67C63C7076 /* Pods_Spectra_Tests.framework */; };
 		433894481BCB676A00CE1002 /* Spectra3D.xml in Resources */ = {isa = PBXBuildFile; fileRef = 433894471BCB676A00CE1002 /* Spectra3D.xml */; settings = {ASSET_TAGS = (); }; };
-		434358491BD2150100B13F10 /* S3DXMLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434358481BD2150100B13F10 /* S3DXMLSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06741BBFB3AE007C738A /* MetalViewController.swift */; };
 		436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B068A1BC23328007C738A /* SpectrogramTextureController.swift */; };
 		438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ACE011BC7163D0008C59E /* CubeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAA91BC82100004323ED /* Cube.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43D8BAA81BC82100004323ED /* Cube.xml */; settings = {ASSET_TAGS = (); }; };
 		43D8BAAD1BC85B02004323ED /* DataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAC1BC85B02004323ED /* DataEncoding.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAB01BC87A97004323ED /* TexturedQuadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */; settings = {ASSET_TAGS = (); }; };
+		43DADE531BD21C7100986774 /* S3DXMLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434358481BD2150100B13F10 /* S3DXMLSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		43E26EAD1BCE280100709D29 /* S3DXSDSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26EAB1BCE248C00709D29 /* S3DXSDSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43E90C191BC45AC9009DBF99 /* color_shift.metal */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -427,7 +427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				434358491BD2150100B13F10 /* S3DXMLSpec.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */,
 				43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */,
@@ -444,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E26EAD1BCE280100709D29 /* S3DXSDSpec.swift in Sources */,
+				43DADE531BD21C7100986774 /* S3DXMLSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
