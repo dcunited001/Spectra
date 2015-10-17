@@ -18,14 +18,25 @@ class S3DXSDSpec: QuickSpec {
         let xmlData = S3DXSD.readXSD("Spectra3D")
         let xsd: ONOXMLDocument? = try! ONOXMLDocument(data: xmlData)
         
+        describe("S3DXSDBaseType") {
+            it("can easily convert basic XSD types") {
+                let xsdString = S3DXSDBaseType(rawValue: "xs:string")
+            }
+            
+            it("can handle values that aren't valid XSD Types by throwing") {
+                expect { return try! S3DXSDBaseType(rawValue: "xs:invalid") }.to(throwError())
+            }
+        }
+        
         describe("S3DMtlEnum") {
             let enumName = "mtlStepFunction"
             let enumSelector = "xs:simpleType[name=\(enumName)][mtl-enum=true]"
             var mtlEnum: S3DMtlEnum?
+            var xsdType: S3DXSDType = .MtlEnum(name: "enumName")
             
             beforeEach {
                 let mtlEnumElem = xsd!.firstChildWithCSS(enumSelector)
-                mtlEnum = S3DMtlEnum(elem: mtlEnumElem)
+                mtlEnum = S3DMtlEnum(type: xsdType, elem: mtlEnumElem)
             }
             
             it("has a name") {

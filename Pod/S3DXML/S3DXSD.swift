@@ -50,6 +50,26 @@ public enum S3DXSDType {
     }
 }
 
+public enum S3DXSDBaseType: String {
+    case XSDString = "xs:string"
+    case XSDInteger = "xs:integer"
+    case XSDFloat = "xs:float"
+    case XSDDouble = "xs:double"
+    
+    public func convert(val: String) -> AnyObject {
+        switch self {
+        case XSDString:
+            return val
+        case XSDInteger:
+            return Int(val)!
+        case XSDFloat:
+            return Float(val)!
+        case XSDDouble:
+            return Double(val)!
+        }
+    }
+}
+
 // TODO: on XSDNode's 
 // - i can store attributes [String: XSDNode], 
 //   - but then i run into type conflict at attribute level
