@@ -24,16 +24,16 @@ public class S3DMtlEnum {
         }
     }
     
-    public func getValue(key: String) -> AnyObject {
-        return convertToEnum(key, val: values[key]!)
+    public func getValue(key: String) -> Int {
+        return values[key]!
     }
     
-    public func convertToEnum(key: String, val: Int) -> AnyObject {
-        switch key {
-        case "mtlStorageAction": return MTLStorageMode(rawValue: UInt(val))!
-        default: val
-        }
-    }
+//    public func convertToEnum(key: String, val: Int) -> AnyObject {
+//        switch key {
+//        case "mtlStorageAction": return MTLStorageMode(rawValue: UInt(val))!
+//        default: val
+//        }
+//    }
 }
 
 public class S3DXSD {
