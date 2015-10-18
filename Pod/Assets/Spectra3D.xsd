@@ -64,18 +64,18 @@
     <xs:complexType name="mtlTextureDescriptor">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
-        <xs:attribute name="texture-type" type="mtlTextureType" />
-        <xs:attribute name="pixel-format" type="mtlPixelFormat" />
-        <xs:attribute name="width" type="xs:integer" />
-        <xs:attribute name="height" type="xs:integer" />
-        <xs:attribute name="depth" type="xs:integer" />
-        <xs:attribute name="mipmap-level-count" type="xs:integer" />
-        <xs:attribute name="sample-count" type="xs:integer" />
-        <xs:attribute name="array-length" type="xs:integer" />
-        <xs:attribute name="resource-options" type="mtlResourceOptions" />
-        <xs:attribute name="cpu-cache-mode" type="mtlCpuCacheMode" />
-        <xs:attribute name="storage-mode" type="mtlStorageMode" />
-        <xs:attribute name="usage" type="mtlTextureUsage" />
+        <xs:attribute name="texture-type" type="mtlTextureType" default="Texture2D" />
+        <xs:attribute name="pixel-format" type="mtlPixelFormat" default="RGBAUnorm" />
+        <xs:attribute name="width" type="xs:integer" default="1" />
+        <xs:attribute name="height" type="xs:integer" default="1" />
+        <xs:attribute name="depth" type="xs:integer" default="1" />
+        <xs:attribute name="mipmap-level-count" type="xs:integer" default="1" /> <!-- constraints -->
+        <xs:attribute name="sample-count" type="xs:integer" default="1" /><!-- constraints -->
+        <xs:attribute name="array-length" type="xs:integer" default="1" /><!-- constraint: 1 to 2048 -->
+        <xs:attribute name="resource-options" type="mtlResourceOptions" /> <!-- default? -->
+        <xs:attribute name="cpu-cache-mode" type="mtlCpuCacheMode" default="DefaultCache" />
+        <xs:attribute name="storage-mode" type="mtlStorageMode" default="Shared" /> <!-- docs say default=Auto -->
+        <xs:attribute name="usage" type="mtlTextureUsage" default="RenderTarget" />
     </xs:complexType>
     <xs:element name="texture-descriptor" type="mtlTextureDescriptor" />
     
