@@ -13,16 +13,37 @@
         </vertex-buffer-layout-descriptors>
     </vertex-descriptor>
     
-    <texture-descriptor>
-    </texture-descriptor>
+<!--    <texture-descriptor/> -->
+
+    <sampler-descriptor key="sampler_desc"
+        label="stencil-descriptor"
+        min-filter=Linear
+        mag-filter=Linear
+        mip-filter=Linear
+        max-anisotropy=10
+        s-address-mode=ClampToZero
+        t-address-mode=ClampToZero
+        r-address-mode=ClampToZero
+        normalized-coordinates=false
+        lod-min-clamp=1.0
+        lod-max-clamp=10.0
+        lod-average=true
+        compare-function=Always />
     
-    <sampler-descriptor>
-    </sampler-descriptor>
+    <stencil-descriptor key="stencil_desc"
+        stencil-compare-function=Never
+        stencil-failure-operation=Zero
+        depth-failure-operation=Zero
+        depth-stencil-pass-operation=Zero />
+        <!--    <xs:attribute name="read-mask" type="xs:integer" /> <!-- uint32 -->
+        <!--    <xs:attribute name="write-mask" type="xs:integer" /> <!-- uint32 -->
     
-    <stencil-descriptor>
-    </stencil-descriptor>
-    
-    <depth-stencil-descriptor>
-    </depth-stencil-descriptor>
-    
+    <depth-stencil-descriptor key="depth_stencil_desc"
+        depth-compare-funciton=Never
+        depth-write-enabled=true />
+        <!--    <xs:attribute name="front-face-stencil-ref" type="xs:string" default="nil" />-->
+        <!--    <xs:attribute name="back-face-stencil-ref" type="xs:string" default="nil" />-->
+
+
+
 </root>

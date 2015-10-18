@@ -37,7 +37,7 @@ class S3DXMLSpec: QuickSpec {
 //        }
 
         //TODO: still need to test these, as they need to create real functions
-//        describe("MTLFunction") {
+//        describe("S3DXMLMTLFunctionNode") {
 //            it("can parse a MTLFunction") {
 //                
 //            }
@@ -47,7 +47,7 @@ class S3DXMLSpec: QuickSpec {
 //            }
 //        }
 
-        describe("MTLVertexDescriptor") {
+        describe("S3DXMLMTLVertexDescriptorNode") {
             it("can parse the attribute descriptor array") {
                 let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
                 expect(vertDesc.attributes[0].format) == MTLVertexFormat.Float4
@@ -63,11 +63,10 @@ class S3DXMLSpec: QuickSpec {
             
             it("can parse from references") {
                 let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
-                
             }
         }
         
-//        describe("MTLTextureDescriptor") {
+//        describe("MTLTextureDescriptorNode") {
 //            it("can parse a MTLVertexDescriptor") {
 //                
 //            }
@@ -77,6 +76,57 @@ class S3DXMLSpec: QuickSpec {
 //            }
 //        }
         
+        describe("S3DXMLMtlSamplerDescriptorNode") {
+            it("can parse a sampler descriptor") {
+                let desc = descriptorManager.samplerDescriptors["sampler_desc"]!
+                expect(desc.minFilter) == MTLSamplerMinMagFilter.Linear
+                expect(desc.magFilter) == MTLSamplerMinMagFilter.Linear
+                expect(desc.mipFilter) == MTLSamplerMipFilter.Linear
+                expect(desc.maxAnisotropy) == 10
+                expect(desc.sAddressMode) == MTLSamplerAddressMode.ClampToZero
+                expect(desc.tAddressMode) == MTLSamplerAddressMode.ClampToZero
+                expect(desc.rAddressMode) == MTLSamplerAddressMode.ClampToZero
+                expect(desc.normalizedCoordinates) == false
+                expect(desc.lodMinClamp) == 1.0
+                expect(desc.lodMaxClamp) == 10.0
+                expect(desc.lodAverage) == true
+                expect(desc.compareFunction) == MTLCompareFunction.Always
+            }
+        }
+        
+        describe("S3DXMLMtlStencilDescriptorNode") {
+            it("can parse a stencil descriptor") {
+                let desc = descriptorManager.stencilDescriptors["stencil_desc"]!
+                expect(desc.stencilCompareFunction) == MTLCompareFunction.Never
+                expect(desc.stencilFailureOperation) == MTLStencilOperation.Zero
+                expect(desc.depthFailureOperation) == MTLStencilOperation.Zero
+                expect(desc.depthStencilPassOperation) == MTLStencilOperation.Zero
+            }
+        }
+        
+        describe("S3DXMLMtlDepthStencilDescriptorNode") {
+            it("can parse a depth stencil descriptor") {
+                let desc = descriptorManager.depthStencilDescriptors["depth_stencil_desc"]!
+                expect(desc.depthCompareFunction) == MTLCompareFunction.Never
+                expect(desc.depthWriteEnabled) == true
+            }
+        }
+        
+//        describe("S3DXMLMTLColorAttachmentDescriptorNode") {
+//            
+//        }
+//        
+//        mtlRenderPipelineDescriptor
+//        mtlRenderPassColorAttachmentDescriptor
+//        mtlRenderPassDepthAttachmentDescriptor
+//        mtlRenderPassStencilAttachmentDescriptor
+//        mtlRenderPassDescriptor
+        
+//        describe("S3DXMLMTLComputePipelineDescriptorNode") {
+//            it("can parse a compute pipeline descriptor") {
+//                //TODO: include compute function for tests
+//            }
+//        }
         
     }
 }
