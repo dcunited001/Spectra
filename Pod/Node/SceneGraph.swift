@@ -17,15 +17,15 @@
 import Ono
 
 public class SceneGraph {
-    public var s3dDefinitions: S3DXSD
+//    public var s3dDefinitions: S3DXSD
     public var xml: ONOXMLDocument?
     
     let nodeGenAttr = "spectra-node-gen"
     let nodeRefAttr = "spectra-node-ref"
     
     public init(xmlData: NSData) {
-        let xmlData = S3DXSD.readXSD("Spectra3D")
-        self.s3dDefinitions = S3DXSD(data: xmlData)
+//        let xmlData = S3DXSD.readXSD("Spectra3D")
+//        self.s3dDefinitions = S3DXSD(data: xmlData)
     }
     
     public func getS3DDefinitions() {
