@@ -24,7 +24,7 @@ public class SpectraDescriptorManager {
     public var textureDescriptors: [String: MTLTextureDescriptor] = [:]
     public var samplerDescriptors: [String: MTLSamplerDescriptor] = [:]
     public var stencilDescriptors: [String: MTLStencilDescriptor] = [:]
-    public var depthStencilDescriptors: [String: MTLStencilDescriptor] = [:]
+    public var depthStencilDescriptors: [String: MTLDepthStencilDescriptor] = [:]
     public var colorAttachmentDescriptors: [String: MTLRenderPipelineColorAttachmentDescriptor] = [:]
     public var renderPipelineDescriptors: [String: MTLRenderPipelineDescriptor] = [:]
     public var renderPassColorAttachmentDescriptors: [String: MTLRenderPassColorAttachmentDescriptor] = [:]
@@ -246,12 +246,12 @@ public class S3DXMLMTLSamplerDescriptorNode: S3DXMLNodeParser {
             samplerDesc.label = label
         }
         if let minFilter = elem.valueForAttribute("min-filter") as? String {
-            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMinMapFilter"]!
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMinMagFilter"]!
             let enumVal = UInt(mtlEnum.getValue(minFilter))
             samplerDesc.minFilter = MTLSamplerMinMagFilter(rawValue: enumVal)!
         }
         if let magFilter = elem.valueForAttribute("mag-filter") as? String {
-            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMinMapFilter"]!
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMinMagFilter"]!
             let enumVal = UInt(mtlEnum.getValue(magFilter))
             samplerDesc.magFilter = MTLSamplerMinMagFilter(rawValue: enumVal)!
         }
@@ -278,8 +278,8 @@ public class S3DXMLMTLSamplerDescriptorNode: S3DXMLNodeParser {
             let enumVal = UInt(mtlEnum.getValue(tAddress))
             samplerDesc.tAddressMode = MTLSamplerAddressMode(rawValue: enumVal)!
         }
-        if let _ = elem.valueForAttribute("normalized-coordinates") as? String {
-            samplerDesc.normalizedCoordinates = true
+        if let normCoord = elem.valueForAttribute("normalized-coordinates") as? String {
+            samplerDesc.normalizedCoordinates = (normCoord == "true")
         }
         if let lodMinClamp = elem.valueForAttribute("lod-min-clamp") as? String {
             samplerDesc.lodMinClamp = Float(lodMinClamp)!
