@@ -465,6 +465,147 @@ public class S3DXMLMTLComputePipelineDescriptorNode: S3DXMLNodeParser {
     }
 }
 
+public class S3DXMLMTLRenderPassColorAttachmentDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLRenderPassColorAttachmentDescriptor
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let desc = NodeType()
+        
+        //TODO: texture & ref
+        
+        if let level = elem.valueForAttribute("level") as? String {
+            desc.level = Int(level)!
+        }
+        if let slice = elem.valueForAttribute("slice") as? String {
+            desc.level = Int(slice)!
+        }
+        if let depthPlane = elem.valueForAttribute("depth-plane") as? String {
+            desc.level = Int(depthPlane)!
+        }
+        
+        //TODO: resolveTexture & ref
+        
+        if let resolveLevel = elem.valueForAttribute("resolve-level") as? String {
+            desc.level = Int(resolveLevel)!
+        }
+        if let resolveSlice = elem.valueForAttribute("resolve-slice") as? String {
+            desc.level = Int(resolveSlice)!
+        }
+        if let resolveDepthPlane = elem.valueForAttribute("resolve-depth-plane") as? String {
+            desc.level = Int(resolveDepthPlane)!
+        }
+        if let loadAction = elem.valueForAttribute("load-action") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlLoadAction"]!
+            let enumVal = UInt(mtlEnum.getValue(loadAction))
+            desc.loadAction = MTLLoadAction(rawValue: enumVal)!
+        }
+        if let storeAction = elem.valueForAttribute("store-action") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStoreAction"]!
+            let enumVal = UInt(mtlEnum.getValue(storeAction))
+            desc.storeAction = MTLStoreAction(rawValue: enumVal)!
+        }
+        
+        //TODO: clearColor: MTLClearColor // default: rgba(0,0,0,1)
+        
+        return desc
+    }
+}
+
+public class S3DXMLMTLRenderPassDepthAttachmentDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLRenderPassDepthAttachmentDescriptor
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let desc = NodeType()
+        
+        //TODO: texture & ref
+        
+        if let level = elem.valueForAttribute("level") as? String {
+            desc.level = Int(level)!
+        }
+        if let slice = elem.valueForAttribute("slice") as? String {
+            desc.level = Int(slice)!
+        }
+        if let depthPlane = elem.valueForAttribute("depth-plane") as? String {
+            desc.level = Int(depthPlane)!
+        }
+        
+        //TODO: resolveTexture & ref
+        
+        if let resolveLevel = elem.valueForAttribute("resolve-level") as? String {
+            desc.level = Int(resolveLevel)!
+        }
+        if let resolveSlice = elem.valueForAttribute("resolve-slice") as? String {
+            desc.level = Int(resolveSlice)!
+        }
+        if let resolveDepthPlane = elem.valueForAttribute("resolve-depth-plane") as? String {
+            desc.level = Int(resolveDepthPlane)!
+        }
+        if let loadAction = elem.valueForAttribute("load-action") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlLoadAction"]!
+            let enumVal = UInt(mtlEnum.getValue(loadAction))
+            desc.loadAction = MTLLoadAction(rawValue: enumVal)!
+        }
+        if let storeAction = elem.valueForAttribute("store-action") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStoreAction"]!
+            let enumVal = UInt(mtlEnum.getValue(storeAction))
+            desc.storeAction = MTLStoreAction(rawValue: enumVal)!
+        }
+        if let clearDepth = elem.valueForAttribute("clear-depth") as? String {
+            desc.clearDepth = Double(clearDepth)!
+        }
+        if let depthResolveFilter = elem.valueForAttribute("depth-resolve-filter") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlMultisampleDepthResolveFilter"]!
+            let enumVal = UInt(mtlEnum.getValue(depthResolveFilter))
+            desc.depthResolveFilter = MTLMultisampleDepthResolveFilter(rawValue: enumVal)!
+        }
+        
+        return desc
+    }
+}
+
+public class S3DXMLMTLRenderPassStencilAttachmentDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLRenderPassStencilAttachmentDescriptor
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let desc = NodeType()
+        
+        //TODO: texture & ref
+        
+        if let level = elem.valueForAttribute("level") as? String {
+            desc.level = Int(level)!
+        }
+        if let slice = elem.valueForAttribute("slice") as? String {
+            desc.level = Int(slice)!
+        }
+        if let depthPlane = elem.valueForAttribute("depth-plane") as? String {
+            desc.level = Int(depthPlane)!
+        }
+        
+        //TODO: resolveTexture & ref
+        
+        if let resolveLevel = elem.valueForAttribute("resolve-level") as? String {
+            desc.level = Int(resolveLevel)!
+        }
+        if let resolveSlice = elem.valueForAttribute("resolve-slice") as? String {
+            desc.level = Int(resolveSlice)!
+        }
+        if let resolveDepthPlane = elem.valueForAttribute("resolve-depth-plane") as? String {
+            desc.level = Int(resolveDepthPlane)!
+        }
+        if let loadAction = elem.valueForAttribute("load-action") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlLoadAction"]!
+            let enumVal = UInt(mtlEnum.getValue(loadAction))
+            desc.loadAction = MTLLoadAction(rawValue: enumVal)!
+        }
+        if let storeAction = elem.valueForAttribute("store-action") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStoreAction"]!
+            let enumVal = UInt(mtlEnum.getValue(storeAction))
+            desc.storeAction = MTLStoreAction(rawValue: enumVal)!
+        }
+        if let clearStencil = elem.valueForAttribute("clear-stencil") as? String {
+            desc.clearStencil = UInt32(clearStencil)!
+        }
+        
+        return desc
+    }
+}
 
 
 //
