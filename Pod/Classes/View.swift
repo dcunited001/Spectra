@@ -58,10 +58,7 @@ public class BaseView: MTKView {
     }
     
     public func configureGraphics() {
-        //TODO: framebufferOnly might be why particleLab failed on OSX!
-        framebufferOnly = false
-        preferredFramesPerSecond = 60
-        
+        mtkViewDefaults()
         beforeSetupMetal()
         setupMetal()
         afterSetupMetal()
@@ -79,6 +76,9 @@ public class BaseView: MTKView {
     }
     
     public func mtkViewDefaults() {
+        //TODO: framebufferOnly might be why particleLab failed on OSX!
+        framebufferOnly = false
+        preferredFramesPerSecond = 60
         colorPixelFormat = MTLPixelFormat.BGRA8Unorm
         sampleCount = 1
     }
