@@ -18,16 +18,16 @@
     <xs:element name="fragment-function" type="mtlFunction" />
     <xs:element name="compute-function" type="mtlFunction" />
     
-    <xs:complexType name="mtlVertexBufferLayoutDescriptor">
+    <xs:simpleType name="mtlVertexBufferLayoutDescriptor">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="stride" type="xs:integer" default="0" /> <!-- restriction: multiple of 4 bytes -->
-        <xs:attribute name="step-function" type="mtlStepFunction" default="PerVertex" />
-        <xs:attribute name="step-rate" type="xs:integer" default="1" />
+        <xs:attribute name="step-function" type="mtlVertexStepFunction" />
+        <xs:attribute name="step-rate" type="xs:integer"/>
     </xs:complexType>
     <xs:element name="vertex-buffer-layout-descriptor" type="mtlVertexBufferLayoutDescriptor" />
     
-    <xs:complexType name="mtlVertexAttributeDescriptor">
+    <xs:simpleType name="mtlVertexAttributeDescriptor">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="name" type="xs:string" />
@@ -39,14 +39,14 @@
     
     <xs:complexType name="mtlVertexAttributeDescriptorArray">
         <xs:sequence>
-            <xs:element ref="mtlVertexAttributeDescriptor" maxOccurs="unbounded"/>
+            <xs:element ref="vertex-attribute-descriptor" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:element name="vertex-attribute-descriptors" type="mtlVertexAttributeDescriptorArray" />
     
     <xs:complexType name="mtlVertexBufferLayoutDescriptorArray">
         <xs:sequence>
-            <xs:element ref="mtlVertexBufferLayoutDescriptor" maxOccurs="unbounded" />
+            <xs:element ref="vertex-buffer-layout-descriptor" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:element name="vertex-buffer-layout-descriptors" type="mtlVertexBufferLayoutDescriptorArray" />
@@ -235,7 +235,7 @@
     
     <!-- enums -->
     
-    <xs:simpleType name="mtlStepFunction" mtl-enum="true">
+    <xs:simpleType name="mtlVertexStepFunction" mtl-enum="true">
         <xs:restriction base="xs:string">
             <xs:enumeration id="0" value="Constant"/>
             <xs:enumeration id="1" value="PerVertex"/>
