@@ -124,16 +124,15 @@
     <xs:complexType name="mtlRenderPipelineColorAttachmentDescriptor">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
-        <xs:attribute name="label" type="xs:string" />
-        <xs:attribute name="pixel-format" type="mtlPixelFormat" />
-        <xs:attribute name="blending-enabled" type="xs:boolean" />
-        <xs:attribute name="source-rgb-blend-factor" type="mtlBlendFactor" />
-        <xs:attribute name="destination-rgb-blend-factor" type="mtlBlendFactor" />
-        <xs:attribute name="rgb-blend-operation" type="mtlBlendOperation" />
-        <xs:attribute name="source-alpha-blend-factor" type="mtlBlendFactor" />
-        <xs:attribute name="destination-alpha-blend-factor" type="mtlBlendFactor" />
-        <xs:attribute name="alpha-blend-operation" type="mtlBlendOperation" />
-        <xs:attribute name="write-mask-ref" type="mtlColorWriteMask" /> <!-- complexType -->
+        <xs:attribute name="pixel-format" type="mtlPixelFormat" /> <!-- match render pipeline state pixel-format -->
+        <xs:attribute name="blending-enabled" type="xs:boolean" default="false" />
+        <xs:attribute name="source-rgb-blend-factor" type="mtlBlendFactor" default="One" />
+        <xs:attribute name="destination-rgb-blend-factor" type="mtlBlendFactor" default="Zero" />
+        <xs:attribute name="rgb-blend-operation" type="mtlBlendOperation" default="Add" />
+        <xs:attribute name="source-alpha-blend-factor" type="mtlBlendFactor" default="One" />
+        <xs:attribute name="destination-alpha-blend-factor" type="mtlBlendFactor" default="Zero" />
+        <xs:attribute name="alpha-blend-operation" type="mtlBlendOperation" default="Add" />
+        <xs:attribute name="write-mask-ref" type="mtlColorWriteMask" default="All" /> <!-- complexType(optionSet) -->
     </xs:complexType>
     <xs:element name="render-pipeline-color-attachment-descriptor" type="mtlRenderPipelineColorAttachmentDescriptor"/>
     
@@ -148,11 +147,10 @@
         <xs:attribute name="alpha-to-coverage-enabled" type="xs:boolean" />
         <xs:attribute name="alpha-to-one-enabled" type="xs:boolean" />
         <xs:attribute name="rasterization-enabled" type="xs:boolean" />
-        <xs:attribute name="blending-enabled" type="xs:boolean" />
         <!-- complexType & sequenceType -->
         <!-- colorAttachments: MTLRenderPipelineColorAttachmentDescriptorArray -->
-        <xs:attribute name="depth-attachment-pixel-format" type="mtlPixelFormat" />
-        <xs:attribute name="stencil-attachment-pixel-format" type="mtlPixelFormat" />
+        <xs:attribute name="depth-attachment-pixel-format" type="mtlPixelFormat" default="Invalid" />
+        <xs:attribute name="stencil-attachment-pixel-format" type="mtlPixelFormat" default="Invalid" />
     </xs:complexType>
     <xs:element name="render-pipeline-descriptor" type="mtlRenderPipelineDescriptor"/>
     
@@ -259,7 +257,7 @@
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="compute-function-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="thread-group-size-is-multiple-of-thread-execution-width" type="xs:string" />
+        <xs:attribute name="thread-group-size-is-multiple-of-thread-execution-width" type="xs:boolean" />
     </xs:complexType>
     <xs:element name="compute-pipeline-descriptor" type="mtlComputePipelineDescriptor" />
     
