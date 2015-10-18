@@ -158,15 +158,15 @@
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="level" type="xs:integer" />
-        <xs:attribute name="slice" type="xs:integer" />
-        <xs:attribute name="depth-plane" type="xs:integer" />
-        <xs:attribute name="resolve-texture-ref" type="xs:string" />
-        <xs:attribute name="resolve-level" type="xs:integer" />
-        <xs:attribute name="resolve-slice" type="xs:integer" />
-        <xs:attribute name="resolve-depth-plane" type="xs:integer" />
-        <xs:attribute name="load-action" type="mtlLoadAction" />
-        <xs:attribute name="store-action" type="mtlStoreAction" />
+        <xs:attribute name="level" type="xs:integer" default="0" />
+        <xs:attribute name="slice" type="xs:integer" default="0" />
+        <xs:attribute name="depth-plane" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-texture-ref" type="xs:string" /> <!-- complexType -->
+        <xs:attribute name="resolve-level" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-slice" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-depth-plane" type="xs:integer" default="0" />
+        <xs:attribute name="load-action" type="mtlLoadAction" default="DontCare" />
+        <xs:attribute name="store-action" type="mtlStoreAction" default="DontCare" />
     </xs:complexType>
     <xs:element name="render-pass-attachment-descriptor" type="mtlRenderPassAttachmentDescriptor" />
     
@@ -174,16 +174,16 @@
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="level" type="xs:integer" />
-        <xs:attribute name="slice" type="xs:integer" />
-        <xs:attribute name="depth-plane" type="xs:integer" />
+        <xs:attribute name="level" type="xs:integer" default="0" />
+        <xs:attribute name="slice" type="xs:integer" default="0" />
+        <xs:attribute name="depth-plane" type="xs:integer" default="0" />
         <xs:attribute name="resolve-texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="resolve-level" type="xs:integer" />
-        <xs:attribute name="resolve-slice" type="xs:integer" />
-        <xs:attribute name="resolve-depth-plane" type="xs:integer" />
-        <xs:attribute name="load-action" type="mtlLoadAction" />
-        <xs:attribute name="store-action" type="mtlStoreAction" />
-        <!--            public var clearColor: MTLClearColor-->
+        <xs:attribute name="resolve-level" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-slice" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-depth-plane" type="xs:integer" default="0" />
+        <xs:attribute name="load-action" type="mtlLoadAction" default="DontCare" />
+        <xs:attribute name="store-action" type="mtlStoreAction" default="DontCare" />
+        <!-- public var clearColor: MTLClearColor --> <!-- default: rgba(0,0,0,1) -->
     </xs:complexType>
     <xs:element name="render-pass-color-attachment-descriptor" type="mtlRenderPassColorAttachmentDescriptor" />
     
@@ -198,17 +198,17 @@
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="level" type="xs:integer" />
-        <xs:attribute name="slice" type="xs:integer" />
-        <xs:attribute name="depth-plane" type="xs:integer" />
+        <xs:attribute name="level" type="xs:integer" default="0" />
+        <xs:attribute name="slice" type="xs:integer" default="0" />
+        <xs:attribute name="depth-plane" type="xs:integer" default="0" />
         <xs:attribute name="resolve-texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="resolve-level" type="xs:integer" />
-        <xs:attribute name="resolve-slice" type="xs:integer" />
-        <xs:attribute name="resolve-depth-plane" type="xs:integer" />
-        <xs:attribute name="load-action" type="mtlLoadAction" />
-        <xs:attribute name="store-action" type="mtlStoreAction" />
-        <xs:attribute name="clear-depth" type="xs:double" />
-        <xs:attribute name="depth-resolve-filter" type="mtlMultisampleDepthResolveFilter" />
+        <xs:attribute name="resolve-level" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-slice" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-depth-plane" type="xs:integer" default="0" />
+        <xs:attribute name="load-action" type="mtlLoadAction" default="DontCare" />
+        <xs:attribute name="store-action" type="mtlStoreAction" default="DontCare" />
+        <xs:attribute name="clear-depth" type="xs:double" default="1.0" />
+        <xs:attribute name="depth-resolve-filter" type="mtlMultisampleDepthResolveFilter" default="Sample0" />
     </xs:complexType>
     <xs:element name="render-pass-depth-attachment-descriptor" type="mtlRenderPassDepthAttachmentDescriptor" />
     
@@ -223,16 +223,16 @@
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="level" type="xs:integer" />
-        <xs:attribute name="slice" type="xs:integer" />
-        <xs:attribute name="depth-plane" type="xs:integer" />
+        <xs:attribute name="level" type="xs:integer" default="0" />
+        <xs:attribute name="slice" type="xs:integer" default="0" />
+        <xs:attribute name="depth-plane" type="xs:integer" default="0" />
         <xs:attribute name="resolve-texture-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="resolve-level" type="xs:integer" />
-        <xs:attribute name="resolve-slice" type="xs:integer" />
-        <xs:attribute name="resolve-depth-plane" type="xs:integer" />
-        <xs:attribute name="load-action" type="mtlLoadAction" />
-        <xs:attribute name="store-action" type="mtlStoreAction" />
-        <xs:attribute name="clear-stencil" type="xs:integer" />
+        <xs:attribute name="resolve-level" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-slice" type="xs:integer" default="0" />
+        <xs:attribute name="resolve-depth-plane" type="xs:integer" default="0" />
+        <xs:attribute name="load-action" type="mtlLoadAction" default="DontCare" />
+        <xs:attribute name="store-action" type="mtlStoreAction" default="DontCare" />
+        <xs:attribute name="clear-stencil" type="xs:integer" default="0" />
     </xs:complexType>
     <xs:element name="render-pass-stencil-attachment-descriptor" type="mtlRenderPassStencilAttachmentDescriptor" />
     
