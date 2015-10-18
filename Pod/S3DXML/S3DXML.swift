@@ -180,45 +180,156 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
     }
 }
 
-//public class S3DXMLMTLTextureDescriptorNode: S3DXMLNodeParser {
-//    public typealias NodeType = MTLTextureDescriptor
-//    
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-//        
-//        return NodeType()
-//    }
-//}
+public class S3DXMLMTLTextureDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLTextureDescriptor
+    
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        
+        let texDesc = NodeType()
+        if let textureType = elem.valueForAttribute("texture-type") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlTextureType"]!
+            let enumVal = UInt(mtlEnum.getValue(textureType))
+            texDesc.textureType = MTLTextureType(rawValue: enumVal)!
+        }
+        if let pixelFormat = elem.valueForAttribute("pixel-format") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlPixelFormat"]!
+            let enumVal = UInt(mtlEnum.getValue(pixelFormat))
+            texDesc.pixelFormat = MTLPixelFormat(rawValue: enumVal)!
+        }
+        if let width = elem.valueForAttribute("width") as? String {
+            texDesc.width = Int(width)!
+        }
+        if let height = elem.valueForAttribute("height") as? String {
+            texDesc.height = Int(height)!
+        }
+        if let depth = elem.valueForAttribute("depth") as? String {
+            texDesc.depth = Int(depth)!
+        }
+        if let mipmapLevelCount = elem.valueForAttribute("mipmap-level-count") as? String {
+            texDesc.mipmapLevelCount = Int(mipmapLevelCount)!
+        }
+        if let sampleCount = elem.valueForAttribute("sample-count") as? String {
+            texDesc.sampleCount = Int(sampleCount)!
+        }
+        if let arrayLength = elem.valueForAttribute("array-length") as? String {
+            texDesc.arrayLength = Int(arrayLength)!
+        }
+        //TODO: resourceOptions is option set type
+        // texDesc.resourceOptions?  optional?  set later?
+        if let cpuCacheMode = elem.valueForAttribute("cpu-cache-mode") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlTextureType"]!
+            let enumVal = UInt(mtlEnum.getValue(cpuCacheMode))
+            texDesc.cpuCacheMode = MTLCPUCacheMode(rawValue: enumVal)!
+        }
+        if let storageMode = elem.valueForAttribute("storage-mode") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStorageMode"]!
+            let enumVal = UInt(mtlEnum.getValue(storageMode))
+            texDesc.storageMode = MTLStorageMode(rawValue: enumVal)!
+        }
+        if let usage = elem.valueForAttribute("usage") as? String {
+            //TODO: option set type
+            let mtlEnum = descriptorManager.mtlEnums["mtlTextureUsage"]!
+            let enumVal = UInt(mtlEnum.getValue(usage))
+            texDesc.usage = MTLTextureUsage(rawValue: enumVal)
+        }
+        
+        return texDesc
+    }
+}
 
-//public class S3DXMLMTLSamplerDescriptorNode: S3DXMLNodeParser {
-//    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-//
-//        return NodeType()
-//    }
-//}
-//
-//public class S3DXMLMTLStencilDescriptorNode: S3DXMLNodeParser {
-//    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-//
-//        return NodeType()
-//    }//}
-//
-//public class S3DXMLMTLDepthStencilDescriptorNode: S3DXMLNodeParser {
-//    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-//
-//        return NodeType()
-//    }
-//}
-//
-//public class S3DXMLMTLColorAttachmentDescriptorNode: S3DXMLNodeParser {
-//    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-//
-//        return NodeType()
-//    }
-//}
+public class S3DXMLMTLSamplerDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLSamplerDescriptor
+    
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let samplerDesc = NodeType()
+        
+        if let label = elem.valueForAttribute("label") as? String {
+            samplerDesc.label = label
+        }
+        
+        if let minFilter = elem.valueForAttribute("min-filter") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMinMapFilter"]!
+            let enumVal = UInt(mtlEnum.getValue(minFilter))
+            samplerDesc.minFilter = MTLSamplerMinMagFilter(rawValue: enumVal)!
+        }
+        if let magFilter = elem.valueForAttribute("mag-filter") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMinMapFilter"]!
+            let enumVal = UInt(mtlEnum.getValue(magFilter))
+            samplerDesc.magFilter = MTLSamplerMinMagFilter(rawValue: enumVal)!
+        }
+        if let mipFilter = elem.valueForAttribute("mip-filter") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerMipFilter"]!
+            let enumVal = UInt(mtlEnum.getValue(mipFilter))
+            samplerDesc.mipFilter = MTLSamplerMipFilter(rawValue: enumVal)!
+        }
+        if let maxAnisotropy = elem.valueForAttribute("max-anisotropy") as? String {
+            samplerDesc.maxAnisotropy = Int(maxAnisotropy)!
+        }
+        if let sAddress = elem.valueForAttribute("s-address-mode") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerAddressMode"]!
+            let enumVal = UInt(mtlEnum.getValue(sAddress))
+            samplerDesc.sAddressMode = MTLSamplerAddressMode(rawValue: enumVal)!
+        }
+        if let rAddress = elem.valueForAttribute("r-address-mode") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerAddressMode"]!
+            let enumVal = UInt(mtlEnum.getValue(rAddress))
+            samplerDesc.rAddressMode = MTLSamplerAddressMode(rawValue: enumVal)!
+        }
+        if let tAddress = elem.valueForAttribute("t-address-mode") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlSamplerAddressMode"]!
+            let enumVal = UInt(mtlEnum.getValue(tAddress))
+            samplerDesc.tAddressMode = MTLSamplerAddressMode(rawValue: enumVal)!
+        }
+        if let normCoord = elem.valueForAttribute("normalized-coordinates") as? String {
+            samplerDesc.normalizedCoordinates = true
+        }
+        if let lodMinClamp = elem.valueForAttribute("lod-min-clamp") as? String {
+            samplerDesc.lodMinClamp = Float(lodMinClamp)!
+        }
+        if let lodMaxClamp = elem.valueForAttribute("lod-max-clamp") as? String {
+            samplerDesc.lodMaxClamp = Float(lodMaxClamp)!
+        }
+        if let lodMaxAvg = elem.valueForAttribute("lod-average") as? String {
+            samplerDesc.lodAverage = true
+        }
+        if let compareFn = elem.valueForAttribute("compare-function") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlCompareFunction"]!
+            let enumVal = UInt(mtlEnum.getValue(compareFn))
+            samplerDesc.compareFunction = MTLCompareFunction(rawValue: enumVal)!
+        }
+        
+        return samplerDesc
+    }
+}
+
+public class S3DXMLMTLStencilDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLStencilDescriptor
+    
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let stencilDesc = NodeType()
+
+        return stencilDesc
+    }
+}
+
+public class S3DXMLMTLDepthStencilDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLDepthStencilDescriptor
+    
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let depthDesc = NodeType()
+
+        return depthDesc
+    }
+}
+
+public class S3DXMLMTLColorAttachmentDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLRenderPipelineColorAttachmentDescriptor
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
+        let colorDesc = NodeType()
+
+        return colorDesc
+    }
+}
 
 //
 //public class S3DXMLMTLVertexDescriptorNode: S3DXMLNodeParser {
