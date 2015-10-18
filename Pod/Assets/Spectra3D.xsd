@@ -364,7 +364,7 @@
         </xs:restriction>
     </xs:simpleType>
     
-    <xs:simpleType name="mtlBlendFactor" mtl-enum="true">
+    <xs:simpleType name="mtlBlendOperation" mtl-enum="true">
         <xs:restriction base="xs:string">
             <xs:enumeration id="0"  value="Add"/>
             <xs:enumeration id="1"  value="Subtract"/>
