@@ -607,14 +607,16 @@ public class S3DXMLMTLRenderPassStencilAttachmentDescriptorNode: S3DXMLNodeParse
     }
 }
 
-
-//
-//public class S3DXMLMTLVertexDescriptorNode: S3DXMLNodeParser {
-//    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-//let desc = NodeType()
-//
-//return desc
-//    }
-//}
+public class S3DXMLMTLRenderPassDescriptorNode: S3DXMLNodeParser {
+    public typealias NodeType = MTLRenderPassDescriptor
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+        let desc = NodeType()
+        
+        //TODO: color attachment array
+        //TODO: depth attachment array
+        //TODO: stencil attachment array
+        
+        return desc
+    }
+}
 
