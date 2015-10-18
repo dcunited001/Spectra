@@ -39,8 +39,8 @@ public class SpectraDescriptorManager {
         let xmlData = S3DXSD.readXSD("Spectra3D")
         xsd = S3DXSD(data: xmlData)
         xsd.parseEnumTypes()
+        mtlEnums = xsd.enumTypes
     }
-    
 }
 
 public class S3DXML {
@@ -62,6 +62,7 @@ public class S3DXML {
             case "vertex-descriptor":
                 descriptorManager.vertexDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLVertexDescriptorNode().parse(descriptorManager, elem: elem)
 //            case "texture-descriptor":
+//                descriptorManager.textureDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLTextureDescriptorNode().parse(descriptorManager, elem: elem)
 //            case "sampler-descriptor":
 //            case "stencil-descriptor":
 //            case "depth-stencil-descriptor":
@@ -72,6 +73,24 @@ public class S3DXML {
         }
         
         return descriptorManager
+    }
+    
+//    public func parseXML(bundle:NSBundle, filename: String) {
+//        let xmlData = S3DXML.readXML(bundle, filename: "TestXML")
+//        xml.parse(self)
+    //    }
+    
+    public class func readXML(bundle: NSBundle, filename: String, bundleResourceName: String? = nil) -> NSData {
+        
+        var resourceBundle: NSBundle = bundle
+        if let resourceName = bundleResourceName {
+            let bundleURL = bundle.URLForResource(resourceName, withExtension: "bundle")
+            resourceBundle = NSBundle(URL: bundleURL!)!
+        }
+        
+        let path = resourceBundle.pathForResource(filename, ofType: "xml")
+        let data = NSData(contentsOfFile: path!)
+        return data!
     }
 }
 
@@ -97,29 +116,35 @@ public class S3DXMLMTLVertexDescriptorNode: S3DXMLNodeParser {
     public typealias NodeType = MTLVertexDescriptor
     
     public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String: AnyObject] = [:]) -> NodeType {
+        let vertexDesc = NodeType()
         
+        let attributeDescSelector = "vertex-attribute-descriptor-array > vertex-attribute-descriptor"
+        elem.enumerateElementsWithCSS(attributeDescSelector) {(el, idx, stop) in
+            let node = S3DXMLMTLVertexAttributeDescriptorNode()
+            vertexDesc.attributes[Int(idx)] = node.parse(descriptorManager, elem: el)
+        }
+        
+        let bufferLayoutDescSelector = "vertex-buffer-layout-descriptor-array > vertex-buffer-layout-descriptor"
+        elem.enumerateElementsWithCSS(bufferLayoutDescSelector) { (el, idx, stop) in
+            let node = S3DXMLMTLVertexBufferLayoutDescriptorNode()
+            vertexDesc.layouts[Int(idx)] = node.parse(descriptorManager, elem: el)
+        }
         // - build each VertexAttributeDescriptor & append
         // - build each BufferLayoutDescriptor & append
-        return NodeType()
-    }
-    
-    public func parseVertexAttributeDesciptor(elem: ONOXMLElement) -> MTLVertexAttributeDescriptor {
-    }
-    
-
-    public func parseVertexBufferLayoutDescriptor(elem: ONOXMLElement) -> MTLVertexBufferLayoutDescriptor {
+        return vertexDesc
     }
 }
 
 public class S3DXMLMTLVertexAttributeDescriptorNode: S3DXMLNodeParser {
     public typealias NodeType = MTLVertexAttributeDescriptor
     
-    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
         let vertexAttrDesc = NodeType()
         
         if let format = elem.valueForAttribute("format") as? String {
-            //TODO: look up in mtlAttributeDescriptor
-            vertexAttrDesc.format = MTLVertexFormat(rawValue: UInt(format)!)!
+            let mtlEnum = descriptorManager.mtlEnums["mtlVertexFormat"]!
+            let enumVal = UInt(mtlEnum.getValue(format))
+            vertexAttrDesc.format = MTLVertexFormat(rawValue: enumVal)!
         }
         if let offset = elem.valueForAttribute("offset") as? String {
             vertexAttrDesc.offset = Int(offset)!
@@ -135,7 +160,7 @@ public class S3DXMLMTLVertexAttributeDescriptorNode: S3DXMLNodeParser {
 public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
     public typealias NodeType = MTLVertexBufferLayoutDescriptor
     
-    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 
         let bufferLayoutDesc = NodeType()
         
@@ -143,7 +168,9 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
         bufferLayoutDesc.stride = Int(stride)!
         
         if let stepFunction = elem.valueForAttribute("step-function") as? String {
-            bufferLayoutDesc.stepFunction = MTLVertexStepFunction(rawValue: UInt(stepFunction)!)!
+            let mtlEnum = descriptorManager.mtlEnums["mtlVertexStepFunction"]!
+            let enumVal = UInt(mtlEnum.getValue(stepFunction))
+            bufferLayoutDesc.stepFunction = MTLVertexStepFunction(rawValue: enumVal)!
         }
         if let stepRate = elem.valueForAttribute("step-rate") as? String {
             bufferLayoutDesc.stepRate = Int(stepRate)!
@@ -156,7 +183,7 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
 //public class S3DXMLMTLTextureDescriptorNode: S3DXMLNodeParser {
 //    public typealias NodeType = MTLTextureDescriptor
 //    
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 //        
 //        return NodeType()
 //    }
@@ -164,7 +191,7 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
 
 //public class S3DXMLMTLSamplerDescriptorNode: S3DXMLNodeParser {
 //    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 //
 //        return NodeType()
 //    }
@@ -172,14 +199,14 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
 //
 //public class S3DXMLMTLStencilDescriptorNode: S3DXMLNodeParser {
 //    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 //
 //        return NodeType()
 //    }//}
 //
 //public class S3DXMLMTLDepthStencilDescriptorNode: S3DXMLNodeParser {
 //    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 //
 //        return NodeType()
 //    }
@@ -187,7 +214,7 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
 //
 //public class S3DXMLMTLColorAttachmentDescriptorNode: S3DXMLNodeParser {
 //    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 //
 //        return NodeType()
 //    }
@@ -196,7 +223,7 @@ public class S3DXMLMTLVertexBufferLayoutDescriptorNode: S3DXMLNodeParser {
 //
 //public class S3DXMLMTLVertexDescriptorNode: S3DXMLNodeParser {
 //    public typealias NodeType =
-//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+//    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
 //
 //        return NodeType()
 //    }
