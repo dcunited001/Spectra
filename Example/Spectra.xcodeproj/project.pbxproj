@@ -16,6 +16,7 @@
 		43D8BAAD1BC85B02004323ED /* DataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAC1BC85B02004323ED /* DataEncoding.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAB01BC87A97004323ED /* TexturedQuadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE531BD21C7100986774 /* S3DXMLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434358481BD2150100B13F10 /* S3DXMLSpec.swift */; settings = {ASSET_TAGS = (); }; };
+		43DADE551BD25D4900986774 /* S3DXMLTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43DADE541BD25D4900986774 /* S3DXMLTest.xml */; settings = {ASSET_TAGS = (); }; };
 		43E26EAD1BCE280100709D29 /* S3DXSDSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26EAB1BCE248C00709D29 /* S3DXSDSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43E90C191BC45AC9009DBF99 /* color_shift.metal */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		43D8BAA81BC82100004323ED /* Cube.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cube.xml; sourceTree = "<group>"; };
 		43D8BAAC1BC85B02004323ED /* DataEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncoding.swift; sourceTree = "<group>"; };
 		43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturedQuadController.swift; sourceTree = "<group>"; };
+		43DADE541BD25D4900986774 /* S3DXMLTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = S3DXMLTest.xml; sourceTree = "<group>"; };
 		43E26EA61BCE21F400709D29 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		43E26EAB1BCE248C00709D29 /* S3DXSDSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3DXSDSpec.swift; sourceTree = "<group>"; };
 		43E90C191BC45AC9009DBF99 /* color_shift.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = color_shift.metal; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
+				43DADE541BD25D4900986774 /* S3DXMLTest.xml */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				43D8BAA91BC82100004323ED /* Cube.xml in Resources */,
 				433894481BCB676A00CE1002 /* Spectra3D.xml in Resources */,
+				43DADE551BD25D4900986774 /* S3DXMLTest.xml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
