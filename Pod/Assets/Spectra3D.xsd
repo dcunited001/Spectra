@@ -114,10 +114,10 @@
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
-        <xs:attribute name="depth-compare-function" type="mtlCompareFunction" />
-        <xs:attribute name="depth-write-enabled" type="xs:boolean" />
-        <xs:attribute name="front-face-stencil-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="back-face-stencil-ref" type="xs:string" /> <!-- complexType -->
+        <xs:attribute name="depth-compare-function" type="mtlCompareFunction" default="Always" />
+        <xs:attribute name="depth-write-enabled" type="xs:boolean" default="false" />
+        <xs:attribute name="front-face-stencil-ref" type="xs:string" default="nil" /> <!-- complexType -->
+        <xs:attribute name="back-face-stencil-ref" type="xs:string" default="nil" /> <!-- complexType -->
     </xs:element>
     <xs:element name="depth-stencil-descriptor" type="mtlDepthStencilDescriptor" />
     
@@ -189,6 +189,13 @@
     </xs:complexType>
     <xs:element name="render-pass-color-attachment-descriptor" type="mtlRenderPassColorAttachmentDescriptor" />
     
+    <xs:complexType name="mtlRenderPassColorAttachmentDescriptorArray">
+        <xs:sequence>
+            <xs:element ref="render-pass-color-attachment-descriptor" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="render-pass-color-attachment-descriptors" type="mtlRenderPassColorAttachmentDescriptorArray" />
+    
     <xs:complexType name="mtlRenderPassDepthAttachmentDescriptor">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
@@ -205,7 +212,14 @@
         <xs:attribute name="clear-depth" type="xs:double" />
         <xs:attribute name="depth-resolve-filter" type="mtlMultisampleDepthResolveFilter" />
     </xs:complexType>
-    <xs:element name="render-pass-depth-attachment-descriptor" type="mtlRenderPassDepthAttachmntDescriptor" />
+    <xs:element name="render-pass-depth-attachment-descriptor" type="mtlRenderPassDepthAttachmentDescriptor" />
+    
+    <xs:complexType name="mtlRenderPassDepthAttachmentDescriptorArray">
+        <xs:sequence>
+            <xs:element ref="render-pass-depth-attachment-descriptor" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="render-pass-depth-attachment-descriptors" type="mtlRenderPassDepthAttachmentDescriptorArray" />
     
     <xs:complexType name="mtlRenderPassStencilAttachmentDescriptor">
         <xs:attribute name="key" type="xs:string" />
@@ -223,6 +237,22 @@
         <xs:attribute name="clear-stencil" type="xs:integer" />
     </xs:complexType>
     <xs:element name="render-pass-stencil-attachment-descriptor" type="mtlRenderPassStencilAttachmentDescriptor" />
+    
+    <xs:complexType name="mtlRenderPassStencilAttachmentDescriptorArray">
+        <xs:sequence>
+            <xs:element ref="render-pass-stencil-attachment-descriptor" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="render-pass-stencil-attachment-descriptors" type="mtlRenderPassStencilAttachmentDescriptorArray" />
+    
+    <!-- can be updated during render passes -->
+    <xs:complexType name="mtlRenderPassDescriptor">
+        <xs:all>
+            <xs:element ref="render-pass-color-attachment-descriptors" />
+            <xs:element ref="render-pass-depth-attachment-descriptors" />
+            <xs:element ref="render-pass-stencil-attachment-descriptors" />
+        </xs:all>
+    </xs:complexType>
     
     <xs:complexType name="mtlComputePipelineDescriptor">
         <xs:attribute name="key" type="xs:string" />
