@@ -94,19 +94,19 @@
         <xs:attribute name="lod-min-clamp" type="xs:float" default="0.0" />
         <xs:attribute name="lod-max-clamp" type="xs:float" default="INF" />
         <xs:attribute name="lod-average" type="xs:boolean" default="false" />
-        <xs:attribute name="compare-function" type="mtlCompareFunction" dfeault="never" />
+        <xs:attribute name="compare-function" type="mtlCompareFunction" default="never" />
     </xs:complexType>
     <xs:element name="sampler-descriptor" type="mtlSamplerDescriptor" />
     
     <xs:complexType name="mtlStencilDescriptor">
         <xs:attribute name="key" type="xs:string" />
         <xs:attribute name="ref" type="xs:string" />
-        <xs:attribute name="stencil-compare-function" type="mtlCompareFunction" />
-        <xs:attribute name="stencil-failure-operation" type="mtlStencilOperation" />
-        <xs:attribute name="depth-failure-operation" type="mtlStencilOperation" />
-        <xs:attribute name="depth-stencil-pass-operation" type="mtlStencilOperation" />
-        <xs:attribute name="read-mask" type="xs:integer" /> <!-- uint32 -->
-        <xs:attribute name="write-mask" type="xs:integer" /> <!-- uint32 -->
+        <xs:attribute name="stencil-compare-function" type="mtlCompareFunction" default="Always" />
+        <xs:attribute name="stencil-failure-operation" type="mtlStencilOperation" default="Keep" />
+        <xs:attribute name="depth-failure-operation" type="mtlStencilOperation" default="Keep" />
+        <xs:attribute name="depth-stencil-pass-operation" type="mtlStencilOperation" default="Keep" />
+        <xs:attribute name="read-mask" type="xs:integer" /> <!-- uint32 --> <!-- default: all ones -->
+        <xs:attribute name="write-mask" type="xs:integer" /> <!-- uint32 --> <!-- default: all ones -->
     </xs:complexType>
     <xs:element name="stencil-descriptor" type="mltStencilDescriptor" />
     
@@ -402,6 +402,14 @@
         <xs:restriction base="xs:string">
             <xs:enumeration id="0"  value="Nearest"/>
             <xs:enumeration id="1"  value="Linear"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="mtlSamplerMipFilter" mtl-enum="true">
+        <xs:restriction base="xs:string">
+            <xs:enumeration id="0"  value="NotMipmapped"/>
+            <xs:enumeration id="1"  value="Nearest"/>
+            <xs:enumeration id="2"  value="Linear"/>
         </xs:restriction>
     </xs:simpleType>
     
