@@ -310,7 +310,7 @@ public class S3DXMLMTLStencilDescriptorNode: S3DXMLNodeParser {
         let stencilDesc = NodeType()
         
         if let stencilCompare = elem.valueForAttribute("stencil-compare-function") as? String {
-            let mtlEnum = descriptorManager.mtlEnums["mtlCompareOperation"]!
+            let mtlEnum = descriptorManager.mtlEnums["mtlCompareFunction"]!
             let enumVal = UInt(mtlEnum.getValue(stencilCompare))
             stencilDesc.stencilCompareFunction = MTLCompareFunction(rawValue: enumVal)!
         }
@@ -350,7 +350,7 @@ public class S3DXMLMTLDepthStencilDescriptorNode: S3DXMLNodeParser {
             depthDesc.label = label
         }
         if let depthCompare = elem.valueForAttribute("depth-compare-function") as? String {
-            let mtlEnum = descriptorManager.mtlEnums["mtlCompareOperation"]!
+            let mtlEnum = descriptorManager.mtlEnums["mtlCompareFunction"]!
             let enumVal = UInt(mtlEnum.getValue(depthCompare))
             depthDesc.depthCompareFunction = MTLCompareFunction(rawValue: enumVal)!
         }
