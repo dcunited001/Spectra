@@ -63,9 +63,12 @@ public class S3DXML {
                 descriptorManager.vertexDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLVertexDescriptorNode().parse(descriptorManager, elem: elem)
 //            case "texture-descriptor":
 //                descriptorManager.textureDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLTextureDescriptorNode().parse(descriptorManager, elem: elem)
-//            case "sampler-descriptor":
-//            case "stencil-descriptor":
-//            case "depth-stencil-descriptor":
+            case "sampler-descriptor":
+                descriptorManager.samplerDescriptors[key!] = descriptorManager.samplerDescriptors[key!] ?? S3DXMLMTLSamplerDescriptorNode().parse(descriptorManager, elem: elem)
+            case "stencil-descriptor":
+                descriptorManager.stencilDescriptors[key!] = descriptorManager.stencilDescriptors[key!] ?? S3DXMLMTLStencilDescriptorNode().parse(descriptorManager, elem: elem)
+            case "depth-stencil-descriptor":
+                descriptorManager.depthStencilDescriptors[key!] = descriptorManager.depthStencilDescriptors[key!] ?? S3DXMLMTLDepthStencilDescriptorNode().parse(descriptorManager, elem: elem)
 //            case "color-attachment-descriptor":
             default:
                 break
