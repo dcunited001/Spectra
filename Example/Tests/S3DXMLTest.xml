@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-
+    <vertex-descriptor key="common_vertex_descriptor">
+        <vertex-attribute-descriptor-array>
+            <vertex-attribute-descriptor name="pos"   format="Float4" offset="0" buffer-index="0" />
+            <vertex-attribute-descriptor name="rgba"  format="Float4" offset="16" buffer-index="0" />
+            <vertex-attribute-descriptor name="tex"   format="Float2" offset="32" buffer-index="0" />
+            <vertex-attribute-descriptor name="extra" format="Float2" offset="40" buffer-index="0" />
+        </vertex-attribute-descriptor-array>
+        
+        <vertex-buffer-layout-descriptor-array>
+            <vertex-buffer-layout-descriptor stride="48" step-function="PerVertex" step-rate="1" />
+        </vertex-buffer-layout-descriptor-array>
+    </vertex-descriptor>
+    
+    <texture-descriptor>
+    </texture-descriptor>
+    
+    <sampler-descriptor>
+    </sampler-descriptor>
+    
+    <stencil-descriptor>
+    </stencil-descriptor>
+    
+    <depth-stencil-descriptor>
+    </depth-stencil-descriptor>
+    
 </root>
