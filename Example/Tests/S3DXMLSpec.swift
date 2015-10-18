@@ -66,7 +66,7 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-//        describe("MTLTextureDescriptorNode") {
+//        describe("S3DXMLMTLTextureDescriptorNode") {
 //            it("can parse a MTLVertexDescriptor") {
 //                
 //            }
@@ -76,7 +76,7 @@ class S3DXMLSpec: QuickSpec {
 //            }
 //        }
         
-        describe("S3DXMLMtlSamplerDescriptorNode") {
+        describe("S3DXMLMTLSamplerDescriptorNode") {
             it("can parse a sampler descriptor") {
                 let desc = descriptorManager.samplerDescriptors["sampler_desc"]!
                 expect(desc.minFilter) == MTLSamplerMinMagFilter.Linear
@@ -96,7 +96,7 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-        describe("S3DXMLMtlStencilDescriptorNode") {
+        describe("S3DXMLMTLStencilDescriptorNode") {
             it("can parse a stencil descriptor") {
                 let desc = descriptorManager.stencilDescriptors["stencil_desc"]!
                 expect(desc.stencilCompareFunction) == MTLCompareFunction.Never
@@ -106,11 +106,24 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-        describe("S3DXMLMtlDepthStencilDescriptorNode") {
+        describe("S3DXMLMTLDepthStencilDescriptorNode") {
             it("can parse a depth stencil descriptor") {
                 let desc = descriptorManager.depthStencilDescriptors["depth_stencil_desc"]!
                 expect(desc.depthCompareFunction) == MTLCompareFunction.Never
                 expect(desc.depthWriteEnabled) == true
+            }
+        }
+        
+        describe("S3DXMLMTLRenderPipelineColorAttachmentDescriptorNode") {
+            it("can parse a render pipline color attachment descriptor") {
+                let desc = descriptorManager.colorAttachmentDescriptors["color_attach_desc"]!
+                expect(desc.blendingEnabled) == true
+                expect(desc.sourceRGBBlendFactor) == MTLBlendFactor.Zero
+                expect(desc.destinationRGBBlendFactor) == MTLBlendFactor.SourceColor
+                expect(desc.rgbBlendOperation) == MTLBlendOperation.Subtract
+                expect(desc.sourceAlphaBlendFactor) == MTLBlendFactor.BlendAlpha
+                expect(desc.destinationAlphaBlendFactor) == MTLBlendFactor.OneMinusBlendAlpha
+                expect(desc.alphaBlendOperation) == MTLBlendOperation.Max
             }
         }
         
