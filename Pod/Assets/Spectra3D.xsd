@@ -105,8 +105,8 @@
         <xs:attribute name="stencil-failure-operation" type="mtlStencilOperation" />
         <xs:attribute name="depth-failure-operation" type="mtlStencilOperation" />
         <xs:attribute name="depth-stencil-pass-operation" type="mtlStencilOperation" />
-        <xs:attribute name="read-mask" type="xs:integer" />
-        <xs:attribute name="write-mask" type="xs:integer" />
+        <xs:attribute name="read-mask" type="xs:integer" /> <!-- uint32 -->
+        <xs:attribute name="write-mask" type="xs:integer" /> <!-- uint32 -->
     </xs:complexType>
     <xs:element name="stencil-descriptor" type="mltStencilDescriptor" />
     

@@ -307,7 +307,34 @@ public class S3DXMLMTLStencilDescriptorNode: S3DXMLNodeParser {
     
     public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
         let stencilDesc = NodeType()
-
+        
+        if let stencilCompare = elem.valueForAttribute("stencil-compare-function") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlCompareOperation"]!
+            let enumVal = UInt(mtlEnum.getValue(stencilCompare))
+            stencilDesc.stencilCompareFunction = MTLCompareFunction(rawValue: enumVal)!
+        }
+        if let stencilFailureOp = elem.valueForAttribute("stencil-failure-oparation") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStencilOperation"]!
+            let enumVal = UInt(mtlEnum.getValue(stencilFailureOp))
+            stencilDesc.stencilFailureOperation = MTLStencilOperation(rawValue: enumVal)!
+        }
+        if let depthFailureOp = elem.valueForAttribute("depth-failure-operation") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStencilOperation"]!
+            let enumVal = UInt(mtlEnum.getValue(depthFailureOp))
+            stencilDesc.depthFailureOperation = MTLStencilOperation(rawValue: enumVal)!
+        }
+        if let depthStencilPassOp = elem.valueForAttribute("depth-stencil-pass-operation") as? String {
+            let mtlEnum = descriptorManager.mtlEnums["mtlStencilOperation"]!
+            let enumVal = UInt(mtlEnum.getValue(depthStencilPassOp))
+            stencilDesc.depthStencilPassOperation = MTLStencilOperation(rawValue: enumVal)!
+        }
+        if let readMask = elem.valueForAttribute("read-mask") as? String {
+            stencilDesc.readMask = UInt32(readMask)!
+        }
+        if let writeMask = elem.valueForAttribute("write-mask") as? String {
+            stencilDesc.writeMask = UInt32(writeMask)!
+        }
+        
         return stencilDesc
     }
 }
