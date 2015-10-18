@@ -314,7 +314,7 @@ public class S3DXMLMTLStencilDescriptorNode: S3DXMLNodeParser {
             let enumVal = UInt(mtlEnum.getValue(stencilCompare))
             stencilDesc.stencilCompareFunction = MTLCompareFunction(rawValue: enumVal)!
         }
-        if let stencilFailureOp = elem.valueForAttribute("stencil-failure-oparation") as? String {
+        if let stencilFailureOp = elem.valueForAttribute("stencil-failure-operation") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlStencilOperation"]!
             let enumVal = UInt(mtlEnum.getValue(stencilFailureOp))
             stencilDesc.stencilFailureOperation = MTLStencilOperation(rawValue: enumVal)!
