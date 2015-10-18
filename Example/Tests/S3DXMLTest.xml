@@ -21,8 +21,8 @@
         mag-filter="Linear"
         mip-filter="Linear"
         max-anisotropy="10"
-        s-address-mode="ClampToZero"
-        t-address-mode="ClampToZero"
+        s-address-mode="Repeat"
+        t-address-mode="MirrorRepeat"
         r-address-mode="ClampToZero"
         normalized-coordinates="false"
         lod-min-clamp="1.0"
@@ -32,9 +32,9 @@
     
     <stencil-descriptor key="stencil_desc"
         stencil-compare-function="Never"
-        stencil-failure-operation="Zero"
-        depth-failure-operation="Zero"
-        depth-stencil-pass-operation="Zero" />
+        stencil-failure-operation="Replace"
+        depth-failure-operation="IncrementWrap"
+        depth-stencil-pass-operation="DecrementWrap" />
         <!--    <xs:attribute name="read-mask" type="xs:integer" /> <!-- uint32 -->
         <!--    <xs:attribute name="write-mask" type="xs:integer" /> <!-- uint32 -->
     

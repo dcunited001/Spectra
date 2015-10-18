@@ -83,8 +83,10 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.magFilter) == MTLSamplerMinMagFilter.Linear
                 expect(desc.mipFilter) == MTLSamplerMipFilter.Linear
                 expect(desc.maxAnisotropy) == 10
-                expect(desc.sAddressMode) == MTLSamplerAddressMode.ClampToZero
-                expect(desc.tAddressMode) == MTLSamplerAddressMode.ClampToZero
+                print(desc.sAddressMode.rawValue)
+                print(MTLSamplerAddressMode.ClampToZero.rawValue)
+                expect(desc.sAddressMode) == MTLSamplerAddressMode.Repeat
+                expect(desc.tAddressMode) == MTLSamplerAddressMode.MirrorRepeat
                 expect(desc.rAddressMode) == MTLSamplerAddressMode.ClampToZero
                 expect(desc.normalizedCoordinates) == false
                 expect(desc.lodMinClamp) == 1.0
@@ -98,9 +100,9 @@ class S3DXMLSpec: QuickSpec {
             it("can parse a stencil descriptor") {
                 let desc = descriptorManager.stencilDescriptors["stencil_desc"]!
                 expect(desc.stencilCompareFunction) == MTLCompareFunction.Never
-                expect(desc.stencilFailureOperation) == MTLStencilOperation.Zero
-                expect(desc.depthFailureOperation) == MTLStencilOperation.Zero
-                expect(desc.depthStencilPassOperation) == MTLStencilOperation.Zero
+                expect(desc.stencilFailureOperation) == MTLStencilOperation.Replace
+                expect(desc.depthFailureOperation) == MTLStencilOperation.IncrementWrap
+                expect(desc.depthStencilPassOperation) == MTLStencilOperation.DecrementWrap
             }
         }
         
