@@ -424,9 +424,10 @@
     <xs:simpleType name="mtlSamplerAddressMode" mtl-enum="true">
         <xs:restriction base="xs:string">
             <xs:enumeration id="0"  value="ClampToEdge"/>
-            <xs:enumeration id="1"  value="Repeat"/>
-            <xs:enumeration id="2"  value="MirrorRepeat"/>
-            <xs:enumeration id="3"  value="ClampToZero"/>
+            <xs:enumeration id="1"  value="MirrorClampToEdge"/>
+            <xs:enumeration id="2"  value="Repeat"/>
+            <xs:enumeration id="3"  value="MirrorRepeat"/>
+            <xs:enumeration id="4"  value="ClampToZero"/>
         </xs:restriction>
     </xs:simpleType>
     
