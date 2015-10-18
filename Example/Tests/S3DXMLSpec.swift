@@ -18,30 +18,65 @@ class S3DXMLSpec: QuickSpec {
         
         let device = MTLCreateSystemDefaultDevice()
         let library = device!.newDefaultLibrary()
-        let xmlData: NSData?
+        let testBundle = NSBundle(forClass: S3DXMLSpec.self)
+        let xmlData: NSData = S3DXML.readXML(testBundle, filename: "S3DXMLTest")
+        let xml = S3DXML(data: xmlData)
         
-        let descriptorManager = SpectraDescriptorManager(library: library!)
+        var descriptorManager = SpectraDescriptorManager(library: library!)
+        descriptorManager = xml.parse(descriptorManager)
         
         describe("SpectraDescriptorManager") {
-            it("parses enumGroups from XSD") {  expect(descriptorManager.mtlEnums["mtlStoreAction"]!.getValue("ClampToEdge")) == 1
+            it("parses enumGroups from XSD") {
+                let mtlStoreActionEnum = descriptorManager.mtlEnums["mtlSamplerAddressMode"]!
+                expect(mtlStoreActionEnum.getValue("ClampToEdge")) == 0
             }
         }
         
 //        describe("S3DXML") {
 //            
 //        }
-  
-        describe("MTLFunction") {
-            it("can parse a MTLFunction") {
-                
-            }
-        }
+
+        //TODO: still need to test these, as they need to create real functions
+//        describe("MTLFunction") {
+//            it("can parse a MTLFunction") {
+//                
+//            }
+//            
+//            it("can parse from references") {
+//                
+//            }
+//        }
 
         describe("MTLVertexDescriptor") {
+            it("can parse the attribute descriptor array") {
+                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
+                expect(vertDesc.attributes[0].format) == MTLVertexFormat.Float4
+                expect(vertDesc.attributes[1].offset) == 16
+            }
             
-            it("can parse a MTLVertexDescriptor") {
+            it("can parse the buffer layout descriptor array") {
+                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
+                expect(vertDesc.layouts[0].stepFunction) == MTLVertexStepFunction.PerVertex
+                expect(vertDesc.layouts[0].stride) == 48
+                expect(vertDesc.layouts[0].stepRate) == 1
+            }
+            
+            it("can parse from references") {
+                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
                 
             }
         }
+        
+//        describe("MTLTextureDescriptor") {
+//            it("can parse a MTLVertexDescriptor") {
+//                
+//            }
+//            
+//            it("can parse from references") {
+//                
+//            }
+//        }
+        
+        
     }
 }
