@@ -487,7 +487,7 @@
         <xs:restriction base="xs:string">
             <xs:enumeration id="0"  value="Invalid"/>
             <xs:enumeration id="1"  value="A8Unorm"/>
-            <xs:enumeration id="34"  value="BGRA8Unorm"/>
+            <xs:enumeration id="80"  value="BGRA8Unorm"/>
             <xs:enumeration id="123"  value="RGBA32Uint"/>
             <xs:enumeration id="124"  value="RGBA32Sint"/>
             <xs:enumeration id="125"  value="RGBA32Float"/>
