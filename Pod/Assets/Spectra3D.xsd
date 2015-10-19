@@ -357,10 +357,10 @@
             <xs:enumeration id="8"  value="DestinationAlpha"/>
             <xs:enumeration id="9"  value="OneMinusDestinationAlpha"/>
             <xs:enumeration id="10" value="SourceAlphaSaturated"/>
-            <xs:enumeration id="10" value="BlendColor"/>
-            <xs:enumeration id="10" value="OneMinusBlendColor"/>
-            <xs:enumeration id="10" value="BlendAlpha"/>
-            <xs:enumeration id="10" value="OneMinusBlendAlpha"/>
+            <xs:enumeration id="11" value="BlendColor"/>
+            <xs:enumeration id="12" value="OneMinusBlendColor"/>
+            <xs:enumeration id="13" value="BlendAlpha"/>
+            <xs:enumeration id="14" value="OneMinusBlendAlpha"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -439,7 +439,7 @@
             <xs:enumeration id="3"  value="Type2DArray"/>
             <xs:enumeration id="4"  value="Type2DMultisample"/>
             <xs:enumeration id="5"  value="TypeCube"/>
-            <xs:enumeration id="6"  value="Type3D"/>
+            <xs:enumeration id="7"  value="Type3D"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -486,10 +486,13 @@
     <xs:simpleType name="mtlPixelFormat" mtl-enum="true">
         <xs:restriction base="xs:string">
             <xs:enumeration id="0"  value="Invalid"/>
+            <xs:enumeration id="1"  value="A8Unorm"/>
             <xs:enumeration id="34"  value="BGRA8Unorm"/>
-            <xs:enumeration id="50"  value="RGBA32Float"/>
-            <xs:enumeration id="252" value="Stencil8"/>
-            <xs:enumeration id="253" value="Depth32Float"/>
+            <xs:enumeration id="123"  value="RGBA32Uint"/>
+            <xs:enumeration id="124"  value="RGBA32Sint"/>
+            <xs:enumeration id="125"  value="RGBA32Float"/>
+            <xs:enumeration id="252" value="Depth32Float"/>
+            <xs:enumeration id="253" value="Stencil8"/>
             <!-- TODO:
              * finish adding color formats
              -->
