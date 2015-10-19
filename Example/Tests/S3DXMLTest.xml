@@ -24,8 +24,8 @@
         array-length="100"
         cpu-cache-mode="WriteCombined"
         storage-mode="Shared"
-        usage="PixelFormatView"
     />
+<!-- usage="PixelFormatView"-->
 <!-- resource-options="" -->
 
     <sampler-descriptor key="sampler_desc"

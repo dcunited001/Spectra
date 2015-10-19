@@ -80,7 +80,7 @@ class S3DXMLSpec: QuickSpec {
                 // desc.resourceOptions
                 expect(desc.cpuCacheMode) == MTLCPUCacheMode.WriteCombined
                 expect(desc.storageMode) == MTLStorageMode.Shared
-                expect(desc.usage) == MTLTextureUsage.PixelFormatView
+//                expect(desc.usage) == MTLTextureUsage.PixelFormatView
             }
             
 //            it("can parse from references") {

@@ -248,12 +248,13 @@ public class S3DXMLMTLTextureDescriptorNode: S3DXMLNodeParser {
             let enumVal = UInt(mtlEnum.getValue(storageMode))
             texDesc.storageMode = MTLStorageMode(rawValue: enumVal)!
         }
-        if let usage = elem.valueForAttribute("usage") as? String {
-            //TODO: option set type
-            let mtlEnum = descriptorManager.mtlEnums["mtlTextureUsage"]!
-            let enumVal = UInt(mtlEnum.getValue(usage))
-            texDesc.usage = MTLTextureUsage(rawValue: enumVal)
-        }
+//        if let usage = elem.valueForAttribute("usage") as? String {
+//            //TODO: option set type
+//            let mtlEnum = descriptorManager.mtlEnums["mtlTextureUsage"]!
+//            let enumVal = UInt(mtlEnum.getValue(usage))
+//            print(MTLTextureUsage.PixelFormatView)
+//            texDesc.usage = MTLTextureUsage(rawValue: enumVal)
+//        }
         
         return texDesc
     }
