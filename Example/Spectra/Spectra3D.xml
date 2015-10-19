@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
     
+    <!-- 
+     TODO: implement name attr for vertex-function tag?
+     -->
     <vertex-function key="basic_color_vertex" name="basicColorVertex" />
     <vertex-function key="basic_color_shifted_vertex" name="basicColorShiftedVertex" />
     <vertex-function key="basic_color_shifted_continuous_vertex" name="basicColorShiftedContinuousVertex" />
     
     <fragment-function key="basic_color_fragment" name="basicColorFragment" />
     
-    <compute-function key="quad_lattice_generator" name="quadLatticeGenerator" />
-    
+<!--    <compute-function key="quad_lattice_generator" name="quadLatticeGenerator" />-->
+
     <vertex-descriptor id="common_vertex_descriptor" key="common_vertex">
-        <vertex-attribute-descriptor-array>
-            
-        </vertex-attribute-descriptor-array>
         
-        <vertex-buffer-layout-descriptor-array>
-        <vertex-attribute-descriptor name="pos"   format="Float4" offset="0" buffer-index="0" />
-        <vertex-attribute-descriptor name="rgba"  format="Float4" offset="16" buffer-index="0" />
-        <vertex-attribute-descriptor name="tex"   format="Float2" offset="32" buffer-index="0" />
-        <vertex-attribute-descriptor name="extra" format="Float2" offset="40" buffer-index="0" />
-        <vertex-buffer-layout-descriptor stride="48" step-function="PerVertex" step-rate="1" />
+        <vertex-attribute-descriptors>
+            <vertex-attribute-descriptor name="pos"   format="Float4" offset="0" buffer-index="0" />
+            <vertex-attribute-descriptor name="rgba"  format="Float4" offset="16" buffer-index="0" />
+            <vertex-attribute-descriptor name="tex"   format="Float2" offset="32" buffer-index="0" />
+            <vertex-attribute-descriptor name="extra" format="Float2" offset="40" buffer-index="0" />
+        </vertex-attribute-descriptors>
+        
+        <vertex-buffer-layout-descriptors>
+            <vertex-buffer-layout-descriptor stride="48" step-function="PerVertex" step-rate="1" />
+        </vertex-buffer-layout-descriptors>
     </vertex-descriptor>
     
     <stencil-descriptor>

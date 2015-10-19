@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
+    
+    <!--
+     TODO: implement name attr for vertex-function tag?
+     -->
     <vertex-function key="basic_color_vertex"/>
     <fragment-function key="basic_color_fragment"/>
     <compute-function key="test_compute_function"/>
