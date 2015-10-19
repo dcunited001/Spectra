@@ -133,8 +133,12 @@
         clear-stencil="0" />
         <!-- texture? -->
         <!-- resolve-texture? -->
-        
-    <render-pass-descriptor key="render_pass_desc"
-    
-    />
+
+    <render-pass-descriptor key="render_pass_desc">
+        <render-pass-color-attachment-descriptors>
+            <render-pass-color-attachment-descriptor ref="rpass_color_attach_desc" />
+        </render-pass-color-attachment-descriptors>
+        <render-pass-depth-attachment-descriptor ref="rpass_depth_attach_desc" />
+        <render-pass-stencil-attachment-descriptor ref="rpass_stencil_attach_desc" />
+    </render-pass-descriptor>
 </root>

@@ -146,7 +146,6 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.alphaBlendOperation) == MTLBlendOperation.Max
                 expect(desc.pixelFormat) == MTLPixelFormat.BGRA8Unorm
             }
-            
         }
         
         describe("S3DXMLMTLRenderPipelineDescriptorNode") {
@@ -224,7 +223,13 @@ class S3DXMLSpec: QuickSpec {
         describe("S3DXMLMTLRenderPassDescriptorNode") {
             it("can parse a render pass descriptor") {
                 let desc = descriptorManager.renderPassDescriptors["render_pass_desc"]!
+                let colorAttach = descriptorManager.renderPassColorAttachmentDescriptors["rpass_color_attach_desc"]!
+                let depthAttach = descriptorManager.renderPassDepthAttachmentDescriptors["rpass_depth_attach_desc"]!
+                let stencilAttach = descriptorManager.renderPassStencilAttachmentDescriptors["rpass_stencil_attach_desc"]!
                 
+                expect(desc.colorAttachments[0]) == colorAttach
+                expect(desc.depthAttachment) == colorAttach
+                expect(desc.stencilAttachment) == colorAttach
             }
         }
         
