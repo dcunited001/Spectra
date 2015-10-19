@@ -60,6 +60,10 @@ public class S3DXML {
             switch tag {
             case "vertex-function":
                 descriptorManager.vertexFunctions[key!] = descriptorManager.vertexFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
+            case "fragment-function":
+                descriptorManager.vertexFunctions[key!] = descriptorManager.fragmentFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
+            case "compute-function":
+                descriptorManager.vertexFunctions[key!] = descriptorManager.computeFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
             case "vertex-descriptor":
                 descriptorManager.vertexDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLVertexDescriptorNode().parse(descriptorManager, elem: elem)
             case "texture-descriptor":
@@ -131,7 +135,8 @@ public class S3DXMLMTLFunctionNode: S3DXMLNodeParser {
     public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String: AnyObject] = [:]) -> NodeType {
         let lib = descriptorManager.library
         let name = elem.valueForAttribute("key") as! String
-        return lib.newFunctionWithName(name)!
+        let mtlFunction = lib.newFunctionWithName(name)
+        return mtlFunction!
     }
 }
 
@@ -438,8 +443,28 @@ public class S3DXMLMTLRenderPipelineDescriptorNode: S3DXMLNodeParser {
     public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
         let desc = NodeType()
         
-        //TODO: vertex function
-        //TODO: fragment function
+        if let vertexFunctionTag = elem.firstChildWithTag("vertex-function") {
+            if let vertexFunctionName = vertexFunctionTag.valueForAttribute("ref") as? String {
+                desc.vertexFunction = descriptorManager.vertexFunctions[vertexFunctionName]!
+            }
+        }
+        
+        if let fragmentFunctionTag = elem.firstChildWithTag("fragment-function") {
+            if let fragmentFunctionName = fragmentFunctionTag.valueForAttribute("ref") as? String {
+                print(fragmentFunctionName)
+                print(descriptorManager.fragmentFunctions)
+                desc.fragmentFunction = descriptorManager.fragmentFunctions[fragmentFunctionName]!
+            }
+        }
+        
+        if let vertexDescTag = elem.firstChildWithTag("vertex-descriptor") {
+            if let vertexDescName = vertexDescTag.valueForAttribute("ref") as? String {
+                desc.vertexDescriptor = descriptorManager.vertexDescriptors[vertexDescName]!
+            }
+        }
+        
+        
+        
         //TODO: vertex-descriptor
         //TODO: color attachments array
         

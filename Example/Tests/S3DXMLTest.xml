@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
+    <vertex-function key="basic_color_vertex"/>
+    <fragment-function key="basic_color_fragment"/>
+    <compute-function key="test_compute_function"/>
+    
     <vertex-descriptor key="common_vertex_descriptor">
         <vertex-attribute-descriptors>
             <vertex-attribute-descriptor name="pos"   format="Float4" offset="0" buffer-index="0" />
@@ -23,8 +27,7 @@
         sample-count="100"
         array-length="100"
         cpu-cache-mode="WriteCombined"
-        storage-mode="Shared"
-    />
+        storage-mode="Shared" />
 <!-- usage="PixelFormatView"-->
 <!-- resource-options="" -->
 
@@ -75,16 +78,18 @@
         alpha-to-one-enabled="true"
         rasterization-enabled="false"
         depth-attachment-pixel-format="Depth32Float"
-        stencil-attachment-pixel-format="Stencil8" />
-        <!-- vertex-function-ref="" -->
-        <!-- fragment-function-ref="" -->
-        <!-- vertex-descriptor-ref="" -->
+        stencil-attachment-pixel-format="Stencil8">
+        <vertex-function ref="basic_color_vertex" />
+        <fragment-function ref="basic_color_fragment" />
+        <vertex-descriptor ref="common_vertex_descriptor" />
         <!-- colorAttachments: MTLRenderPipelineColorAttachmentDescriptorArray -->
+    </render-pipeline-descriptor>
         
     <compute-pipeline-descriptor key="compute_pipeline_desc"
         label="compute-pipeline-descriptor"
-        thread-group-size-is-multiple-of-thread-execution-width="true" />
-        <!-- compute-function-ref -->
+        thread-group-size-is-multiple-of-thread-execution-width="true">
+        <compute-function ref="test_compute_function" />
+    </compute-pipeline-descriptor>
     
     <render-pass-color-attachment-descriptor key="rpass_color_attach_desc"
         level="1"
