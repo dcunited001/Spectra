@@ -144,6 +144,7 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.sourceAlphaBlendFactor) == MTLBlendFactor.BlendAlpha
                 expect(desc.destinationAlphaBlendFactor) == MTLBlendFactor.OneMinusBlendAlpha
                 expect(desc.alphaBlendOperation) == MTLBlendOperation.Max
+                expect(desc.pixelFormat) == MTLPixelFormat.BGRA8Unorm
             }
             
         }
