@@ -30,6 +30,7 @@ public class SpectraDescriptorManager {
     public var renderPassColorAttachmentDescriptors: [String: MTLRenderPassColorAttachmentDescriptor] = [:]
     public var renderPassDepthAttachmentDescriptors: [String: MTLRenderPassDepthAttachmentDescriptor] = [:]
     public var renderPassStencilAttachmentDescriptors: [String: MTLRenderPassStencilAttachmentDescriptor] = [:]
+    public var renderPassDescriptors: [String: MTLRenderPassDescriptor] = [:]
     public var computePipelineDescriptors: [String: MTLComputePipelineDescriptor] = [:]
     
     public init(library: MTLLibrary) {
@@ -61,15 +62,34 @@ public class S3DXML {
                 descriptorManager.vertexFunctions[key!] = descriptorManager.vertexFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
             case "vertex-descriptor":
                 descriptorManager.vertexDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLVertexDescriptorNode().parse(descriptorManager, elem: elem)
-//            case "texture-descriptor":
-//                descriptorManager.textureDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLTextureDescriptorNode().parse(descriptorManager, elem: elem)
+            case "texture-descriptor":
+                descriptorManager.textureDescriptors[key!] = descriptorManager.textureDescriptors[key!] ?? S3DXMLMTLTextureDescriptorNode().parse(descriptorManager, elem: elem)
             case "sampler-descriptor":
                 descriptorManager.samplerDescriptors[key!] = descriptorManager.samplerDescriptors[key!] ?? S3DXMLMTLSamplerDescriptorNode().parse(descriptorManager, elem: elem)
             case "stencil-descriptor":
                 descriptorManager.stencilDescriptors[key!] = descriptorManager.stencilDescriptors[key!] ?? S3DXMLMTLStencilDescriptorNode().parse(descriptorManager, elem: elem)
             case "depth-stencil-descriptor":
                 descriptorManager.depthStencilDescriptors[key!] = descriptorManager.depthStencilDescriptors[key!] ?? S3DXMLMTLDepthStencilDescriptorNode().parse(descriptorManager, elem: elem)
-//            case "color-attachment-descriptor":
+            case "render-pipeline-color-attachment-descriptor":
+                descriptorManager.colorAttachmentDescriptors[key!] = descriptorManager.colorAttachmentDescriptors[key!] ?? S3DXMLMTLColorAttachmentDescriptorNode().parse(descriptorManager, elem: elem)
+            case "compute-pipeline-descriptor":
+                descriptorManager.computePipelineDescriptors[key!] = descriptorManager.computePipelineDescriptors[key!] ??
+                    S3DXMLMTLComputePipelineDescriptorNode().parse(descriptorManager, elem: elem)
+            case "render-pipeline-descriptor":
+                descriptorManager.renderPipelineDescriptors[key!] = descriptorManager.renderPipelineDescriptors[key!] ??
+                    S3DXMLMTLRenderPipelineDescriptorNode().parse(descriptorManager, elem: elem)
+            case "render-pass-color-attachment-descriptor":
+                descriptorManager.renderPassColorAttachmentDescriptors[key!] = descriptorManager.renderPassColorAttachmentDescriptors[key!] ??
+                    S3DXMLMTLRenderPassColorAttachmentDescriptorNode().parse(descriptorManager, elem: elem)
+            case "render-pass-depth-attachment-descriptor":
+                descriptorManager.renderPassDepthAttachmentDescriptors[key!] = descriptorManager.renderPassDepthAttachmentDescriptors[key!] ??
+                    S3DXMLMTLRenderPassDepthAttachmentDescriptorNode().parse(descriptorManager, elem: elem)
+            case "render-pass-stencil-attachment-descriptor":
+                descriptorManager.renderPassStencilAttachmentDescriptors[key!] = descriptorManager.renderPassStencilAttachmentDescriptors[key!] ??
+                    S3DXMLMTLRenderPassStencilAttachmentDescriptorNode().parse(descriptorManager, elem: elem)
+            case "render-pass-descriptor":
+                descriptorManager.renderPassDescriptors[key!] = descriptorManager.renderPassDescriptors[key!] ??
+                    S3DXMLMTLRenderPassDescriptorNode().parse(descriptorManager, elem: elem)
             default:
                 break
             }
