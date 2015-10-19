@@ -12,8 +12,7 @@
     
 <!--    <compute-function key="quad_lattice_generator" name="quadLatticeGenerator" />-->
 
-    <vertex-descriptor id="common_vertex_descriptor" key="common_vertex">
-        
+    <vertex-descriptor key="common_vertex_descriptor">
         <vertex-attribute-descriptors>
             <vertex-attribute-descriptor name="pos"   format="Float4" offset="0" buffer-index="0" />
             <vertex-attribute-descriptor name="rgba"  format="Float4" offset="16" buffer-index="0" />
@@ -26,20 +25,26 @@
         </vertex-buffer-layout-descriptors>
     </vertex-descriptor>
     
-    <stencil-descriptor>
-        
-    </stencil-descriptor>
+    <depth-stencil-descriptor key="depth_default"
+        depth-compare-function="Always"
+        depth-write-enabled="True" />
     
-    <depth-stencil-descriptor>
-        
-    </depth-stencil-descriptor>
+    <render-pipeline-descriptor key="basic">
+        <vertex-function ref="basic_color_vertex" />
+        <fragment-function ref="basic_color_fragment" />
+        <vertex-descriptor ref="common_vertex_descriptor" />
+    </render-pipeline-descriptor>
     
-    <render-pipeline-color-attachment-descriptor>
-        
-    </render-pipeline-color-attachment-descriptor>
+    <render-pipeline-descriptor key="basic_color_shift">
+        <vertex-function ref="basic_color_shifted_vertex" />
+        <fragment-function ref="basic_color_fragment" />
+        <vertex-descriptor ref="common_vertex_descriptor" />
+    </render-pipeline-descriptor>
     
-    <render-pipeline-descriptor>
-        
+    <render-pipeline-descriptor key="basic_color_shift_continuous">
+        <vertex-function ref="basic_color_shifted_continuous_vertex" />
+        <fragment-function ref="basic_color_fragment" />
+        <vertex-descriptor ref="common_vertex_descriptor" />
     </render-pipeline-descriptor>
     
 </root>
