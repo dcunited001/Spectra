@@ -63,7 +63,7 @@ extern float4 shiftColorContinuousWithMVP
 
 //float4 colorShiftByDistance
 
-vertex CommonVertexOut basicColorVertex
+vertex CommonVertexOut basic_color_vertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
@@ -77,14 +77,14 @@ vertex CommonVertexOut basicColorVertex
     return vOut;
 }
 
-fragment half4 basicColorFragment
+fragment half4 basic_color_fragment
 (
  CommonVertexOut interpolated [[ stage_in ]])
 {
     return half4(interpolated.rgba[0], interpolated.rgba[1], interpolated.rgba[2], interpolated.rgba[3]);
 }
 
-vertex CommonVertexOut basicColorShiftedVertex
+vertex CommonVertexOut basic_color_shifted_vertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
@@ -98,7 +98,7 @@ vertex CommonVertexOut basicColorShiftedVertex
     return vout;
 }
 
-vertex CommonVertexOut basicColorShiftedContinuousVertex
+vertex CommonVertexOut basic_color_shifted_continuous_vertex
 (
  const device float4* vin [[ buffer(0) ]],
  const device float4* cin [[ buffer(1) ]],
@@ -111,4 +111,13 @@ vertex CommonVertexOut basicColorShiftedContinuousVertex
         vout.rgba = shiftColorContinuousWithMVP(*cin, mvp);
     
     return vout;
+}
+
+kernel void test_compute_function
+(
+ uint gid [[ thread_position_in_grid ]],
+ constant CommonVertex *tIn [[ buffer(0) ]],
+ device CommonVertexOut *tOut [[ buffer(1) ]])
+{
+    
 }
