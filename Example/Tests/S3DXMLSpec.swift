@@ -83,8 +83,6 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.magFilter) == MTLSamplerMinMagFilter.Linear
                 expect(desc.mipFilter) == MTLSamplerMipFilter.Linear
                 expect(desc.maxAnisotropy) == 10
-                print(desc.sAddressMode.rawValue)
-                print(MTLSamplerAddressMode.ClampToZero.rawValue)
                 expect(desc.sAddressMode) == MTLSamplerAddressMode.Repeat
                 expect(desc.tAddressMode) == MTLSamplerAddressMode.MirrorRepeat
                 expect(desc.rAddressMode) == MTLSamplerAddressMode.ClampToZero
@@ -115,7 +113,7 @@ class S3DXMLSpec: QuickSpec {
         }
         
         describe("S3DXMLMTLRenderPipelineColorAttachmentDescriptorNode") {
-            it("can parse a render pipline color attachment descriptor") {
+            it("can parse a render pipeline color attachment descriptor") {
                 let desc = descriptorManager.colorAttachmentDescriptors["color_attach_desc"]!
                 expect(desc.blendingEnabled) == true
                 expect(desc.sourceRGBBlendFactor) == MTLBlendFactor.Zero
@@ -127,15 +125,82 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-//        describe("S3DXMLMTLColorAttachmentDescriptorNode") {
-//            
+        describe("S3DXMLMTLRenderPipelineDescriptor") {
+            it("can parse a render pipeline descriptor") {
+                print(MTLPixelFormat.Depth32Float.rawValue)
+                print(MTLPixelFormat.Stencil8.rawValue)
+                let desc = descriptorManager.renderPipelineDescriptors["render_pipeline_desc"]!
+                expect(desc.label) == "render-pipeline-descriptor"
+                expect(desc.sampleCount) == 2
+                expect(desc.alphaToCoverageEnabled) == true
+                expect(desc.alphaToOneEnabled) == true
+                expect(desc.rasterizationEnabled) == true
+                expect(desc.depthAttachmentPixelFormat) == MTLPixelFormat.Depth32Float
+                expect(desc.stencilAttachmentPixelFormat) == MTLPixelFormat.Stencil8
+                //expect(desc.vertexDescriptor) == descriptorManager.vertexDescriptors["common_vertex_desc"]!
+            }
+        }
+        
+        describe("S3DXMLMTLComputePipelineDescribe") {
+            it("can parse a compute pipeline descriptor") {
+                let desc = descriptorManager.computePipelineDescriptors["compute_pipeline_desc"]!
+                expect(desc.label) == "compute-pipeline-descriptor"
+                expect(desc.threadGroupSizeIsMultipleOfThreadExecutionWidth) == true
+            }
+        }
+        
+        describe("S3DXMLMTLRenderPassColorAttachmentDescriptor") {
+            it("can parse a render pass color attachment descriptor") {
+                let desc = descriptorManager.renderPassColorAttachmentDescriptors["rpass_color_attach_desc"]!
+                expect(desc.level) == 1
+                expect(desc.slice) == 1
+                expect(desc.depthPlane) == 1
+                expect(desc.resolveLevel) == 1
+                expect(desc.resolveSlice) == 1
+                expect(desc.resolveDepthPlane) == 1
+                expect(desc.loadAction) == MTLLoadAction.Load
+                expect(desc.storeAction) == MTLStoreAction.Store
+                //clearColor
+            }
+        }
+        
+        describe("S3DXMLMTLRenderPassDepthAttachmentDescriptor") {
+            it("can parse a render pass depth attachment descriptor") {
+                let desc = descriptorManager.renderPassDepthAttachmentDescriptors["rpass_depth_attach_desc"]!
+                expect(desc.level) == 1
+                expect(desc.slice) == 1
+                expect(desc.depthPlane) == 1
+                expect(desc.resolveLevel) == 1
+                expect(desc.resolveSlice) == 1
+                expect(desc.resolveDepthPlane) == 1
+                expect(desc.loadAction) == MTLLoadAction.Load
+                expect(desc.storeAction) == MTLStoreAction.Store
+                expect(desc.clearDepth) == 2.0
+                expect(desc.depthResolveFilter) == MTLMultisampleDepthResolveFilter.Min
+            }
+        }
+        
+        describe("S3DXMLMTLRenderPassStencilAttachmentDescriptor") {
+            it("can parse a render pass stencil attachment descriptor") {
+                let desc = descriptorManager.renderPassStencilAttachmentDescriptors["rpass_stencil_attach_desc"]!
+                expect(desc.level) == 1
+                expect(desc.slice) == 1
+                expect(desc.depthPlane) == 1
+                expect(desc.resolveLevel) == 1
+                expect(desc.resolveSlice) == 1
+                expect(desc.resolveDepthPlane) == 1
+                expect(desc.loadAction) == MTLLoadAction.Load
+                expect(desc.storeAction) == MTLStoreAction.Store
+                expect(desc.clearStencil) == 0
+            }
+        }
+//
+//        describe("S3DXMLMTLRenderPassDescriptor") {
+//            it("can parse a render pass descriptor") {
+//                let desc = descriptorManager.renderPassDescriptors["render_pass_desc"]!
+//                
+//            }
 //        }
-//        
-//        mtlRenderPipelineDescriptor
-//        mtlRenderPassColorAttachmentDescriptor
-//        mtlRenderPassDepthAttachmentDescriptor
-//        mtlRenderPassStencilAttachmentDescriptor
-//        mtlRenderPassDescriptor
         
 //        describe("S3DXMLMTLComputePipelineDescriptorNode") {
 //            it("can parse a compute pipeline descriptor") {

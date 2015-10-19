@@ -39,7 +39,7 @@
         <!--    <xs:attribute name="write-mask" type="xs:integer" /> <!-- uint32 -->
     
     <depth-stencil-descriptor key="depth_stencil_desc"
-        depth-compare-funciton="Never"
+        depth-compare-function="Never"
         depth-write-enabled="true" />
         <!--    <xs:attribute name="front-face-stencil-ref" type="xs:string" default="nil" />-->
         <!--    <xs:attribute name="back-face-stencil-ref" type="xs:string" default="nil" />-->
