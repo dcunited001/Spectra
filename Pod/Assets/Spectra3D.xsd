@@ -143,10 +143,10 @@
         <xs:attribute name="vertex-function-ref" type="xs:string" />  <!-- complexType -->
         <xs:attribute name="fragment-function-ref" type="xs:string" />  <!-- complexType -->
         <xs:attribute name="vertex-descriptor-ref" type="xs:string" />  <!-- complexType -->
-        <xs:attribute name="sample-count" type="xs:integer" />  <!-- complexType -->
-        <xs:attribute name="alpha-to-coverage-enabled" type="xs:boolean" />
-        <xs:attribute name="alpha-to-one-enabled" type="xs:boolean" />
-        <xs:attribute name="rasterization-enabled" type="xs:boolean" />
+        <xs:attribute name="sample-count" type="xs:integer" default="1" />  <!-- complexType -->
+        <xs:attribute name="alpha-to-coverage-enabled" type="xs:boolean" default="false" />
+        <xs:attribute name="alpha-to-one-enabled" type="xs:boolean" default="false" />
+        <xs:attribute name="rasterization-enabled" type="xs:boolean" default="true" />
         <!-- complexType & sequenceType -->
         <!-- colorAttachments: MTLRenderPipelineColorAttachmentDescriptorArray -->
         <xs:attribute name="depth-attachment-pixel-format" type="mtlPixelFormat" default="Invalid" />
@@ -257,7 +257,7 @@
         <xs:attribute name="ref" type="xs:string" />
         <xs:attribute name="label" type="xs:string" />
         <xs:attribute name="compute-function-ref" type="xs:string" /> <!-- complexType -->
-        <xs:attribute name="thread-group-size-is-multiple-of-thread-execution-width" type="xs:boolean" />
+        <xs:attribute name="thread-group-size-is-multiple-of-thread-execution-width" type="xs:boolean" default="false" />
     </xs:complexType>
     <xs:element name="compute-pipeline-descriptor" type="mtlComputePipelineDescriptor" />
     
@@ -488,7 +488,8 @@
             <xs:enumeration id="0"  value="Invalid"/>
             <xs:enumeration id="34"  value="BGRA8Unorm"/>
             <xs:enumeration id="50"  value="RGBA32Float"/>
-            
+            <xs:enumeration id="252" value="Stencil8"/>
+            <xs:enumeration id="253" value="Depth32Float"/>
             <!-- TODO:
              * finish adding color formats
              -->
