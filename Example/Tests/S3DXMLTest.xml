@@ -13,7 +13,20 @@
         </vertex-buffer-layout-descriptors>
     </vertex-descriptor>
     
-<!-- <texture-descriptor/> -->
+    <texture-descriptor key="texture_desc"
+        texture-type="Type3D"
+        pixel-format="RGBA32Float"
+        width="100"
+        height="100"
+        depth="100"
+        mipmap-level-count="100"
+        sample-count="100"
+        array-length="100"
+        cpu-cache-mode="WriteCombined"
+        storage-mode="Shared"
+        usage="PixelFormatView"
+    />
+<!-- resource-options="" -->
 
     <sampler-descriptor key="sampler_desc"
         label="stencil-descriptor"

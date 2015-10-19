@@ -66,15 +66,27 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-//        describe("S3DXMLMTLTextureDescriptorNode") {
-//            it("can parse a MTLVertexDescriptor") {
-//                
-//            }
-//            
+        describe("S3DXMLMTLTextureDescriptorNode") {
+            it("can parse a MTLVertexDescriptor") {
+                let desc = descriptorManager.textureDescriptors["texture_desc"]!
+                expect(desc.textureType) == MTLTextureType.Type3D
+                expect(desc.pixelFormat) == MTLPixelFormat.RGBA32Float
+                expect(desc.width) == 100
+                expect(desc.height) == 100
+                expect(desc.depth) == 100
+                expect(desc.mipmapLevelCount) == 100
+                expect(desc.sampleCount) == 100
+                expect(desc.arrayLength) == 100
+                // desc.resourceOptions
+                expect(desc.cpuCacheMode) == MTLCPUCacheMode.WriteCombined
+                expect(desc.storageMode) == MTLStorageMode.Shared
+                expect(desc.usage) == MTLTextureUsage.PixelFormatView
+            }
+            
 //            it("can parse from references") {
 //                
 //            }
-//        }
+        }
         
         describe("S3DXMLMTLSamplerDescriptorNode") {
             it("can parse a sampler descriptor") {
