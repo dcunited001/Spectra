@@ -689,9 +689,34 @@ public class S3DXMLMTLRenderPassDescriptorNode: S3DXMLNodeParser {
     public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
         let desc = NodeType()
         
-        //TODO: color attachment array
-        //TODO: depth attachment array
-        //TODO: stencil attachment array
+        let AttachSelector = "render-pass-color-attachment-descriptors > render-pass-color-attachment-descriptor"
+        elem.enumerateElementsWithCSS(AttachSelector) {(el, idx, stop) in
+            if let colorAttachRef = el.valueForAttribute("ref") as? String {
+                let colorAttach = descriptorManager.renderPassColorAttachmentDescriptors[colorAttachRef]!
+                desc.colorAttachments[Int(idx)] = colorAttach
+            } else {
+                let node = S3DXMLMTLRenderPassColorAttachmentDescriptorNode()
+                desc.colorAttachments[Int(idx)] = node.parse(descriptorManager, elem: elem)
+            }
+        }
+        
+        if let depthAttachTag = elem.firstChildWithTag("render-pass-depth-attachment-descriptor") {
+            if let depthAttachName = depthAttachTag.valueForAttribute("ref") as? String {
+                desc.depthAttachment = descriptorManager.renderPassDepthAttachmentDescriptors[depthAttachName]!
+            } else {
+                let node = S3DXMLMTLRenderPassDepthAttachmentDescriptorNode()
+                desc.depthAttachment = node.parse(descriptorManager, elem: depthAttachTag)
+            }
+        }
+        
+        if let stencilAttachTag = elem.firstChildWithTag("render-pass-stencil-attachment-descriptor") {
+            if let stencilAttachName = stencilAttachTag.valueForAttribute("ref") as? String {
+                desc.stencilAttachment = descriptorManager.renderPassStencilAttachmentDescriptors[stencilAttachName]!
+            } else {
+                let node = S3DXMLMTLRenderPassStencilAttachmentDescriptorNode()
+                desc.stencilAttachment = node.parse(descriptorManager, elem: stencilAttachTag)
+            }
+        }
         
         return desc
     }
