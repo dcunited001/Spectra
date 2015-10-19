@@ -36,16 +36,24 @@ class S3DXMLSpec: QuickSpec {
 //            
 //        }
 
-        //TODO: still need to test these, as they need to create real functions
-//        describe("S3DXMLMTLFunctionNode") {
-//            it("can parse a MTLFunction") {
-//                
-//            }
-//            
+        describe("S3DXMLMTLFunctionNode") {
+            let vertName = "basic_color_vertex"
+            let fragName = "basic_color_fragment"
+            let compName = "test_compute_function"
+            
+            it("can parse render and compute functions") {
+                let vert = descriptorManager.vertexFunctions[vertName]!
+                expect(vert.name) == vertName
+                let frag = descriptorManager.fragmentFunctions[fragName]!
+                expect(frag.name) == fragName
+                let comp = descriptorManager.computeFunctions["test_compute_function"]!
+                expect(comp.name) == compName
+            }
+            
 //            it("can parse from references") {
 //                
 //            }
-//        }
+        }
 
         describe("S3DXMLMTLVertexDescriptorNode") {
             it("can parse the attribute descriptor array") {
@@ -61,9 +69,9 @@ class S3DXMLSpec: QuickSpec {
                 expect(vertDesc.layouts[0].stepRate) == 1
             }
             
-            it("can parse from references") {
-                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
-            }
+//            it("can parse from references") {
+//                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
+//            }
         }
         
         describe("S3DXMLMTLTextureDescriptorNode") {
@@ -148,6 +156,8 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.rasterizationEnabled) == true
                 expect(desc.depthAttachmentPixelFormat) == MTLPixelFormat.Depth32Float
                 expect(desc.stencilAttachmentPixelFormat) == MTLPixelFormat.Stencil8
+                expect(desc.vertexFunction!.name) == "basic_color_vertex"
+                expect(desc.fragmentFunction!.name) == "basic_color_fragment"
                 //expect(desc.vertexDescriptor) == descriptorManager.vertexDescriptors["common_vertex_desc"]!
             }
         }
@@ -157,6 +167,7 @@ class S3DXMLSpec: QuickSpec {
                 let desc = descriptorManager.computePipelineDescriptors["compute_pipeline_desc"]!
                 expect(desc.label) == "compute-pipeline-descriptor"
                 expect(desc.threadGroupSizeIsMultipleOfThreadExecutionWidth) == true
+                expect(desc.computeFunction!.name) == "test_compute_function"
             }
         }
         
