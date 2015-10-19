@@ -135,12 +135,11 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.destinationAlphaBlendFactor) == MTLBlendFactor.OneMinusBlendAlpha
                 expect(desc.alphaBlendOperation) == MTLBlendOperation.Max
             }
+            
         }
         
-        describe("S3DXMLMTLRenderPipelineDescriptor") {
+        describe("S3DXMLMTLRenderPipelineDescriptorNode") {
             it("can parse a render pipeline descriptor") {
-                print(MTLPixelFormat.Depth32Float.rawValue)
-                print(MTLPixelFormat.Stencil8.rawValue)
                 let desc = descriptorManager.renderPipelineDescriptors["render_pipeline_desc"]!
                 expect(desc.label) == "render-pipeline-descriptor"
                 expect(desc.sampleCount) == 2
@@ -153,7 +152,7 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-        describe("S3DXMLMTLComputePipelineDescribe") {
+        describe("S3DXMLMTLComputePipelineDescribeNode") {
             it("can parse a compute pipeline descriptor") {
                 let desc = descriptorManager.computePipelineDescriptors["compute_pipeline_desc"]!
                 expect(desc.label) == "compute-pipeline-descriptor"
@@ -161,7 +160,7 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-        describe("S3DXMLMTLRenderPassColorAttachmentDescriptor") {
+        describe("S3DXMLMTLRenderPassColorAttachmentDescriptorNode") {
             it("can parse a render pass color attachment descriptor") {
                 let desc = descriptorManager.renderPassColorAttachmentDescriptors["rpass_color_attach_desc"]!
                 expect(desc.level) == 1
@@ -176,7 +175,7 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-        describe("S3DXMLMTLRenderPassDepthAttachmentDescriptor") {
+        describe("S3DXMLMTLRenderPassDepthAttachmentDescriptorNode") {
             it("can parse a render pass depth attachment descriptor") {
                 let desc = descriptorManager.renderPassDepthAttachmentDescriptors["rpass_depth_attach_desc"]!
                 expect(desc.level) == 1
@@ -192,7 +191,7 @@ class S3DXMLSpec: QuickSpec {
             }
         }
         
-        describe("S3DXMLMTLRenderPassStencilAttachmentDescriptor") {
+        describe("S3DXMLMTLRenderPassStencilAttachmentDescriptorNode") {
             it("can parse a render pass stencil attachment descriptor") {
                 let desc = descriptorManager.renderPassStencilAttachmentDescriptors["rpass_stencil_attach_desc"]!
                 expect(desc.level) == 1
@@ -206,19 +205,13 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.clearStencil) == 0
             }
         }
-//
-//        describe("S3DXMLMTLRenderPassDescriptor") {
-//            it("can parse a render pass descriptor") {
-//                let desc = descriptorManager.renderPassDescriptors["render_pass_desc"]!
-//                
-//            }
-//        }
         
-//        describe("S3DXMLMTLComputePipelineDescriptorNode") {
-//            it("can parse a compute pipeline descriptor") {
-//                //TODO: include compute function for tests
-//            }
-//        }
+        describe("S3DXMLMTLRenderPassDescriptorNode") {
+            it("can parse a render pass descriptor") {
+                let desc = descriptorManager.renderPassDescriptors["render_pass_desc"]!
+                
+            }
+        }
         
     }
 }
