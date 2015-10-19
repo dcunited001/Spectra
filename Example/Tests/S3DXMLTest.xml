@@ -13,7 +13,7 @@
         </vertex-buffer-layout-descriptors>
     </vertex-descriptor>
     
-<!--    <texture-descriptor/> -->
+<!-- <texture-descriptor/> -->
 
     <sampler-descriptor key="sampler_desc"
         label="stencil-descriptor"
@@ -55,11 +55,65 @@
         <!-- <xs:attribute name="pixel-format" type="mtlPixelFormat" /> -->
         <!-- <xs:attribute name="write-mask-ref" type="mtlColorWriteMask" default="All" /> -->
 
-<!-- <render-pipeline-descriptor key="render_pipeline_desc" /> -->
-<!-- <compute-pipeline-descriptor key="compute_pipeline_desc" /> -->
-<!-- <render-pass-color-attachment-descriptor key="rpass_color_attach_desc" /> -->
-<!-- <render-pass-depth-attachment-descriptor key="rpass_depth_attach_desc" /> -->
-<!-- <render-pass-stencil-attachment-descriptor key="rpass_stencil_attach_desc" /> -->
-<!-- <render-pass-descriptor key="rpass_descriptor" /> -->
-
+    <render-pipeline-descriptor key="render_pipeline_desc"
+        label="render-pipeline-descriptor"
+        sample-count="2"
+        alpha-to-coverage-enabled="true"
+        alpha-to-one-enabled="true"
+        rasterization-enabled="false"
+        depth-attachment-pixel-format="Depth32Float"
+        stencil-attachment-pixel-format="Stencil8" />
+        <!-- vertex-function-ref="" -->
+        <!-- fragment-function-ref="" -->
+        <!-- vertex-descriptor-ref="" -->
+        <!-- colorAttachments: MTLRenderPipelineColorAttachmentDescriptorArray -->
+        
+    <compute-pipeline-descriptor key="compute_pipeline_desc"
+        label="compute-pipeline-descriptor"
+        thread-group-size-is-multiple-of-thread-execution-width="true" />
+        <!-- compute-function-ref -->
+    
+    <render-pass-color-attachment-descriptor key="rpass_color_attach_desc"
+        level="1"
+        slice="1"
+        depth-plane="1"
+        resolve-level="1"
+        resolve-slice="1"
+        resolve-depth-plane="1"
+        load-action="Load"
+        store-action="Store" />
+        <!-- clearColor -->
+        <!-- texture? -->
+        <!-- resolve-texture? -->
+    
+    <render-pass-depth-attachment-descriptor key="rpass_depth_attach_desc"
+        level="1"
+        slice="1"
+        depth-plane="1"
+        resolve-level="1"
+        resolve-slice="1"
+        resolve-depth-plane="1"
+        load-action="Load"
+        store-action="Store"
+        clear-depth="2.0"
+        depth-resolve-filter="Min" />
+        <!-- texture? -->
+        <!-- resolve-texture? -->
+        
+    <render-pass-stencil-attachment-descriptor key="rpass_stencil_attach_desc"
+        level="1"
+        slice="1"
+        depth-plane="1"
+        resolve-level="1"
+        resolve-slice="1"
+        resolve-depth-plane="1"
+        load-action="Load"
+        store-action="Store"
+        clear-stencil="0" />
+        <!-- texture? -->
+        <!-- resolve-texture? -->
+        
+    <render-pass-descriptor key="render_pass_desc"
+    
+    />
 </root>
