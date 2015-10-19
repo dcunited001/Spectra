@@ -4,7 +4,7 @@
     <fragment-function key="basic_color_fragment"/>
     <compute-function key="test_compute_function"/>
     
-    <vertex-descriptor key="common_vertex_descriptor">
+    <vertex-descriptor key="common_vertex_desc">
         <vertex-attribute-descriptors>
             <vertex-attribute-descriptor name="pos"   format="Float4" offset="0" buffer-index="0" />
             <vertex-attribute-descriptor name="rgba"  format="Float4" offset="16" buffer-index="0" />
@@ -28,8 +28,8 @@
         array-length="100"
         cpu-cache-mode="WriteCombined"
         storage-mode="Shared" />
-<!-- usage="PixelFormatView"-->
-<!-- resource-options="" -->
+        <!-- usage="PixelFormatView"-->
+        <!-- resource-options="" -->
 
     <sampler-descriptor key="sampler_desc"
         label="stencil-descriptor"
@@ -56,7 +56,10 @@
     
     <depth-stencil-descriptor key="depth_stencil_desc"
         depth-compare-function="Never"
-        depth-write-enabled="true" />
+        depth-write-enabled="true">
+        <front-face-stencil ref="stencil_desc" />
+        <back-face-stencil ref="stencil_desc" />
+    </depth-stencil-descriptor>
         <!--    <xs:attribute name="front-face-stencil-ref" type="xs:string" default="nil" />-->
         <!--    <xs:attribute name="back-face-stencil-ref" type="xs:string" default="nil" />-->
 
@@ -81,7 +84,10 @@
         stencil-attachment-pixel-format="Stencil8">
         <vertex-function ref="basic_color_vertex" />
         <fragment-function ref="basic_color_fragment" />
-        <vertex-descriptor ref="common_vertex_descriptor" />
+        <vertex-descriptor ref="common_vertex_desc" />
+        <color-attachment-descriptors>
+            <color-attachment-descriptor ref="color_attach_desc" />
+        </color-attachment-descriptors>
         <!-- colorAttachments: MTLRenderPipelineColorAttachmentDescriptorArray -->
     </render-pipeline-descriptor>
         

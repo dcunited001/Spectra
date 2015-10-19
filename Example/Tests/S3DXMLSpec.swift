@@ -57,20 +57,20 @@ class S3DXMLSpec: QuickSpec {
 
         describe("S3DXMLMTLVertexDescriptorNode") {
             it("can parse the attribute descriptor array") {
-                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
+                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_desc"]!
                 expect(vertDesc.attributes[0].format) == MTLVertexFormat.Float4
                 expect(vertDesc.attributes[1].offset) == 16
             }
             
             it("can parse the buffer layout descriptor array") {
-                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
+                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_desc"]!
                 expect(vertDesc.layouts[0].stepFunction) == MTLVertexStepFunction.PerVertex
                 expect(vertDesc.layouts[0].stride) == 48
                 expect(vertDesc.layouts[0].stepRate) == 1
             }
             
 //            it("can parse from references") {
-//                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_descriptor"]!
+//                let vertDesc = descriptorManager.vertexDescriptors["common_vertex_desc"]!
 //            }
         }
         
@@ -129,6 +129,8 @@ class S3DXMLSpec: QuickSpec {
                 let desc = descriptorManager.depthStencilDescriptors["depth_stencil_desc"]!
                 expect(desc.depthCompareFunction) == MTLCompareFunction.Never
                 expect(desc.depthWriteEnabled) == true
+                expect(desc.frontFaceStencil) == descriptorManager.stencilDescriptors["stencil_desc"]
+                expect(desc.backFaceStencil) == descriptorManager.stencilDescriptors["stencil_desc"]
             }
         }
         
@@ -158,7 +160,8 @@ class S3DXMLSpec: QuickSpec {
                 expect(desc.stencilAttachmentPixelFormat) == MTLPixelFormat.Stencil8
                 expect(desc.vertexFunction!.name) == "basic_color_vertex"
                 expect(desc.fragmentFunction!.name) == "basic_color_fragment"
-                //expect(desc.vertexDescriptor) == descriptorManager.vertexDescriptors["common_vertex_desc"]!
+                expect(desc.vertexDescriptor) == descriptorManager.vertexDescriptors["common_vertex_desc"]!
+                expect(desc.colorAttachments[0]) == descriptorManager.colorAttachmentDescriptors["color_attach_desc"]
             }
         }
         

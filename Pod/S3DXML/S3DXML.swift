@@ -61,9 +61,9 @@ public class S3DXML {
             case "vertex-function":
                 descriptorManager.vertexFunctions[key!] = descriptorManager.vertexFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
             case "fragment-function":
-                descriptorManager.vertexFunctions[key!] = descriptorManager.fragmentFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
+                descriptorManager.fragmentFunctions[key!] = descriptorManager.fragmentFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
             case "compute-function":
-                descriptorManager.vertexFunctions[key!] = descriptorManager.computeFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
+                descriptorManager.computeFunctions[key!] = descriptorManager.computeFunctions[key!] ?? S3DXMLMTLFunctionNode().parse(descriptorManager, elem: elem)
             case "vertex-descriptor":
                 descriptorManager.vertexDescriptors[key!] = descriptorManager.vertexDescriptors[key!] ?? S3DXMLMTLVertexDescriptorNode().parse(descriptorManager, elem: elem)
             case "texture-descriptor":
@@ -80,8 +80,7 @@ public class S3DXML {
                 descriptorManager.computePipelineDescriptors[key!] = descriptorManager.computePipelineDescriptors[key!] ??
                     S3DXMLMTLComputePipelineDescriptorNode().parse(descriptorManager, elem: elem)
             case "render-pipeline-descriptor":
-                descriptorManager.renderPipelineDescriptors[key!] = descriptorManager.renderPipelineDescriptors[key!] ??
-                    S3DXMLMTLRenderPipelineDescriptorNode().parse(descriptorManager, elem: elem)
+                descriptorManager.renderPipelineDescriptors[key!] = descriptorManager.renderPipelineDescriptors[key!] ?? S3DXMLMTLRenderPipelineDescriptorNode().parse(descriptorManager, elem: elem)
             case "render-pass-color-attachment-descriptor":
                 descriptorManager.renderPassColorAttachmentDescriptors[key!] = descriptorManager.renderPassColorAttachmentDescriptors[key!] ??
                     S3DXMLMTLRenderPassColorAttachmentDescriptorNode().parse(descriptorManager, elem: elem)
@@ -384,6 +383,24 @@ public class S3DXMLMTLDepthStencilDescriptorNode: S3DXMLNodeParser {
             depthDesc.depthWriteEnabled = true
         }
         
+        if let frontFaceTag = elem.firstChildWithTag("front-face-stencil") {
+            if let frontFaceName = frontFaceTag.valueForAttribute("ref") as? String {
+                depthDesc.frontFaceStencil = descriptorManager.stencilDescriptors[frontFaceName]!
+            } else {
+                let node = S3DXMLMTLStencilDescriptorNode()
+                depthDesc.frontFaceStencil = node.parse(descriptorManager, elem: frontFaceTag)
+            }
+        }
+        
+        if let backFaceTag = elem.firstChildWithTag("back-face-stencil") {
+            if let backFaceName = backFaceTag.valueForAttribute("ref") as? String {
+                depthDesc.backFaceStencil = descriptorManager.stencilDescriptors[backFaceName]!
+            } else {
+                let node = S3DXMLMTLStencilDescriptorNode()
+                depthDesc.backFaceStencil = node.parse(descriptorManager, elem: backFaceTag)
+            }
+        }
+        
         return depthDesc
     }
 }
@@ -451,22 +468,27 @@ public class S3DXMLMTLRenderPipelineDescriptorNode: S3DXMLNodeParser {
         
         if let fragmentFunctionTag = elem.firstChildWithTag("fragment-function") {
             if let fragmentFunctionName = fragmentFunctionTag.valueForAttribute("ref") as? String {
-                print(fragmentFunctionName)
-                print(descriptorManager.fragmentFunctions)
                 desc.fragmentFunction = descriptorManager.fragmentFunctions[fragmentFunctionName]!
             }
         }
         
         if let vertexDescTag = elem.firstChildWithTag("vertex-descriptor") {
             if let vertexDescName = vertexDescTag.valueForAttribute("ref") as? String {
+                print(descriptorManager.vertexDescriptors)
                 desc.vertexDescriptor = descriptorManager.vertexDescriptors[vertexDescName]!
             }
         }
         
-        
-        
-        //TODO: vertex-descriptor
-        //TODO: color attachments array
+        let colorAttachSelector = "color-attachment-descriptors > color-attachment-descriptor"
+        elem.enumerateElementsWithCSS(colorAttachSelector) {(el, idx, stop) in
+            if let colorAttachRef = el.valueForAttribute("ref") as? String {
+                let colorAttach = descriptorManager.colorAttachmentDescriptors[colorAttachRef]!
+                desc.colorAttachments[Int(idx)] = colorAttach
+            } else {
+                let node = S3DXMLMTLColorAttachmentDescriptorNode()
+                desc.colorAttachments[Int(idx)] = node.parse(descriptorManager, elem: elem)
+            }
+        }
         
         if let label = elem.valueForAttribute("label") as? String {
             desc.label = label
@@ -503,7 +525,11 @@ public class S3DXMLMTLComputePipelineDescriptorNode: S3DXMLNodeParser {
     public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
         let desc = NodeType()
         
-        //TODO: compute function
+        if let computeFunctionTag = elem.firstChildWithTag("compute-function") {
+            if let computeFunctionName = computeFunctionTag.valueForAttribute("ref") as? String {
+                desc.computeFunction = descriptorManager.computeFunctions[computeFunctionName]!
+            }
+        }
         
         if let label = elem.valueForAttribute("label") as? String {
             desc.label = label
