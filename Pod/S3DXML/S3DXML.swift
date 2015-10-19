@@ -10,16 +10,26 @@ import Foundation
 import Metal
 import Ono
 
+public class SpectraStateManager {
+    public var renderPipelineStates: [String: MTLRenderPipelineState] = [:]
+    public var computePipelineStates: [String: MTLComputePipelineState] = [:]
+    public var depthStencilStates: [String: MTLDepthStencilState] = [:]
+    public var samplerStates: [String: MTLSamplerState] = [:]
+    
+    public init() {
+        
+    }
+}
+
 public class SpectraDescriptorManager {
     public var library: MTLLibrary // TODO: support multiple libraries?
-    //TODO: load mtlEnums
     
     public var xsd: S3DXSD
     public var mtlEnums: [String: S3DMtlEnum] = [:]
     public var vertexFunctions: [String: MTLFunction] = [:]
     public var fragmentFunctions: [String: MTLFunction] = [:]
     public var computeFunctions: [String: MTLFunction] = [:]
-    
+
     public var vertexDescriptors: [String: MTLVertexDescriptor] = [:]
     public var textureDescriptors: [String: MTLTextureDescriptor] = [:]
     public var samplerDescriptors: [String: MTLSamplerDescriptor] = [:]
