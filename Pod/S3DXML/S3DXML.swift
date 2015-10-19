@@ -239,7 +239,7 @@ public class S3DXMLMTLTextureDescriptorNode: S3DXMLNodeParser {
         //TODO: resourceOptions is option set type
         // texDesc.resourceOptions?  optional?  set later?
         if let cpuCacheMode = elem.valueForAttribute("cpu-cache-mode") as? String {
-            let mtlEnum = descriptorManager.mtlEnums["mtlTextureType"]!
+            let mtlEnum = descriptorManager.mtlEnums["mtlCpuCacheMode"]!
             let enumVal = UInt(mtlEnum.getValue(cpuCacheMode))
             texDesc.cpuCacheMode = MTLCPUCacheMode(rawValue: enumVal)!
         }
@@ -396,32 +396,32 @@ public class S3DXMLMTLColorAttachmentDescriptorNode: S3DXMLNodeParser {
         if let _ = elem.valueForAttribute("blending-enabled") as? String {
             desc.blendingEnabled = true
         }
-        if let sourceRgbBlendFactor = elem.valueForAttribute("-blend-factor") as? String {
+        if let sourceRgbBlendFactor = elem.valueForAttribute("source-rgb-blend-factor") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlBlendFactor"]!
             let enumVal = UInt(mtlEnum.getValue(sourceRgbBlendFactor))
             desc.sourceRGBBlendFactor = MTLBlendFactor(rawValue: enumVal)!
         }
-        if let destRgbBlendFactor = elem.valueForAttribute("-blend-factor") as? String {
+        if let destRgbBlendFactor = elem.valueForAttribute("destination-rgb-blend-factor") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlBlendFactor"]!
             let enumVal = UInt(mtlEnum.getValue(destRgbBlendFactor))
             desc.destinationRGBBlendFactor = MTLBlendFactor(rawValue: enumVal)!
         }
-        if let rgbBlendOp = elem.valueForAttribute("-blend-operation") as? String {
+        if let rgbBlendOp = elem.valueForAttribute("rgb-blend-operation") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlBlendOperation"]!
             let enumVal = UInt(mtlEnum.getValue(rgbBlendOp))
             desc.rgbBlendOperation = MTLBlendOperation(rawValue: enumVal)!
         }
-        if let sourceAlphaBlendFactor = elem.valueForAttribute("-blend-factor") as? String {
+        if let sourceAlphaBlendFactor = elem.valueForAttribute("source-alpha-blend-factor") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlBlendFactor"]!
             let enumVal = UInt(mtlEnum.getValue(sourceAlphaBlendFactor))
             desc.sourceAlphaBlendFactor = MTLBlendFactor(rawValue: enumVal)!
         }
-        if let destAlphaBlendFactor = elem.valueForAttribute("-blend-factor") as? String {
+        if let destAlphaBlendFactor = elem.valueForAttribute("destination-alpha-blend-factor") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlBlendFactor"]!
             let enumVal = UInt(mtlEnum.getValue(destAlphaBlendFactor))
-            desc.destinationRGBBlendFactor = MTLBlendFactor(rawValue: enumVal)!
+            desc.destinationAlphaBlendFactor = MTLBlendFactor(rawValue: enumVal)!
         }
-        if let alphaBlendOp = elem.valueForAttribute("-blend-operation") as? String {
+        if let alphaBlendOp = elem.valueForAttribute("alpha-blend-operation") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlBlendOperation"]!
             let enumVal = UInt(mtlEnum.getValue(alphaBlendOp))
             desc.alphaBlendOperation = MTLBlendOperation(rawValue: enumVal)!
@@ -431,7 +431,6 @@ public class S3DXMLMTLColorAttachmentDescriptorNode: S3DXMLNodeParser {
         return desc
     }
 }
-
 
 public class S3DXMLMTLRenderPipelineDescriptorNode: S3DXMLNodeParser {
     public typealias NodeType = MTLRenderPipelineDescriptor
@@ -445,6 +444,9 @@ public class S3DXMLMTLRenderPipelineDescriptorNode: S3DXMLNodeParser {
         
         if let label = elem.valueForAttribute("label") as? String {
             desc.label = label
+        }
+        if let sampleCount = elem.valueForAttribute("sample-count") as? String {
+            desc.sampleCount = Int(sampleCount)!
         }
         if let _ = elem.valueForAttribute("alpha-to-coverage-enabled") as? String {
             desc.alphaToCoverageEnabled = true
@@ -499,22 +501,22 @@ public class S3DXMLMTLRenderPassColorAttachmentDescriptorNode: S3DXMLNodeParser 
             desc.level = Int(level)!
         }
         if let slice = elem.valueForAttribute("slice") as? String {
-            desc.level = Int(slice)!
+            desc.slice = Int(slice)!
         }
         if let depthPlane = elem.valueForAttribute("depth-plane") as? String {
-            desc.level = Int(depthPlane)!
+            desc.depthPlane = Int(depthPlane)!
         }
         
         //TODO: resolveTexture & ref
         
         if let resolveLevel = elem.valueForAttribute("resolve-level") as? String {
-            desc.level = Int(resolveLevel)!
+            desc.resolveLevel = Int(resolveLevel)!
         }
         if let resolveSlice = elem.valueForAttribute("resolve-slice") as? String {
-            desc.level = Int(resolveSlice)!
+            desc.resolveSlice = Int(resolveSlice)!
         }
         if let resolveDepthPlane = elem.valueForAttribute("resolve-depth-plane") as? String {
-            desc.level = Int(resolveDepthPlane)!
+            desc.resolveDepthPlane = Int(resolveDepthPlane)!
         }
         if let loadAction = elem.valueForAttribute("load-action") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlLoadAction"]!
@@ -544,22 +546,22 @@ public class S3DXMLMTLRenderPassDepthAttachmentDescriptorNode: S3DXMLNodeParser 
             desc.level = Int(level)!
         }
         if let slice = elem.valueForAttribute("slice") as? String {
-            desc.level = Int(slice)!
+            desc.slice = Int(slice)!
         }
         if let depthPlane = elem.valueForAttribute("depth-plane") as? String {
-            desc.level = Int(depthPlane)!
+            desc.depthPlane = Int(depthPlane)!
         }
         
         //TODO: resolveTexture & ref
         
         if let resolveLevel = elem.valueForAttribute("resolve-level") as? String {
-            desc.level = Int(resolveLevel)!
+            desc.resolveLevel = Int(resolveLevel)!
         }
         if let resolveSlice = elem.valueForAttribute("resolve-slice") as? String {
-            desc.level = Int(resolveSlice)!
+            desc.resolveSlice = Int(resolveSlice)!
         }
         if let resolveDepthPlane = elem.valueForAttribute("resolve-depth-plane") as? String {
-            desc.level = Int(resolveDepthPlane)!
+            desc.resolveDepthPlane = Int(resolveDepthPlane)!
         }
         if let loadAction = elem.valueForAttribute("load-action") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlLoadAction"]!
@@ -595,22 +597,22 @@ public class S3DXMLMTLRenderPassStencilAttachmentDescriptorNode: S3DXMLNodeParse
             desc.level = Int(level)!
         }
         if let slice = elem.valueForAttribute("slice") as? String {
-            desc.level = Int(slice)!
+            desc.slice = Int(slice)!
         }
         if let depthPlane = elem.valueForAttribute("depth-plane") as? String {
-            desc.level = Int(depthPlane)!
+            desc.depthPlane = Int(depthPlane)!
         }
         
         //TODO: resolveTexture & ref
         
         if let resolveLevel = elem.valueForAttribute("resolve-level") as? String {
-            desc.level = Int(resolveLevel)!
+            desc.resolveLevel = Int(resolveLevel)!
         }
         if let resolveSlice = elem.valueForAttribute("resolve-slice") as? String {
-            desc.level = Int(resolveSlice)!
+            desc.resolveSlice = Int(resolveSlice)!
         }
         if let resolveDepthPlane = elem.valueForAttribute("resolve-depth-plane") as? String {
-            desc.level = Int(resolveDepthPlane)!
+            desc.resolveDepthPlane = Int(resolveDepthPlane)!
         }
         if let loadAction = elem.valueForAttribute("load-action") as? String {
             let mtlEnum = descriptorManager.mtlEnums["mtlLoadAction"]!
@@ -632,7 +634,7 @@ public class S3DXMLMTLRenderPassStencilAttachmentDescriptorNode: S3DXMLNodeParse
 
 public class S3DXMLMTLRenderPassDescriptorNode: S3DXMLNodeParser {
     public typealias NodeType = MTLRenderPassDescriptor
-    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+    public func parse(descriptorManager: SpectraDescriptorManager, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
         let desc = NodeType()
         
         //TODO: color attachment array
