@@ -23,14 +23,12 @@ public class SceneGraph {
     let nodeGenAttr = "spectra-node-gen"
     let nodeRefAttr = "spectra-node-ref"
     
-    public init(xmlData: NSData) {
-//        let xmlData = S3DXSD.readXSD("Spectra3D")
-//        self.s3dDefinitions = S3DXSD(data: xmlData)
+    public init() {
+        
     }
     
-    public func getS3DDefinitions() {
-        // make s3dDefinitions optional?
-        
+    public func loadXML(data: NSData) {
+        //TODO: scene graph data from xml into objects
     }
     
     public func createGeneratedNodes(generatorMap: [String:NodeGenerator], var nodeMap: SceneNodeMap) -> SceneNodeMap {

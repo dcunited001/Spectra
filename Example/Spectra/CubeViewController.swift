@@ -19,25 +19,18 @@ class CubeViewController: MetalViewController {
     var descMan: Spectra.SpectraDescriptorManager!
     var stateMan: Spectra.SpectraStateManager!
     
-    // i wish i could more strongly constrain the keys for these maps
-    // - but i can't create a protocol for enums 
-    // - AND type constraints apply to function params, regardless of whether those types are functionally equivalent
-    // - ... womp, womp
-//    enum CubePipelineKey: String {
-//        case Basic = "basic"
-//        case ColorShift = "colorShift"
-//        case ColorShiftContinuous = "colorShiftContinuous"
-//    }
-    
     let cubeKey = "spectra_cube"
     var pipelineStateMap: Spectra.RenderPipelineStateMap = [:]
     var encodableDataMap: Spectra.SceneEncodableDataMap = [:]
+    var cubeGenerator: Spectra.CubeGenerator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stateMan = Spectra.SpectraStateManager()
         loadDescriptorManager()
         loadRenderPipelineStates()
+        
+        cubeGenerator = Spectra.CubeGenerator()
         
         scene = Spectra.Scene()
         setupPerspective()
@@ -75,12 +68,11 @@ class CubeViewController: MetalViewController {
     }
     
     func setupSceneGraph() {
-        let bundle = NSBundle(forClass: CubeViewController.self)
-        let path = bundle.pathForResource("Cube", ofType: "xml")
-        
-        let data = NSData(contentsOfFile: path!)
-        let sceneGraph = SceneGraph(xmlData: data!)
-        
+//        let bundle = NSBundle(forClass: CubeViewController.self)
+//        let path = bundle.pathForResource("Cube", ofType: "xml")
+//        let data = NSData(contentsOfFile: path!)
+//        let sceneGraph = SceneGraph(xmlData: data!)
+        let sceneGraph = SceneGraph()
         scene!.sceneGraph = sceneGraph
     }
     
@@ -101,8 +93,10 @@ class CubeViewController: MetalViewController {
     
     func setupScene() {
         scene!.pipelineStateMap = pipelineStateMap
+        
+        // renderer strategy
+        // updater strategy
     }
-    
 }
 
 //    static let renderFunctionMap: Spectra.RenderPipelineFunctionMap = [
