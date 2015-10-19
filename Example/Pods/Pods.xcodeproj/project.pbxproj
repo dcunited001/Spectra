@@ -48,6 +48,8 @@
 		3A92AEE86034356AF8987F20EE1F82DF /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715CB6E655103CC8D50D6C2375D8978D /* EndWith.swift */; };
 		3AEAC447B09E7AABC140654C8529BC94 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C202AAEE2299425A8014EB8718B267D /* MatcherFunc.swift */; };
 		3B65216432F068224900F98866EB4B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C911CDC9E5B648AB9C0E573B15600BB /* Foundation.framework */; };
+		43DADE601BD52AE800986774 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5E1BD52A8D00986774 /* StateManager.swift */; settings = {ASSET_TAGS = (); }; };
+		43DADE611BD52AEB00986774 /* DescriptorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5C1BD52A8400986774 /* DescriptorManager.swift */; settings = {ASSET_TAGS = (); }; };
 		447E920797AE188521E15E8F9DC9DDFE /* Spectra3D.xsd in Resources */ = {isa = PBXBuildFile; fileRef = BFA49DC08AE5368A3CA84FF1C11353E0 /* Spectra3D.xsd */; };
 		459689BFB01A7FCD8AC323ECBF8F6EAC /* Pods-Spectra_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9DE94B776354E0B12604E298B9CC925 /* Pods-Spectra_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		477EC470CABFA47382642A804A8A866F /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = C31679B064F867F0A311229391639FEA /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -339,6 +341,9 @@
 		3F71409D90F3AB40F87FFD82B3D9F414 /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		4181D49B4344A3E2C92F5E006414F563 /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		42A7045B62526AD327630DED9C698BD8 /* S3DXSD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = S3DXSD.swift; sourceTree = "<group>"; };
+		43DADE591BD51B3000986774 /* SpectraSceneGraph.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpectraSceneGraph.xsd; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
+		43DADE5C1BD52A8400986774 /* DescriptorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptorManager.swift; sourceTree = "<group>"; };
+		43DADE5E1BD52A8D00986774 /* StateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		46E625A2EEE11342EC4BCCE0A37B7BFD /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		476DEF83A325F04796774ECD8F1A52F6 /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
 		48A1742B3CE5FE65E71486494CD38AE8 /* Pods-Spectra_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -796,6 +801,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA49DC08AE5368A3CA84FF1C11353E0 /* Spectra3D.xsd */,
+				43DADE591BD51B3000986774 /* SpectraSceneGraph.xsd */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -842,6 +848,8 @@
 			children = (
 				0D73BCFC0070B0A314D5EB0DE962D102 /* S3DXML.swift */,
 				42A7045B62526AD327630DED9C698BD8 /* S3DXSD.swift */,
+				43DADE5C1BD52A8400986774 /* DescriptorManager.swift */,
+				43DADE5E1BD52A8D00986774 /* StateManager.swift */,
 			);
 			path = S3DXML;
 			sourceTree = "<group>";
@@ -1504,6 +1512,7 @@
 				FE24E4E86A22347FC84944EEDC93867A /* Camable.swift in Sources */,
 				B3F4A12EA12484E6AF4259D7937595A6 /* Cube.swift in Sources */,
 				B7E8DBEC48C2732131FABD9CFE42F040 /* EncodableData.swift in Sources */,
+				43DADE611BD52AEB00986774 /* DescriptorManager.swift in Sources */,
 				7679663C3DACF0B075E2731EC7AE1347 /* InflightResourceManager.swift in Sources */,
 				8843CEF05942940DC07806D1E73CCA6A /* Modelable.swift in Sources */,
 				DA663A9BC1B09A467B513465DC670C1B /* Node.swift in Sources */,
@@ -1515,6 +1524,7 @@
 				7081E9FF2829AA5A608750C3A6E2A252 /* Quad.swift in Sources */,
 				4EC3BB99CEC47E3D6D761F1086B93AD5 /* Renderer.swift in Sources */,
 				4E9A5018064973486AEF3F0E21718DF1 /* RenderStage.swift in Sources */,
+				43DADE601BD52AE800986774 /* StateManager.swift in Sources */,
 				A41175CEF2997B4E47A2337F19E38B58 /* RenderStrategy.swift in Sources */,
 				BA16D81B6F884FE7AFAE7CC5427C5E55 /* S3DXML.swift in Sources */,
 				D6368806F3B23C35DC39B35DADAB294E /* S3DXSD.swift in Sources */,
@@ -1680,6 +1690,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C2A7901C7CE15461BBFD413B39F8ABD /* EZAudio.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1697,6 +1708,7 @@
 				PRODUCT_NAME = EZAudio;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2262,6 +2274,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C2A7901C7CE15461BBFD413B39F8ABD /* EZAudio.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
