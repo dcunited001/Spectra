@@ -30,6 +30,34 @@
         <perspective-arg name="far" value="100.0" />
     </perspective>
     
+    <mesh-generator key="cubeGen" type="cube">
+        <mesh-generator-args>
+            <mesh-generator-arg key="test" type="string" value="test" />
+        </mesh-generator-args>
+    </mesh-generator>
+    
+    <!-- create mesh using generator -->
+    <mesh key="cubeMesh" mesh-generator-ref="cubeGen" />
+
+    <!-- create mesh by specifying points -->
+    
+    <!-- don't... just dont... don't even use this
+     - write a generator or use model i/o or something
+     - map to the appropriate scene graph keys -->
+
+<!--    <mesh key="quadMesh" primitive-type="triangle">-->
+<!--        <mesh-data-sequence>-->
+<!--            <mesh-data key="pos">-1 -1 0 1 -1 1 0 1 1 -1 0 1 1 1 0 1</mesh-data>-->
+<!--            <mesh-data key="rgba">-1 -1 0 1 -1 1 0 1 1 -1 0 1 1 1 0 1</mesh-data>-->
+<!--            <mesh-data key="tex">-1 -1 0 1 -1 1 0 1 1 -1 0 1 1 1 0 1</mesh-data>-->
+<!--        </mesh-data-sequence>-->
+<!--        <mesh-data-map-sequence>-->
+<!--            <mesh-data-map key="triangle_vertex_map">0 1 3;3 2 0</mesh-data-map>-->
+<!--            <mesh-data-map key="face_vertex_map">0 1 2 3</mesh-data-map>-->
+<!--            <mesh-data-map key="face_triangle_map"></mesh-data-map>-->
+<!--        </mesh-data-map-sequence>-->
+<!--    </mesh>-->
+
     <!-- node -->
     <!-- nodes can have subnodes -->
     <!-- nodes can be loaded from model i/o -->
