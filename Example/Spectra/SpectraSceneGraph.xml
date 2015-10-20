@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<!-- world uniforms -->
+<view key="world">
+    <uniforms pos="0 0 1 1" rotation="1 0 0 0" scale="1 1 1 0" />
+</view>
+
+<!-- camera -->
+<camera key="default" pos="0 0 1 1" center="0 0 0 1" up="0 1 0 0" />
+
+<!-- node -->
+<!-- nodes can have subnodes -->
+<!-- nodes can be loaded from model i/o -->
+
+<!-- node-group -->
+<!-- groups nodes logically based on keys, etc -->
+
+</root>
