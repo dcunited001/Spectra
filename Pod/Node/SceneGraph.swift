@@ -14,35 +14,81 @@
 
 import Ono
 
+public class Mesh {}
+public class MeshData {}
+public class MeshDataMap {}
+public class MeshGenerator {}
+public class NodeGroup {}
+
 public class SceneGraph {
-//    public var s3dDefinitions: S3DXSD
-    public var xml: ONOXMLDocument?
+    
+    let nodeGenAttr = "spectra-node-gen"
+    let nodeRefAttr = "spectra-node-ref"
+    
+    public var perspectives: [String: Perspectable] = [:]
+    public var views: [String: WorldView] = [:]
+    public var cameras: [String: Camable] = [:]
+
+    public var nodes: [String: Node] = [:]
+    public var nodeGroups: [String: NodeGroup] = [:]
+    public var meshes: [String: Mesh] = [:]
+    public var meshData: [String: MeshData] = [:]
+    public var meshDataMap: [String: MeshDataMap] = [:]
+    public var meshGenerators: [String: MeshGenerator] = [:]
+    
+    private var viewMonads: [String: (() -> WorldView)] = [:] //final?
+    private var cameraMonads: [String: (() -> Camable)] = [:] //final?
+    
+    // resources
+    // - buffers? (encodable data or buffer pools)
+    // - inputs?
+    // - textures?
     
     public init() {
         
     }
     
-    public func loadXML(data: NSData) {
-        //TODO: scene graph data from xml into objects
+//    public func loadXML(data: NSData) {
+//        //TODO: scene graph data from xml into objects
+//    }
+    
+//    public func createGeneratedNodes(generatorMap: [String:NodeGenerator], var nodeMap: SceneNodeMap) -> SceneNodeMap {
+//        xml!.enumerateElementsWithCSS("mesh[\(nodeGenAttr)]", block: { (elem) -> Void in
+//            let nodeGenName = elem.valueForAttribute(self.nodeGenAttr) as! String
+//            let nodeId = elem.valueForAttribute("id") as! String
+//            nodeMap[nodeId] = generatorMap[nodeGenName]!.generate()
+//        })
+//        
+//        return nodeMap
+//    }
+//    
+//    public func createRefNodes(var nodeMap: SceneNodeMap) -> SceneNodeMap {
+//        xml!.enumerateElementsWithCSS("mesh[\(nodeRefAttr)]", block: { (elem) -> Void in
+//            let nodeRefName = elem.valueForAttribute(self.nodeRefAttr) as! String
+//            let nodeId = elem.valueForAttribute("id") as! String
+//            nodeMap[nodeId] = nodeMap[nodeRefName]
+//        })
+//        
+//        return nodeMap
+//    }
+    
+    //TODO: going to try out these protocol monad lists on a few types
+    // - so more complicated types can be instantiated via xml
+    // - or (for view/camera) i may just want to follow the perspectiveArgs example
+    public func registerViewMonad(key: String, monad: (() -> WorldView)) {
+        viewMonads[key] = monad
     }
     
-    public func createGeneratedNodes(generatorMap: [String:NodeGenerator], var nodeMap: SceneNodeMap) -> SceneNodeMap {
-        xml!.enumerateElementsWithCSS("mesh[\(nodeGenAttr)]", block: { (elem) -> Void in
-            let nodeGenName = elem.valueForAttribute(self.nodeGenAttr) as! String
-            let nodeId = elem.valueForAttribute("id") as! String
-            nodeMap[nodeId] = generatorMap[nodeGenName]!.generate()
-        })
-        
-        return nodeMap
+    public func getViewMonad(key: String) -> (() -> WorldView)? {
+        return viewMonads[key]
     }
     
-    public func createRefNodes(var nodeMap: SceneNodeMap) -> SceneNodeMap {
-        xml!.enumerateElementsWithCSS("mesh[\(nodeRefAttr)]", block: { (elem) -> Void in
-            let nodeRefName = elem.valueForAttribute(self.nodeRefAttr) as! String
-            let nodeId = elem.valueForAttribute("id") as! String
-            nodeMap[nodeId] = nodeMap[nodeRefName]
-        })
-        
-        return nodeMap
+    public func registerCameraMonad(key: String, monad: (() -> Camable)) {
+        cameraMonads[key] = monad
     }
+    
+    public func getCameraMonad(key: String) -> (() -> Camable)? {
+        return cameraMonads[key]
+    }
+    
 }
