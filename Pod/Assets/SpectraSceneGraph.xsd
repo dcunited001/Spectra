@@ -99,6 +99,11 @@
     <element name="node-sequence" type="nodeSequence" />
     
     <complexType name="mesh">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <attribute name="primitive-type" type="string" default="triangle" />
+        <!-- how to define args for mesh-generator? -->
+        <attribute name="mesh-generator-ref" type="string" />
         <all>
             <element ref="mesh-data-sequence" />
             <element ref="mesh-data-map-sequence" />
@@ -113,16 +118,11 @@
     <element name="mesh-sequence" type="meshSequence" />
     
     <complexType name="meshData">
-        <!-- data should mostly be created by user (XML is slow) -->
+        <!-- data should mostly be created in program (XML is slow) -->
         <simpleContent>
             <extension base="string">
                 <attribute name="key" type="string" />
                 <attribute name="ref" type="string" />
-                <!-- how to define args for mesh-generator? -->
-                <attribute name="mesh-generator-ref" type="string" />
-                <attribute name="mesh-generator-args-ref" type="string" />
-                <!-- how to convert this to float4/int4/etc? -->
-                <attribute name="data-type" type="string" />
             </extension>
         </simpleContent>
     </complexType>
@@ -138,7 +138,8 @@
     <complexType name="meshDataMap">
         <attribute name="key" type="string" />
         <attribute name="ref" type="string" />
-        <attribute name="map-type" type="string" /> <!-- specify triangle/face/etc -->
+        <attribute name="map-from" type="string" /> <!-- specify triangle/face/etc -->
+        <attribute name="map-to" type="string" /> <!-- specify triangle/face/vertex -->
     </complexType>
     <element name="mesh-data-map" />
     
@@ -152,6 +153,10 @@
     <complexType name="meshGenerator">
         <attribute name="key" type="string" />
         <attribute name="ref" type="string" />
+        <attribute name="type" type="string" />
+        <all>
+            <element ref="mesh-generator-args" />
+        </all>
     </complexType>
     <element name="mesh-generator" type="meshGenerator" />
     
@@ -165,6 +170,7 @@
     <element name="mesh-generator-args" type="meshGeneratorArgs" />
     
     <complexType name="meshGeneratorArg">
+        <attribute name="key" type="string" />
         <attribute name="type" type="string" />
         <attribute name="value" type="string" />
     </complexType>
