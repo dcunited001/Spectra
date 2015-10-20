@@ -81,8 +81,8 @@ class CubeViewController: MetalViewController {
     }
     
     func setupNodeMap() {
-        scene!.sceneGraph!.createGeneratedNodes(scene!.nodeGeneratorMap, nodeMap: scene!.nodeMap)
-        scene!.sceneGraph!.createRefNodes(scene!.nodeMap)
+//        scene!.sceneGraph!.createGeneratedNodes(scene!.nodeGeneratorMap, nodeMap: scene!.nodeMap)
+//        scene!.sceneGraph!.createRefNodes(scene!.nodeMap)
     }
     
     func setupObjects() {

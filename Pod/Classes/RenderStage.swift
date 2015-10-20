@@ -8,8 +8,8 @@
 
 import Foundation
 
-public typealias NodeGroup = [String:Node]
-public typealias RenderStageNodeSelect = ((NodeGroup, [String]) -> [Node])
+public typealias NodeGroupz = [String:Node]
+public typealias RenderStageNodeSelect = ((NodeGroupz, [String]) -> [Node])
 public typealias RenderStageNodeEncodeBlock = ((MTLRenderCommandEncoder, Node) -> Void)
 public typealias RenderStageEncodeBlock = ((Renderer, [Node], RenderStageNodeEncodeBlock?) -> Void)
 public typealias RenderStageTransitionBlock = ((Renderer, Renderer?) -> RenderEncoderTransition)
@@ -22,13 +22,13 @@ public protocol RenderStage: class {
     var nodeEncodeBlock: RenderStageNodeEncodeBlock? { get set }
     var transitionBlock: RenderStageTransitionBlock? { get set }
     
-    func selectNodes(nodeGroup: NodeGroup, keys: [String])
+    func selectNodes(nodeGroup: NodeGroupz, keys: [String])
     func encode(renderer: Renderer, nodes: [Node])
     func transition(renderer: Renderer, nextRenderer: Renderer?) -> RenderEncoderTransition?
 }
 
 extension RenderStage {
-    public func selectNodes(nodeGroup: NodeGroup, keys: [String]) {
+    public func selectNodes(nodeGroup: NodeGroupz, keys: [String]) {
         nodes = nodeSelectBlock!(nodeGroup, keys)
     }
     
