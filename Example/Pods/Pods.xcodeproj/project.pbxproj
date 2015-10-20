@@ -48,6 +48,7 @@
 		3A92AEE86034356AF8987F20EE1F82DF /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715CB6E655103CC8D50D6C2375D8978D /* EndWith.swift */; };
 		3AEAC447B09E7AABC140654C8529BC94 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C202AAEE2299425A8014EB8718B267D /* MatcherFunc.swift */; };
 		3B65216432F068224900F98866EB4B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C911CDC9E5B648AB9C0E573B15600BB /* Foundation.framework */; };
+		43B74F491BD666FB009D9BED /* SceneGraphXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE621BD52CD500986774 /* SceneGraphXML.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE601BD52AE800986774 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5E1BD52A8D00986774 /* StateManager.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE611BD52AEB00986774 /* DescriptorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5C1BD52A8400986774 /* DescriptorManager.swift */; settings = {ASSET_TAGS = (); }; };
 		447E920797AE188521E15E8F9DC9DDFE /* Spectra3D.xsd in Resources */ = {isa = PBXBuildFile; fileRef = BFA49DC08AE5368A3CA84FF1C11353E0 /* Spectra3D.xsd */; };
@@ -344,6 +345,7 @@
 		43DADE591BD51B3000986774 /* SpectraSceneGraph.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpectraSceneGraph.xsd; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		43DADE5C1BD52A8400986774 /* DescriptorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptorManager.swift; sourceTree = "<group>"; };
 		43DADE5E1BD52A8D00986774 /* StateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		43DADE621BD52CD500986774 /* SceneGraphXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneGraphXML.swift; path = ../S3DXML/SceneGraphXML.swift; sourceTree = "<group>"; };
 		46E625A2EEE11342EC4BCCE0A37B7BFD /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		476DEF83A325F04796774ECD8F1A52F6 /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
 		48A1742B3CE5FE65E71486494CD38AE8 /* Pods-Spectra_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spectra_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 		2FFB3DCCEE0FC1947B1D293CF2F07E97 /* Node */ = {
 			isa = PBXGroup;
 			children = (
+				43DADE621BD52CD500986774 /* SceneGraphXML.swift */,
 				1C58D78D773C9EC94875B6582E55416A /* Camable.swift */,
 				3F57A491D260BCDDBB0C316B2B735172 /* Modelable.swift */,
 				3DCF6E21E936D088F2C3CD6242C75DD7 /* Node.swift */,
@@ -1519,6 +1522,7 @@
 				698481338E65CF689B339097F13CA09B /* NodeGenerator.swift in Sources */,
 				5B1711ABD4347822E85524ACF0683CEF /* NodeResource.swift in Sources */,
 				07836F8AFE29EED721789391B43583BB /* Perspectable.swift in Sources */,
+				43B74F491BD666FB009D9BED /* SceneGraphXML.swift in Sources */,
 				30D023DC534CE068D063308FD6396615 /* PipelineGenerator.swift in Sources */,
 				49A2072C59A9F508C4FF9B28E430689A /* PlatonicSolids.swift in Sources */,
 				7081E9FF2829AA5A608750C3A6E2A252 /* Quad.swift in Sources */,

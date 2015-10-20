@@ -12,12 +12,15 @@
 		436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06741BBFB3AE007C738A /* MetalViewController.swift */; };
 		436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B068A1BC23328007C738A /* SpectrogramTextureController.swift */; };
 		438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ACE011BC7163D0008C59E /* CubeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		43B74F451BD658EB009D9BED /* SceneGraphXMLTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43B74F441BD658EB009D9BED /* SceneGraphXMLTest.xml */; settings = {ASSET_TAGS = (); }; };
+		43B74F481BD666D8009D9BED /* SceneGraphXMLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B74F461BD65F76009D9BED /* SceneGraphXMLSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAA91BC82100004323ED /* Cube.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43D8BAA81BC82100004323ED /* Cube.xml */; settings = {ASSET_TAGS = (); }; };
 		43D8BAAD1BC85B02004323ED /* DataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAC1BC85B02004323ED /* DataEncoding.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAB01BC87A97004323ED /* TexturedQuadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE531BD21C7100986774 /* S3DXMLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434358481BD2150100B13F10 /* S3DXMLSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE551BD25D4900986774 /* S3DXMLTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43DADE541BD25D4900986774 /* S3DXMLTest.xml */; settings = {ASSET_TAGS = (); }; };
 		43DADE581BD37BFB00986774 /* S3DXMLTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43DADE561BD37BEA00986774 /* S3DXMLTest.xml */; settings = {ASSET_TAGS = (); }; };
+		43DADE5B1BD51C0300986774 /* SpectraSceneGraph.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43DADE5A1BD51C0300986774 /* SpectraSceneGraph.xml */; settings = {ASSET_TAGS = (); }; };
 		43E26EAD1BCE280100709D29 /* S3DXSDSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26EAB1BCE248C00709D29 /* S3DXSDSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		43E90C1A1BC45AC9009DBF99 /* color_shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43E90C191BC45AC9009DBF99 /* color_shift.metal */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -48,11 +51,14 @@
 		436B06741BBFB3AE007C738A /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
 		436B068A1BC23328007C738A /* SpectrogramTextureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrogramTextureController.swift; sourceTree = "<group>"; };
 		438ACE011BC7163D0008C59E /* CubeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeViewController.swift; sourceTree = "<group>"; };
+		43B74F441BD658EB009D9BED /* SceneGraphXMLTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SceneGraphXMLTest.xml; sourceTree = "<group>"; };
+		43B74F461BD65F76009D9BED /* SceneGraphXMLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneGraphXMLSpec.swift; sourceTree = "<group>"; };
 		43D8BAA81BC82100004323ED /* Cube.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cube.xml; sourceTree = "<group>"; };
 		43D8BAAC1BC85B02004323ED /* DataEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEncoding.swift; sourceTree = "<group>"; };
 		43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturedQuadController.swift; sourceTree = "<group>"; };
 		43DADE541BD25D4900986774 /* S3DXMLTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = S3DXMLTest.xml; sourceTree = "<group>"; };
 		43DADE561BD37BEA00986774 /* S3DXMLTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = S3DXMLTest.xml; sourceTree = "<group>"; };
+		43DADE5A1BD51C0300986774 /* SpectraSceneGraph.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SpectraSceneGraph.xml; sourceTree = "<group>"; };
 		43E26EA61BCE21F400709D29 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		43E26EAB1BCE248C00709D29 /* S3DXSDSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3DXSDSpec.swift; sourceTree = "<group>"; };
 		43E90C191BC45AC9009DBF99 /* color_shift.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = color_shift.metal; sourceTree = "<group>"; };
@@ -95,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43B74F431BD658D3009D9BED /* SceneGraphXML */ = {
+			isa = PBXGroup;
+			children = (
+				43B74F441BD658EB009D9BED /* SceneGraphXMLTest.xml */,
+				43B74F461BD65F76009D9BED /* SceneGraphXMLSpec.swift */,
+			);
+			name = SceneGraphXML;
+			sourceTree = "<group>";
+		};
 		43D8BAA71BC820AB004323ED /* Cube */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +182,7 @@
 				436B068A1BC23328007C738A /* SpectrogramTextureController.swift */,
 				43D8BAAC1BC85B02004323ED /* DataEncoding.swift */,
 				433894471BCB676A00CE1002 /* Spectra3D.xml */,
+				43DADE5A1BD51C0300986774 /* SpectraSceneGraph.xml */,
 			);
 			name = "Example for Spectra";
 			path = Spectra;
@@ -183,6 +199,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				43B74F431BD658D3009D9BED /* SceneGraphXML */,
 				43E26EAA1BCE23E700709D29 /* S3DXML */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -323,7 +340,9 @@
 				43D8BAA91BC82100004323ED /* Cube.xml in Resources */,
 				433894481BCB676A00CE1002 /* Spectra3D.xml in Resources */,
 				43DADE551BD25D4900986774 /* S3DXMLTest.xml in Resources */,
+				43B74F451BD658EB009D9BED /* SceneGraphXMLTest.xml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				43DADE5B1BD51C0300986774 /* SpectraSceneGraph.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E26EAD1BCE280100709D29 /* S3DXSDSpec.swift in Sources */,
+				43B74F481BD666D8009D9BED /* SceneGraphXMLSpec.swift in Sources */,
 				43DADE531BD21C7100986774 /* S3DXMLSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
