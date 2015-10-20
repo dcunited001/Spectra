@@ -11,8 +11,8 @@
         <uniforms pos="0 0 1 1" rotation="1 0 0 0" scale="1 1 1 0" />
     </view>
     
-    <camera key="default" pos="0 0 1 1" center="0 0 0 1" up="0 1 0 0" />
-    <camera key="customCamera" type="custom" pos="0 0 1 1" center="0 0 0 1" up="0 1 0 0" />
+    <camera key="default" eye="0 0 1 1" center="0 0 0 1" up="0 1 0 0" />
+    <camera key="customCamera" type="custom" eye="0 0 1 1" center="0 0 0 1" up="0 1 0 0" />
     
     <perspective key="landscape" perspective-type="fov">
         <perspective-arg name="fov" value="65.0" />
