@@ -37,7 +37,7 @@ public class SceneGraph {
     
     private var viewMonads: [String: (() -> WorldView)] = [:] //final?
     private var cameraMonads: [String: (() -> Camable)] = [:] //final?
-    private var meshGeneratorMonads: [String: (() -> MeshGenerator)] = [:]
+    private var meshGeneratorMonads: [String: (([String: String]) -> MeshGenerator)] = [:]
     
     // resources
     // - buffers? (encodable data or buffer pools)
@@ -89,6 +89,32 @@ public class SceneGraph {
     
     public func getCameraMonad(key: String) -> (() -> Camable)? {
         return cameraMonads[key]
+    }
+    
+    public func registerMeshGeneratorMonad(key: String, monad: (([String: String]) -> MeshGenerator)) {
+        meshGeneratorMonads[key] = monad
+    }
+    
+    public func getMeshGeneratorMonad(key: String) -> (([String:String]) -> MeshGenerator)? {
+        return meshGeneratorMonads[key]
+    }
+    
+    private func setDefaultMeshGeneratorMonads() {
+        registerMeshGeneratorMonad("basic_triangle") { (args) in
+            return BasicTriangleGenerator(args: args)
+        }
+        registerMeshGeneratorMonad("quad") { (args) in
+            return QuadGenerator(args: args)
+        }
+        registerMeshGeneratorMonad("cube") { (args) in
+            return CubeGenerator(args: args)
+        }
+        registerMeshGeneratorMonad("cube") { (args) in
+            return TetrahedronGenerator(args: args)
+        }
+        registerMeshGeneratorMonad("cube") { (args) in
+            return OctahedronGenerator(args: args)
+        }
     }
     
 }
