@@ -9,38 +9,53 @@
 import simd
 
 public protocol Perspectable: class {
-    var perspectiveFov:Float { get set }
-    var perspectiveAngle:Float { get set } // view orientation to user in degrees =) 3d
-    var perspectiveAspect:Float { get set } // update when view bounds change
-    var perspectiveNear:Float { get set }
-    var perspectiveFar:Float { get set }
+    var persepctiveType: String { get set }
+    var perspectiveArgs: [String: Float] { get set }
     
-    func setPerspectiveDefaults()
     func calcPerspectiveMatrix() -> float4x4
 }
 
 extension Perspectable {
-    public func setPerspectiveDefaults() {
-        perspectiveFov = 65.0
-        perspectiveAngle = 35.0 // 35.0 for landscape
-        perspectiveAspect = 1
-        perspectiveNear = 0.01
-        perspectiveFar = 100.0
-    }
     
     public func calcPerspectiveMatrix() -> float4x4 {
-        let rAngle = Transform3D.toRadians(perspectiveAngle)
-        let length = perspectiveNear * tan(rAngle)
+        switch persepctiveType {
+        case "fov": return calcPerspectiveFov()
+        default: return calcPerspectiveFov()
+        }
+    }
+    
+    public func calcPerspectiveFov() -> float4x4 {
+        let fov = perspectiveArgs["fov"]!
+        let angle = perspectiveArgs["angle"]!
+        let aspect = perspectiveArgs["aspect"]!
+        let near = perspectiveArgs["near"]!
+        let far = perspectiveArgs["far"]!
         
-        let right = length / perspectiveAspect
+        return Transform3D.perspectiveFov(angle, aspect: aspect, near: near, far: far)
+    }
+    
+    public func calcPerspectiveFrustumOC() -> float4x4 {
+        let fov = perspectiveArgs["fov"]!
+        let angle = perspectiveArgs["angle"]!
+        let aspect = perspectiveArgs["aspect"]!
+        let near = perspectiveArgs["near"]!
+        let far = perspectiveArgs["far"]!
+        
+        let rAngle = Transform3D.toRadians(angle)
+        let length = near * tan(rAngle)
+        
+        let right = length / aspect
         let left = -right
         let top = length
         let bottom = -top
         
-        return Transform3D.perspectiveFov(perspectiveAngle, aspect: perspectiveAspect, near: perspectiveNear, far: perspectiveFar)
-        
         // alternate perspective using frustum_oc
-        //        return Metal3DTransforms.frustum_oc(left, right: right, bottom: bottom, top: top, near: perspectiveNear, far: perspectiveFar)
+        return Transform3D.frustum_oc(left, right: right, bottom: bottom, top: top, near: near, far: far)
+    }
+    
+    public func calcPerspectiveFrustumOCEyeTracking() -> float4x4 {
+        // haha maybe soon
+        return float4x4()
     }
 }
 
