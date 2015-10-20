@@ -66,6 +66,8 @@ extension BufferPool {
         return createWith(self)
     }
     
+    // TODO: remove getBuffer()
+    // - this should only be accessed with index provided by semaphore
     public func getBuffer() -> EncodableBuffer {
         var buffer = buffers[buffersIndex]
         buffersIndex = (buffersIndex + 1) % buffersCount

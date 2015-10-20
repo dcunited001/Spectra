@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <root id="Cube" xmlns="http://www.xml3d.org/2009/xml3d/">
+    <view position="0 0 1"></view>
+    
     <!-- kind of based on xml3d, but mostly just using XML bc:
      - it has tree-like nature
      - and CSS selectability -->
@@ -8,7 +9,7 @@
     <!-- 
      TODO: setup view to control worldUniforms for scene
      -->
-    <view position="0 0 1"></view>
+
     
 
 <!-- 

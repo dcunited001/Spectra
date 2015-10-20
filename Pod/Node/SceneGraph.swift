@@ -12,16 +12,11 @@
 // X3Dom docs: http://doc.x3dom.org/
 // Xml3D basics: https://github.com/xml3d/xml3d.js/wiki/The-Basics-of-XML3D
 
-
-
 import Ono
 
 public class SceneGraph {
 //    public var s3dDefinitions: S3DXSD
     public var xml: ONOXMLDocument?
-    
-    let nodeGenAttr = "spectra-node-gen"
-    let nodeRefAttr = "spectra-node-ref"
     
     public init() {
         
