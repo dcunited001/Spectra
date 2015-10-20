@@ -9,17 +9,19 @@
 import simd
 
 public protocol Perspectable: class {
-    var persepctiveType: String { get set }
+    var perspectiveType: String { get set }
     var perspectiveArgs: [String: Float] { get set }
     
+    func setPerspectiveDefaults()
     func calcPerspectiveMatrix() -> float4x4
 }
 
 extension Perspectable {
     
     public func calcPerspectiveMatrix() -> float4x4 {
-        switch persepctiveType {
+        switch perspectiveType {
         case "fov": return calcPerspectiveFov()
+        case "frustum_oc": return calcPerspectiveFrustumOC()
         default: return calcPerspectiveFov()
         }
     }
@@ -57,5 +59,26 @@ extension Perspectable {
         // haha maybe soon
         return float4x4()
     }
+    
+    public func setPerspectiveDefaults() {
+        self.perspectiveType = "fov"
+        self.perspectiveArgs = [
+            "fov": 65.0,
+            "angle": 35.0,
+            "aspect": 1.0,
+            "near": 0.01,
+            "far": 100.0
+        ]
+    }
+}
+
+public class BasePerspectable: Perspectable {
+    public var perspectiveType: String = "fov"
+    public var perspectiveArgs: [String:Float] = [:]
+    
+    public init() {
+        setPerspectiveDefaults()
+    }
+    
 }
 
