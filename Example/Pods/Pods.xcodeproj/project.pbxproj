@@ -887,8 +887,7 @@
 				4B790E2B95C45326896EBBD1B18133B8 /* PlatonicSolids.swift */,
 				E2011687E5B82539A7831AD01EF5412D /* Quad.swift */,
 			);
-			name = MeshGenerators;
-			path = NodeGenerators;
+			path = MeshGenerators;
 			sourceTree = "<group>";
 		};
 		B3CF3196B87358DBD8BA22185B6D050E /* Pod */ = {
