@@ -8,9 +8,9 @@
 
 import simd
 
-public class BasicTriangleGenerator: NodeGenerator {
+public class BasicTriangleGenerator: MeshGenerator {
     
-    public init() {
+    public required init(args: [String: String] = [:]) {
         
     }
     

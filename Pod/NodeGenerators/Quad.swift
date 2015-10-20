@@ -8,9 +8,9 @@
 
 import simd
 
-public class QuadGenerator: NodeGenerator {
+public class QuadGenerator: MeshGenerator {
     
-    public init() {
+    public required init(args: [String: String] = [:]) {
         
     }
     

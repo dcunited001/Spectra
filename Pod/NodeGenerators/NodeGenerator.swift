@@ -1,5 +1,5 @@
 //
-//  NodeGenerator.swift
+//  MeshGenerator.swift
 //  Pods
 //
 //  Created by David Conner on 10/3/15.
@@ -9,7 +9,7 @@
 import Metal
 import simd
 
-public protocol NodeGenerator {
+public protocol MeshGenerator {
     //    func flattenMap(vertexMap: OrderedDictionary<Int, [Int]>) -> [Int]
     func generate() -> Node
     func getData() -> [String:[float4]]
@@ -21,9 +21,10 @@ public protocol NodeGenerator {
     func getTriangleVertexMap() -> [[Int]]
     func getFaceTriangleMap() -> [[Int]]
 
+    init(args: [String: String])
 }
 
-extension NodeGenerator {
+extension MeshGenerator {
 //    func flattenMap(vertexMap: OrderedDictionary<Int, [Int]>) -> [Int] {
 //        //TODO: are maps ordered in swift?
 //        return vertexMap.  .reduce([]) {  }

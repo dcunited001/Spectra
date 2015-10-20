@@ -35,7 +35,7 @@ class CubeViewController: MetalViewController {
         scene = Spectra.Scene()
         setupPerspective()
         setupSceneGraph()
-        setupNodeGeneratorMap()
+        setupMeshGeneratorMap()
         setupNodeMap()
         setupObjects()
         setupScene()
@@ -76,8 +76,8 @@ class CubeViewController: MetalViewController {
         scene!.sceneGraph = sceneGraph
     }
     
-    func setupNodeGeneratorMap() {
-        scene!.nodeGeneratorMap["cube"] = Spectra.CubeGenerator()
+    func setupMeshGeneratorMap() {
+//        scene!.meshGeneratorMap["cube"] = Spectra.CubeGenerator()
     }
     
     func setupNodeMap() {

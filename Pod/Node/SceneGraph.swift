@@ -17,7 +17,6 @@ import Ono
 public class Mesh {}
 public class MeshData {}
 public class MeshDataMap {}
-public class MeshGenerator {}
 public class NodeGroup {}
 
 public class SceneGraph {
@@ -38,6 +37,7 @@ public class SceneGraph {
     
     private var viewMonads: [String: (() -> WorldView)] = [:] //final?
     private var cameraMonads: [String: (() -> Camable)] = [:] //final?
+    private var meshGeneratorMonads: [String: (() -> MeshGenerator)] = [:]
     
     // resources
     // - buffers? (encodable data or buffer pools)

@@ -8,9 +8,9 @@
 
 import simd
 
-public class CubeGenerator: NodeGenerator {
+public class CubeGenerator: MeshGenerator {
     
-    public init() {
+    public required init(args: [String: String] = [:]) {
         
     }
     

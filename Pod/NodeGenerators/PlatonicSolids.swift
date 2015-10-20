@@ -11,9 +11,9 @@ import simd
 //N.B. textures are 1-to-1 with vertex-face map
 // - for simple 3d objects
 
-public class TetrahedronGenerator: NodeGenerator {
+public class TetrahedronGenerator: MeshGenerator {
     
-    public init() {
+    public required init(args: [String: String] = [:]) {
         
     }
     
@@ -62,9 +62,9 @@ public class TetrahedronGenerator: NodeGenerator {
     }
 }
 
-public class OctahedronGenerator: NodeGenerator {
+public class OctahedronGenerator: MeshGenerator {
     
-    public init() {
+    public required init(args: [String: String] = [:]) {
         
     }
     
@@ -127,14 +127,14 @@ public class OctahedronGenerator: NodeGenerator {
 }
 
 //http://paulbourke.net/geometry/platonic/
-//public class IcosahedronGenerator: NodeGenerator { }
-//public class DodecahderonGenerator: NodeGenerator { }
-//public class Dodecahderon2Generator: NodeGenerator { }
+//public class IcosahedronGenerator: MeshGenerator { }
+//public class DodecahderonGenerator: MeshGenerator { }
+//public class Dodecahderon2Generator: MeshGenerator { }
 // - where vertex in center of pentagons
-//class Dodecahderon3: NodeGenerator { }
+//class Dodecahderon3: MeshGenerator { }
 // - with overlapping triangles
 
-//public class TetrahedronGenerator: NodeGenerator {
+//public class TetrahedronGenerator: MeshGenerator {
 //    func getVertices() -> [float4] {
 //        return [
 //            
