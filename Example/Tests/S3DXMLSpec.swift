@@ -228,8 +228,8 @@ class S3DXMLSpec: QuickSpec {
                 let stencilAttach = descriptorManager.renderPassStencilAttachmentDescriptors["rpass_stencil_attach_desc"]!
                 
                 expect(desc.colorAttachments[0]) == colorAttach
-                expect(desc.depthAttachment) == colorAttach
-                expect(desc.stencilAttachment) == colorAttach
+                expect(desc.depthAttachment) == depthAttach
+                expect(desc.stencilAttachment) == stencilAttach
             }
         }
         
