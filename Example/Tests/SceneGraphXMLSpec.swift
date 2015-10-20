@@ -78,8 +78,15 @@ class SceneGraphXMLSpec: QuickSpec {
         }
         
         describe("SGXMLCameraNode") {
+            let camEye = float4(0,0,1,1)
+            let camCenter = float4(0,0,0,1)
+            let camUp = float4(0,1,0,0)
+            
             it("parses default nodes") {
-                
+                let cam = sceneGraph.cameras["default"]!
+                expect(compareFloat4(cam.camEye, to: camEye)).to(beTrue())
+                expect(compareFloat4(cam.camCenter, to: camCenter)).to(beTrue())
+                expect(compareFloat4(cam.camUp, to: camUp)).to(beTrue())
             }
             
             it("allows for custom implementations of Uniformable via viewMonads") {
@@ -89,7 +96,22 @@ class SceneGraphXMLSpec: QuickSpec {
         }
         
         describe("SGXMLPerspectiveNode") {
+            let fov:Float = 65.0
+            let angle:Float = 35.0
+            let aspect:Float = 1.0
+            let near:Float = 0.01
+            let far:Float = 100.0
             
+            let pers = sceneGraph.perspectives["landscape"]!
+            
+            it("parses perspective with fov") {
+                expect(pers.perspectiveType) == "fov"
+                expect(pers.perspectiveArgs["fov"]!) == fov
+                expect(pers.perspectiveArgs["angle"]!) == angle
+                expect(pers.perspectiveArgs["aspect"]!) == aspect
+                expect(pers.perspectiveArgs["near"]!) == near
+                expect(pers.perspectiveArgs["far"]!) == far
+            }
         }
     }
     
