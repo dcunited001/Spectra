@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="S3D"
+    elementFormDefault="qualified">
+    
+    <complexType name="uniforms">
+        <!-- how to specify class or the specific implementation of uniform -->
+        <attribute name="pos" type="float4" />
+        <attribute name="rotation" type="float4" />
+        <attribute name="scale" type="float4" />
+    </complexType>
+    <element name="uniforms" type="uniforms" />
+    
+    <complexType name="view">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <all>
+            <element ref="uniforms" />
+        </all>
+    </complexType>
+    <element name="view" type="view" />
+    
+    <complexType name="perspective">
+        <!-- this defines an object that implements the perspectable protocol -->
+        <!-- and the type will define a means of translating the args into a float 4x4 matrix -->
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <attribute name="perspective-type" type="string" default="fov" />
+        <sequence>
+            <element ref="perspective-arg" />
+        </sequence>
+    </complexType>
+    <element name="perspective" type="perspective" />
+    
+    <!-- simple means of mapping arguments for the myriad of perspective transformations -->
+    <complexType name="perspectiveArg">
+        <attribute name="name" type="string" />
+        <attribute name="value" type="value" />
+    </complexType>
+    <element name="perspective-arg" type="perspectiveArg" />
+    
+    <complexType name="camera">
+        <!-- add uniforms to camera? -->
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <attribute name="pos" type="float4" />
+        <attribute name="center" type="float4" />
+        <attribute name="up" type="float4" />
+    </complexType>
+    <element name="camera" type="camera" />
+    
+    <complexType name="node">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <!-- need a concept of copy-ref that force copies the data for node -->
+        <all>
+            <!-- these will be loaded into a 'meshes' hash -->
+            <element ref="mesh-sequence" />
+        </all>
+        
+        <!-- nodes may need a concept of 'data-loaded' and 'meshes-generated'
+         - so mesh data generation can be specified at xml load time
+         - or delayed and lazily loaded by the developer
+         -->
+    </complexType>
+    <element name="node" type="node" />
+    
+    <complexType name="nodeGroup">
+        <!-- node-groups are logical groupings of nodes
+             - not to be confused with a tree of nodes
+         -->
+        <!-- TODO: nested sub groups?
+         -->
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <all>
+            <element ref="node-sequence" />
+        </all>
+    </complexType>
+    <element name="node-group" type="nodeGroup" />
+    
+    <complexType name="nodeSequence">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <sequence>
+            <element ref="node" />
+        </sequence>
+    </complexType>
+    <element name="node-sequence" type="nodeSequence" />
+    
+    <complexType name="mesh">
+        <all>
+            <element ref="mesh-data-sequence" />
+            <element ref="mesh-data-map-sequence" />
+        </all>
+    </complexType>
+    
+    <complexType name="meshSequence">
+        <sequence>
+            <element ref="mesh" />
+        </sequence>
+    </complexType>
+    <element name="mesh-sequence" type="meshSequence" />
+    
+    <complexType name="meshData">
+        <!-- data should mostly be created by user (XML is slow) -->
+        <simpleContent>
+            <extension base="string">
+                <attribute name="key" type="string" />
+                <attribute name="ref" type="string" />
+                <!-- how to define args for mesh-generator? -->
+                <attribute name="mesh-generator-ref" type="string" />
+                <attribute name="mesh-generator-args-ref" type="string" />
+                <!-- how to convert this to float4/int4/etc? -->
+                <attribute name="data-type" type="string" />
+            </extension>
+        </simpleContent>
+    </complexType>
+    <element name="mesh-data" type="meshData" />
+    
+    <complexType name="meshDataSequence">
+        <sequence>
+            <element ref="mesh-data" />
+        </sequence>
+    </complexType>
+    <element name="mesh-data-sequence" type="meshDataSequence" />
+    
+    <complexType name="meshDataMap">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <attribute name="map-type" type="string" /> <!-- specify triangle/face/etc -->
+    </complexType>
+    <element name="mesh-data-map" />
+    
+    <complexType name="meshDataMapSequence">
+        <sequence>
+            <element ref="mesh-data-map" />
+        </sequence>
+    </complexType>
+    <element name="mesh-data-map-sequence" type="meshDataMapSequence" />
+    
+    <complexType name="meshGenerator">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+    </complexType>
+    <element name="mesh-generator" type="meshGenerator" />
+    
+    <complexType name="meshGeneratorArgs">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <sequence>
+            <element ref="meshGeneratorArg" />
+        </sequence>
+    </complexType>
+    <element name="mesh-generator-args" type="meshGeneratorArgs" />
+    
+    <complexType name="meshGeneratorArg">
+        <attribute name="type" type="string" />
+        <attribute name="value" type="string" />
+    </complexType>
+    <element name="mesh-generator-arg" type="meshGeneratorArg" />
+    
+    <complexType name="resource">
+        <!-- hmmmm ... buffers and textures? -->
+    </complexType>
+    
+    <!-- texture (material?) -->
+    <!-- texture mapping -->
+    
+    <!-- input mapping? -->
+    
+    <!-- mesh-data-resource-mapping -->
+    <!-- per-renderer mesh-data-resource-mapping -->
+    
+</schema>
