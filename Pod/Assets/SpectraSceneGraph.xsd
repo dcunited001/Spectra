@@ -3,6 +3,14 @@
     targetNamespace="S3D"
     elementFormDefault="qualified">
     
+    <!-- unfortunately, it doesn't look like swift can dynamically parse simd types, not in the way i want it to -->
+<!--    <simpleType name="float4">-->
+<!--        <attribute name="x" type="float" />-->
+<!--        <attribute name="y" type="float" />-->
+<!--        <attribute name="z" type="float" />-->
+<!--        <attribute name="w" type="float" />-->
+<!--    </simpleType>-->
+
     <complexType name="uniforms">
         <!-- how to specify class or the specific implementation of uniform -->
         <attribute name="pos" type="float4" />
@@ -14,6 +22,7 @@
     <complexType name="view">
         <attribute name="key" type="string" />
         <attribute name="ref" type="string" />
+        <attribute name="type" type="string" />
         <all>
             <element ref="uniforms" />
         </all>
@@ -25,6 +34,7 @@
         <!-- and the type will define a means of translating the args into a float 4x4 matrix -->
         <attribute name="key" type="string" />
         <attribute name="ref" type="string" />
+        <attribute name="type" type="string" />
         <attribute name="perspective-type" type="string" default="fov" />
         <sequence>
             <element ref="perspective-arg" />
@@ -35,7 +45,7 @@
     <!-- simple means of mapping arguments for the myriad of perspective transformations -->
     <complexType name="perspectiveArg">
         <attribute name="name" type="string" />
-        <attribute name="value" type="value" />
+        <attribute name="value" type="float" />
     </complexType>
     <element name="perspective-arg" type="perspectiveArg" />
     
@@ -43,7 +53,7 @@
         <!-- add uniforms to camera? -->
         <attribute name="key" type="string" />
         <attribute name="ref" type="string" />
-        <attribute name="pos" type="float4" />
+        <attribute name="eye" type="float4" />
         <attribute name="center" type="float4" />
         <attribute name="up" type="float4" />
     </complexType>
@@ -160,9 +170,26 @@
     </complexType>
     <element name="mesh-generator-arg" type="meshGeneratorArg" />
     
-    <complexType name="resource">
-        <!-- hmmmm ... buffers and textures? -->
+    <complexType name="buffer">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <!-- hmmmm ... how does this corelate to encodable data? -->
     </complexType>
+    <element name="buffer" type="buffer" />
+    
+    <complexType name="input">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <!-- ?? -->
+    </complexType>
+    <element name="input" type="input" />
+    
+    <complexType name="texture">
+        <attribute name="key" type="string" />
+        <attribute name="ref" type="string" />
+        <!-- ?? -->
+    </complexType>
+    <element name="texture" type="texture" />
     
     <!-- texture (material?) -->
     <!-- texture mapping -->
