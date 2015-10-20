@@ -604,7 +604,7 @@
 			children = (
 				6AEF4C11356E1D4F71E7156B257102B3 /* Classes */,
 				2FFB3DCCEE0FC1947B1D293CF2F07E97 /* Node */,
-				B1625675B03707800496CEE517D88025 /* NodeGenerators */,
+				B1625675B03707800496CEE517D88025 /* MeshGenerators */,
 				A36B47E352034B37512A536749ACC0DD /* S3DXML */,
 			);
 			path = Pod;
@@ -878,7 +878,7 @@
 			path = "Target Support Files/Pods-Spectra_Example";
 			sourceTree = "<group>";
 		};
-		B1625675B03707800496CEE517D88025 /* NodeGenerators */ = {
+		B1625675B03707800496CEE517D88025 /* MeshGenerators */ = {
 			isa = PBXGroup;
 			children = (
 				CB417F227866132A221A0D6C5BD8F099 /* BasicTriangle.swift */,
@@ -887,6 +887,7 @@
 				4B790E2B95C45326896EBBD1B18133B8 /* PlatonicSolids.swift */,
 				E2011687E5B82539A7831AD01EF5412D /* Quad.swift */,
 			);
+			name = MeshGenerators;
 			path = NodeGenerators;
 			sourceTree = "<group>";
 		};
