@@ -34,7 +34,7 @@ extension Uniformable {
     }
 }
 
-public class WorldUniforms: Uniformable {
+public class BaseUniforms: Uniformable {
     public var uniformScale = float4()
     public var uniformPosition = float4()
     public var uniformRotation = float4()

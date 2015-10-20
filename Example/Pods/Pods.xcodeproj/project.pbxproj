@@ -49,6 +49,7 @@
 		3AEAC447B09E7AABC140654C8529BC94 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C202AAEE2299425A8014EB8718B267D /* MatcherFunc.swift */; };
 		3B65216432F068224900F98866EB4B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C911CDC9E5B648AB9C0E573B15600BB /* Foundation.framework */; };
 		43B74F491BD666FB009D9BED /* SceneGraphXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE621BD52CD500986774 /* SceneGraphXML.swift */; settings = {ASSET_TAGS = (); }; };
+		43B74F4E1BD69185009D9BED /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B74F4B1BD69179009D9BED /* WorldView.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE601BD52AE800986774 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5E1BD52A8D00986774 /* StateManager.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE611BD52AEB00986774 /* DescriptorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5C1BD52A8400986774 /* DescriptorManager.swift */; settings = {ASSET_TAGS = (); }; };
 		447E920797AE188521E15E8F9DC9DDFE /* Spectra3D.xsd in Resources */ = {isa = PBXBuildFile; fileRef = BFA49DC08AE5368A3CA84FF1C11353E0 /* Spectra3D.xsd */; };
@@ -342,6 +343,7 @@
 		3F71409D90F3AB40F87FFD82B3D9F414 /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		4181D49B4344A3E2C92F5E006414F563 /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		42A7045B62526AD327630DED9C698BD8 /* S3DXSD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = S3DXSD.swift; sourceTree = "<group>"; };
+		43B74F4B1BD69179009D9BED /* WorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
 		43DADE591BD51B3000986774 /* SpectraSceneGraph.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpectraSceneGraph.xsd; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		43DADE5C1BD52A8400986774 /* DescriptorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptorManager.swift; sourceTree = "<group>"; };
 		43DADE5E1BD52A8D00986774 /* StateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
@@ -715,6 +717,7 @@
 				C4467C72DF370FD887368F3B2B67D50B /* SceneGraph.swift */,
 				A40639BFE33A868CDD9CD1E763983F88 /* Uniformable.swift */,
 				CC07A581A2FCAB650DBA2BA837ABD983 /* Vertexable.swift */,
+				43B74F4B1BD69179009D9BED /* WorldView.swift */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -1537,6 +1540,7 @@
 				E1554A7959DA9B485D018CEB18B8A1BD /* Spectra-dummy.m in Sources */,
 				A0B41C596DD54C17F0674168C065E0E4 /* Transform3D.swift in Sources */,
 				B18AB81C464B61EC4A47E0455FFC8715 /* Uniformable.swift in Sources */,
+				43B74F4E1BD69185009D9BED /* WorldView.swift in Sources */,
 				1370632997AC52DB15A3DEF3CC8EBC40 /* Vertexable.swift in Sources */,
 				BA0E11EE69C1E1CA9A9CCD9D04DD0C00 /* View.swift in Sources */,
 			);

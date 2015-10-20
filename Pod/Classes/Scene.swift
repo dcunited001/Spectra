@@ -37,7 +37,7 @@ public class Scene: RenderDelegate, UpdateDelegate {
     public var sceneGraph: SceneGraph?
     
     public var activeCamera: Camable = BaseCamera()
-    public var worldUniforms: Uniformable = WorldUniforms()
+    public var worldUniforms: Uniformable = BaseUniforms()
     public var mvpInput: BaseEncodableInput<float4x4>?
     
     public init() {

@@ -12,8 +12,8 @@
 		436B06751BBFB3AE007C738A /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B06741BBFB3AE007C738A /* MetalViewController.swift */; };
 		436B068B1BC23328007C738A /* SpectrogramTextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436B068A1BC23328007C738A /* SpectrogramTextureController.swift */; };
 		438ACE021BC7163D0008C59E /* CubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ACE011BC7163D0008C59E /* CubeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		43B74F451BD658EB009D9BED /* SceneGraphXMLTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43B74F441BD658EB009D9BED /* SceneGraphXMLTest.xml */; settings = {ASSET_TAGS = (); }; };
 		43B74F481BD666D8009D9BED /* SceneGraphXMLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B74F461BD65F76009D9BED /* SceneGraphXMLSpec.swift */; settings = {ASSET_TAGS = (); }; };
+		43B74F4A1BD68C41009D9BED /* SceneGraphXMLTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43B74F441BD658EB009D9BED /* SceneGraphXMLTest.xml */; settings = {ASSET_TAGS = (); }; };
 		43D8BAA91BC82100004323ED /* Cube.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43D8BAA81BC82100004323ED /* Cube.xml */; settings = {ASSET_TAGS = (); }; };
 		43D8BAAD1BC85B02004323ED /* DataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAC1BC85B02004323ED /* DataEncoding.swift */; settings = {ASSET_TAGS = (); }; };
 		43D8BAB01BC87A97004323ED /* TexturedQuadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8BAAF1BC87A97004323ED /* TexturedQuadController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -340,7 +340,6 @@
 				43D8BAA91BC82100004323ED /* Cube.xml in Resources */,
 				433894481BCB676A00CE1002 /* Spectra3D.xml in Resources */,
 				43DADE551BD25D4900986774 /* S3DXMLTest.xml in Resources */,
-				43B74F451BD658EB009D9BED /* SceneGraphXMLTest.xml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				43DADE5B1BD51C0300986774 /* SpectraSceneGraph.xml in Resources */,
 			);
@@ -351,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43DADE581BD37BFB00986774 /* S3DXMLTest.xml in Resources */,
+				43B74F4A1BD68C41009D9BED /* SceneGraphXMLTest.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
