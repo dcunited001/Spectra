@@ -18,6 +18,10 @@ public class SceneGraphXML {
         xml = try! ONOXMLDocument(data: data)
     }
     
+    // TODO: methods to specify load order?
+    // - e.g. what if you want to declare nodes/meshs in XML
+    //   - but then load all/some of their data using generators or whatever?
+    
     public func parse(sceneGraph: SceneGraph, options: [String: AnyObject] = [:]) -> SceneGraph {
         for child in xml!.rootElement.children {            
             let elem = child as! ONOXMLElement
@@ -186,6 +190,34 @@ public class SGXMLPerspectiveNode: SGXMLNodeParser {
             let argValue = el.valueForAttribute("value") as! String
             
             node.perspectiveArgs[argName] = Float(argValue)
+        }
+        
+        return node
+    }
+}
+
+public class SGXMLMeshGeneratorNode: SGXMLNodeParser {
+    public typealias NodeType = MeshGenerator
+    
+    public func parse(sceneGraph: SceneGraph, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+        
+        var node: NodeType
+        var meshGenArgs: [String: String] = [:]
+        let argsSelector = "mesh-generator-arg"
+        elem.enumerateElementsWithCSS(argsSelector) {(el, idx, stop) in
+            let argName = el.valueForAttribute("name") as! String
+            let argValue = el.valueForAttribute("value") as! String
+            meshGenArgs[argName] = argValue
+        }
+        
+        if let nodeType = elem.valueForAttribute("type") as? String {
+            if let monad = sceneGraph.getMeshGeneratorMonad(nodeType) {
+                node = monad(meshGenArgs)
+            } else {
+                node = BasicTriangleGenerator(args: meshGenArgs)
+            }
+        } else {
+            node = BasicTriangleGenerator(args: meshGenArgs)
         }
         
         return node
