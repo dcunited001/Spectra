@@ -45,7 +45,7 @@ public class SceneGraph {
     // - textures?
     
     public init() {
-        
+        setDefaultMeshGeneratorMonads()
     }
     
 //    public func loadXML(data: NSData) {
