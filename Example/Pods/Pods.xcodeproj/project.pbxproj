@@ -50,6 +50,8 @@
 		3B65216432F068224900F98866EB4B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C911CDC9E5B648AB9C0E573B15600BB /* Foundation.framework */; };
 		43B74F491BD666FB009D9BED /* SceneGraphXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE621BD52CD500986774 /* SceneGraphXML.swift */; settings = {ASSET_TAGS = (); }; };
 		43B74F4E1BD69185009D9BED /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B74F4B1BD69179009D9BED /* WorldView.swift */; settings = {ASSET_TAGS = (); }; };
+		43B74F521BD94345009D9BED /* TriangularQuadLatticeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B74F4F1BD9431D009D9BED /* TriangularQuadLatticeGenerator.swift */; settings = {ASSET_TAGS = (); }; };
+		43B74F551BD94514009D9BED /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B74F531BD94451009D9BED /* Mesh.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE601BD52AE800986774 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5E1BD52A8D00986774 /* StateManager.swift */; settings = {ASSET_TAGS = (); }; };
 		43DADE611BD52AEB00986774 /* DescriptorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DADE5C1BD52A8400986774 /* DescriptorManager.swift */; settings = {ASSET_TAGS = (); }; };
 		447E920797AE188521E15E8F9DC9DDFE /* Spectra3D.xsd in Resources */ = {isa = PBXBuildFile; fileRef = BFA49DC08AE5368A3CA84FF1C11353E0 /* Spectra3D.xsd */; };
@@ -79,7 +81,7 @@
 		5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F83446FEFA694951EADA1A05B1D503 /* EZRecorder.m */; };
 		63210E3EC6D54FF5CB235CEE782088E8 /* Ono-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D088AF3FF22A2E5DBB6D841DD609E5 /* Ono-dummy.m */; };
 		656F340F4EB85C2876251968A4841FA0 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642B745E8233AA907EF9D034C94F22F /* DSL.swift */; };
-		698481338E65CF689B339097F13CA09B /* NodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62837AC5C98C89FF3561FFC9D39D7A /* NodeGenerator.swift */; };
+		698481338E65CF689B339097F13CA09B /* MeshGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62837AC5C98C89FF3561FFC9D39D7A /* MeshGenerator.swift */; };
 		6D2C5F1BC28D8BA676BC798D445AC7E8 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 73CBB3748A8658D29F0425A12E15A82A /* TPCircularBuffer.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6DD806197B2246EFF7C6CB1FA0A4127F /* ONOXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D773A4DD2A154FE42A8121FFCFC2029F /* ONOXMLDocument.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = 8995FE9C34BDA38C8F6108DDCDE91012 /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -344,6 +346,8 @@
 		4181D49B4344A3E2C92F5E006414F563 /* Cube.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		42A7045B62526AD327630DED9C698BD8 /* S3DXSD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = S3DXSD.swift; sourceTree = "<group>"; };
 		43B74F4B1BD69179009D9BED /* WorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
+		43B74F4F1BD9431D009D9BED /* TriangularQuadLatticeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangularQuadLatticeGenerator.swift; sourceTree = "<group>"; };
+		43B74F531BD94451009D9BED /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		43DADE591BD51B3000986774 /* SpectraSceneGraph.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpectraSceneGraph.xsd; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		43DADE5C1BD52A8400986774 /* DescriptorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptorManager.swift; sourceTree = "<group>"; };
 		43DADE5E1BD52A8D00986774 /* StateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
@@ -355,7 +359,7 @@
 		4AE2841B50AFB231EAF3A2C51F865D4B /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		4B13B98FD4FCC52EBC794AF576EA4CC7 /* Spectra.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spectra.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B790E2B95C45326896EBBD1B18133B8 /* PlatonicSolids.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlatonicSolids.swift; sourceTree = "<group>"; };
-		4E62837AC5C98C89FF3561FFC9D39D7A /* NodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NodeGenerator.swift; sourceTree = "<group>"; };
+		4E62837AC5C98C89FF3561FFC9D39D7A /* MeshGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MeshGenerator.swift; sourceTree = "<group>"; };
 		4EDBEE76C3065649CC1CFBECC3DA3B8C /* TPCircularBuffer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TPCircularBuffer.modulemap; sourceTree = "<group>"; };
 		510A6CC9EE3413303B4D9D03525F86BC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		521C46BA67AFC3FBCCCE955F1328D538 /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
@@ -718,6 +722,7 @@
 				A40639BFE33A868CDD9CD1E763983F88 /* Uniformable.swift */,
 				CC07A581A2FCAB650DBA2BA837ABD983 /* Vertexable.swift */,
 				43B74F4B1BD69179009D9BED /* WorldView.swift */,
+				43B74F531BD94451009D9BED /* Mesh.swift */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -883,9 +888,10 @@
 			children = (
 				CB417F227866132A221A0D6C5BD8F099 /* BasicTriangle.swift */,
 				4181D49B4344A3E2C92F5E006414F563 /* Cube.swift */,
-				4E62837AC5C98C89FF3561FFC9D39D7A /* NodeGenerator.swift */,
+				4E62837AC5C98C89FF3561FFC9D39D7A /* MeshGenerator.swift */,
 				4B790E2B95C45326896EBBD1B18133B8 /* PlatonicSolids.swift */,
 				E2011687E5B82539A7831AD01EF5412D /* Quad.swift */,
+				43B74F4F1BD9431D009D9BED /* TriangularQuadLatticeGenerator.swift */,
 			);
 			path = MeshGenerators;
 			sourceTree = "<group>";
@@ -1522,12 +1528,14 @@
 				7679663C3DACF0B075E2731EC7AE1347 /* InflightResourceManager.swift in Sources */,
 				8843CEF05942940DC07806D1E73CCA6A /* Modelable.swift in Sources */,
 				DA663A9BC1B09A467B513465DC670C1B /* Node.swift in Sources */,
-				698481338E65CF689B339097F13CA09B /* NodeGenerator.swift in Sources */,
+				698481338E65CF689B339097F13CA09B /* MeshGenerator.swift in Sources */,
 				5B1711ABD4347822E85524ACF0683CEF /* NodeResource.swift in Sources */,
+				43B74F551BD94514009D9BED /* Mesh.swift in Sources */,
 				07836F8AFE29EED721789391B43583BB /* Perspectable.swift in Sources */,
 				43B74F491BD666FB009D9BED /* SceneGraphXML.swift in Sources */,
 				30D023DC534CE068D063308FD6396615 /* PipelineGenerator.swift in Sources */,
 				49A2072C59A9F508C4FF9B28E430689A /* PlatonicSolids.swift in Sources */,
+				43B74F521BD94345009D9BED /* TriangularQuadLatticeGenerator.swift in Sources */,
 				7081E9FF2829AA5A608750C3A6E2A252 /* Quad.swift in Sources */,
 				4EC3BB99CEC47E3D6D761F1086B93AD5 /* Renderer.swift in Sources */,
 				4E9A5018064973486AEF3F0E21718DF1 /* RenderStage.swift in Sources */,
