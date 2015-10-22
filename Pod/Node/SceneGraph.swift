@@ -14,7 +14,6 @@
 
 import Ono
 
-public class Mesh {}
 public class MeshData {}
 public class MeshDataMap {}
 public class NodeGroup {}
@@ -95,7 +94,7 @@ public class SceneGraph {
         meshGeneratorMonads[key] = monad
     }
     
-    public func getMeshGeneratorMonad(key: String) -> (([String:String]) -> MeshGenerator)? {
+    public func getMeshGeneratorMonad(key: String) -> (([String: String]) -> MeshGenerator)? {
         return meshGeneratorMonads[key]
     }
     
@@ -116,5 +115,4 @@ public class SceneGraph {
             return OctahedronGenerator(args: args)
         }
     }
-    
 }
