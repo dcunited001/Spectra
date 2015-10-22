@@ -11,15 +11,15 @@ import simd
 
 public protocol MeshGenerator {
     //    func flattenMap(vertexMap: OrderedDictionary<Int, [Int]>) -> [Int]
-    func generate() -> Node
+    func generate() -> Mesh
     func getData() -> [String:[float4]]
     func getDataMaps() -> [String:[[Int]]]
     
-    func getVertices() -> [float4]
-    func getColorCoords() -> [float4]
-    func getTexCoords() -> [float4]
-    func getTriangleVertexMap() -> [[Int]]
-    func getFaceTriangleMap() -> [[Int]]
+//    func getVertices() -> [float4]
+//    func getColorCoords() -> [float4]
+//    func getTexCoords() -> [float4]
+//    func getTriangleVertexMap() -> [[Int]]
+//    func getFaceTriangleMap() -> [[Int]]
 
     init(args: [String: String])
 }
@@ -30,26 +30,11 @@ extension MeshGenerator {
 //        return vertexMap.  .reduce([]) {  }
 //    }
     
-    public func generate() -> Node {
-        let node = Node()
-        node.data = getData()
-        node.dataMaps = getDataMaps()
-        return node
-    }
-    
-    public func getData() -> [String:[float4]] {
-        return [
-            "pos": getVertices(),
-            "rgba": getColorCoords(),
-            "tex": getTexCoords()
-        ]
-    }
-    
-    public func getDataMaps() -> [String:[[Int]]] {
-        return [
-            "triangle_vertex_map": getTriangleVertexMap(),
-            "face_vertex_map": getFaceTriangleMap()
-        ]
+    public func generate() -> Mesh {
+        let mesh = BaseMesh()
+        mesh.data = getData()
+        mesh.dataMaps = getDataMaps()
+        return mesh
     }
     
 }

@@ -14,6 +14,21 @@ public class QuadGenerator: MeshGenerator {
         
     }
     
+    public func getData() -> [String:[float4]] {
+        return [
+            "pos": getVertices(),
+            "rgba": getColorCoords(),
+            "tex": getTexCoords()
+        ]
+    }
+    
+    public func getDataMaps() -> [String:[[Int]]] {
+        return [
+            "triangle_vertex_map": getTriangleVertexMap(),
+            "face_vertex_map": getFaceTriangleMap()
+        ]
+    }
+    
     public func getVertices() -> [float4] {
         return [
             float4(-1.0, -1.0, 0.0, 1.0),
