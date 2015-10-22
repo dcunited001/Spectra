@@ -11,12 +11,16 @@ import simd
 
 class TriangularQuadLatticeGenerator: MeshGenerator {
     
-    var rowCount: Int
-    var colCount: Int
+    var rowCount: Int = 10
+    var colCount: Int = 10
     
     public required init(args: [String: String]) {
-        rowCount = Int(args["rowCount"]!)!
-        colCount = Int(args["colCount"]!)!
+        if let rCount = args["rowCount"] {
+            rowCount = Int(rCount)!
+        }
+        if let cCount = args["colCount"] {
+            colCount = Int(cCount)!
+        }
     }
     
     public func getData() -> [String:[float4]] {
