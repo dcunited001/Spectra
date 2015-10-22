@@ -65,22 +65,22 @@ public protocol SGXMLNodeParser {
 
 public class SGXMLSimd {
     public static func parseDoubles(str: String) -> [Double] {
-        var valStrs = str.characters.split { $0 == " " }.map(String.init)
+        let valStrs = str.characters.split { $0 == " " }.map(String.init)
         return valStrs.map() { Double($0)! }
     }
     
     public static func parseInts(str: String) -> [Int] {
-        var valStrs = str.characters.split { $0 == " " }.map(String.init)
+        let valStrs = str.characters.split { $0 == " " }.map(String.init)
         return valStrs.map() { Int($0)! }
     }
     
     public static func parseInt32s(str: String) -> [Int32] {
-        var valStrs = str.characters.split { $0 == " " }.map(String.init)
+        let valStrs = str.characters.split { $0 == " " }.map(String.init)
         return valStrs.map() { Int32($0)! }
     }
     
     public static func parseFloats(str: String) -> [Float] {
-        var valStrs = str.characters.split { $0 == " " }.map(String.init)
+        let valStrs = str.characters.split { $0 == " " }.map(String.init)
         return valStrs.map() { Float($0)! }
     }
     
@@ -98,7 +98,7 @@ public class SGXMLUniformsNode: SGXMLNodeParser {
     public typealias NodeType = Uniformable
     
     public func parse(sceneGraph: SceneGraph, elem: ONOXMLElement, options: [String : AnyObject] = [:]) -> NodeType {
-        var node = BaseUniforms()
+        let node = BaseUniforms()
         
         if let pos = elem.valueForAttribute("pos") as? String {
             node.uniformPosition = SGXMLSimd.parseFloat4(pos)
