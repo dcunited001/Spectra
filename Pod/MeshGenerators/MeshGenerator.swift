@@ -11,7 +11,7 @@ import simd
 
 public protocol MeshGenerator {
     //    func flattenMap(vertexMap: OrderedDictionary<Int, [Int]>) -> [Int]
-    func generate() -> Mesh
+    func generate(args: [String: String]) -> Mesh
     func getData() -> [String:[float4]]
     func getDataMaps() -> [String:[[Int]]]
     
@@ -30,7 +30,8 @@ extension MeshGenerator {
 //        return vertexMap.  .reduce([]) {  }
 //    }
     
-    public func generate() -> Mesh {
+    //TODO: move to individual generators?
+    public func generate(args: [String: String]) -> Mesh {
         let mesh = BaseMesh()
         mesh.data = getData()
         mesh.dataMaps = getDataMaps()
