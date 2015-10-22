@@ -8,6 +8,6 @@ target 'Spectra_Example' do
 end
 
 target 'Spectra_Tests' do
-  pod 'Quick', '~> 0.6.0'
+  pod 'Quick', '~> 0.7.0'
   pod 'Nimble', '~> 2.0.0-rc.3'
 end
