@@ -25,7 +25,10 @@ class CustomCamera: Spectra.BaseCamera {
 func compareFloat4(x:float4, to:float4) -> Bool {
     //no == ????
     //wow that's dumb. or maybe i'm dumb?
-    return (x.x == to.x && x.y == to.y && x.z == to.z && x.w == to.w)
+    return (x.x == to.x &&
+        x.y == to.y &&
+        x.z == to.z
+        && x.w == to.w)
 }
 
 class SceneGraphXMLSpec: QuickSpec {
@@ -112,6 +115,27 @@ class SceneGraphXMLSpec: QuickSpec {
                 expect(pers.perspectiveArgs["near"]!) == near
                 expect(pers.perspectiveArgs["far"]!) == far
             }
+        }
+        
+        describe("SGXMLMeshGeneratorNode") {
+            let customArgs = ["rowCount": 10, "colCount": 10]
+            let cubeGen = sceneGraph.meshGenerators["cubeGen"]! as! CubeGenerator
+            let latticeGen = sceneGraph.meshGenerators["latticeGen"]! as! TriangularQuadLatticeGenerator
+            
+            it("parses meshes without args") {
+                expect(cubeGen.getVertices().count) == 8
+            }
+            
+            it("passes args to mesh generator monad for custom generator types") {
+                expect(latticeGen.rowCount) == 100
+                expect(latticeGen.colCount) == 100
+//                expect(latticeGen.getVertices().count) == 0
+//                expect(latticeGen.getVertices().count) == 121
+            }
+        }
+        
+        describe("SGXMLMeshNode") {
+            
         }
     }
     

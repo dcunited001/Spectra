@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+
+<!--
  TODO: xmlns and schema
  -->
 
@@ -30,9 +31,11 @@
         <perspective-arg name="far" value="100.0" />
     </perspective>
     
-    <mesh-generator key="cubeGen" type="cube">
+    <mesh-generator key="cubeGen" type="cube" />
+    <mesh-generator key="triangularQuadLatticeGen" type="cube">
         <mesh-generator-args>
-            <mesh-generator-arg key="test" type="string" value="test" />
+            <mesh-generator-arg key="rowCount" type="string" value="100" />
+            <mesh-generator-arg key="colCount" type="string" value="100" />
         </mesh-generator-args>
     </mesh-generator>
     
