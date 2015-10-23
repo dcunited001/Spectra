@@ -1,6 +1,8 @@
 framework module Spectra {
   umbrella header "Spectra-umbrella.h"
 
+  header "Ono/ONOXMLDocument.h"
+
   export *
   module * { export * }
 }

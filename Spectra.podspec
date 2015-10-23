@@ -36,11 +36,13 @@ you've been warned.
     'Pod/Classes/**/*',
     'Pod/Node/**/*',
     'Pod/S3DXML/**/*',
-    'Pod/NodeGenerators/**/*']
+    'Pod/MeshGenerators/**/*']
 
   s.resource_bundles = {
     'Spectra' => ['Pod/Assets/*.png', 'Pod/Assets/Spectra3D.xsd']
   }
+
+  # s.module_map = 'Pod/Spectra.modulemap'
 
   # s.exclude_files = "Classes/Exclude"
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }

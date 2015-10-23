@@ -41,12 +41,13 @@
     "Pod/Classes/**/*",
     "Pod/Node/**/*",
     "Pod/S3DXML/**/*",
-    "Pod/NodeGenerators/**/*"
+    "Pod/MeshGenerators/**/*"
   ],
   "resource_bundles": {
     "Spectra": [
       "Pod/Assets/*.png",
       "Pod/Assets/Spectra3D.xsd"
     ]
-  }
+  },
+  "module_map": "Pod/Spectra.modulemap"
 }
