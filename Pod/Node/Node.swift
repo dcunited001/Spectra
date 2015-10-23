@@ -7,7 +7,6 @@
 //
 
 import Metal
-import SWXMLHash
 import simd
 
 public typealias SceneNodeMap = [String:Node]
