@@ -224,3 +224,16 @@ public class SGXMLMeshGeneratorNode: SGXMLNodeParser {
     }
 }
 
+public class SGXMLMeshNode: SGXMLNodeParser {
+    public typealias NodeType = Mesh
+    
+    public func parse(sceneGraph: SceneGraph, elem: ONOXMLElement, options: [String : AnyObject]) -> NodeType {
+        //TODO: mesh monads for each mesh type?
+        var node: Mesh = BaseMesh()
+        
+        // i'd really rather lazily evaluate the node
+        
+        
+        return node
+    }
+}
